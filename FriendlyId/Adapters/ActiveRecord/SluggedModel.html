@@ -1,0 +1,664 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+<title>Module: FriendlyId::Adapters::ActiveRecord::SluggedModel</title>
+<link rel="stylesheet" href="../../../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../../../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '../../..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../_index.html">Index (S)</a> &raquo; 
+    <a href="../../../FriendlyId.html" title="FriendlyId">FriendlyId</a> &raquo; <a href="../../Adapters.html" title="Adapters">Adapters</a> &raquo; <a href="../ActiveRecord.html" title="ActiveRecord">ActiveRecord</a>
+     &raquo; 
+    <span class="title">SluggedModel</span>
+  
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Namespace List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: FriendlyId::Adapters::ActiveRecord::SluggedModel 
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+      <dt class="r1">Includes:</dt>
+      <dd class="r1"><a href="SluggedModel/DeprecatedMethods.html" title="FriendlyId::Adapters::ActiveRecord::SluggedModel::DeprecatedMethods">FriendlyId::Adapters::ActiveRecord::SluggedModel::DeprecatedMethods</a></dd>
+      
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/friendly_id/adapters/active_record/slugged_model.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+   
+    
+      <strong class="modules">Modules:</strong> <a href="SluggedModel/ClassMethods.html" title="ClassMethods">ClassMethods</a>, <a href="SluggedModel/DeprecatedMethods.html" title="DeprecatedMethods">DeprecatedMethods</a>
+    
+   
+    
+      <strong class="classes">Classes:</strong> <a href="SluggedModel/MultipleFinder.html" title="MultipleFinder">MultipleFinder</a>, <a href="SluggedModel/SingleFinder.html" title="SingleFinder">SingleFinder</a>, <a href="SluggedModel/Status.html" title="Status">Status</a>
+    
+  
+</p>
+
+
+  
+  
+  
+  
+
+  <h2>Class Method Summary</h2>
+
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#included-class_method" title="included (class method)">+ (Object) <strong>included</strong>(base) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+  </ul>
+
+  <h2>Instance Method Summary</h2>
+
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#friendly_id-instance_method" title="#friendly_id (instance method)">- (Object) <strong>friendly_id</strong> </a>
+    
+
+    
+      (also: #best_id)
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Returns the friendly id.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#friendly_id_status-instance_method" title="#friendly_id_status (instance method)">- (Object) <strong>friendly_id_status</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_slug_needed%3F-instance_method" title="#new_slug_needed? (instance method)">- (Boolean) <strong>new_slug_needed?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Has the basis of our friendly id changed, requiring the generation of a new
+slug?.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#normalize_friendly_id-instance_method" title="#normalize_friendly_id (instance method)">- (Object) <strong>normalize_friendly_id</strong>(string) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#slug-instance_method" title="#slug (instance method)">- (Object) <strong>slug</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#slug%3D-instance_method" title="#slug= (instance method)">- (Object) <strong>slug=</strong>(slug) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#slug%3F-instance_method" title="#slug? (instance method)">- (Boolean) <strong>slug?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_param-instance_method" title="#to_param (instance method)">- (Object) <strong>to_param</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Returns the friendly id, or if none is available, the numeric id.
+
+</span>
+  
+</li>
+
+    
+  </ul>
+
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <a href="SluggedModel/DeprecatedMethods.html" title="FriendlyId::Adapters::ActiveRecord::SluggedModel::DeprecatedMethods">FriendlyId::Adapters::ActiveRecord::SluggedModel::DeprecatedMethods</a></h3>
+  <p class="inherited"><a href="SluggedModel/DeprecatedMethods.html#finder_slug-instance_method" title="#finder_slug">#finder_slug</a>, <a href="SluggedModel/DeprecatedMethods.html#found_using_friendly_id%3F-instance_method" title="#found_using_friendly_id?">#found_using_friendly_id?</a>, <a href="SluggedModel/DeprecatedMethods.html#found_using_numeric_id%3F-instance_method" title="#found_using_numeric_id?">#found_using_numeric_id?</a>, <a href="SluggedModel/DeprecatedMethods.html#found_using_outdated_friendly_id%3F-instance_method" title="#found_using_outdated_friendly_id?">#found_using_outdated_friendly_id?</a>, <a href="SluggedModel/DeprecatedMethods.html#has_a_slug%3F-instance_method" title="#has_a_slug?">#has_a_slug?</a>, <a href="SluggedModel/DeprecatedMethods.html#has_better_id%3F-instance_method" title="#has_better_id?">#has_better_id?</a></p>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="included-class_method">
+  
+    + (<tt>Object</tt>) <strong>included</strong>(base) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/adapters/active_record/slugged_model.rb', line 191</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id included'>included</span><span class='lparen'>(</span><span class='id base'>base</span><span class='rparen'>)</span>
+  <span class='id base'>base</span><span class='period'>.</span><span class='id class_eval'>class_eval</span> <span class='kw'>do</span>
+    <span class='id has_many'>has_many</span> <span class='symbol'>:slugs</span><span class='comma'>,</span> <span class='symbol'>:class_name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>FriendlyId::Adapters::ActiveRecord::Slug</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+      <span class='symbol'>:order</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id DESC</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:as</span> <span class='op'>=&gt;</span> <span class='symbol'>:sluggable</span><span class='comma'>,</span> <span class='symbol'>:dependent</span> <span class='op'>=&gt;</span> <span class='symbol'>:destroy</span>
+    <span class='id before_save'>before_save</span> <span class='symbol'>:set_slug</span>
+    <span class='id after_save'>after_save</span> <span class='symbol'>:set_slug_cache</span>
+    <span class='id after_update'>after_update</span> <span class='symbol'>:update_scopes</span>
+    <span class='id protect_friendly_id_attributes'>protect_friendly_id_attributes</span>
+    <span class='id extend'>extend</span> <span class='const'>ClassMethods</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="friendly_id-instance_method">
+  
+    - (<tt>Object</tt>) <strong>friendly_id</strong> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='best_id-instance_method'>best_id</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the friendly id.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+210
+211
+212</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/adapters/active_record/slugged_model.rb', line 210</span>
+
+<span class='kw'>def</span> <span class='id friendly_id'>friendly_id</span>
+  <span class='id slug'>slug</span><span class='period'>.</span><span class='id to_friendly_id'>to_friendly_id</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="friendly_id_status-instance_method">
+  
+    - (<tt>Object</tt>) <strong>friendly_id_status</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+205
+206
+207</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/adapters/active_record/slugged_model.rb', line 205</span>
+
+<span class='kw'>def</span> <span class='id friendly_id_status'>friendly_id_status</span>
+  <span class='ivar'>@friendly_id_status</span> <span class='op'>||=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='symbol'>:record</span> <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="new_slug_needed?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>new_slug_needed?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Has the basis of our friendly id changed, requiring the generation of a new
+slug?
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+217
+218
+219</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/adapters/active_record/slugged_model.rb', line 217</span>
+
+<span class='kw'>def</span> <span class='id new_slug_needed?'>new_slug_needed?</span>
+  <span class='op'>!</span><span class='id slug'>slug</span> <span class='op'>||</span> <span class='id slug_text_changed?'>slug_text_changed?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="normalize_friendly_id-instance_method">
+  
+    - (<tt>Object</tt>) <strong>normalize_friendly_id</strong>(string) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+226
+227
+228</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/adapters/active_record/slugged_model.rb', line 226</span>
+
+<span class='kw'>def</span> <span class='id normalize_friendly_id'>normalize_friendly_id</span><span class='lparen'>(</span><span class='id string'>string</span><span class='rparen'>)</span>
+  <span class='id string'>string</span><span class='period'>.</span><span class='id normalize_for!'>normalize_for!</span><span class='lparen'>(</span><span class='id friendly_id_config'>friendly_id_config</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_s'>to_s</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="slug-instance_method">
+  
+    - (<tt>Object</tt>) <strong>slug</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+230
+231
+232</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/adapters/active_record/slugged_model.rb', line 230</span>
+
+<span class='kw'>def</span> <span class='id slug'>slug</span>
+  <span class='ivar'>@slug</span> <span class='op'>||=</span> <span class='id slugs'>slugs</span><span class='period'>.</span><span class='id first'>first</span><span class='lparen'>(</span><span class='symbol'>:order</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id DESC</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="slug=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>slug=</strong>(slug) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+234
+235
+236</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/adapters/active_record/slugged_model.rb', line 234</span>
+
+<span class='kw'>def</span> <span class='id slug='>slug=</span><span class='lparen'>(</span><span class='id slug'>slug</span><span class='rparen'>)</span>
+  <span class='ivar'>@slug</span> <span class='op'>=</span> <span class='id slug'>slug</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="slug?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>slug?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+238
+239
+240</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/adapters/active_record/slugged_model.rb', line 238</span>
+
+<span class='kw'>def</span> <span class='id slug?'>slug?</span>
+  <span class='op'>!</span><span class='op'>!</span> <span class='id slug'>slug</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="to_param-instance_method">
+  
+    - (<tt>Object</tt>) <strong>to_param</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the friendly id, or if none is available, the numeric id.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+222
+223
+224</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/adapters/active_record/slugged_model.rb', line 222</span>
+
+<span class='kw'>def</span> <span class='id to_param'>to_param</span>
+  <span class='id friendly_id_config'>friendly_id_config</span><span class='period'>.</span><span class='id cache_column'>cache_column</span> <span class='op'>?</span> <span class='id to_param_from_cache'>to_param_from_cache</span> <span class='op'>:</span> <span class='id to_param_from_slug'>to_param_from_slug</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Wed Jan 20 14:06:42 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.2 (ruby-1.9.1).
+</div>
+
+  </body>
+</html>

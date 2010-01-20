@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+<title>Class: FriendlyId::Adapters::ActiveRecord::SimpleModel::Status</title>
+<link rel="stylesheet" href="../../../../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../../../../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '../../../..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/app.js"></script>
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../../_index.html">Index (S)</a> &raquo; 
+    <a href="../../../../FriendlyId.html" title="FriendlyId">FriendlyId</a> &raquo; <a href="../../../Adapters.html" title="Adapters">Adapters</a> &raquo; <a href="../../ActiveRecord.html" title="ActiveRecord">ActiveRecord</a> &raquo; <a href="../SimpleModel.html" title="SimpleModel">SimpleModel</a>
+     &raquo; 
+    <span class="title">Status</span>
+  
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Namespace List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: FriendlyId::Adapters::ActiveRecord::SimpleModel::Status 
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">FriendlyId::Adapters::ActiveRecord::SimpleModel::Status</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><a href="../../../BaseStatus.html" title="FriendlyId::BaseStatus">FriendlyId::BaseStatus</a></dd>
+      
+    
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/friendly_id/adapters/active_record/simple_model.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+  
+  
+  
+  
+
+  <h2>Instance Method Summary</h2>
+
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#friendly%3F-instance_method" title="#friendly? (instance method)">- (Boolean) <strong>friendly?</strong> </a>
+    
+
+    
+      (also: #best?)
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Did the find operation use a friendly id?.
+
+</span>
+  
+</li>
+
+    
+  </ul>
+
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <a href="../../../BaseStatus.html" title="FriendlyId::BaseStatus">FriendlyId::BaseStatus</a></h3>
+  <p class="inherited"><a href="../../../BaseStatus.html#initialize-instance_method" title="#initialize">#initialize</a>, <a href="../../../BaseStatus.html#numeric%3F-instance_method" title="#numeric?">#numeric?</a></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <p class="notice">This class inherits a constructor from <a href="../../../BaseStatus.html#initialize-instance_method" title="FriendlyId::BaseStatus">FriendlyId::BaseStatus</a></p>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="friendly?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>friendly?</strong> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='best?-instance_method'>best?</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Did the find operation use a friendly id?
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/adapters/active_record/simple_model.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id friendly?'>friendly?</span>
+  <span class='op'>!</span><span class='op'>!</span> <span class='id name'>name</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Wed Jan 20 14:06:41 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.2 (ruby-1.9.1).
+</div>
+
+  </body>
+</html>
