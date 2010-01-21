@@ -16,6 +16,10 @@
 
   </head>
   <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
     <div id="header">
       <div id="menu">
   
@@ -24,10 +28,12 @@
     
     <span class="title">FriendlyId</span>
   
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
       <div id="search">
-  <a id="class_list_link" href="#">Namespace List</a>
+  <a id="class_list_link" href="#">Class List</a>
   <a id="method_list_link" href="#">Method List</a>
   <a id ="file_list_link" href="#">File List</a>
 </div>
@@ -52,7 +58,7 @@
   
     <dt class="r1 last">Defined in:</dt>
     <dd class="r1 last">lib/friendly_id.rb<span class="defines">,<br />
-  lib/friendly_id/tasks.rb,<br /> lib/friendly_id/config.rb,<br /> lib/friendly_id/version.rb,<br /> lib/friendly_id/base_status.rb,<br /> lib/friendly_id/adapters/active_record/slug.rb,<br /> lib/friendly_id/adapters/active_record/finders.rb,<br /> lib/friendly_id/adapters/active_record/simple_model.rb,<br /> lib/friendly_id/adapters/active_record/slugged_model.rb</span>
+  lib/friendly_id/tasks.rb,<br /> lib/friendly_id/status.rb,<br /> lib/friendly_id/version.rb,<br /> lib/friendly_id/slug_string.rb,<br /> lib/friendly_id/configuration.rb,<br /> lib/friendly_id/active_record_2/slug.rb,<br /> lib/friendly_id/active_record_2/finders.rb,<br /> lib/friendly_id/active_record_2/simple_model.rb,<br /> lib/friendly_id/active_record_2/slugged_model.rb</span>
 </dd>
   
 </dl>
@@ -61,23 +67,67 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     <p>
-A Slug is a unique, human-friendly identifier for an ActiveRecord.
+FriendlyId is a comprehensive Ruby library for slugging and permalinks with
+ActiveRecord.
 </p>
 
 
   </div>
 </div>
 <div class="tags">
+  <h3>Author:</h3>
+<ul class="author">
   
+    <li>
+      
+      
+      
+      
+        
+        
+Norman Clarke
+
+
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+        
+        
+Emilio Tagua
+
+
+      
+    </li>
+  
+    <li>
+      
+      
+      
+      
+        
+        
+Adrian Mugnolo
+
+
+      
+    </li>
+  
+</ul>
+
 </div><h2>Defined Under Namespace</h2>
 <p class="children">
    
     
-      <strong class="modules">Modules:</strong> <a href="FriendlyId/Adapters.html" title="Adapters">Adapters</a>, <a href="FriendlyId/BaseStatus.html" title="BaseStatus">BaseStatus</a>, <a href="FriendlyId/Version.html" title="Version">Version</a>
+      <strong class="modules">Modules:</strong> <a href="FriendlyId/ActiveRecord2.html" title="FriendlyId::ActiveRecord2 (module)">ActiveRecord2</a>, <a href="FriendlyId/Version.html" title="FriendlyId::Version (module)">Version</a>
     
    
     
-      <strong class="classes">Classes:</strong> <a href="FriendlyId/Config.html" title="Config">Config</a>, <a href="FriendlyId/SlugGenerationError.html" title="SlugGenerationError">SlugGenerationError</a>, <a href="FriendlyId/SlugTextBlankError.html" title="SlugTextBlankError">SlugTextBlankError</a>, <a href="FriendlyId/SlugTextReservedError.html" title="SlugTextReservedError">SlugTextReservedError</a>, <a href="FriendlyId/Tasks.html" title="Tasks">Tasks</a>
+      <strong class="classes">Classes:</strong> <a href="FriendlyId/Configuration.html" title="FriendlyId::Configuration (class)">Configuration</a>, <a href="FriendlyId/SlugGenerationError.html" title="FriendlyId::SlugGenerationError (class)">SlugGenerationError</a>, <a href="FriendlyId/SlugString.html" title="FriendlyId::SlugString (class)">SlugString</a>, <a href="FriendlyId/SlugTextBlankError.html" title="FriendlyId::SlugTextBlankError (class)">SlugTextBlankError</a>, <a href="FriendlyId/SlugTextReservedError.html" title="FriendlyId::SlugTextReservedError (class)">SlugTextReservedError</a>, <a href="FriendlyId/Status.html" title="FriendlyId::Status (class)">Status</a>, <a href="FriendlyId/Tasks.html" title="FriendlyId::Tasks (class)">Tasks</a>
     
   
 </p>
@@ -111,6 +161,29 @@ Set up a model to use a friendly_id.
 </li>
 
     
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#uses_friendly_id%3F-instance_method" title="#uses_friendly_id? (instance method)">- (Boolean) <strong>uses_friendly_id?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Does the model class use the FriendlyId plugin?.
+
+</span>
+  
+</li>
+
+    
   </ul>
 
 
@@ -129,7 +202,7 @@ Set up a model to use a friendly_id.
   <div class="discussion">
     <p>
 Set up a model to use a friendly_id. This method accepts a hash with
-<tt><a href="FriendlyId/Config.html" title="several possible options">several possible options</a></tt>.
+<tt><a href="FriendlyId/Configuration.html" title="FriendlyId::Configuration (class)">several possible options</a></tt>.
 </p>
 
 
@@ -142,13 +215,14 @@ Set up a model to use a friendly_id. This method accepts a hash with
     
       <h4></h4>
       <pre class="example code">
-  <span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
-    <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:user_name</span>
-  <span class='kw'>end</span>
+  <span class='class class kw'>class</span> <span class='User constant id'>User</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
+    <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:user_name</span>
+  <span class='end end kw'>end</span>
 
-  <span class='kw'>class</span> <span class='const'>Post</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
-    <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:title</span><span class='comma'>,</span> <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:approximate_ascii</span> <span class='op'>=&gt;</span> <span class='kw'>true</span>
-  <span class='kw'>end</span></pre>
+  <span class='class class kw'>class</span> <span class='Post constant id'>Post</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
+    <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:title</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span> <span class='symbol val'>:approximate_ascii</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span>
+  <span class='end end kw'>end</span>
+</pre>
     
   </div>
 <h3>Parameters:</h3>
@@ -185,7 +259,7 @@ string.
       
         &mdash;
         
-For valid configuration options, see <tt><a href="FriendlyId/Config.html" title="FriendlyId::Config">FriendlyId::Config</a></tt>.
+For valid configuration options, see <tt><a href="FriendlyId/Configuration.html" title="FriendlyId::Configuration (class)">FriendlyId::Configuration</a></tt>.
 
 
       
@@ -203,8 +277,8 @@ For valid configuration options, see <tt><a href="FriendlyId/Config.html" title=
         &mdash;
         
 An optional block through which to filter the friendly_id text; see
-<tt><a href="FriendlyId/Config.html#normalizer-instance_method" title="FriendlyId::Config#normalizer">FriendlyId::Config#normalizer</a></tt>. Note that passing a block parameter is now
-deprecated and will be removed from FriendlyId 3.0.
+<tt><a href="FriendlyId/Configuration.html#normalizer-instance_method" title="FriendlyId::Configuration#normalizer (method)">FriendlyId::Configuration#normalizer</a></tt>. Note that passing a block parameter
+is now deprecated and will be removed from FriendlyId 3.0.
 
 
       
@@ -215,7 +289,7 @@ deprecated and will be removed from FriendlyId 3.0.
   <h3>See Also:</h3>
   <ul class="see">
     
-      <li><a href="FriendlyId/Config.html" title="FriendlyId::Config">FriendlyId::Config</a></li>
+      <li><a href="FriendlyId/Configuration.html" title="FriendlyId::Configuration (class)">FriendlyId::Configuration</a></li>
     
   </ul>
 
@@ -225,22 +299,76 @@ deprecated and will be removed from FriendlyId 3.0.
       <pre class="lines">
 
 
-44
 45
 46
 47
 48
-49</pre>
+49
+50</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 45</span>
 
-<span class='kw'>def</span> <span class='id has_friendly_id'>has_friendly_id</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
-  <span class='id class_inheritable_accessor'>class_inheritable_accessor</span> <span class='symbol'>:friendly_id_config</span>
-  <span class='id write_inheritable_attribute'>write_inheritable_attribute</span> <span class='symbol'>:friendly_id_config</span><span class='comma'>,</span> <span class='const'>Config</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> 
-    <span class='id method'>method</span><span class='comma'>,</span> <span class='id options'>options</span><span class='period'>.</span><span class='id merge'>merge</span><span class='lparen'>(</span><span class='symbol'>:normalizer</span> <span class='op'>=&gt;</span> <span class='id block'>block</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='id load_friendly_id_adapter'>load_friendly_id_adapter</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='has_friendly_id identifier id'>has_friendly_id</span><span class='lparen token'>(</span><span class='method identifier id'>method</span><span class='comma token'>,</span> <span class='options identifier id'>options</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
+  <span class='class_inheritable_accessor identifier id'>class_inheritable_accessor</span> <span class='symbol val'>:friendly_id_config</span>
+  <span class='write_inheritable_attribute identifier id'>write_inheritable_attribute</span> <span class='symbol val'>:friendly_id_config</span><span class='comma token'>,</span> <span class='Configuration constant id'>Configuration</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='comma token'>,</span>
+    <span class='method identifier id'>method</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='dot token'>.</span><span class='merge identifier id'>merge</span><span class='lparen token'>(</span><span class='symbol val'>:normalizer</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='block identifier id'>block</span><span class='rparen token'>)</span><span class='rparen token'>)</span>
+  <span class='load_friendly_id_adapter identifier id'>load_friendly_id_adapter</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="uses_friendly_id?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>uses_friendly_id?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Does the model class use the FriendlyId plugin?
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 53</span>
+
+<span class='def def kw'>def</span> <span class='uses_friendly_id? fid id'>uses_friendly_id?</span>
+  <span class='respond_to? fid id'>respond_to?</span> <span class='symbol val'>:friendly_id_config</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -251,9 +379,9 @@ deprecated and will be removed from FriendlyId 3.0.
 </div>
     
     <div id="footer">
-  Generated on Wed Jan 20 14:37:25 2010 by 
+  Generated on Thu Jan 21 17:15:15 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.2 (ruby-1.9.1).
+  0.5.3 (ruby-1.8.7).
 </div>
 
   </body>

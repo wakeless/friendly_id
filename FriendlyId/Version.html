@@ -16,18 +16,24 @@
 
   </head>
   <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
     <div id="header">
       <div id="menu">
   
     <a href="../_index.html">Index (V)</a> &raquo; 
-    <a href="../FriendlyId.html" title="FriendlyId">FriendlyId</a>
+    <span class='title'><a href="../FriendlyId.html" title="FriendlyId (module)">FriendlyId</a></span>
      &raquo; 
     <span class="title">Version</span>
   
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
       <div id="search">
-  <a id="class_list_link" href="#">Namespace List</a>
+  <a id="class_list_link" href="#">Class List</a>
   <a id="method_list_link" href="#">Method List</a>
   <a id ="file_list_link" href="#">File List</a>
 </div>
@@ -56,41 +62,34 @@
 </dl>
 <div class="clear"></div>
 
-<h2>Overview</h2><div class="docstring">
-  <div class="discussion">
-    <p>
-:nodoc: :nodoc:
-</p>
 
-
-  </div>
-</div>
-<div class="tags">
-  
-</div>
   <h2>Constant Summary</h2>
   
     <dl class="constants">
       
-        <dt id="MAJOR-constant ">MAJOR =
+        <dt id="MAJOR-constant" class="">MAJOR =
             <span class="summary_desc"></span>
         </dt>
-        <dd><pre class="code"><span class='int'>2</span></pre></dd>
+        <dd><pre class="code"><span class='integer val'>2</span>
+</pre></dd>
       
-        <dt id="MINOR-constant ">MINOR =
+        <dt id="MINOR-constant" class="">MINOR =
             <span class="summary_desc"></span>
         </dt>
-        <dd><pre class="code"><span class='int'>3</span></pre></dd>
+        <dd><pre class="code"><span class='integer val'>3</span>
+</pre></dd>
       
-        <dt id="TINY-constant ">TINY =
+        <dt id="TINY-constant" class="">TINY =
             <span class="summary_desc"></span>
         </dt>
-        <dd><pre class="code"><span class='int'>0</span></pre></dd>
+        <dd><pre class="code"><span class='integer val'>0</span>
+</pre></dd>
       
-        <dt id="STRING-constant ">STRING =
+        <dt id="STRING-constant" class="">STRING =
             <span class="summary_desc"></span>
         </dt>
-        <dd><pre class="code"><span class='lbracket'>[</span><span class='const'>MAJOR</span><span class='comma'>,</span> <span class='const'>MINOR</span><span class='comma'>,</span> <span class='const'>TINY</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>.</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre></dd>
+        <dd><pre class="code"><span class='lbrack token'>[</span><span class='MAJOR constant id'>MAJOR</span><span class='comma token'>,</span> <span class='MINOR constant id'>MINOR</span><span class='comma token'>,</span> <span class='TINY constant id'>TINY</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='join identifier id'>join</span><span class='lparen token'>(</span><span class='string val'>'.'</span><span class='rparen token'>)</span>
+</pre></dd>
       
     </dl>
   
@@ -101,9 +100,9 @@
 </div>
     
     <div id="footer">
-  Generated on Wed Jan 20 14:37:27 2010 by 
+  Generated on Thu Jan 21 17:15:16 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.2 (ruby-1.9.1).
+  0.5.3 (ruby-1.8.7).
 </div>
 
   </body>

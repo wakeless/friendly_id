@@ -16,18 +16,24 @@
 
   </head>
   <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
     <div id="header">
       <div id="menu">
   
     <a href="../_index.html">Index (F)</a> &raquo; 
-    <a href="../ActiveRecord.html" title="ActiveRecord">ActiveRecord</a>
+    <span class='title'><a href="../ActiveRecord.html" title="ActiveRecord (module)">ActiveRecord</a></span>
      &raquo; 
     <span class="title">Friendly</span>
   
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
       <div id="search">
-  <a id="class_list_link" href="#">Namespace List</a>
+  <a id="class_list_link" href="#">Class List</a>
   <a id="method_list_link" href="#">Method List</a>
   <a id ="file_list_link" href="#">File List</a>
 </div>
@@ -49,7 +55,7 @@
   
     
       <dt class="r1">Includes:</dt>
-      <dd class="r1"><a href="../FriendlyId.html" title="FriendlyId">FriendlyId</a></dd>
+      <dd class="r1"><a href="../FriendlyId.html" title="FriendlyId (module)">FriendlyId</a></dd>
       
     
   
@@ -72,16 +78,16 @@
   
   
   
-  <h3 class="inherited">Methods included from <a href="../FriendlyId.html" title="FriendlyId">FriendlyId</a></h3>
-  <p class="inherited"><a href="../FriendlyId.html#has_friendly_id-instance_method" title="#has_friendly_id">#has_friendly_id</a></p>
+  <h3 class="inherited">Methods included from <a href="../FriendlyId.html" title="FriendlyId (module)">FriendlyId</a></h3>
+  <p class="inherited"><a href="../FriendlyId.html#has_friendly_id-instance_method" title="FriendlyId#has_friendly_id (method)">#has_friendly_id</a>, <a href="../FriendlyId.html#uses_friendly_id%3F-instance_method" title="FriendlyId#uses_friendly_id? (method)">#uses_friendly_id?</a></p>
 
 
 </div>
     
     <div id="footer">
-  Generated on Wed Jan 20 14:37:26 2010 by 
+  Generated on Thu Jan 21 17:15:16 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.2 (ruby-1.9.1).
+  0.5.3 (ruby-1.8.7).
 </div>
 
   </body>

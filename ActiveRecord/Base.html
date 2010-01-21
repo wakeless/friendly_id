@@ -16,18 +16,24 @@
 
   </head>
   <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
     <div id="header">
       <div id="menu">
   
     <a href="../_index.html">Index (B)</a> &raquo; 
-    <a href="../ActiveRecord.html" title="ActiveRecord">ActiveRecord</a>
+    <span class='title'><a href="../ActiveRecord.html" title="ActiveRecord (module)">ActiveRecord</a></span>
      &raquo; 
     <span class="title">Base</span>
   
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
       <div id="search">
-  <a id="class_list_link" href="#">Namespace List</a>
+  <a id="class_list_link" href="#">Class List</a>
   <a id="method_list_link" href="#">Method List</a>
   <a id ="file_list_link" href="#">File List</a>
 </div>
@@ -62,7 +68,7 @@
   
     
       <dt class="r2">Extends:</dt>
-      <dd class="r2"><a href="Friendly.html" title="ActiveRecord::Friendly">ActiveRecord::Friendly</a></dd>
+      <dd class="r2"><a href="Friendly.html" title="ActiveRecord::Friendly (module)">Friendly</a></dd>
       
     
   
@@ -75,6 +81,10 @@
 </dl>
 <div class="clear"></div>
 
+<div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><a href="../FriendlyId/ActiveRecord2/Slug.html" title="FriendlyId::ActiveRecord2::Slug (class)">FriendlyId::ActiveRecord2::Slug</a></p>
+</div>
 
 
 
@@ -82,9 +92,9 @@
 </div>
     
     <div id="footer">
-  Generated on Wed Jan 20 14:37:26 2010 by 
+  Generated on Thu Jan 21 17:15:19 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.2 (ruby-1.9.1).
+  0.5.3 (ruby-1.8.7).
 </div>
 
   </body>

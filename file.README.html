@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta name="Content-Type" content="text/html; charset=UTF-8" />
-<title>Documentation by YARD 0.5.2</title>
+<title>Documentation by YARD 0.5.3</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
 
@@ -16,16 +16,22 @@
 
   </head>
   <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
     <div id="header">
       <div id="menu">
   
     <a href="_index.html" title="Index">Index</a> &raquo; 
     <span class="title">File: README</span>
   
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
 </div>
 
       <div id="search">
-  <a id="class_list_link" href="#">Namespace List</a>
+  <a id="class_list_link" href="#">Class List</a>
   <a id="method_list_link" href="#">Method List</a>
   <a id ="file_list_link" href="#">File List</a>
 </div>
@@ -41,11 +47,13 @@
 
 <p>Using FriendlyId, it&#8217;s easy to make your application use URL&#8217;s like:</p>
 
-<pre class="code"><span class='id http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id example'>example</span><span class='period'>.</span><span class='id com'>com</span><span class='op'>/</span><span class='id states'>states</span><span class='op'>/</span><span class='id washington'>washington</span></pre>
+<pre class="code"><span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/example.com/s</span><span class='tates identifier id'>tates</span><span class='div op'>/</span><span class='washington identifier id'>washington</span>
+</pre>
 
 <p>instead of:</p>
 
-<pre class="code"><span class='id http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id example'>example</span><span class='period'>.</span><span class='id com'>com</span><span class='op'>/</span><span class='id states'>states</span><span class='op'>/</span><span class='int'>4323454</span></pre>
+<pre class="code"><span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/example.com/s</span><span class='tates identifier id'>tates</span><span class='div op'>/</span><span class='integer val'>4323454</span>
+</pre>
 
 <h2 id='docs_info_and_support'>Docs, Info and Support</h2>
 
@@ -63,21 +71,22 @@
 
 <h2 id='rails_quickstart'>Rails Quickstart:</h2>
 
-<pre class="code">gem install friendly_id
+<pre class="code"><span class='gem identifier id'>gem</span> <span class='install identifier id'>install</span> <span class='friendly_id identifier id'>friendly_id</span>
 
-./script/generate friendly_id
+<span class='dot token'>.</span><span class='div op'>/</span><span class='script identifier id'>script</span><span class='div op'>/</span><span class='generate identifier id'>generate</span> <span class='friendly_id identifier id'>friendly_id</span>
 
-rake db:migrate 
+<span class='rake identifier id'>rake</span> <span class='db identifier id'>db</span><span class='symbol val'>:migrate</span> 
 
-class User &lt; ActiveRecord::Base
-  has_friendly_id :user_name
-end
+<span class='class class kw'>class</span> <span class='User constant id'>User</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
+  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:user_name</span>
+<span class='end end kw'>end</span>
 
-rake friendly_id:make_slugs
+<span class='rake identifier id'>rake</span> <span class='friendly_id identifier id'>friendly_id</span><span class='symbol val'>:make_slugs</span>
 
-./script/server
+<span class='dot token'>.</span><span class='div op'>/</span><span class='script identifier id'>script</span><span class='div op'>/</span><span class='server identifier id'>server</span>
 
-get http://0.0.0.0:3000/users/joe-schmoe</pre>
+<span class='get identifier id'>get</span> <span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/0.0.0.0:3000/</span><span class='users identifier id'>users</span><span class='div op'>/</span><span class='joe identifier id'>joe</span><span class='minus op'>-</span><span class='schmoe identifier id'>schmoe</span>
+</pre>
 
 <h2 id='friendlyid_features_and_guide'>FriendlyId Features and Guide</h2>
 
@@ -106,9 +115,9 @@ get http://0.0.0.0:3000/users/joe-schmoe</pre>
 <p>Copyright (c) 2008-2010, released under the MIT license.</p></div></div>
     
     <div id="footer">
-  Generated on Wed Jan 20 14:37:23 2010 by 
+  Generated on Thu Jan 21 17:15:14 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.2 (ruby-1.9.1).
+  0.5.3 (ruby-1.8.7).
 </div>
 
   </body>
