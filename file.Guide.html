@@ -94,11 +94,11 @@
 <span class='redirect_to identifier id'>redirect_to</span> <span class='@post ivar id'>@post</span>   <span class='comment val'># the URL will be /posts/this-is-the-first-post</span>
 </pre>
 
-<p>If you are unsure whether to use slugs, then your best bet is to use them, because FriendlyId provides many useful features that only work with slugs. These features are explained in detail below.</p>
+<p>If you are unsure whether to use slugs, then your best bet is to use them, because FriendlyId provides many useful features that only work with slugs. These features are explained in detail <a href="file.Guide.html#features" title="below">below</a>.</p>
 
 <h2 id='installation'>Installation</h2>
 
-<p>FriendlyId can be installed as a gem, or as a Rails plugin. It is compatible with Rails 2.2.x, 2.3.x.</p>
+<p>FriendlyId can be installed as a gem, or as a Rails plugin. It is compatible with Rails 2.2.x, 2.3.x. Support for Rails 3.x is in progress.</p>
 
 <h3 id='as_a_gem'>As a Gem</h3>
 
@@ -107,7 +107,7 @@
 
 <h4 id='rails_22x__23x'>Rails 2.2.x - 2.3.x</h4>
 
-<p>After installing the gem, you will need to add an entry in environment.rb:</p>
+<p>After installing the gem, add an entry in environment.rb:</p>
 
 <pre class="code"><span class='config identifier id'>config</span><span class='dot token'>.</span><span class='gem identifier id'>gem</span> <span class='string val'>&quot;friendly_id&quot;</span>
 </pre>
@@ -125,12 +125,12 @@
 
 <h3 id='as_a_plugin'>As a Plugin</h3>
 
-<p>Plugin installtion is simple for all supported versions of Rails:</p>
+<p>Plugin installation is simple for all supported versions of Rails:</p>
 
 <pre class="code"><span class='dot token'>.</span><span class='div op'>/</span><span class='script identifier id'>script</span><span class='div op'>/</span><span class='plugin identifier id'>plugin</span> <span class='install identifier id'>install</span> <span class='git identifier id'>git</span><span class='symbol val'>:/</span><span class='regexp val'>/github.com/n</span><span class='orman identifier id'>orman</span><span class='div op'>/</span><span class='friendly_id identifier id'>friendly_id</span><span class='dot token'>.</span><span class='git identifier id'>git</span>
 </pre>
 
-<p>However, installing as a gem offers simpler version control than plugin installtion. Whenever possible, install as a gem instead.</p>
+<p>However, installing as a gem offers simpler version control than plugin installation. Whenever possible, install as a gem instead.</p>
 
 <h3 id='setup'>Setup</h3>
 
@@ -149,20 +149,27 @@
 
 <h2 id='configuration'>Configuration</h2>
 
-<p>FriendlyId is configured using the <tt><a href="FriendlyId.html#has_friendly_id-instance_method" title="FriendlyId#has_friendly_id (method)">FriendlyId#has_friendly_id</a></tt> class method:</p>
+<p>FriendlyId is configured in your model using the <tt><a href="FriendlyId.html#has_friendly_id-instance_method" title="FriendlyId#has_friendly_id (method)">FriendlyId#has_friendly_id</a></tt> class method:</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='MyModel constant id'>MyModel</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:a_column_or_method</span> <span class='options_hash identifier id'>options_hash</span>
+<pre class="code"><span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:a_column_or_method</span> <span class='options_hash identifier id'>options_hash</span>
+
+<span class='class class kw'>class</span> <span class='Post constant id'>Post</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
+  <span class='comment val'># use the &quot;title&quot; column as the basis of the friendly_id, and use slugs</span>
+  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:title</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span>
+    <span class='comment val'># remove accents and other diacritics from Western characters</span>
+    <span class='symbol val'>:approximate_ascii</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span>
+    <span class='comment val'># don't use slugs longer than 50 chars</span>
+    <span class='symbol val'>:max_length</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>50</span>
 <span class='end end kw'>end</span>
 </pre>
 
-<p>For a list of valid options, see the instance attrbute summary for <tt><a href="FriendlyId/Configuration.html" title="FriendlyId::Configuration (class)">FriendlyId::Configuration</a></tt>.</p>
+<p>For the full list of valid configuration options, see the instance attribute summary for <tt><a href="FriendlyId/Configuration.html" title="FriendlyId::Configuration (class)">FriendlyId::Configuration</a></tt>.</p>
 
 <h1 id='features'>Features</h1>
 
 <h2 id='friendlyid_strings'>FriendlyId Strings</h2>
 
-<p>When using slugs, FriendlyId will automatically modify the slug text to make it more suitable for use in a URL:</p>
+<p>FriendlyId comes with <tt><a href="FriendlyId/SlugString.html" title="FriendlyId::SlugString (class)">excellent support for Unicode strings</a></tt>. When using slugs, FriendlyId will automatically modify the slug text to make it more suitable for use in a URL:</p>
 
 <pre class="code"><span class='class class kw'>class</span> <span class='City constant id'>City</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
   <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span>
@@ -172,7 +179,7 @@
 <span class='@city ivar id'>@city</span><span class='dot token'>.</span><span class='friendly_id identifier id'>friendly_id</span>  <span class='comment val'># will be &quot;viña-del-mar&quot;</span>
 </pre>
 
-<p>By default, the string is <tt><a href="FriendlyId/SlugString.html#downcase%21-instance_method" title="FriendlyId::SlugString#downcase! (method)">downcased</a></tt> and <tt><a href="FriendlyId/SlugString.html#clean%21-instance_method" title="FriendlyId::SlugString#clean! (method)">stripped</a></tt>, <tt><a href="FriendlyId/SlugString.html#with_dashes%21-instance_method" title="FriendlyId::SlugString#with_dashes! (method)">spaces are replaced with dashes</a></tt>, and <tt><a href="FriendlyId/SlugString.html#letters%21-instance_method" title="FriendlyId::SlugString#letters! (method)">non-letters are removed</a></tt>.</p>
+<p>By default, the string is <tt><a href="FriendlyId/SlugString.html#downcase%21-instance_method" title="FriendlyId::SlugString#downcase! (method)">downcased</a></tt> and <tt><a href="FriendlyId/SlugString.html#clean%21-instance_method" title="FriendlyId::SlugString#clean! (method)">stripped</a></tt>, <tt><a href="FriendlyId/SlugString.html#with_dashes%21-instance_method" title="FriendlyId::SlugString#with_dashes! (method)">spaces are replaced with dashes</a></tt>, and <tt><a href="FriendlyId/SlugString.html#word_chars%21-instance_method" title="FriendlyId::SlugString#word_chars! (method)">non-word characters are removed</a></tt>.</p>
 
 <h3 id='replacing_accented_characters'>Replacing Accented Characters</h3>
 
@@ -261,7 +268,7 @@
 <pre class="code"><span class='class class kw'>class</span> <span class='City constant id'>City</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
 
   <span class='def def kw'>def</span> <span class='normalize_friendly_id identifier id'>normalize_friendly_id</span><span class='lparen token'>(</span><span class='text identifier id'>text</span><span class='rparen token'>)</span>
-    <span class='text identifier id'>text</span><span class='dot token'>.</span><span class='clean identifier id'>clean</span><span class='dot token'>.</span><span class='approximate_ascii identifier id'>approximate_ascii</span><span class='dot token'>.</span><span class='underscore identifier id'>underscore</span><span class='dot token'>.</span><span class='upcase identifier id'>upcase</span>
+    <span class='my_text_modifier_method identifier id'>my_text_modifier_method</span><span class='lparen token'>(</span><span class='text identifier id'>text</span><span class='rparen token'>)</span>
   <span class='end end kw'>end</span>
 
 <span class='end end kw'>end</span>
@@ -273,7 +280,8 @@
 
 <p>Stringex is a library which provides some interesting options for transliterating non-Western strings to ASCII:</p>
 
-<p>&#8220;你好&#8221;.to_url =&gt; &#8220;ni-hao&#8221;</p>
+<pre class="code"><span class='string val'>&quot;你好&quot;</span><span class='dot token'>.</span><span class='to_url identifier id'>to_url</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;ni-hao&quot;</span>
+</pre>
 
 <p>Using Stringex with FriendlyId is a simple matter of installing and requiring the <code>stringex</code> gem, and overriding the <code>normalize_friendly_id</code> method in your model:</p>
 
@@ -290,18 +298,18 @@
 
 <p>FriendlyId maintains a history of your record&#8217;s older slugs, so if your record&#8217;s friendly_id changes, your URL&#8217;s won&#8217;t break. It offers several methods to determine whether the model instance was found using the most recent friendly_id. This helps you redirect to your &#8220;unfriendly&#8221; URL&#8217;s to your new &#8220;friendly&#8221; ones when adding FriendlyId to an existing application:</p>
 
-<p>class PostsController &lt; ApplicationController</p>
+<pre class="code"><span class='class class kw'>class</span> <span class='PostsController constant id'>PostsController</span> <span class='lt op'>&lt;</span> <span class='ApplicationController constant id'>ApplicationController</span>
 
-<pre class="code"><span class='before_filter identifier id'>before_filter</span> <span class='ensure_current_post_url identifier id'>ensure_current_post_url</span><span class='comma token'>,</span> <span class='symbol val'>:only</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:show</span>
+  <span class='before_filter identifier id'>before_filter</span> <span class='ensure_current_post_url identifier id'>ensure_current_post_url</span><span class='comma token'>,</span> <span class='symbol val'>:only</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:show</span>
 
-<span class='dot3 op'>...</span>
+  <span class='dot3 op'>...</span>
 
-<span class='def def kw'>def</span> <span class='ensure_current_post_url identifier id'>ensure_current_post_url</span>
-  <span class='redirect_to identifier id'>redirect_to</span> <span class='@post ivar id'>@post</span><span class='comma token'>,</span> <span class='symbol val'>:status</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:moved_permanently</span> <span class='unless unless_mod kw'>unless</span> <span class='@post ivar id'>@post</span><span class='dot token'>.</span><span class='friendly_id_status identifier id'>friendly_id_status</span><span class='dot token'>.</span><span class='best? fid id'>best?</span>
+  <span class='def def kw'>def</span> <span class='ensure_current_post_url identifier id'>ensure_current_post_url</span>
+    <span class='redirect_to identifier id'>redirect_to</span> <span class='@post ivar id'>@post</span><span class='comma token'>,</span> <span class='symbol val'>:status</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:moved_permanently</span> <span class='unless unless_mod kw'>unless</span> <span class='@post ivar id'>@post</span><span class='dot token'>.</span><span class='friendly_id_status identifier id'>friendly_id_status</span><span class='dot token'>.</span><span class='best? fid id'>best?</span>
+  <span class='end end kw'>end</span>
+
 <span class='end end kw'>end</span>
 </pre>
-
-<p>end</p>
 
 <p>For more information, take a look at the documentation for <tt><a href="FriendlyId/Status.html" title="FriendlyId::Status (class)">FriendlyId::Status</a></tt>.</p>
 
@@ -316,7 +324,7 @@
 <span class='etc identifier id'>etc</span><span class='dot token'>.</span>
 </pre>
 
-<p>Note that the number is preceeded by &#8221;&#8211;&#8221; to distinguish it from the rest of the slug. This is important to enable having slugs like:</p>
+<p>Note that the number is preceded by &#8221;&#8211;&#8221; to distinguish it from the rest of the slug. This is important to enable having slugs like:</p>
 
 <pre class="code"><span class='regexp val'>/cars/</span><span class='peugeot identifier id'>peugeot</span><span class='minus op'>-</span><span class='integer val'>206</span>
 <span class='regexp val'>/cars/</span><span class='peugeot identifier id'>peugeot</span><span class='minus op'>-</span><span class='integer val'>206</span><span class='minus op'>-</span><span class='integer val'>-2</span>
@@ -327,7 +335,7 @@
 <pre class="code"><span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:title</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span> <span class='symbol val'>:sequence_separator</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;;&quot;</span>
 </pre>
 
-<p>You can also override the default used in <tt><a href="FriendlyId/Configuration.html#DEFAULTS-constant" title="FriendlyId::Configuration::DEFAULTS (constant)">FriendlyId::Configuration::DEFAULTS</a></tt> to set the value for any model using FriendlyId.</p>
+<p>You can also override the default used in <tt><a href="FriendlyId/Configuration.html#DEFAULTS-constant" title="FriendlyId::Configuration::DEFAULTS (constant)">FriendlyId::Configuration::DEFAULTS</a></tt> to set the value for any model using FriendlyId. If you change this value in an existing application, be sure to <a href="file.Guide.html#regenerating_slugs" title="regenerate the slugs">regenerate the slugs</a> afterwards.</p>
 
 <h2 id='reserved_words'>Reserved Words</h2>
 
@@ -337,15 +345,15 @@
 <span class='regexp val'>/users/n</span><span class='ew identifier id'>ew</span>        <span class='comment val'># A user chose &quot;new&quot; as his user name, and now no one can sign up.</span>
 </pre>
 
-<p>Here&#8217;s how to do it:</p>
+<p>Reserved words are configured using the <code>:reserved_words</code> option:</p>
 
 <pre class="code"><span class='class class kw'>class</span> <span class='Restaurant constant id'>Restaurant</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
   <span class='belongs_to identifier id'>belongs_to</span> <span class='symbol val'>:city</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span> <span class='symbol val'>:reserved</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='string val'>&quot;my&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;values&quot;</span><span class='rbrack token'>]</span>
+  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span> <span class='symbol val'>:reserved_words</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='string val'>&quot;my&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;values&quot;</span><span class='rbrack token'>]</span>
 <span class='end end kw'>end</span>
 </pre>
 
-<p>The strings &#8220;new&#8221; and &#8220;index&#8221; are reseved by default. When you attempt to store a reserved value, FriendlyId raises a <tt><a href="FriendlyId/SlugTextReservedError.html" title="FriendlyId::SlugTextReservedError (class)">FriendlyId::SlugTextReservedError</a></tt>. You can also override the default reserved words in <tt><a href="FriendlyId/Configuration.html#DEFAULTS-constant" title="FriendlyId::Configuration::DEFAULTS (constant)">FriendlyId::Configuration::DEFAULTS</a></tt> to set the value for any model using FriendlyId.</p>
+<p>The strings &#8220;new&#8221; and &#8220;index&#8221; are reserved by default. When you attempt to store a reserved value, FriendlyId raises a <tt><a href="FriendlyId/SlugTextReservedError.html" title="FriendlyId::SlugTextReservedError (class)">FriendlyId::SlugTextReservedError</a></tt>. You can also override the default reserved words in <tt><a href="FriendlyId/Configuration.html#DEFAULTS-constant" title="FriendlyId::Configuration::DEFAULTS (constant)">FriendlyId::Configuration::DEFAULTS</a></tt> to set the value for any model using FriendlyId.</p>
 
 <h2 id='caching_the_friendlyid_slug_for_better_performance'>Caching the FriendlyId Slug for Better Performance</h2>
 
@@ -435,7 +443,7 @@
 
 <h2 id='friendlyid_rake_tasks'>FriendlyId Rake Tasks</h2>
 
-<p>FriendlyId provides several tasks to help maintain your application. The tasks can be invoked via Rake, or programatically through <tt><a href="FriendlyId/Tasks.html" title="FriendlyId::Tasks (class)">FriendlyId::Tasks</a></tt>.</p>
+<p>FriendlyId provides several tasks to help maintain your application. The tasks can be invoked via Rake, or programmatically through <tt><a href="FriendlyId/Tasks.html" title="FriendlyId::Tasks (class)">FriendlyId::Tasks</a></tt>.</p>
 
 <h3 id='generating_new_slugs_for_the_first_time'>Generating New Slugs For the First Time</h3>
 
@@ -449,7 +457,7 @@
 <pre class="code"><span class='friendly_id identifier id'>friendly_id</span><span class='symbol val'>:redo_slugs</span> <span class='MODEL constant id'>MODEL</span><span class='assign token'>=</span><span class='lt op'>&lt;</span><span class='model identifier id'>model</span> <span class='name identifier id'>name</span><span class='gt op'>&gt;</span>
 </pre>
 
-<p>Use this task to regenrate slugs after making any changes to your model&#8217;s FriendlyId configuration options that affect slug generation. For example, if you introduce a <code>cached_slug</code> column or change the <code>:seqence_separator</code>.</p>
+<p>Use this task to regenerate slugs after making any changes to your model&#8217;s FriendlyId configuration options that affect slug generation. For example, if you introduce a <code>cached_slug</code> column or change the <code>:seqence_separator</code>.</p>
 
 <h3 id='deleting_old_slugs'>Deleting Old Slugs</h3>
 
@@ -467,7 +475,7 @@
 <p>Before removing any public or protected methods, FriendlyId will deprecate them through one major release cycle. Private methods may, however, change at any time.</p></div></div>
     
     <div id="footer">
-  Generated on Thu Jan 21 17:15:14 2010 by 
+  Generated on Fri Jan 22 14:45:17 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>

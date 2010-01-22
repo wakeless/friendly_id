@@ -58,7 +58,7 @@
   
     <dt class="r1 last">Defined in:</dt>
     <dd class="r1 last">lib/friendly_id.rb<span class="defines">,<br />
-  lib/friendly_id/tasks.rb,<br /> lib/friendly_id/status.rb,<br /> lib/friendly_id/version.rb,<br /> lib/friendly_id/slug_string.rb,<br /> lib/friendly_id/configuration.rb,<br /> lib/friendly_id/active_record_2/slug.rb,<br /> lib/friendly_id/active_record_2/finders.rb,<br /> lib/friendly_id/active_record_2/simple_model.rb,<br /> lib/friendly_id/active_record_2/slugged_model.rb</span>
+  lib/friendly_id/tasks.rb,<br /> lib/friendly_id/status.rb,<br /> lib/friendly_id/version.rb,<br /> lib/friendly_id/slug_string.rb,<br /> lib/friendly_id/configuration.rb,<br /> lib/friendly_id/active_record_2/slug.rb,<br /> lib/friendly_id/active_record_2/finders.rb,<br /> lib/friendly_id/active_record_2/simple_model.rb,<br /> lib/friendly_id/active_record_3/simple_model.rb,<br /> lib/friendly_id/active_record_2/slugged_model.rb,<br /> lib/friendly_id/active_record_3/slugged_model.rb</span>
 </dd>
   
 </dl>
@@ -67,63 +67,19 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     <p>
-FriendlyId is a comprehensive Ruby library for slugging and permalinks with
-ActiveRecord.
+encoding: utf-8
 </p>
 
 
   </div>
 </div>
 <div class="tags">
-  <h3>Author:</h3>
-<ul class="author">
   
-    <li>
-      
-      
-      
-      
-        
-        
-Norman Clarke
-
-
-      
-    </li>
-  
-    <li>
-      
-      
-      
-      
-        
-        
-Emilio Tagua
-
-
-      
-    </li>
-  
-    <li>
-      
-      
-      
-      
-        
-        
-Adrian Mugnolo
-
-
-      
-    </li>
-  
-</ul>
-
 </div><h2>Defined Under Namespace</h2>
 <p class="children">
    
     
-      <strong class="modules">Modules:</strong> <a href="FriendlyId/ActiveRecord2.html" title="FriendlyId::ActiveRecord2 (module)">ActiveRecord2</a>, <a href="FriendlyId/Version.html" title="FriendlyId::Version (module)">Version</a>
+      <strong class="modules">Modules:</strong> <a href="FriendlyId/ActiveRecord2.html" title="FriendlyId::ActiveRecord2 (module)">ActiveRecord2</a>, <a href="FriendlyId/ActiveRecord3.html" title="FriendlyId::ActiveRecord3 (module)">ActiveRecord3</a>, <a href="FriendlyId/Version.html" title="FriendlyId::Version (module)">Version</a>
     
    
     
@@ -299,15 +255,15 @@ is now deprecated and will be removed from FriendlyId 3.0.
       <pre class="lines">
 
 
-45
-46
 47
 48
 49
-50</pre>
+50
+51
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 45</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 47</span>
 
 <span class='def def kw'>def</span> <span class='has_friendly_id identifier id'>has_friendly_id</span><span class='lparen token'>(</span><span class='method identifier id'>method</span><span class='comma token'>,</span> <span class='options identifier id'>options</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
   <span class='class_inheritable_accessor identifier id'>class_inheritable_accessor</span> <span class='symbol val'>:friendly_id_config</span>
@@ -358,12 +314,12 @@ Does the model class use the FriendlyId plugin?
       <pre class="lines">
 
 
-53
-54
-55</pre>
+55
+56
+57</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 53</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 55</span>
 
 <span class='def def kw'>def</span> <span class='uses_friendly_id? fid id'>uses_friendly_id?</span>
   <span class='respond_to? fid id'>respond_to?</span> <span class='symbol val'>:friendly_id_config</span>
@@ -379,7 +335,7 @@ Does the model class use the FriendlyId plugin?
 </div>
     
     <div id="footer">
-  Generated on Thu Jan 21 17:15:15 2010 by 
+  Generated on Fri Jan 22 14:45:22 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>

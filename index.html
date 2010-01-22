@@ -55,6 +55,31 @@
 <pre class="code"><span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/example.com/s</span><span class='tates identifier id'>tates</span><span class='div op'>/</span><span class='integer val'>4323454</span>
 </pre>
 
+<h2 id='friendlyid_features'>FriendlyId Features</h2>
+
+<p>FriendlyId offers many advanced features, including: slug history and versioning, scoped slugs, reserved words, custom slug generators, and excellent Unicode support. For complete information on using FriendlyId, please see the <a href="file.GUIDE.html" title="FriendlyId Guide">FriendlyId Guide</a>.</p>
+
+<h2 id='rails_quickstart'>Rails Quickstart</h2>
+
+<pre class="code"><span class='gem identifier id'>gem</span> <span class='install identifier id'>install</span> <span class='friendly_id identifier id'>friendly_id</span>
+
+<span class='cd identifier id'>cd</span> <span class='my_app identifier id'>my_app</span>
+
+<span class='dot token'>.</span><span class='div op'>/</span><span class='script identifier id'>script</span><span class='div op'>/</span><span class='generate identifier id'>generate</span> <span class='friendly_id identifier id'>friendly_id</span>
+
+<span class='rake identifier id'>rake</span> <span class='db identifier id'>db</span><span class='symbol val'>:migrate</span>
+
+<span class='class class kw'>class</span> <span class='User constant id'>User</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
+  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:user_name</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span>
+<span class='end end kw'>end</span>
+
+<span class='rake identifier id'>rake</span> <span class='friendly_id identifier id'>friendly_id</span><span class='symbol val'>:make_slugs</span>
+
+<span class='dot token'>.</span><span class='div op'>/</span><span class='script identifier id'>script</span><span class='div op'>/</span><span class='server identifier id'>server</span>
+
+<span class='GET constant id'>GET</span> <span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/0.0.0.0:3000/</span><span class='users identifier id'>users</span><span class='div op'>/</span><span class='joe identifier id'>joe</span><span class='minus op'>-</span><span class='schmoe identifier id'>schmoe</span>
+</pre>
+
 <h2 id='docs_info_and_support'>Docs, Info and Support</h2>
 
 <ul>
@@ -68,29 +93,6 @@
 
 <li><a href='http://github.com/norman/friendly_id/issues'>Issue Tracker</a></li>
 </ul>
-
-<h2 id='rails_quickstart'>Rails Quickstart:</h2>
-
-<pre class="code"><span class='gem identifier id'>gem</span> <span class='install identifier id'>install</span> <span class='friendly_id identifier id'>friendly_id</span>
-
-<span class='dot token'>.</span><span class='div op'>/</span><span class='script identifier id'>script</span><span class='div op'>/</span><span class='generate identifier id'>generate</span> <span class='friendly_id identifier id'>friendly_id</span>
-
-<span class='rake identifier id'>rake</span> <span class='db identifier id'>db</span><span class='symbol val'>:migrate</span> 
-
-<span class='class class kw'>class</span> <span class='User constant id'>User</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:user_name</span>
-<span class='end end kw'>end</span>
-
-<span class='rake identifier id'>rake</span> <span class='friendly_id identifier id'>friendly_id</span><span class='symbol val'>:make_slugs</span>
-
-<span class='dot token'>.</span><span class='div op'>/</span><span class='script identifier id'>script</span><span class='div op'>/</span><span class='server identifier id'>server</span>
-
-<span class='get identifier id'>get</span> <span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/0.0.0.0:3000/</span><span class='users identifier id'>users</span><span class='div op'>/</span><span class='joe identifier id'>joe</span><span class='minus op'>-</span><span class='schmoe identifier id'>schmoe</span>
-</pre>
-
-<h2 id='friendlyid_features_and_guide'>FriendlyId Features and Guide</h2>
-
-<p>FriendlyId offers many advanced features, including: slug history and versioning, scoped slugs, reserved words, a custom slug generator, unicode and accented characters. For more information on using FriendlyId, please see the <a href="file.GUIDE.html" title="FriendlyId Guide">FriendlyId Guide</a>.</p>
 
 <h2 id='bugs'>Bugs:</h2>
 
@@ -115,7 +117,7 @@
 <p>Copyright (c) 2008-2010, released under the MIT license.</p></div></div>
     
     <div id="footer">
-  Generated on Thu Jan 21 17:15:14 2010 by 
+  Generated on Fri Jan 22 14:45:17 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>

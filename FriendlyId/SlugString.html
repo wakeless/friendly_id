@@ -79,13 +79,54 @@
 </dl>
 <div class="clear"></div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+This class provides some string-manipulation methods specific to slugs. Its
+Unicode support is provided by ActiveSupport::Multibyte::Chars; this is
+needed primarily for Unicode encoding normalization and proper calculation
+of string lengths.
+</p>
+<p>
+Note that this class includes many &quot;bang methods&quot; such as
+<tt><a href="#clean%21-instance_method" title="FriendlyId::SlugString#clean! (method)">#clean!</a></tt> and <tt><a href="#normalize%21-instance_method" title="FriendlyId::SlugString#normalize! (method)">#normalize!</a></tt> that perform actions on the string in-place.
+Each of these methods has a corresponding &quot;bangless&quot; method
+(i.e., <tt>SlugString#clean!</tt> and <tt>SlugString#clean</tt>) which does not appear in
+the generated because it is generated dynamically.
+</p>
+<p>
+All of the bang methods return an instance of String, while the bangless
+versions return an instance of FriendlyId::SlugString, so that calls to
+methods specific to this class can be chained:
+</p>
+<pre class="code">
+  <span class='string identifier id'>string</span> <span class='assign token'>=</span> <span class='SlugString constant id'>SlugString</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='string val'>&quot;hello world&quot;</span><span class='rparen token'>)</span>
+  <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='with_dashes! fid id'>with_dashes!</span> <span class='comment val'># =&gt; &quot;hello-world&quot;</span>
+  <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='with_dashes identifier id'>with_dashes</span>  <span class='comment val'># =&gt; &lt;FriendlyId::SlugString:0x000001013e1590 @wrapped_string=&quot;hello-world&quot;&gt;</span>
+</pre>
 
+
+  </div>
+</div>
+<div class="tags">
+  
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><a href="http://www.utf8-chartable.de/unicode-utf8-table.pl?utf8=dec" title="Unicode character table">Unicode character table</a></li>
+    
+  </ul>
+
+</div>
   <h2>Constant Summary</h2>
   
     <dl class="constants">
       
         <dt id="APPROXIMATIONS-constant" class="">APPROXIMATIONS =
-            <span class="summary_desc"></span>
+            <span class="summary_desc">
+All values are Unicode decimal characters or character arrays.
+
+</span>
         </dt>
         <dd><pre class="code"><span class='lbrace token'>{</span>
   <span class='symbol val'>:common</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='Hash constant id'>Hash</span><span class='lbrack token'>[</span>
@@ -148,7 +189,10 @@
   
 
   
-    <span class="summary_desc"></span>
+    <span class="summary_desc">
+Approximate an ASCII string.
+
+</span>
   
 </li>
 
@@ -168,7 +212,11 @@
   
 
   
-    <span class="summary_desc"></span>
+    <span class="summary_desc">
+Removes leading and trailing spaces or dashses, and replaces multiple
+whitespace characters with a single space.
+
+</span>
   
 </li>
 
@@ -188,7 +236,10 @@
   
 
   
-    <span class="summary_desc"></span>
+    <span class="summary_desc">
+Lowercases the string.
+
+</span>
   
 </li>
 
@@ -221,26 +272,6 @@ A new instance of SlugString.
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#letters%21-instance_method" title="#letters! (instance method)">- (Object) <strong>letters!</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#normalize%21-instance_method" title="#normalize! (instance method)">- (Object) <strong>normalize!</strong> </a>
     
 
@@ -253,7 +284,10 @@ A new instance of SlugString.
   
 
   
-    <span class="summary_desc"></span>
+    <span class="summary_desc">
+Normalize the string for use as a FriendlyId.
+
+</span>
   
 </li>
 
@@ -274,7 +308,7 @@ A new instance of SlugString.
 
   
     <span class="summary_desc">
-Normalize the string for a FriendlyIdConfig.
+Normalize the string for a given <tt><a href="Configuration.html" title="FriendlyId::Configuration (class)">FriendlyId::Configuration</a></tt>.
 
 </span>
   
@@ -296,7 +330,10 @@ Normalize the string for a FriendlyIdConfig.
   
 
   
-    <span class="summary_desc"></span>
+    <span class="summary_desc">
+Delete any non-ascii characters.
+
+</span>
   
 </li>
 
@@ -316,7 +353,10 @@ Normalize the string for a FriendlyIdConfig.
   
 
   
-    <span class="summary_desc"></span>
+    <span class="summary_desc">
+Truncate the string to <tt>max</tt> length.
+
+</span>
   
 </li>
 
@@ -336,7 +376,34 @@ Normalize the string for a FriendlyIdConfig.
   
 
   
-    <span class="summary_desc"></span>
+    <span class="summary_desc">
+Upper-cases the string.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#validate_for%21-instance_method" title="#validate_for! (instance method)">- (Object) <strong>validate_for!</strong>(config) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Validate that the slug string is not blank or reserved, and truncate it to
+the max length if necessary.
+
+</span>
   
 </li>
 
@@ -356,7 +423,33 @@ Normalize the string for a FriendlyIdConfig.
   
 
   
-    <span class="summary_desc"></span>
+    <span class="summary_desc">
+Replaces whitespace with dashes (&quot;-&quot;).
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#word_chars%21-instance_method" title="#word_chars! (instance method)">- (Object) <strong>word_chars!</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Remove any non-word characters.
+
+</span>
   
 </li>
 
@@ -383,19 +476,40 @@ A new instance of SlugString
   </div>
 </div>
 <div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
   
+    <li>
+      
+        <span class='type'>(<tt><a href="../String.html" title="String (class)">String</a></tt>)</span>
+      
+      
+        <span class='name'>string</span>
+      
+      
+      
+        &mdash;
+        
+The string to use as the basis of the SlugString.
+
+
+      
+    </li>
+  
+</ul>
+
 </div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-42
-43
-44</pre>
+65
+66
+67</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 65</span>
 
 <span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='string identifier id'>string</span><span class='rparen token'>)</span>
   <span class='super super kw'>super</span> <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
@@ -420,19 +534,112 @@ A new instance of SlugString
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Approximate an ASCII string. This works only for Western strings using
+characters that are Roman-alphabet characters + diacritics. Non-letter
+characters are left unmodified.
+</p>
+<pre class="code">
+  <span class='string identifier id'>string</span> <span class='assign token'>=</span> <span class='SlugString constant id'>SlugString</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='string val'>&quot;Łódź, Poland&quot;</span>
+  <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='approximate_ascii identifier id'>approximate_ascii</span>                 <span class='comment val'># =&gt; &quot;Lodz, Poland&quot;</span>
+  <span class='string identifier id'>string</span> <span class='assign token'>=</span> <span class='SlugString constant id'>SlugString</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='string val'>&quot;日本&quot;</span>
+  <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='approximate_ascii identifier id'>approximate_ascii</span>                 <span class='comment val'># =&gt; &quot;日本&quot;</span>
+</pre>
+<p>
+You can pass any key(s) from <tt><a href="#APPROXIMATIONS-constant" title="FriendlyId::SlugString::APPROXIMATIONS (constant)">APPROXIMATIONS</a></tt> as arguments. This allows for
+contextual approximations. By default; <tt>:spanish</tt> and <tt>:german</tt> are
+provided:
+</p>
+<pre class="code">
+  <span class='string identifier id'>string</span> <span class='assign token'>=</span> <span class='SlugString constant id'>SlugString</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='string val'>&quot;Jürgen Müller&quot;</span>
+  <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='approximate_ascii identifier id'>approximate_ascii</span>                 <span class='comment val'># =&gt; &quot;Jurgen Muller&quot;</span>
+  <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='approximate_ascii identifier id'>approximate_ascii</span> <span class='symbol val'>:german</span>        <span class='comment val'># =&gt; &quot;Juergen Mueller&quot;</span>
+  <span class='string identifier id'>string</span> <span class='assign token'>=</span> <span class='SlugString constant id'>SlugString</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='string val'>&quot;¡Feliz año!&quot;</span>
+  <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='approximate_ascii identifier id'>approximate_ascii</span>                 <span class='comment val'># =&gt; &quot;¡Feliz ano!&quot;</span>
+  <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='approximate_ascii identifier id'>approximate_ascii</span> <span class='symbol val'>:spanish</span>       <span class='comment val'># =&gt; &quot;¡Feliz anno!&quot;</span>
+</pre>
+<p>
+You can modify the built-in approximations, or add your own:
+</p>
+<pre class="code">
+  <span class='comment val'># Make Spanish use &quot;nh&quot; rather than &quot;nn&quot;</span>
+  <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='SlugString constant id'>SlugString</span><span class='colon2 op'>::</span><span class='APPROXIMATIONS constant id'>APPROXIMATIONS</span><span class='lbrack token'>[</span><span class='symbol val'>:spanish</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span>
+    <span class='comment val'># Ñ =&gt; &quot;Nh&quot;</span>
+    <span class='integer val'>209</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>78</span><span class='comma token'>,</span> <span class='integer val'>104</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+    <span class='comment val'># ñ =&gt; &quot;nh&quot;</span>
+    <span class='integer val'>241</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>110</span><span class='comma token'>,</span> <span class='integer val'>104</span><span class='rbrack token'>]</span>
+  <span class='rbrace token'>}</span>
+</pre>
+<p>
+It&#8217;s also possible to use a custom approximation for all strings:
+</p>
+<pre class="code">
+  <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='SlugString constant id'>SlugString</span><span class='dot token'>.</span><span class='approximations identifier id'>approximations</span> <span class='lshft op'>&lt;&lt;</span> <span class='symbol val'>:german</span>
+</pre>
+<p>
+Notice that this method does not simply convert to ASCII; if you want to
+remove non-ASCII characters such as &quot;¡&quot; and &quot;¿&quot;, use
+<tt><a href="#to_ascii%21-instance_method" title="FriendlyId::SlugString#to_ascii! (method)">#to_ascii!</a></tt>:
+</p>
+<pre class="code">
+  <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='approximate_ascii! fid id'>approximate_ascii!</span><span class='lparen token'>(</span><span class='symbol val'>:spanish</span><span class='rparen token'>)</span>       <span class='comment val'># =&gt; &quot;¡Feliz anno!&quot;</span>
+  <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='to_ascii! fid id'>to_ascii!</span>                          <span class='comment val'># =&gt; &quot;Feliz anno!&quot;</span>
+</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+        <span class='name'>*args</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        
+String
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-46
-47
-48
-49</pre>
+110
+111
+112
+113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 46</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 110</span>
 
 <span class='def def kw'>def</span> <span class='approximate_ascii! fid id'>approximate_ascii!</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
   <span class='@maps ivar id'>@maps</span> <span class='assign token'>=</span> <span class='lparen token'>(</span><span class='self self kw'>self</span><span class='dot token'>.</span><span class='class identifier id'>class</span><span class='dot token'>.</span><span class='approximations identifier id'>approximations</span> <span class='plus op'>+</span> <span class='args identifier id'>args</span> <span class='plus op'>+</span> <span class='lbrack token'>[</span><span class='symbol val'>:common</span><span class='rbrack token'>]</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='dot token'>.</span><span class='uniq identifier id'>uniq</span>
@@ -451,18 +658,49 @@ A new instance of SlugString
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Removes leading and trailing spaces or dashses, and replaces multiple
+whitespace characters with a single space.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        
+String
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-51
-52
-53</pre>
+118
+119
+120</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 51</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 118</span>
 
 <span class='def def kw'>def</span> <span class='clean! fid id'>clean!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='@wrapped_string ivar id'>@wrapped_string</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/\A\-|\-\z/</span><span class='comma token'>,</span> <span class='string val'>''</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/\s+/</span><span class='u identifier id'>u</span><span class='comma token'>,</span> <span class='string val'>' '</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='strip identifier id'>strip</span>
@@ -480,70 +718,52 @@ A new instance of SlugString
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Lowercases the string. Note that this works for Unicode strings, though
+your milage may vary with Greek and Turkic strings.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        
+String
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-55
-56
-57</pre>
+125
+126
+127</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 125</span>
 
 <span class='def def kw'>def</span> <span class='downcase! fid id'>downcase!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='apply_mapping identifier id'>apply_mapping</span> <span class='symbol val'>:lowercase_mapping</span>
-<span class='end end kw'>end</span>
-</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <p class="signature " id="letters!-instance_method">
-  
-    - (<tt>Object</tt>) <strong>letters!</strong> 
-  
-
-  
-</p><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 59</span>
-
-<span class='def def kw'>def</span> <span class='letters! fid id'>letters!</span>
-  <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='normalize_utf8 identifier id'>normalize_utf8</span><span class='lparen token'>(</span><span class='symbol val'>:c</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='unpack identifier id'>unpack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='map identifier id'>map</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='char identifier id'>char</span><span class='bitor op'>|</span>
-    <span class='case case kw'>case</span> <span class='char identifier id'>char</span>
-    <span class='when when kw'>when</span> <span class='integer val'>0</span><span class='dot2 op'>..</span><span class='integer val'>31</span>
-    <span class='when when kw'>when</span> <span class='float val'>33</span><span class='dot2 op'>..</span><span class='integer val'>44</span>
-    <span class='when when kw'>when</span> <span class='float val'>46</span><span class='dot2 op'>..</span><span class='integer val'>47</span>
-    <span class='when when kw'>when</span> <span class='float val'>58</span><span class='dot2 op'>..</span><span class='integer val'>64</span>
-    <span class='when when kw'>when</span> <span class='float val'>91</span><span class='dot2 op'>..</span><span class='integer val'>96</span>
-    <span class='when when kw'>when</span> <span class='float val'>123</span><span class='dot2 op'>..</span><span class='integer val'>191</span>
-    <span class='else else kw'>else</span> <span class='char identifier id'>char</span>
-    <span class='end end kw'>end</span>
-  <span class='rbrace token'>}</span><span class='dot token'>.</span><span class='compact identifier id'>compact</span><span class='dot token'>.</span><span class='pack identifier id'>pack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span>
 <span class='end end kw'>end</span>
 </pre>
     </td>
@@ -558,25 +778,58 @@ A new instance of SlugString
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Normalize the string for use as a FriendlyId. Note that in this context,
+<tt>normalize</tt> means, strip, remove non-letters/numbers, downcasing and
+converting whitespace to dashes. ActiveSupport::Multibyte::Chars#normalize
+is aliased to <tt>normalize_utf8</tt> in this subclass.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        
+String
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-91
-92
-93
-94
-95
-96</pre>
+172
+173
+174
+175
+176
+177</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 91</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 172</span>
 
 <span class='def def kw'>def</span> <span class='normalize! fid id'>normalize!</span>
   <span class='clean! fid id'>clean!</span>
-  <span class='letters! fid id'>letters!</span>
+  <span class='word_chars! fid id'>word_chars!</span>
   <span class='downcase! fid id'>downcase!</span>
   <span class='with_dashes! fid id'>with_dashes!</span>
 <span class='end end kw'>end</span>
@@ -596,7 +849,7 @@ A new instance of SlugString
 </p><div class="docstring">
   <div class="discussion">
     <p>
-Normalize the string for a FriendlyIdConfig
+Normalize the string for a given <tt><a href="Configuration.html" title="FriendlyId::Configuration (class)">FriendlyId::Configuration</a></tt>.
 </p>
 
 
@@ -608,7 +861,7 @@ Normalize the string for a FriendlyIdConfig
   
     <li>
       
-        <span class='type'>(<tt>FriendlyIdConfig</tt>)</span>
+        <span class='type'>(<tt><a href="Configuration.html" title="FriendlyId::Configuration (class)">FriendlyId::Configuration</a></tt>)</span>
       
       
         <span class='name'>config</span>
@@ -618,15 +871,21 @@ Normalize the string for a FriendlyIdConfig
     </li>
   
 </ul>
-<h3>Raises:</h3>
-<ul class="raise">
+<h3>Returns:</h3>
+<ul class="return">
   
     <li>
       
-        <span class='type'>(<tt><a href="SlugTextBlankError.html" title="FriendlyId::SlugTextBlankError (class)">FriendlyId::SlugTextBlankError</a></tt>)</span>
+        <span class='type'></span>
       
       
       
+      
+        
+        
+String
+
+
       
     </li>
   
@@ -638,22 +897,18 @@ Normalize the string for a FriendlyIdConfig
       <pre class="lines">
 
 
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87</pre>
+154
+155
+156
+157
+158
+159
+160
+161
+162</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 75</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 154</span>
 
 <span class='def def kw'>def</span> <span class='normalize_for! fid id'>normalize_for!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='rparen token'>)</span>
   <span class='if if kw'>if</span> <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='normalizer? fid id'>normalizer?</span>
@@ -663,10 +918,6 @@ Normalize the string for a FriendlyIdConfig
     <span class='to_ascii! fid id'>to_ascii!</span> <span class='if if_mod kw'>if</span> <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='strip_non_ascii? fid id'>strip_non_ascii?</span>
     <span class='normalize! fid id'>normalize!</span>
   <span class='end end kw'>end</span>
-  <span class='truncate! fid id'>truncate!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='dot token'>.</span><span class='max_length identifier id'>max_length</span><span class='rparen token'>)</span>
-  <span class='raise identifier id'>raise</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='SlugTextBlankError constant id'>SlugTextBlankError</span> <span class='if if_mod kw'>if</span> <span class='blank? fid id'>blank?</span>
-  <span class='raise identifier id'>raise</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='SlugTextReservedError constant id'>SlugTextReservedError</span> <span class='if if_mod kw'>if</span> <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='reserved? fid id'>reserved?</span><span class='lparen token'>(</span><span class='to_s identifier id'>to_s</span><span class='rparen token'>)</span>
-  <span class='self self kw'>self</span>
 <span class='end end kw'>end</span>
 </pre>
     </td>
@@ -681,18 +932,48 @@ Normalize the string for a FriendlyIdConfig
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Delete any non-ascii characters.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        
+String
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-102
-103
-104</pre>
+187
+188
+189</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 102</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 187</span>
 
 <span class='def def kw'>def</span> <span class='to_ascii! fid id'>to_ascii!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='normalize_utf8 identifier id'>normalize_utf8</span><span class='lparen token'>(</span><span class='symbol val'>:c</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='unpack identifier id'>unpack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='reject identifier id'>reject</span> <span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='char identifier id'>char</span><span class='bitor op'>|</span> <span class='char identifier id'>char</span> <span class='gt op'>&gt;</span> <span class='integer val'>127</span><span class='rbrace token'>}</span><span class='dot token'>.</span><span class='pack identifier id'>pack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span>
@@ -710,18 +991,48 @@ Normalize the string for a FriendlyIdConfig
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Truncate the string to <tt>max</tt> length.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        
+String
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-98
-99
-100</pre>
+181
+182
+183</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 181</span>
 
 <span class='def def kw'>def</span> <span class='truncate! fid id'>truncate!</span><span class='lparen token'>(</span><span class='max identifier id'>max</span><span class='rparen token'>)</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='self self kw'>self</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='dot3 op'>...</span><span class='max identifier id'>max</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span> <span class='if if_mod kw'>if</span> <span class='length identifier id'>length</span> <span class='gt op'>&gt;</span> <span class='max identifier id'>max</span>
@@ -739,21 +1050,167 @@ Normalize the string for a FriendlyIdConfig
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Upper-cases the string. Note that this works for Unicode strings, though
+your milage may vary with Greek and Turkic strings.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        
+String
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-106
-107
-108</pre>
+194
+195
+196</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 106</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 194</span>
 
 <span class='def def kw'>def</span> <span class='upcase! fid id'>upcase!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='apply_mapping identifier id'>apply_mapping</span> <span class='symbol val'>:uppercase_mapping</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="validate_for!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>validate_for!</strong>(config) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Validate that the slug string is not blank or reserved, and truncate it to
+the max length if necessary.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt><a href="Configuration.html" title="FriendlyId::Configuration (class)">FriendlyId::Configuration</a></tt>)</span>
+      
+      
+        <span class='name'>config</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        
+String
+
+
+      
+    </li>
+  
+</ul>
+<h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        
+FriendlyId::SlugTextBlankError
+
+
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        
+FriendlyId::SlugTextReservedError
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+204
+205
+206
+207
+208
+209</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 204</span>
+
+<span class='def def kw'>def</span> <span class='validate_for! fid id'>validate_for!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='rparen token'>)</span>
+  <span class='truncate! fid id'>truncate!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='dot token'>.</span><span class='max_length identifier id'>max_length</span><span class='rparen token'>)</span>
+  <span class='raise identifier id'>raise</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='SlugTextBlankError constant id'>SlugTextBlankError</span> <span class='if if_mod kw'>if</span> <span class='blank? fid id'>blank?</span>
+  <span class='raise identifier id'>raise</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='SlugTextReservedError constant id'>SlugTextReservedError</span> <span class='if if_mod kw'>if</span> <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='reserved? fid id'>reserved?</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='rparen token'>)</span>
+  <span class='self self kw'>self</span>
 <span class='end end kw'>end</span>
 </pre>
     </td>
@@ -768,21 +1225,142 @@ Normalize the string for a FriendlyIdConfig
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Replaces whitespace with dashes (&quot;-&quot;).
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        
+String
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-110
-111
-112</pre>
+213
+214
+215</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 110</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 213</span>
 
 <span class='def def kw'>def</span> <span class='with_dashes! fid id'>with_dashes!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='@wrapped_string ivar id'>@wrapped_string</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/\s+/</span><span class='u identifier id'>u</span><span class='comma token'>,</span> <span class='string val'>'-'</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="word_chars!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>word_chars!</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Remove any non-word characters.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        
+String
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 131</span>
+
+<span class='def def kw'>def</span> <span class='word_chars! fid id'>word_chars!</span>
+  <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='normalize_utf8 identifier id'>normalize_utf8</span><span class='lparen token'>(</span><span class='symbol val'>:c</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='unpack identifier id'>unpack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='map identifier id'>map</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='char identifier id'>char</span><span class='bitor op'>|</span>
+    <span class='case case kw'>case</span> <span class='char identifier id'>char</span>
+    <span class='comment val'># control chars</span>
+    <span class='when when kw'>when</span> <span class='integer val'>0</span><span class='dot2 op'>..</span><span class='integer val'>31</span>
+    <span class='comment val'># punctuation; 45 is &quot;-&quot; (HYPHEN-MINUS) and allowed</span>
+    <span class='when when kw'>when</span> <span class='float val'>33</span><span class='dot2 op'>..</span><span class='integer val'>44</span>
+    <span class='comment val'># more puncuation</span>
+    <span class='when when kw'>when</span> <span class='float val'>46</span><span class='dot2 op'>..</span><span class='integer val'>47</span>
+    <span class='comment val'># more puncuation and other symbols</span>
+    <span class='when when kw'>when</span> <span class='float val'>58</span><span class='dot2 op'>..</span><span class='integer val'>64</span>
+    <span class='comment val'># brackets and other symbols</span>
+    <span class='when when kw'>when</span> <span class='float val'>91</span><span class='dot2 op'>..</span><span class='integer val'>96</span>
+    <span class='comment val'># braces, pipe, tilde, etc.</span>
+    <span class='when when kw'>when</span> <span class='float val'>123</span><span class='dot2 op'>..</span><span class='integer val'>191</span>
+    <span class='else else kw'>else</span> <span class='char identifier id'>char</span>
+    <span class='end end kw'>end</span>
+  <span class='rbrace token'>}</span><span class='dot token'>.</span><span class='compact identifier id'>compact</span><span class='dot token'>.</span><span class='pack identifier id'>pack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span>
 <span class='end end kw'>end</span>
 </pre>
     </td>
@@ -795,7 +1373,7 @@ Normalize the string for a FriendlyIdConfig
 </div>
     
     <div id="footer">
-  Generated on Thu Jan 21 17:15:17 2010 by 
+  Generated on Fri Jan 22 14:45:21 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>

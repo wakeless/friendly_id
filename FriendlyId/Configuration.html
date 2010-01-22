@@ -77,7 +77,42 @@
 </dl>
 <div class="clear"></div>
 
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+This class is not intended to be used on its own, it is used internally by
+<tt><a href="../FriendlyId.html#has_friendly_id-instance_method" title="FriendlyId#has_friendly_id (method)">FriendlyId#has_friendly_id</a></tt> to load the model&#8217;s configuration.
+</p>
+<p>
+The arguments accepted by <tt><a href="../FriendlyId.html#has_friendly_id-instance_method" title="FriendlyId#has_friendly_id (method)">#has_friendly_id</a></tt> correspond to the writeable
+instance attributes of this class; please see the description of the
+attributes below for information on the possible options.
+</p>
 
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4></h4>
+      <pre class="example code"><span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> 
+ <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span>
+ <span class='symbol val'>:max_length</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>150</span><span class='comma token'>,</span> 
+ <span class='symbol val'>:approximate_ascii</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span>
+ <span class='symbol val'>:ascii_approximation_options</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:german</span><span class='comma token'>,</span>
+ <span class='symbol val'>:sequence_separator</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;:&quot;</span><span class='comma token'>,</span>
+ <span class='symbol val'>:reserved_words</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='string val'>&quot;reserved&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;words&quot;</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+ <span class='symbol val'>:scope</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:country</span><span class='comma token'>,</span>
+ <span class='symbol val'>:cache_column</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:my_cache_column_name</span>
+ <span class='comment val'># etc.</span>
+</pre>
+    
+  </div>
+
+</div>
   <h2>Constant Summary</h2>
   
     <dl class="constants">
@@ -509,26 +544,6 @@ Use slugs for storing the friendly_id string.
       <li class="public ">
   <span class="summary_signature">
     
-      <a href="#autodiscover_cache_column-instance_method" title="#autodiscover_cache_column (instance method)">- (Object) <strong>autodiscover_cache_column</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#initialize-instance_method" title="#initialize (instance method)">- (Configuration) <strong>initialize</strong>(configured_class, method, options = nil, &amp;block) {|_self| ... }</a>
     
 
@@ -739,17 +754,17 @@ the object that the method was called on
       <pre class="lines">
 
 
-69
-70
-71
-72
-73
-74
-75
-76</pre>
+91
+92
+93
+94
+95
+96
+97
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 69</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 91</span>
 
 <span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='configured_class identifier id'>configured_class</span><span class='comma token'>,</span> <span class='method identifier id'>method</span><span class='comma token'>,</span> <span class='options identifier id'>options</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
   <span class='@configured_class ivar id'>@configured_class</span> <span class='assign token'>=</span> <span class='configured_class identifier id'>configured_class</span>
@@ -797,12 +812,12 @@ Strip diacritics from Western characters.
       <pre class="lines">
 
 
-14
-15
-16</pre>
+32
+33
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 14</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 32</span>
 
 <span class='def def kw'>def</span> <span class='approximate_ascii identifier id'>approximate_ascii</span>
   <span class='@approximate_ascii ivar id'>@approximate_ascii</span>
@@ -841,12 +856,12 @@ values supported by <tt><a href="SlugString.html#approximate_ascii%21-instance_m
       <pre class="lines">
 
 
-18
-19
-20</pre>
+36
+37
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 36</span>
 
 <span class='def def kw'>def</span> <span class='ascii_approximation_options identifier id'>ascii_approximation_options</span>
   <span class='@ascii_approximation_options ivar id'>@ascii_approximation_options</span>
@@ -870,7 +885,11 @@ values supported by <tt><a href="SlugString.html#approximate_ascii%21-instance_m
 </p><div class="docstring">
   <div class="discussion">
     <p>
-The column used to cache the friendly_id string.
+The column used to cache the friendly_id string. If no column is specified,
+FriendlyId will look for a column named <tt>cached_slug</tt> and use it
+automatically if it exists. If for some reason you have a column named
+<tt>cached_slug</tt> but don&#8217;t want FriendlyId to modify it, pass the
+option <tt>:cache_column =&gt; false</tt> to <tt><a href="../FriendlyId.html#has_friendly_id-instance_method" title="FriendlyId#has_friendly_id (method)">#has_friendly_id</a></tt>.
 </p>
 
 
@@ -884,13 +903,13 @@ The column used to cache the friendly_id string.
       <pre class="lines">
 
 
-21
-22
-23
-24</pre>
+43
+44
+45
+46</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 43</span>
 
 <span class='def def kw'>def</span> <span class='cache_column identifier id'>cache_column</span>
   <span class='return return kw'>return</span> <span class='@cache_column ivar id'>@cache_column</span> <span class='if if_mod kw'>if</span> <span class='defined? defined kw'>defined?</span><span class='lparen token'>(</span><span class='@cache_column ivar id'>@cache_column</span><span class='rparen token'>)</span>
@@ -930,12 +949,12 @@ scope.
       <pre class="lines">
 
 
-25
-26
-27</pre>
+47
+48
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 47</span>
 
 <span class='def def kw'>def</span> <span class='child_scopes identifier id'>child_scopes</span>
   <span class='@child_scopes ivar id'>@child_scopes</span> <span class='opasgn op'>||=</span> <span class='associated_friendly_classes identifier id'>associated_friendly_classes</span><span class='dot token'>.</span><span class='select identifier id'>select</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='klass identifier id'>klass</span><span class='bitor op'>|</span> <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='scopes_over? fid id'>scopes_over?</span><span class='lparen token'>(</span><span class='configured_class identifier id'>configured_class</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
@@ -973,12 +992,12 @@ The class that&#8217;s using the configuration.
       <pre class="lines">
 
 
-28
-29
-30</pre>
+50
+51
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 50</span>
 
 <span class='def def kw'>def</span> <span class='configured_class identifier id'>configured_class</span>
   <span class='@configured_class ivar id'>@configured_class</span>
@@ -1016,12 +1035,12 @@ Returns the value of attribute custom_cache_column
       <pre class="lines">
 
 
-67
-68
-69</pre>
+89
+90
+91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 89</span>
 
 <span class='def def kw'>def</span> <span class='custom_cache_column identifier id'>custom_cache_column</span>
   <span class='@custom_cache_column ivar id'>@custom_cache_column</span>
@@ -1061,12 +1080,12 @@ characters, etc.
       <pre class="lines">
 
 
-32
-33
-34</pre>
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 54</span>
 
 <span class='def def kw'>def</span> <span class='max_length identifier id'>max_length</span>
   <span class='@max_length ivar id'>@max_length</span>
@@ -1109,12 +1128,12 @@ string.
       <pre class="lines">
 
 
-35
-36
-37</pre>
+57
+58
+59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 57</span>
 
 <span class='def def kw'>def</span> <span class='method identifier id'>method</span>
   <span class='@method ivar id'>@method</span>
@@ -1158,12 +1177,12 @@ will be removed from FriendlyId 3.0.
       <pre class="lines">
 
 
-42
-43
-44</pre>
+64
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 64</span>
 
 <span class='def def kw'>def</span> <span class='normalizer identifier id'>normalizer</span>
   <span class='@normalizer ivar id'>@normalizer</span>
@@ -1208,12 +1227,12 @@ The message shown when a reserved word is used.
       <pre class="lines">
 
 
-46
-47
-48</pre>
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 46</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 68</span>
 
 <span class='def def kw'>def</span> <span class='reserved_message identifier id'>reserved_message</span>
   <span class='@reserved_message ivar id'>@reserved_message</span>
@@ -1255,12 +1274,12 @@ the defaults unless overridden.
       <pre class="lines">
 
 
-52
-53
-54</pre>
+74
+75
+76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 74</span>
 
 <span class='def def kw'>def</span> <span class='reserved_words identifier id'>reserved_words</span>
   <span class='@reserved_words ivar id'>@reserved_words</span>
@@ -1298,12 +1317,12 @@ The method or relation to use as the friendly_id&#8217;s scope.
       <pre class="lines">
 
 
-55
-56
-57</pre>
+77
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 77</span>
 
 <span class='def def kw'>def</span> <span class='scope identifier id'>scope</span>
   <span class='@scope ivar id'>@scope</span>
@@ -1342,12 +1361,12 @@ The string that separates slug names from slug sequences. Defaults to
       <pre class="lines">
 
 
-58
-59
-60</pre>
+80
+81
+82</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 58</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 80</span>
 
 <span class='def def kw'>def</span> <span class='sequence_separator identifier id'>sequence_separator</span>
   <span class='@sequence_separator ivar id'>@sequence_separator</span>
@@ -1385,12 +1404,12 @@ Strip non-ASCII characters from the friendly_id string.
       <pre class="lines">
 
 
-61
-62
-63</pre>
+83
+84
+85</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 83</span>
 
 <span class='def def kw'>def</span> <span class='strip_non_ascii identifier id'>strip_non_ascii</span>
   <span class='@strip_non_ascii ivar id'>@strip_non_ascii</span>
@@ -1432,12 +1451,12 @@ Use slugs for storing the friendly_id string.
       <pre class="lines">
 
 
-64
-65
-66</pre>
+86
+87
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 86</span>
 
 <span class='def def kw'>def</span> <span class='use_slug identifier id'>use_slug</span>
   <span class='@use_slug ivar id'>@use_slug</span>
@@ -1456,36 +1475,7 @@ Use slugs for storing the friendly_id string.
     
     
       <div class="method_details first">
-  <p class="signature first" id="autodiscover_cache_column-instance_method">
-  
-    - (<tt>Object</tt>) <strong>autodiscover_cache_column</strong> 
-  
-
-  
-</p><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-78
-79
-80</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 78</span>
-
-<span class='def def kw'>def</span> <span class='autodiscover_cache_column identifier id'>autodiscover_cache_column</span>
-  <span class='symbol val'>:cached_slug</span> <span class='if if_mod kw'>if</span> <span class='configured_class identifier id'>configured_class</span><span class='dot token'>.</span><span class='columns identifier id'>columns</span><span class='dot token'>.</span><span class='any? fid id'>any?</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='column identifier id'>column</span><span class='bitor op'>|</span> <span class='column identifier id'>column</span><span class='dot token'>.</span><span class='name identifier id'>name</span> <span class='eq op'>==</span> <span class='string val'>'cached_slug'</span> <span class='rbrace token'>}</span>
-<span class='end end kw'>end</span>
-</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <p class="signature " id="reserved=-instance_method">
+  <p class="signature first" id="reserved=-instance_method">
   
     - (<tt>Object</tt>) <strong>reserved=</strong>(*args) 
   
@@ -1512,13 +1502,13 @@ This method will be removed from FriendlyId 3.0.
       <pre class="lines">
 
 
-114
-115
-116
-117</pre>
+134
+135
+136
+137</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 114</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 134</span>
 
 <span class='def def kw'>def</span> <span class='reserved= identifier id'>reserved=</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
   <span class='warn identifier id'>warn</span><span class='lparen token'>(</span><span class='string val'>'The &quot;reserved&quot; option is deprecated and will be removed from FriendlyId 3.0. Please use &quot;reserved_words&quot;.'</span><span class='rparen token'>)</span>
@@ -1564,15 +1554,15 @@ This method will be removed from FriendlyId 3.0.
       <pre class="lines">
 
 
-104
-105
-106</pre>
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 104</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 124</span>
 
 <span class='def def kw'>def</span> <span class='reserved? fid id'>reserved?</span><span class='lparen token'>(</span><span class='word identifier id'>word</span><span class='rparen token'>)</span>
-  <span class='reserved_words identifier id'>reserved_words</span><span class='dot token'>.</span><span class='include? fid id'>include?</span> <span class='word identifier id'>word</span>
+  <span class='reserved_words identifier id'>reserved_words</span><span class='dot token'>.</span><span class='include? fid id'>include?</span> <span class='word identifier id'>word</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
 <span class='end end kw'>end</span>
 </pre>
     </td>
@@ -1593,12 +1583,12 @@ This method will be removed from FriendlyId 3.0.
       <pre class="lines">
 
 
-108
-109
-110</pre>
+128
+129
+130</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 108</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 128</span>
 
 <span class='def def kw'>def</span> <span class='reserved_error_message identifier id'>reserved_error_message</span><span class='lparen token'>(</span><span class='word identifier id'>word</span><span class='rparen token'>)</span>
   <span class='lbrack token'>[</span><span class='method identifier id'>method</span><span class='comma token'>,</span> <span class='reserved_message identifier id'>reserved_message</span> <span class='mod op'>%</span> <span class='word identifier id'>word</span><span class='rbrack token'>]</span> <span class='if if_mod kw'>if</span> <span class='reserved? fid id'>reserved?</span> <span class='word identifier id'>word</span>
@@ -1622,12 +1612,12 @@ This method will be removed from FriendlyId 3.0.
       <pre class="lines">
 
 
-119
-120
-121</pre>
+139
+140
+141</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 119</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 139</span>
 
 <span class='def def kw'>def</span> <span class='scope_for identifier id'>scope_for</span><span class='lparen token'>(</span><span class='record identifier id'>record</span><span class='rparen token'>)</span>
   <span class='scope? fid id'>scope?</span> <span class='integer val'>? </span><span class='record identifier id'>record</span><span class='dot token'>.</span><span class='send identifier id'>send</span><span class='lparen token'>(</span><span class='scope identifier id'>scope</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='to_param identifier id'>to_param</span> <span class='colon op'>:</span> <span class='nil nil kw'>nil</span>
@@ -1672,12 +1662,12 @@ This method will be removed from FriendlyId 3.0.
       <pre class="lines">
 
 
-123
-124
-125</pre>
+143
+144
+145</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 123</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 143</span>
 
 <span class='def def kw'>def</span> <span class='scopes_over? fid id'>scopes_over?</span><span class='lparen token'>(</span><span class='klass identifier id'>klass</span><span class='rparen token'>)</span>
   <span class='scope? fid id'>scope?</span> <span class='andop op'>&amp;&amp;</span> <span class='scope identifier id'>scope</span> <span class='eq op'>==</span> <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='underscore identifier id'>underscore</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span>
@@ -1716,13 +1706,13 @@ This method will be removed from FriendlyId 3.0.
       <pre class="lines">
 
 
-129
-130
-131
-132</pre>
+149
+150
+151
+152</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 129</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 149</span>
 
 <span class='def def kw'>def</span> <span class='strip_diacritics= identifier id'>strip_diacritics=</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
   <span class='warn identifier id'>warn</span><span class='lparen token'>(</span><span class='string val'>'strip_diacritics is deprecated and will be removed from 3.0. Please use #approximate_ascii'</span><span class='rparen token'>)</span>
@@ -1739,7 +1729,7 @@ This method will be removed from FriendlyId 3.0.
 </div>
     
     <div id="footer">
-  Generated on Thu Jan 21 17:15:15 2010 by 
+  Generated on Fri Jan 22 14:45:19 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>
