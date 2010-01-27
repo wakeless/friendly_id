@@ -214,26 +214,6 @@ Did the find operation use an outdated slug?.
 </li>
 
     
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#separator-instance_method" title="#separator (instance method)">- (Object) <strong>separator</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"></span>
-  
-</li>
-
-    
   </ul>
 
   
@@ -280,12 +260,12 @@ The slug that was used to find the model.
       <pre class="lines">
 
 
-9
 10
-11</pre>
+11
+12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 9</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 10</span>
 
 <span class='def def kw'>def</span> <span class='slug identifier id'>slug</span>
   <span class='@slug ivar id'>@slug</span> <span class='opasgn op'>||=</span> <span class='record identifier id'>record</span><span class='dot token'>.</span><span class='slugs identifier id'>slugs</span><span class='dot token'>.</span><span class='find_by_name_and_sequence identifier id'>find_by_name_and_sequence</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='name identifier id'>name</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='parse_friendly_id identifier id'>parse_friendly_id</span><span class='lparen token'>(</span><span class='separator identifier id'>separator</span><span class='rparen token'>)</span><span class='rparen token'>)</span>
@@ -341,12 +321,12 @@ numeric, but the model has no slug, or <tt>id</tt> is friendly and current
       <pre class="lines">
 
 
-34
-35
-36</pre>
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 31</span>
 
 <span class='def def kw'>def</span> <span class='best? fid id'>best?</span>
   <span class='current? fid id'>current?</span> <span class='orop op'>||</span> <span class='lparen token'>(</span><span class='numeric? fid id'>numeric?</span> <span class='andop op'>&amp;&amp;</span> <span class='notop op'>!</span><span class='record identifier id'>record</span><span class='dot token'>.</span><span class='slug identifier id'>slug</span><span class='rparen token'>)</span>
@@ -394,12 +374,12 @@ Did the find operation use the current slug?
       <pre class="lines">
 
 
-19
 20
-21</pre>
+21
+22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 20</span>
 
 <span class='def def kw'>def</span> <span class='current? fid id'>current?</span>
   <span class='notop op'>!</span><span class='notop op'>!</span> <span class='slug identifier id'>slug</span> <span class='andop op'>&amp;&amp;</span> <span class='slug identifier id'>slug</span><span class='dot token'>.</span><span class='current? fid id'>current?</span>
@@ -447,12 +427,12 @@ Did the find operation use a friendly id?
       <pre class="lines">
 
 
-14
 15
-16</pre>
+16
+17</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 14</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 15</span>
 
 <span class='def def kw'>def</span> <span class='friendly? fid id'>friendly?</span>
   <span class='notop op'>!</span><span class='notop op'>!</span> <span class='lparen token'>(</span><span class='name identifier id'>name</span> <span class='or or kw'>or</span> <span class='slug identifier id'>slug</span><span class='rparen token'>)</span>
@@ -500,44 +480,15 @@ Did the find operation use an outdated slug?
       <pre class="lines">
 
 
-24
 25
-26</pre>
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 25</span>
 
 <span class='def def kw'>def</span> <span class='outdated? fid id'>outdated?</span>
   <span class='notop op'>!</span><span class='current? fid id'>current?</span>
-<span class='end end kw'>end</span>
-</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <p class="signature " id="separator-instance_method">
-  
-    - (<tt>Object</tt>) <strong>separator</strong> 
-  
-
-  
-</p><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-28
-29
-30</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 28</span>
-
-<span class='def def kw'>def</span> <span class='separator identifier id'>separator</span>
-  <span class='record identifier id'>record</span><span class='dot token'>.</span><span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='sequence_separator identifier id'>sequence_separator</span>
 <span class='end end kw'>end</span>
 </pre>
     </td>
@@ -550,7 +501,7 @@ Did the find operation use an outdated slug?
 </div>
     
     <div id="footer">
-  Generated on Fri Jan 22 14:45:20 2010 by 
+  Generated on Wed Jan 27 12:46:05 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>

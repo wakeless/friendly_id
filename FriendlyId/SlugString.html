@@ -92,7 +92,7 @@ Note that this class includes many &quot;bang methods&quot; such as
 <tt><a href="#clean%21-instance_method" title="FriendlyId::SlugString#clean! (method)">#clean!</a></tt> and <tt><a href="#normalize%21-instance_method" title="FriendlyId::SlugString#normalize! (method)">#normalize!</a></tt> that perform actions on the string in-place.
 Each of these methods has a corresponding &quot;bangless&quot; method
 (i.e., <tt>SlugString#clean!</tt> and <tt>SlugString#clean</tt>) which does not appear in
-the generated because it is generated dynamically.
+the documentation because it is generated dynamically.
 </p>
 <p>
 All of the bang methods return an instance of String, while the bangless
@@ -114,6 +114,8 @@ methods specific to this class can be chained:
   <ul class="see">
     
       <li><a href="http://www.utf8-chartable.de/unicode-utf8-table.pl?utf8=dec" title="Unicode character table">Unicode character table</a></li>
+    
+      <li><a href="#dump_approximations-class_method" title="FriendlyId::SlugString.dump_approximations (method)">FriendlyId::SlugString::dump_approximations</a></li>
     
   </ul>
 
@@ -169,6 +171,36 @@ All values are Unicode decimal characters or character arrays.
 
 
   
+
+  <h2>Class Method Summary</h2>
+
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dump_approximations-class_method" title="dump_approximations (class method)">+ (Object) <strong>dump_approximations</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+This method can be used by developers wishing to debug the <tt><a href="#APPROXIMATIONS-constant" title="FriendlyId::SlugString::APPROXIMATIONS (constant)">APPROXIMATIONS</a></tt>
+hashes, which are written in a hard-to-read format.
+
+</span>
+  
+</li>
+
+    
+  </ul>
 
   <h2>Instance Method Summary</h2>
 
@@ -504,12 +536,12 @@ The string to use as the basis of the SlugString.
       <pre class="lines">
 
 
-65
-66
-67</pre>
+111
+112
+113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 65</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 111</span>
 
 <span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='string identifier id'>string</span><span class='rparen token'>)</span>
   <span class='super super kw'>super</span> <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
@@ -522,6 +554,118 @@ The string to use as the basis of the SlugString.
   
 </div>
 
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="dump_approximations-class_method">
+  
+    + (<tt>Object</tt>) <strong>dump_approximations</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+This method can be used by developers wishing to debug the <tt><a href="#APPROXIMATIONS-constant" title="FriendlyId::SlugString::APPROXIMATIONS (constant)">APPROXIMATIONS</a></tt>
+hashes, which are written in a hard-to-read format.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4></h4>
+      <pre class="example code">
+ <span class='gt op'>&gt;</span> <span class='ruby identifier id'>ruby</span> <span class='minus op'>-</span><span class='rrubygems identifier id'>rrubygems</span> <span class='minus op'>-</span><span class='rlib identifier id'>rlib</span><span class='div op'>/</span><span class='friendly_id identifier id'>friendly_id</span> <span class='minus op'>-</span><span class='e identifier id'>e</span> <span class='string val'>'p FriendlyId::SlugString.dump_approximations'</span>
+
+<span class='lbrace token'>{</span><span class='symbol val'>:common</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> 
+<span class='lbrace token'>{</span><span class='string val'>&quot;À&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;A&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Á&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;A&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Â&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;A&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ã&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;A&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ä&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;A&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Å&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;A&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Æ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;AE&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;Ç&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;C&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;È&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;E&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;É&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;E&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ê&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;E&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ë&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;E&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ì&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;I&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Í&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;I&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;Î&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;I&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ï&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;I&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ð&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;D&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ñ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;N&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ò&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;O&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ó&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;O&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ô&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;O&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;Õ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;O&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ö&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;O&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;×&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;x&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ø&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;O&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ù&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;U&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ú&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;U&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Û&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;U&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;Ü&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;U&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ý&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;Y&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Þ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;Th&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ß&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;ss&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;à&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;a&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;á&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;a&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;â&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;a&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;ã&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;a&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ä&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;a&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;å&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;a&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;æ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;ae&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ç&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;c&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;è&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;e&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;é&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;e&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;ê&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;e&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ë&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;e&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ì&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;i&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;í&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;i&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;î&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;i&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ï&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;i&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ð&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;d&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;ñ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;n&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ò&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;o&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ó&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;o&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ô&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;o&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;õ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;o&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ö&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;o&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ø&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;o&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;ù&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;u&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ú&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;u&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;û&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;u&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ü&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;u&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ý&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;y&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;þ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;th&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ÿ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;y&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;Ā&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;A&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ā&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;a&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ă&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;A&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ă&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;a&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ą&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;A&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ą&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;a&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ć&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;C&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;ć&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;c&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ĉ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;C&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ĉ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;c&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ċ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;C&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ċ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;c&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Č&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;C&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;č&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;c&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;Ď&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;D&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ď&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;d&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Đ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;D&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;đ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;d&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ē&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;E&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ē&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;e&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ĕ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;E&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;ĕ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;e&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ė&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;E&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ė&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;e&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ę&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;E&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ę&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;e&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ě&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;E&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ě&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;e&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;Ĝ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;G&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ĝ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;g&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ğ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;G&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ğ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;g&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ġ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;G&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ġ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;g&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ģ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;G&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;ģ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;g&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ĥ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;H&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ĥ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;h&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ħ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;H&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ħ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;h&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ĩ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;I&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ĩ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;i&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;Ī&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;I&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ī&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;i&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ĭ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;I&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ĭ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;i&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Į&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;I&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;į&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;i&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;İ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;I&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;ı&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;i&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ĳ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;IJ&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ĳ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;ij&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ĵ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;J&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ĵ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;j&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ķ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;K&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ķ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;k&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;ĸ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;k&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ĺ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;L&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ĺ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;l&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ļ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;L&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ļ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;l&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ľ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;L&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ľ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;l&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;Ŀ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;L&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ŀ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;l&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ł&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;L&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ł&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;l&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ń&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;N&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ń&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;n&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ņ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;N&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;ņ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;n&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ň&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;N&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ň&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;n&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ŉ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;'n&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ŋ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;NG&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ŋ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;ng&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;Ō&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;O&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ō&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;o&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ŏ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;O&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ŏ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;o&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ő&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;O&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ő&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;o&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Œ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;OE&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;œ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;oe&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ŕ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;R&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ŕ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;r&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ŗ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;R&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ŗ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;r&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ř&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;R&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ř&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;r&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;Ś&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;S&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ś&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;s&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ŝ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;S&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ŝ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;s&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ş&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;S&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ş&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;s&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Š&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;S&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;š&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;s&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ţ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;T&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ţ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;t&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ť&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;T&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ť&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;t&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ŧ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;T&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ŧ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;t&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;Ũ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;U&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ũ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;u&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ū&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;U&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ū&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;u&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ŭ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;U&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ŭ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;u&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ů&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;U&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;ů&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;u&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ű&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;U&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ű&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;u&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ų&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;U&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ų&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;u&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ŵ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;W&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ŵ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;w&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;Ŷ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;Y&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ŷ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;y&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ÿ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;Y&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ź&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;Z&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ź&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;z&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;Ż&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;Z&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ż&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;z&quot;</span><span class='comma token'>,</span>
+<span class='string val'>&quot;Ž&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;Z&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ž&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;z&quot;</span><span class='rbrace token'>}</span><span class='comma token'>,</span>
+<span class='symbol val'>:german</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrace token'>{</span><span class='string val'>&quot;ü&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;ue&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ö&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;oe&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ä&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;ae&quot;</span><span class='rbrace token'>}</span><span class='comma token'>,</span>
+<span class='symbol val'>:spanish</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrace token'>{</span><span class='string val'>&quot;Ñ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;Nn&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;ñ&quot;</span><span class='assign token'>=</span><span class='gt op'>&gt;</span><span class='string val'>&quot;nn&quot;</span><span class='rbrace token'>}</span><span class='rbrace token'>}</span>
+</pre>
+    
+  </div>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        
+Hash
+
+
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+103
+104
+105
+106
+107</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 103</span>
+
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='dump_approximations identifier id'>dump_approximations</span>
+  <span class='Hash constant id'>Hash</span><span class='lbrack token'>[</span><span class='APPROXIMATIONS constant id'>APPROXIMATIONS</span><span class='dot token'>.</span><span class='map identifier id'>map</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='approx identifier id'>approx</span><span class='bitor op'>|</span>
+    <span class='lbrack token'>[</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='Hash constant id'>Hash</span><span class='lbrack token'>[</span><span class='approx identifier id'>approx</span><span class='dot token'>.</span><span class='map identifier id'>map</span> <span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='key identifier id'>key</span><span class='comma token'>,</span> <span class='value identifier id'>value</span><span class='bitor op'>|</span> <span class='lbrack token'>[</span><span class='lbrack token'>[</span><span class='key identifier id'>key</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='pack identifier id'>pack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='value identifier id'>value</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='dot token'>.</span><span class='pack identifier id'>pack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span><span class='rbrack token'>]</span><span class='rbrace token'>}</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span>
+  <span class='end end kw'>end</span><span class='rbrack token'>]</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -633,13 +777,13 @@ String
       <pre class="lines">
 
 
-110
-111
-112
-113</pre>
+156
+157
+158
+159</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 110</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 156</span>
 
 <span class='def def kw'>def</span> <span class='approximate_ascii! fid id'>approximate_ascii!</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
   <span class='@maps ivar id'>@maps</span> <span class='assign token'>=</span> <span class='lparen token'>(</span><span class='self self kw'>self</span><span class='dot token'>.</span><span class='class identifier id'>class</span><span class='dot token'>.</span><span class='approximations identifier id'>approximations</span> <span class='plus op'>+</span> <span class='args identifier id'>args</span> <span class='plus op'>+</span> <span class='lbrack token'>[</span><span class='symbol val'>:common</span><span class='rbrack token'>]</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='dot token'>.</span><span class='uniq identifier id'>uniq</span>
@@ -695,12 +839,12 @@ String
       <pre class="lines">
 
 
-118
-119
-120</pre>
+164
+165
+166</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 118</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 164</span>
 
 <span class='def def kw'>def</span> <span class='clean! fid id'>clean!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='@wrapped_string ivar id'>@wrapped_string</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/\A\-|\-\z/</span><span class='comma token'>,</span> <span class='string val'>''</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/\s+/</span><span class='u identifier id'>u</span><span class='comma token'>,</span> <span class='string val'>' '</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='strip identifier id'>strip</span>
@@ -755,12 +899,12 @@ String
       <pre class="lines">
 
 
-125
-126
-127</pre>
+171
+172
+173</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 125</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 171</span>
 
 <span class='def def kw'>def</span> <span class='downcase! fid id'>downcase!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='apply_mapping identifier id'>apply_mapping</span> <span class='symbol val'>:lowercase_mapping</span>
@@ -817,15 +961,15 @@ String
       <pre class="lines">
 
 
-172
-173
-174
-175
-176
-177</pre>
+218
+219
+220
+221
+222
+223</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 172</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 218</span>
 
 <span class='def def kw'>def</span> <span class='normalize! fid id'>normalize!</span>
   <span class='clean! fid id'>clean!</span>
@@ -897,18 +1041,18 @@ String
       <pre class="lines">
 
 
-154
-155
-156
-157
-158
-159
-160
-161
-162</pre>
+200
+201
+202
+203
+204
+205
+206
+207
+208</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 154</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 200</span>
 
 <span class='def def kw'>def</span> <span class='normalize_for! fid id'>normalize_for!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='rparen token'>)</span>
   <span class='if if kw'>if</span> <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='normalizer? fid id'>normalizer?</span>
@@ -968,12 +1112,12 @@ String
       <pre class="lines">
 
 
-187
-188
-189</pre>
+233
+234
+235</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 187</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 233</span>
 
 <span class='def def kw'>def</span> <span class='to_ascii! fid id'>to_ascii!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='normalize_utf8 identifier id'>normalize_utf8</span><span class='lparen token'>(</span><span class='symbol val'>:c</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='unpack identifier id'>unpack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='reject identifier id'>reject</span> <span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='char identifier id'>char</span><span class='bitor op'>|</span> <span class='char identifier id'>char</span> <span class='gt op'>&gt;</span> <span class='integer val'>127</span><span class='rbrace token'>}</span><span class='dot token'>.</span><span class='pack identifier id'>pack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span>
@@ -1027,12 +1171,12 @@ String
       <pre class="lines">
 
 
-181
-182
-183</pre>
+227
+228
+229</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 181</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 227</span>
 
 <span class='def def kw'>def</span> <span class='truncate! fid id'>truncate!</span><span class='lparen token'>(</span><span class='max identifier id'>max</span><span class='rparen token'>)</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='self self kw'>self</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='dot3 op'>...</span><span class='max identifier id'>max</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span> <span class='if if_mod kw'>if</span> <span class='length identifier id'>length</span> <span class='gt op'>&gt;</span> <span class='max identifier id'>max</span>
@@ -1087,12 +1231,12 @@ String
       <pre class="lines">
 
 
-194
-195
-196</pre>
+240
+241
+242</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 194</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 240</span>
 
 <span class='def def kw'>def</span> <span class='upcase! fid id'>upcase!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='apply_mapping identifier id'>apply_mapping</span> <span class='symbol val'>:uppercase_mapping</span>
@@ -1167,7 +1311,7 @@ String
       
         
         
-FriendlyId::SlugTextBlankError
+FriendlyId::BlankError
 
 
       
@@ -1182,7 +1326,7 @@ FriendlyId::SlugTextBlankError
       
         
         
-FriendlyId::SlugTextReservedError
+FriendlyId::ReservedError
 
 
       
@@ -1196,20 +1340,20 @@ FriendlyId::SlugTextReservedError
       <pre class="lines">
 
 
-204
-205
-206
-207
-208
-209</pre>
+250
+251
+252
+253
+254
+255</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 204</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 250</span>
 
 <span class='def def kw'>def</span> <span class='validate_for! fid id'>validate_for!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='rparen token'>)</span>
   <span class='truncate! fid id'>truncate!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='dot token'>.</span><span class='max_length identifier id'>max_length</span><span class='rparen token'>)</span>
-  <span class='raise identifier id'>raise</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='SlugTextBlankError constant id'>SlugTextBlankError</span> <span class='if if_mod kw'>if</span> <span class='blank? fid id'>blank?</span>
-  <span class='raise identifier id'>raise</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='SlugTextReservedError constant id'>SlugTextReservedError</span> <span class='if if_mod kw'>if</span> <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='reserved? fid id'>reserved?</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='rparen token'>)</span>
+  <span class='raise identifier id'>raise</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='BlankError constant id'>BlankError</span> <span class='if if_mod kw'>if</span> <span class='blank? fid id'>blank?</span>
+  <span class='raise identifier id'>raise</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='ReservedError constant id'>ReservedError</span> <span class='if if_mod kw'>if</span> <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='reserved? fid id'>reserved?</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='rparen token'>)</span>
   <span class='self self kw'>self</span>
 <span class='end end kw'>end</span>
 </pre>
@@ -1261,12 +1405,12 @@ String
       <pre class="lines">
 
 
-213
-214
-215</pre>
+259
+260
+261</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 213</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 259</span>
 
 <span class='def def kw'>def</span> <span class='with_dashes! fid id'>with_dashes!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='@wrapped_string ivar id'>@wrapped_string</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/\s+/</span><span class='u identifier id'>u</span><span class='comma token'>,</span> <span class='string val'>'-'</span><span class='rparen token'>)</span>
@@ -1320,28 +1464,28 @@ String
       <pre class="lines">
 
 
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149</pre>
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 131</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 177</span>
 
 <span class='def def kw'>def</span> <span class='word_chars! fid id'>word_chars!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='normalize_utf8 identifier id'>normalize_utf8</span><span class='lparen token'>(</span><span class='symbol val'>:c</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='unpack identifier id'>unpack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='map identifier id'>map</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='char identifier id'>char</span><span class='bitor op'>|</span>
@@ -1373,7 +1517,7 @@ String
 </div>
     
     <div id="footer">
-  Generated on Fri Jan 22 14:45:21 2010 by 
+  Generated on Wed Jan 27 12:46:04 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>

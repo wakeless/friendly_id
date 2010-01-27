@@ -67,12 +67,16 @@
   
   
     
+      <dt class="r2">Extends:</dt>
+      <dd class="r2">Forwardable</dd>
+      
+    
   
     
   
   
-    <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/friendly_id/active_record_2/finders.rb</dd>
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/friendly_id/active_record_2/finders.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -310,26 +314,6 @@ A new instance of Finder.
 </li>
 
     
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#method_missing-instance_method" title="#method_missing (instance method)">- (Object) <strong>method_missing</strong>(*args, &amp;block) </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"></span>
-  
-</li>
-
-    
   </ul>
 <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
@@ -358,58 +342,21 @@ A new instance of Finder
       <pre class="lines">
 
 
-58
-59
-60
-61
-62
-63</pre>
+65
+66
+67
+68
+69
+70</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 58</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 65</span>
 
 <span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='ids identifier id'>ids</span><span class='comma token'>,</span> <span class='model_class identifier id'>model_class</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='assign token'>=</span><span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
   <span class='self self kw'>self</span><span class='dot token'>.</span><span class='ids identifier id'>ids</span> <span class='assign token'>=</span> <span class='ids identifier id'>ids</span>
   <span class='self self kw'>self</span><span class='dot token'>.</span><span class='options identifier id'>options</span> <span class='assign token'>=</span> <span class='options identifier id'>options</span>
   <span class='self self kw'>self</span><span class='dot token'>.</span><span class='model_class identifier id'>model_class</span> <span class='assign token'>=</span> <span class='model_class identifier id'>model_class</span>
   <span class='self self kw'>self</span><span class='dot token'>.</span><span class='scope identifier id'>scope</span> <span class='assign token'>=</span> <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:scope</span><span class='rbrack token'>]</span>
-<span class='end end kw'>end</span>
-</pre>
-    </td>
-  </tr>
-</table>
-</div>
-  
-</div>
-<div id="method_missing_details" class="method_details_list">
-  <h2>Dynamic Method Handling</h2>
-  <p class="notice this">
-    This class handles dynamic methods through the <tt>method_missing</tt> method
-    
-  </p>
-  
-    <div class="method_details first">
-  <p class="signature first" id="method_missing-instance_method">
-  
-    - (<tt>Object</tt>) <strong>method_missing</strong>(*args, &amp;block) 
-  
-
-  
-</p><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-65
-66
-67</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 65</span>
-
-<span class='def def kw'>def</span> <span class='method_missing identifier id'>method_missing</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
-  <span class='model_class identifier id'>model_class</span><span class='dot token'>.</span><span class='send identifier id'>send</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
 <span class='end end kw'>end</span>
 </pre>
     </td>
@@ -449,12 +396,12 @@ An array of ids; can be both friendly and unfriendly.
       <pre class="lines">
 
 
-16
-17
-18</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 23</span>
 
 <span class='def def kw'>def</span> <span class='ids identifier id'>ids</span>
   <span class='@ids ivar id'>@ids</span>
@@ -492,12 +439,12 @@ The model class being used to perform the query.
       <pre class="lines">
 
 
-25
-26
-27</pre>
+32
+33
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 32</span>
 
 <span class='def def kw'>def</span> <span class='model_class identifier id'>model_class</span>
   <span class='@model_class ivar id'>@model_class</span>
@@ -535,12 +482,12 @@ The ActiveRecord query options
       <pre class="lines">
 
 
-19
-20
-21</pre>
+26
+27
+28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 26</span>
 
 <span class='def def kw'>def</span> <span class='options identifier id'>options</span>
   <span class='@options ivar id'>@options</span>
@@ -578,12 +525,12 @@ The FriendlyId scope
       <pre class="lines">
 
 
-22
-23
-24</pre>
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 29</span>
 
 <span class='def def kw'>def</span> <span class='scope identifier id'>scope</span>
   <span class='@scope ivar id'>@scope</span>
@@ -661,18 +608,18 @@ ActiveRecord::Base, etc.)
       <pre class="lines">
 
 
-38
-39
-40
-41
-42
-43
-44
 45
-46</pre>
+46
+47
+48
+49
+50
+51
+52
+53</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 38</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 45</span>
 
 <span class='def def kw'>def</span> <span class='friendly? fid id'>friendly?</span><span class='lparen token'>(</span><span class='id identifier id'>id</span><span class='rparen token'>)</span>
   <span class='if if kw'>if</span> <span class='id identifier id'>id</span><span class='dot token'>.</span><span class='is_a? fid id'>is_a?</span><span class='lparen token'>(</span><span class='Integer constant id'>Integer</span><span class='rparen token'>)</span> <span class='orop op'>||</span> <span class='id identifier id'>id</span><span class='dot token'>.</span><span class='kind_of? fid id'>kind_of?</span><span class='lparen token'>(</span><span class='colon3 op'>::</span><span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span><span class='rparen token'>)</span>
@@ -740,12 +687,12 @@ friendly, else <tt>nil</tt>.
       <pre class="lines">
 
 
-52
-53
-54</pre>
+59
+60
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 59</span>
 
 <span class='def def kw'>def</span> <span class='unfriendly? fid id'>unfriendly?</span><span class='lparen token'>(</span><span class='id identifier id'>id</span><span class='rparen token'>)</span>
   <span class='notop op'>!</span><span class='friendly? fid id'>friendly?</span><span class='lparen token'>(</span><span class='id identifier id'>id</span><span class='rparen token'>)</span> <span class='unless unless_mod kw'>unless</span> <span class='friendly? fid id'>friendly?</span><span class='lparen token'>(</span><span class='id identifier id'>id</span><span class='rparen token'>)</span> <span class='eq op'>==</span> <span class='nil nil kw'>nil</span>
@@ -799,12 +746,12 @@ Perform the find.
       <pre class="lines">
 
 
-70
-71
-72</pre>
+73
+74
+75</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/finders.rb', line 73</span>
 
 <span class='def def kw'>def</span> <span class='find identifier id'>find</span>
   <span class='raise identifier id'>raise</span> <span class='NotImplementedError constant id'>NotImplementedError</span>
@@ -820,7 +767,7 @@ Perform the find.
 </div>
     
     <div id="footer">
-  Generated on Fri Jan 22 14:45:22 2010 by 
+  Generated on Wed Jan 27 12:46:10 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>

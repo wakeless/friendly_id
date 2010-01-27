@@ -163,7 +163,7 @@
 <span class='end end kw'>end</span>
 </pre>
 
-<p>For the full list of valid configuration options, see the instance attribute summary for <tt><a href="FriendlyId/Configuration.html" title="FriendlyId::Configuration (class)">FriendlyId::Configuration</a></tt>.</p>
+<p>Read on to learn about the various features that can be configured. For the full list of valid configuration options, see the instance attribute summary for <tt><a href="FriendlyId/Configuration.html" title="FriendlyId::Configuration (class)">FriendlyId::Configuration</a></tt>.</p>
 
 <h1 id='features'>Features</h1>
 
@@ -261,6 +261,8 @@
 <span class='@city ivar id'>@city</span><span class='dot token'>.</span><span class='friendly_id identifier id'>friendly_id</span> <span class='comment val'># will be &quot;buenos-aires-argentina&quot;</span>
 </pre>
 
+<p>One word of caution: in the example above, if the country&#8217;s name were updated, say, to &#8220;Argentine Republic&#8221;, the city&#8217;s friendly_id would not be automatically updated. For this reason, it&#8217;s a good idea to avoid using frequently-updated relations as a part of the friendly_id.</p>
+
 <h2 id='using_a_custom_method_to_process_the_slug_text'>Using a Custom Method to Process the Slug Text</h2>
 
 <p>If the built-in slug text handling options don&#8217;t work for your application, you can override the <code>normalize_friendly_id</code> method in your model class in order to fine-tune the output:</p>
@@ -353,7 +355,7 @@
 <span class='end end kw'>end</span>
 </pre>
 
-<p>The strings &#8220;new&#8221; and &#8220;index&#8221; are reserved by default. When you attempt to store a reserved value, FriendlyId raises a <tt><a href="FriendlyId/SlugTextReservedError.html" title="FriendlyId::SlugTextReservedError (class)">FriendlyId::SlugTextReservedError</a></tt>. You can also override the default reserved words in <tt><a href="FriendlyId/Configuration.html#DEFAULTS-constant" title="FriendlyId::Configuration::DEFAULTS (constant)">FriendlyId::Configuration::DEFAULTS</a></tt> to set the value for any model using FriendlyId.</p>
+<p>The strings &#8220;new&#8221; and &#8220;index&#8221; are reserved by default. When you attempt to store a reserved value, FriendlyId raises a <tt><a href="FriendlyId/ReservedError.html" title="FriendlyId::ReservedError (class)">FriendlyId::ReservedError</a></tt>. You can also override the default reserved words in <tt><a href="FriendlyId/Configuration.html#DEFAULTS-constant" title="FriendlyId::Configuration::DEFAULTS (constant)">FriendlyId::Configuration::DEFAULTS</a></tt> to set the value for any model using FriendlyId.</p>
 
 <h2 id='caching_the_friendlyid_slug_for_better_performance'>Caching the FriendlyId Slug for Better Performance</h2>
 
@@ -475,7 +477,7 @@
 <p>Before removing any public or protected methods, FriendlyId will deprecate them through one major release cycle. Private methods may, however, change at any time.</p></div></div>
     
     <div id="footer">
-  Generated on Fri Jan 22 14:45:17 2010 by 
+  Generated on Wed Jan 27 12:45:59 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>

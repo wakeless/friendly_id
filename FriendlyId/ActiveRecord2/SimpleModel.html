@@ -213,14 +213,20 @@ Returns the friendly id, or if none is available, the numeric id.
 108
 109
 110
-111</pre>
+111
+112
+113
+114</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/simple_model.rb', line 104</span>
 
 <span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='included identifier id'>included</span><span class='lparen token'>(</span><span class='base identifier id'>base</span><span class='rparen token'>)</span>
   <span class='base identifier id'>base</span><span class='dot token'>.</span><span class='class_eval identifier id'>class_eval</span> <span class='do do kw'>do</span>
+    <span class='column identifier id'>column</span> <span class='assign token'>=</span> <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='column identifier id'>column</span>
     <span class='validate identifier id'>validate</span> <span class='symbol val'>:validate_friendly_id</span>
+    <span class='validates_presence_of identifier id'>validates_presence_of</span> <span class='column identifier id'>column</span>
+    <span class='validates_length_of identifier id'>validates_length_of</span> <span class='column identifier id'>column</span><span class='comma token'>,</span> <span class='symbol val'>:maximum</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='max_length identifier id'>max_length</span>
     <span class='after_update identifier id'>after_update</span> <span class='symbol val'>:update_scopes</span>
     <span class='extend identifier id'>extend</span> <span class='FinderMethods constant id'>FinderMethods</span>
     <span class='include identifier id'>include</span> <span class='DeprecatedMethods constant id'>DeprecatedMethods</span>
@@ -266,12 +272,12 @@ Returns the friendly_id.
       <pre class="lines">
 
 
-119
-120
-121</pre>
+122
+123
+124</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/simple_model.rb', line 119</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/simple_model.rb', line 122</span>
 
 <span class='def def kw'>def</span> <span class='friendly_id identifier id'>friendly_id</span>
   <span class='send identifier id'>send</span> <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='column identifier id'>column</span>
@@ -306,12 +312,12 @@ Get the <tt><a href="../Status.html" title="FriendlyId::Status (class)">Friendly
       <pre class="lines">
 
 
-114
-115
-116</pre>
+117
+118
+119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/simple_model.rb', line 114</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/simple_model.rb', line 117</span>
 
 <span class='def def kw'>def</span> <span class='friendly_id_status identifier id'>friendly_id_status</span>
   <span class='@friendly_id_status ivar id'>@friendly_id_status</span> <span class='opasgn op'>||=</span> <span class='Status constant id'>Status</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='symbol val'>:record</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='self self kw'>self</span>
@@ -346,12 +352,12 @@ Returns the friendly id, or if none is available, the numeric id.
       <pre class="lines">
 
 
-125
-126
-127</pre>
+128
+129
+130</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/simple_model.rb', line 125</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/simple_model.rb', line 128</span>
 
 <span class='def def kw'>def</span> <span class='to_param identifier id'>to_param</span>
   <span class='lparen token'>(</span><span class='friendly_id identifier id'>friendly_id</span> <span class='orop op'>||</span> <span class='id identifier id'>id</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
@@ -367,7 +373,7 @@ Returns the friendly id, or if none is available, the numeric id.
 </div>
     
     <div id="footer">
-  Generated on Fri Jan 22 14:45:20 2010 by 
+  Generated on Wed Jan 27 12:46:07 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>

@@ -83,7 +83,7 @@ encoding: utf-8
     
    
     
-      <strong class="classes">Classes:</strong> <a href="FriendlyId/Configuration.html" title="FriendlyId::Configuration (class)">Configuration</a>, <a href="FriendlyId/SlugGenerationError.html" title="FriendlyId::SlugGenerationError (class)">SlugGenerationError</a>, <a href="FriendlyId/SlugString.html" title="FriendlyId::SlugString (class)">SlugString</a>, <a href="FriendlyId/SlugTextBlankError.html" title="FriendlyId::SlugTextBlankError (class)">SlugTextBlankError</a>, <a href="FriendlyId/SlugTextReservedError.html" title="FriendlyId::SlugTextReservedError (class)">SlugTextReservedError</a>, <a href="FriendlyId/Status.html" title="FriendlyId::Status (class)">Status</a>, <a href="FriendlyId/Tasks.html" title="FriendlyId::Tasks (class)">Tasks</a>
+      <strong class="classes">Classes:</strong> <a href="FriendlyId/BlankError.html" title="FriendlyId::BlankError (class)">BlankError</a>, <a href="FriendlyId/Configuration.html" title="FriendlyId::Configuration (class)">Configuration</a>, <a href="FriendlyId/ReservedError.html" title="FriendlyId::ReservedError (class)">ReservedError</a>, <a href="FriendlyId/SlugGenerationError.html" title="FriendlyId::SlugGenerationError (class)">SlugGenerationError</a>, <a href="FriendlyId/SlugString.html" title="FriendlyId::SlugString (class)">SlugString</a>, <a href="FriendlyId/Status.html" title="FriendlyId::Status (class)">Status</a>, <a href="FriendlyId/Tasks.html" title="FriendlyId::Tasks (class)">Tasks</a>
     
   
 </p>
@@ -255,15 +255,15 @@ is now deprecated and will be removed from FriendlyId 3.0.
       <pre class="lines">
 
 
-47
 48
 49
 50
 51
-52</pre>
+52
+53</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 47</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 48</span>
 
 <span class='def def kw'>def</span> <span class='has_friendly_id identifier id'>has_friendly_id</span><span class='lparen token'>(</span><span class='method identifier id'>method</span><span class='comma token'>,</span> <span class='options identifier id'>options</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
   <span class='class_inheritable_accessor identifier id'>class_inheritable_accessor</span> <span class='symbol val'>:friendly_id_config</span>
@@ -314,12 +314,12 @@ Does the model class use the FriendlyId plugin?
       <pre class="lines">
 
 
-55
 56
-57</pre>
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 56</span>
 
 <span class='def def kw'>def</span> <span class='uses_friendly_id? fid id'>uses_friendly_id?</span>
   <span class='respond_to? fid id'>respond_to?</span> <span class='symbol val'>:friendly_id_config</span>
@@ -335,7 +335,7 @@ Does the model class use the FriendlyId plugin?
 </div>
     
     <div id="footer">
-  Generated on Fri Jan 22 14:45:22 2010 by 
+  Generated on Wed Jan 27 12:46:11 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>

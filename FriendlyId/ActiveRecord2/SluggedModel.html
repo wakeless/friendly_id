@@ -200,7 +200,7 @@ Clean up the string before setting it as the friendly_id.
 
   
     <span class="summary_desc">
-The model instance&#8217;s current <tt><a href="Slug.html" title="FriendlyId::ActiveRecord2::Slug (class)">slug</a></tt>.
+The model instance&#8217;s current <tt><a href="../../Slug.html" title="Slug (class)">slug</a></tt>.
 
 </span>
   
@@ -312,9 +312,6 @@ Returns the friendly id, or if none is available, the numeric id.
       <pre class="lines">
 
 
-204
-205
-206
 207
 208
 209
@@ -322,18 +319,21 @@ Returns the friendly id, or if none is available, the numeric id.
 211
 212
 213
-214</pre>
+214
+215
+216
+217</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 204</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 207</span>
 
 <span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='included identifier id'>included</span><span class='lparen token'>(</span><span class='base identifier id'>base</span><span class='rparen token'>)</span>
   <span class='base identifier id'>base</span><span class='dot token'>.</span><span class='class_eval identifier id'>class_eval</span> <span class='do do kw'>do</span>
-    <span class='has_many identifier id'>has_many</span> <span class='symbol val'>:slugs</span><span class='comma token'>,</span> <span class='symbol val'>:class_name</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;FriendlyId::ActiveRecord2::Slug&quot;</span><span class='comma token'>,</span>
-      <span class='symbol val'>:order</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'id DESC'</span><span class='comma token'>,</span> <span class='symbol val'>:as</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:sluggable</span><span class='comma token'>,</span> <span class='symbol val'>:dependent</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:destroy</span>
+    <span class='has_many identifier id'>has_many</span> <span class='symbol val'>:slugs</span><span class='comma token'>,</span> <span class='symbol val'>:order</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'id DESC'</span><span class='comma token'>,</span> <span class='symbol val'>:as</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:sluggable</span><span class='comma token'>,</span> <span class='symbol val'>:dependent</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:destroy</span>
     <span class='before_save identifier id'>before_save</span> <span class='symbol val'>:build_slug</span>
     <span class='after_save identifier id'>after_save</span> <span class='symbol val'>:set_slug_cache</span>
-    <span class='after_update identifier id'>after_update</span> <span class='symbol val'>:update_scopes</span>
+    <span class='after_update identifier id'>after_update</span> <span class='symbol val'>:update_scope</span>
+    <span class='after_update identifier id'>after_update</span> <span class='symbol val'>:update_dependent_scopes</span>
     <span class='protect_friendly_id_attributes identifier id'>protect_friendly_id_attributes</span>
     <span class='extend identifier id'>extend</span> <span class='FinderMethods constant id'>FinderMethods</span>
   <span class='end end kw'>end</span>
@@ -374,12 +374,12 @@ The friendly id.
       <pre class="lines">
 
 
-224
-225
-226</pre>
+227
+228
+229</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 224</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 227</span>
 
 <span class='def def kw'>def</span> <span class='friendly_id identifier id'>friendly_id</span>
   <span class='slug identifier id'>slug</span><span class='dot token'>.</span><span class='to_friendly_id identifier id'>to_friendly_id</span>
@@ -414,12 +414,12 @@ Get the <tt><a href="../Status.html" title="FriendlyId::Status (class)">Friendly
       <pre class="lines">
 
 
-219
-220
-221</pre>
+222
+223
+224</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 219</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 222</span>
 
 <span class='def def kw'>def</span> <span class='friendly_id_status identifier id'>friendly_id_status</span>
   <span class='@friendly_id_status ivar id'>@friendly_id_status</span> <span class='opasgn op'>||=</span> <span class='Status constant id'>Status</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='symbol val'>:record</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='self self kw'>self</span><span class='rparen token'>)</span>
@@ -489,12 +489,12 @@ this method to add your own custom normalization routines.
       <pre class="lines">
 
 
-232
-233
-234</pre>
+235
+236
+237</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 232</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 235</span>
 
 <span class='def def kw'>def</span> <span class='normalize_friendly_id identifier id'>normalize_friendly_id</span><span class='lparen token'>(</span><span class='string identifier id'>string</span><span class='rparen token'>)</span>
   <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='normalize_for! fid id'>normalize_for!</span><span class='lparen token'>(</span><span class='friendly_id_config identifier id'>friendly_id_config</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
@@ -515,7 +515,7 @@ this method to add your own custom normalization routines.
 </p><div class="docstring">
   <div class="discussion">
     <p>
-The model instance&#8217;s current <tt><a href="Slug.html" title="FriendlyId::ActiveRecord2::Slug (class)">slug</a></tt>.
+The model instance&#8217;s current <tt><a href="../../Slug.html" title="Slug (class)">slug</a></tt>.
 </p>
 
 
@@ -529,12 +529,12 @@ The model instance&#8217;s current <tt><a href="Slug.html" title="FriendlyId::Ac
       <pre class="lines">
 
 
-237
-238
-239</pre>
+240
+241
+242</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 237</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 240</span>
 
 <span class='def def kw'>def</span> <span class='slug identifier id'>slug</span>
   <span class='@slug ivar id'>@slug</span> <span class='opasgn op'>||=</span> <span class='slugs identifier id'>slugs</span><span class='dot token'>.</span><span class='first identifier id'>first</span><span class='lparen token'>(</span><span class='symbol val'>:order</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;id DESC&quot;</span><span class='rparen token'>)</span>
@@ -569,17 +569,17 @@ Set the slug.
       <pre class="lines">
 
 
-242
-243
-244
-245</pre>
+245
+246
+247
+248</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 242</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 245</span>
 
 <span class='def def kw'>def</span> <span class='slug= identifier id'>slug=</span><span class='lparen token'>(</span><span class='slug identifier id'>slug</span><span class='rparen token'>)</span>
   <span class='@slug ivar id'>@slug</span> <span class='assign token'>=</span> <span class='slug identifier id'>slug</span>
-  <span class='@new_friendly_id ivar id'>@new_friendly_id</span> <span class='assign token'>=</span> <span class='@slug ivar id'>@slug</span><span class='dot token'>.</span><span class='to_friendly_id identifier id'>to_friendly_id</span>
+  <span class='@new_friendly_id ivar id'>@new_friendly_id</span> <span class='assign token'>=</span> <span class='@slug ivar id'>@slug</span><span class='dot token'>.</span><span class='to_friendly_id identifier id'>to_friendly_id</span> <span class='unless unless_mod kw'>unless</span> <span class='slug identifier id'>slug</span><span class='dot token'>.</span><span class='nil? fid id'>nil?</span>
 <span class='end end kw'>end</span>
 </pre>
     </td>
@@ -624,12 +624,12 @@ Does the instance have a slug?
       <pre class="lines">
 
 
-248
-249
-250</pre>
+251
+252
+253</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 248</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 251</span>
 
 <span class='def def kw'>def</span> <span class='slug? fid id'>slug?</span>
   <span class='notop op'>!</span><span class='notop op'>!</span> <span class='slug identifier id'>slug</span>
@@ -664,12 +664,12 @@ Returns the friendly id, or if none is available, the numeric id.
       <pre class="lines">
 
 
-253
-254
-255</pre>
+256
+257
+258</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 253</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slugged_model.rb', line 256</span>
 
 <span class='def def kw'>def</span> <span class='to_param identifier id'>to_param</span>
   <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='cache_column identifier id'>cache_column</span> <span class='integer val'>? </span><span class='to_param_from_cache identifier id'>to_param_from_cache</span> <span class='colon op'>:</span> <span class='to_param_from_slug identifier id'>to_param_from_slug</span>
@@ -685,7 +685,7 @@ Returns the friendly id, or if none is available, the numeric id.
 </div>
     
     <div id="footer">
-  Generated on Fri Jan 22 14:45:18 2010 by 
+  Generated on Wed Jan 27 12:46:11 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>
