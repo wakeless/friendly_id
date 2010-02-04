@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+<title>Module: FriendlyId::ActiveRecord2::Finders::Multiple</title>
+<link rel="stylesheet" href="../../../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../../../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '../../..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../_index.html">Index (M)</a> &raquo; 
+    <span class='title'><a href="../../../FriendlyId.html" title="FriendlyId (module)">FriendlyId</a></span> &raquo; <span class='title'><a href="../../ActiveRecord2.html" title="FriendlyId::ActiveRecord2 (module)">ActiveRecord2</a></span> &raquo; <span class='title'><a href="../Finders.html" title="FriendlyId::ActiveRecord2::Finders (module)">Finders</a></span>
+     &raquo; 
+    <span class="title">Multiple</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: FriendlyId::ActiveRecord2::Finders::Multiple 
+  <span class="abstract note title">Abstract</span>
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/friendly_id/active_record2/finders.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p class="note abstract">
+  <strong>This module is abstract.</strong> 
+  
+</p>
+<p>
+Wraps finds for multiple records using an array of friendly_ids.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div>
+
+  <h2>Instance Attribute Summary</h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#friendly_ids-instance_method" title="#friendly_ids (instance method)">- (Object) <strong>friendly_ids</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Returns the value of attribute friendly_ids.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#results-instance_method" title="#results (instance method)">- (Object) <strong>results</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Returns the value of attribute results.
+
+</span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#unfriendly_ids-instance_method" title="#unfriendly_ids (instance method)">- (Object) <strong>unfriendly_ids</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+Returns the value of attribute unfriendly_ids.
+
+</span>
+  
+</li>
+
+    
+  </ul>
+
+
+  <h2>Instance Method Summary</h2>
+
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Multiple) <strong>initialize</strong>(ids, model_class, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc">
+A new instance of Multiple.
+
+</span>
+  
+</li>
+
+    
+  </ul>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <span id="friendly_ids-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="friendly_ids-instance_method">
+  
+    - (<tt>Object</tt>) <strong>friendly_ids</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute friendly_ids
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/finders.rb', line 90</span>
+
+<span class='def def kw'>def</span> <span class='friendly_ids identifier id'>friendly_ids</span>
+  <span class='@friendly_ids ivar id'>@friendly_ids</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="results-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="results-instance_method">
+  
+    - (<tt>Object</tt>) <strong>results</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute results
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/finders.rb', line 90</span>
+
+<span class='def def kw'>def</span> <span class='results identifier id'>results</span>
+  <span class='@results ivar id'>@results</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="unfriendly_ids-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="unfriendly_ids-instance_method">
+  
+    - (<tt>Object</tt>) <strong>unfriendly_ids</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute unfriendly_ids
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/finders.rb', line 90</span>
+
+<span class='def def kw'>def</span> <span class='unfriendly_ids identifier id'>unfriendly_ids</span>
+  <span class='@unfriendly_ids ivar id'>@unfriendly_ids</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt><a href="" title="FriendlyId::ActiveRecord2::Finders::Multiple (module)">Multiple</a></tt>) <strong>initialize</strong>(ids, model_class, options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+A new instance of Multiple
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+92
+93
+94
+95
+96</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/finders.rb', line 92</span>
+
+<span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='ids identifier id'>ids</span><span class='comma token'>,</span> <span class='model_class identifier id'>model_class</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='assign token'>=</span><span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
+  <span class='@friendly_ids ivar id'>@friendly_ids</span><span class='comma token'>,</span> <span class='@unfriendly_ids ivar id'>@unfriendly_ids</span> <span class='assign token'>=</span> <span class='ids identifier id'>ids</span><span class='dot token'>.</span><span class='partition identifier id'>partition</span> <span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='id identifier id'>id</span><span class='bitor op'>|</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='Finders constant id'>Finders</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span><span class='dot token'>.</span><span class='friendly? fid id'>friendly?</span><span class='lparen token'>(</span><span class='id identifier id'>id</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span>
+  <span class='@unfriendly_ids ivar id'>@unfriendly_ids</span> <span class='assign token'>=</span> <span class='@unfriendly_ids ivar id'>@unfriendly_ids</span><span class='dot token'>.</span><span class='map identifier id'>map</span> <span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='id identifier id'>id</span><span class='bitor op'>|</span> <span class='id identifier id'>id</span><span class='dot token'>.</span><span class='class identifier id'>class</span><span class='dot token'>.</span><span class='respond_to? fid id'>respond_to?</span><span class='lparen token'>(</span><span class='symbol val'>:friendly_id_config</span><span class='rparen token'>)</span> <span class='question op'>?</span> <span class='id identifier id'>id</span><span class='dot token'>.</span><span class='id identifier id'>id</span> <span class='colon op'>:</span> <span class='id identifier id'>id</span><span class='rbrace token'>}</span>
+  <span class='super super kw'>super</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Thu Feb  4 17:18:45 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.3 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

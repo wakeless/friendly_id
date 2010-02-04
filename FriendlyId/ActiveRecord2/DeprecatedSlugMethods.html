@@ -57,7 +57,7 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/friendly_id/active_record_2/slug.rb</dd>
+    <dd class="r1 last">lib/friendly_id/active_record2/slug.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -191,7 +191,7 @@ Please use SlugString#normalize.
   
     <li>
       
-        <span class='type'>(<tt><a href="../SlugGenerationError.html" title="FriendlyId::SlugGenerationError (class)">SlugGenerationError</a></tt>)</span>
+        <span class='type'>(<tt><a href="../BlankError.html" title="FriendlyId::BlankError (class)">BlankError</a></tt>)</span>
       
       
       
@@ -213,11 +213,11 @@ Please use SlugString#normalize.
 16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slug.rb', line 12</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slug.rb', line 12</span>
 
 <span class='def def kw'>def</span> <span class='normalize identifier id'>normalize</span><span class='lparen token'>(</span><span class='slug_text identifier id'>slug_text</span><span class='rparen token'>)</span>
   <span class='warn identifier id'>warn</span><span class='lparen token'>(</span><span class='string val'>&quot;Slug#normalize is deprecated and will be removed in FriendlyId 3.0. Please use SlugString#normalize.&quot;</span><span class='rparen token'>)</span>
-  <span class='raise identifier id'>raise</span> <span class='SlugGenerationError constant id'>SlugGenerationError</span> <span class='if if_mod kw'>if</span> <span class='slug_text identifier id'>slug_text</span><span class='dot token'>.</span><span class='blank? fid id'>blank?</span>
+  <span class='raise identifier id'>raise</span> <span class='BlankError constant id'>BlankError</span> <span class='if if_mod kw'>if</span> <span class='slug_text identifier id'>slug_text</span><span class='dot token'>.</span><span class='blank? fid id'>blank?</span>
   <span class='SlugString constant id'>SlugString</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='slug_text identifier id'>slug_text</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='normalize identifier id'>normalize</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
 <span class='end end kw'>end</span>
 </pre>
@@ -257,7 +257,7 @@ Please use String#parse_friendly_id
 9</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slug.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slug.rb', line 6</span>
 
 <span class='def def kw'>def</span> <span class='parse identifier id'>parse</span><span class='lparen token'>(</span><span class='string identifier id'>string</span><span class='rparen token'>)</span>
   <span class='warn identifier id'>warn</span><span class='lparen token'>(</span><span class='string val'>&quot;Slug#parse is deprecated and will be removed in FriendlyId 3.0. Please use String#parse_friendly_id.&quot;</span><span class='rparen token'>)</span>
@@ -292,7 +292,7 @@ Please use SlugString#approximate_ascii.&quot;
   
     <li>
       
-        <span class='type'>(<tt><a href="../SlugGenerationError.html" title="FriendlyId::SlugGenerationError (class)">SlugGenerationError</a></tt>)</span>
+        <span class='type'>(<tt><a href="../BlankError.html" title="FriendlyId::BlankError (class)">BlankError</a></tt>)</span>
       
       
       
@@ -314,11 +314,11 @@ Please use SlugString#approximate_ascii.&quot;
 23</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slug.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slug.rb', line 19</span>
 
 <span class='def def kw'>def</span> <span class='strip_diacritics identifier id'>strip_diacritics</span><span class='lparen token'>(</span><span class='string identifier id'>string</span><span class='rparen token'>)</span>
   <span class='warn identifier id'>warn</span><span class='lparen token'>(</span><span class='string val'>&quot;Slug#strip_diacritics is deprecated and will be removed in FriendlyId 3.0. Please use SlugString#approximate_ascii.&quot;</span><span class='rparen token'>)</span>
-  <span class='raise identifier id'>raise</span> <span class='SlugGenerationError constant id'>SlugGenerationError</span> <span class='if if_mod kw'>if</span> <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='blank? fid id'>blank?</span>
+  <span class='raise identifier id'>raise</span> <span class='BlankError constant id'>BlankError</span> <span class='if if_mod kw'>if</span> <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='blank? fid id'>blank?</span>
   <span class='SlugString constant id'>SlugString</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='string identifier id'>string</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='approximate_ascii identifier id'>approximate_ascii</span>
 <span class='end end kw'>end</span>
 </pre>
@@ -350,7 +350,7 @@ Please use SlugString#to_ascii.
   
     <li>
       
-        <span class='type'>(<tt><a href="../SlugGenerationError.html" title="FriendlyId::SlugGenerationError (class)">SlugGenerationError</a></tt>)</span>
+        <span class='type'>(<tt><a href="../BlankError.html" title="FriendlyId::BlankError (class)">BlankError</a></tt>)</span>
       
       
       
@@ -372,11 +372,11 @@ Please use SlugString#to_ascii.
 30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slug.rb', line 26</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slug.rb', line 26</span>
 
 <span class='def def kw'>def</span> <span class='strip_non_ascii identifier id'>strip_non_ascii</span><span class='lparen token'>(</span><span class='string identifier id'>string</span><span class='rparen token'>)</span>
   <span class='warn identifier id'>warn</span><span class='lparen token'>(</span><span class='string val'>&quot;Slug#strip_non_ascii is deprecated and will be removed in FriendlyId 3.0. Please use SlugString#to_ascii.&quot;</span><span class='rparen token'>)</span>
-  <span class='raise identifier id'>raise</span> <span class='SlugGenerationError constant id'>SlugGenerationError</span> <span class='if if_mod kw'>if</span> <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='blank? fid id'>blank?</span>
+  <span class='raise identifier id'>raise</span> <span class='BlankError constant id'>BlankError</span> <span class='if if_mod kw'>if</span> <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='blank? fid id'>blank?</span>
   <span class='SlugString constant id'>SlugString</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='string identifier id'>string</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='to_ascii identifier id'>to_ascii</span>
 <span class='end end kw'>end</span>
 </pre>
@@ -390,7 +390,7 @@ Please use SlugString#to_ascii.
 </div>
     
     <div id="footer">
-  Generated on Wed Jan 27 12:54:59 2010 by 
+  Generated on Thu Feb  4 17:18:46 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>

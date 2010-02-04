@@ -57,7 +57,7 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/friendly_id/active_record_2/simple_model.rb</dd>
+    <dd class="r1 last">lib/friendly_id/active_record2/simple_model.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -206,20 +206,20 @@ Returns the friendly id, or if none is available, the numeric id.
       <pre class="lines">
 
 
-104
-105
-106
-107
 108
 109
 110
 111
 112
 113
-114</pre>
+114
+115
+116
+117
+118</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/simple_model.rb', line 104</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/simple_model.rb', line 108</span>
 
 <span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='included identifier id'>included</span><span class='lparen token'>(</span><span class='base identifier id'>base</span><span class='rparen token'>)</span>
   <span class='base identifier id'>base</span><span class='dot token'>.</span><span class='class_eval identifier id'>class_eval</span> <span class='do do kw'>do</span>
@@ -272,12 +272,12 @@ Returns the friendly_id.
       <pre class="lines">
 
 
-122
-123
-124</pre>
+126
+127
+128</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/simple_model.rb', line 122</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/simple_model.rb', line 126</span>
 
 <span class='def def kw'>def</span> <span class='friendly_id identifier id'>friendly_id</span>
   <span class='send identifier id'>send</span> <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='column identifier id'>column</span>
@@ -312,12 +312,12 @@ Get the <tt><a href="../Status.html" title="FriendlyId::Status (class)">Friendly
       <pre class="lines">
 
 
-117
-118
-119</pre>
+121
+122
+123</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/simple_model.rb', line 117</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/simple_model.rb', line 121</span>
 
 <span class='def def kw'>def</span> <span class='friendly_id_status identifier id'>friendly_id_status</span>
   <span class='@friendly_id_status ivar id'>@friendly_id_status</span> <span class='opasgn op'>||=</span> <span class='Status constant id'>Status</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='symbol val'>:record</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='self self kw'>self</span>
@@ -352,12 +352,12 @@ Returns the friendly id, or if none is available, the numeric id.
       <pre class="lines">
 
 
-128
-129
-130</pre>
+132
+133
+134</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/simple_model.rb', line 128</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/simple_model.rb', line 132</span>
 
 <span class='def def kw'>def</span> <span class='to_param identifier id'>to_param</span>
   <span class='lparen token'>(</span><span class='friendly_id identifier id'>friendly_id</span> <span class='orop op'>||</span> <span class='id identifier id'>id</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
@@ -373,7 +373,7 @@ Returns the friendly id, or if none is available, the numeric id.
 </div>
     
     <div id="footer">
-  Generated on Wed Jan 27 12:54:57 2010 by 
+  Generated on Thu Feb  4 17:18:44 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>

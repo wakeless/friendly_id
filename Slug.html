@@ -52,12 +52,12 @@
   
     <dt class="r1">Inherits:</dt>
     <dd class="r1">
-      <span class="inheritName"><a href="ActiveRecord/Base.html" title="ActiveRecord::Base (class)">ActiveRecord::Base</a></span>
+      <span class="inheritName">ActiveRecord::Base</span>
       
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next"><a href="ActiveRecord/Base.html" title="ActiveRecord::Base (class)">ActiveRecord::Base</a></li>
+            <li class="next">ActiveRecord::Base</li>
           
             <li class="next">Slug</li>
           
@@ -78,7 +78,7 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/friendly_id/active_record_2/slug.rb</dd>
+    <dd class="r1 last">lib/friendly_id/active_record2/slug.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -96,9 +96,6 @@ A Slug is a unique, human-friendly identifier for an ActiveRecord.
   
 </div>
 
-  
-  
-  
   
 
   <h2>Instance Method Summary</h2>
@@ -154,6 +151,26 @@ Please used Slug#current?
       <li class="public ">
   <span class="summary_signature">
     
+      <a href="#outdated%3F-instance_method" title="#outdated? (instance method)">- (Boolean) <strong>outdated?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#to_friendly_id-instance_method" title="#to_friendly_id (instance method)">- (Object) <strong>to_friendly_id</strong> </a>
     
 
@@ -196,10 +213,6 @@ Raise a FriendlyId::SlugGenerationError if the slug name is blank.
     
   </ul>
 
-  
-  
-  
-  
   
 
   <div id="instance_method_details" class="method_details_list">
@@ -248,7 +261,7 @@ Whether this slug is the most recent of its owner&#8217;s slugs.
 59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slug.rb', line 57</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slug.rb', line 57</span>
 
 <span class='def def kw'>def</span> <span class='current? fid id'>current?</span>
   <span class='sluggable identifier id'>sluggable</span><span class='dot token'>.</span><span class='slug identifier id'>slug</span> <span class='eq op'>==</span> <span class='self self kw'>self</span>
@@ -297,17 +310,67 @@ Please used Slug#current?
       <pre class="lines">
 
 
-62
-63
-64
-65</pre>
+66
+67
+68
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slug.rb', line 62</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slug.rb', line 66</span>
 
 <span class='def def kw'>def</span> <span class='is_most_recent? fid id'>is_most_recent?</span>
   <span class='warn identifier id'>warn</span><span class='lparen token'>(</span><span class='string val'>&quot;Slug#is_most_recent? is deprecated and will be removed in FriendlyId 3.0. Please use Slug#current?&quot;</span><span class='rparen token'>)</span>
   <span class='current? fid id'>current?</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="outdated?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>outdated?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slug.rb', line 61</span>
+
+<span class='def def kw'>def</span> <span class='outdated? fid id'>outdated?</span>
+  <span class='notop op'>!</span><span class='current? fid id'>current?</span>
 <span class='end end kw'>end</span>
 </pre>
     </td>
@@ -328,12 +391,12 @@ Please used Slug#current?
       <pre class="lines">
 
 
-67
-68
-69</pre>
+71
+72
+73</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slug.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slug.rb', line 71</span>
 
 <span class='def def kw'>def</span> <span class='to_friendly_id identifier id'>to_friendly_id</span>
   <span class='sequence identifier id'>sequence</span> <span class='gt op'>&gt;</span> <span class='integer val'>1</span> <span class='question op'>?</span> <span class='friendly_id_with_sequence identifier id'>friendly_id_with_sequence</span> <span class='colon op'>:</span> <span class='name identifier id'>name</span>
@@ -368,18 +431,18 @@ Raise a FriendlyId::SlugGenerationError if the slug name is blank.
       <pre class="lines">
 
 
-72
-73
-74
-75
-76</pre>
+76
+77
+78
+79
+80</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_2/slug.rb', line 72</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slug.rb', line 76</span>
 
 <span class='def def kw'>def</span> <span class='validate_name identifier id'>validate_name</span>
   <span class='if if kw'>if</span> <span class='name identifier id'>name</span><span class='dot token'>.</span><span class='blank? fid id'>blank?</span>
-    <span class='raise identifier id'>raise</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='SlugGenerationError constant id'>SlugGenerationError</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='string val'>&quot;slug.name can not be blank.&quot;</span><span class='rparen token'>)</span>
+    <span class='raise identifier id'>raise</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='BlankError constant id'>BlankError</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='string val'>&quot;slug.name can not be blank.&quot;</span><span class='rparen token'>)</span>
   <span class='end end kw'>end</span>
 <span class='end end kw'>end</span>
 </pre>
@@ -393,7 +456,7 @@ Raise a FriendlyId::SlugGenerationError if the slug name is blank.
 </div>
     
     <div id="footer">
-  Generated on Wed Jan 27 12:55:03 2010 by 
+  Generated on Thu Feb  4 17:18:41 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>
