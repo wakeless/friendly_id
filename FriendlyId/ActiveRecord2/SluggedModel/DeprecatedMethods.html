@@ -273,13 +273,13 @@ Please use #to_param
       <pre class="lines">
 
 
-173
-174
-175
-176</pre>
+169
+170
+171
+172</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slugged_model.rb', line 173</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slugged_model.rb', line 169</span>
 
 <span class='def def kw'>def</span> <span class='best_id identifier id'>best_id</span>
   <span class='warn identifier id'>warn</span><span class='lparen token'>(</span><span class='string val'>&quot;best_id is deprecated and will be removed in 3.0. Please use #to_param.&quot;</span><span class='rparen token'>)</span>
@@ -316,13 +316,13 @@ Please use #friendly_id_status.slug.
       <pre class="lines">
 
 
-179
-180
-181
-182</pre>
+175
+176
+177
+178</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slugged_model.rb', line 179</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slugged_model.rb', line 175</span>
 
 <span class='def def kw'>def</span> <span class='finder_slug identifier id'>finder_slug</span>
   <span class='warn identifier id'>warn</span><span class='lparen token'>(</span><span class='string val'>&quot;finder_slug is deprecated and will be removed in 3.0. Please use #friendly_id_status.slug.&quot;</span><span class='rparen token'>)</span>
@@ -375,13 +375,13 @@ Was the record found using one of its friendly ids?
       <pre class="lines">
 
 
-186
-187
-188
-189</pre>
+182
+183
+184
+185</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slugged_model.rb', line 186</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slugged_model.rb', line 182</span>
 
 <span class='def def kw'>def</span> <span class='found_using_friendly_id? fid id'>found_using_friendly_id?</span>
   <span class='warn identifier id'>warn</span><span class='lparen token'>(</span><span class='string val'>&quot;found_using_friendly_id? is deprecated and will be removed in 3.0. Please use #friendly_id_status.friendly?&quot;</span><span class='rparen token'>)</span>
@@ -434,13 +434,13 @@ Was the record found using its numeric id?
       <pre class="lines">
 
 
-193
-194
-195
-196</pre>
+189
+190
+191
+192</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slugged_model.rb', line 193</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slugged_model.rb', line 189</span>
 
 <span class='def def kw'>def</span> <span class='found_using_numeric_id? fid id'>found_using_numeric_id?</span>
   <span class='warn identifier id'>warn</span><span class='lparen token'>(</span><span class='string val'>&quot;found_using_numeric_id is deprecated and will be removed in 3.0. Please use #friendly_id_status.numeric?&quot;</span><span class='rparen token'>)</span>
@@ -493,13 +493,13 @@ Was the record found using an old friendly id?
       <pre class="lines">
 
 
-200
-201
-202
-203</pre>
+196
+197
+198
+199</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slugged_model.rb', line 200</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slugged_model.rb', line 196</span>
 
 <span class='def def kw'>def</span> <span class='found_using_outdated_friendly_id? fid id'>found_using_outdated_friendly_id?</span>
   <span class='warn identifier id'>warn</span><span class='lparen token'>(</span><span class='string val'>&quot;found_using_outdated_friendly_id is deprecated and will be removed in 3.0. Please use #friendly_id_status.outdated?&quot;</span><span class='rparen token'>)</span>
@@ -549,13 +549,13 @@ Please use #slug?
       <pre class="lines">
 
 
-213
-214
-215
-216</pre>
+209
+210
+211
+212</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slugged_model.rb', line 213</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slugged_model.rb', line 209</span>
 
 <span class='def def kw'>def</span> <span class='has_a_slug? fid id'>has_a_slug?</span>
   <span class='warn identifier id'>warn</span><span class='lparen token'>(</span><span class='string val'>&quot;has_a_slug? is deprecated and will be removed in 3.0. Please use #slug?&quot;</span><span class='rparen token'>)</span>
@@ -608,13 +608,13 @@ Was the record found using an old friendly id, or its numeric id?
       <pre class="lines">
 
 
-207
-208
-209
-210</pre>
+203
+204
+205
+206</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slugged_model.rb', line 207</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record2/slugged_model.rb', line 203</span>
 
 <span class='def def kw'>def</span> <span class='has_better_id? fid id'>has_better_id?</span>
   <span class='warn identifier id'>warn</span><span class='lparen token'>(</span><span class='string val'>&quot;has_better_id? is deprecated and will be removed in 3.0. Please use !#friendly_id_status.best?&quot;</span><span class='rparen token'>)</span>
@@ -631,7 +631,7 @@ Was the record found using an old friendly id, or its numeric id?
 </div>
     
     <div id="footer">
-  Generated on Tue Feb  9 16:02:48 2010 by 
+  Generated on Mon Mar 22 12:59:30 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>

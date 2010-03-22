@@ -264,12 +264,12 @@ Returns the value of attribute slug
       <pre class="lines">
 
 
-37
-38
-39</pre>
+41
+42
+43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 37</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 41</span>
 
 <span class='def def kw'>def</span> <span class='slug identifier id'>slug</span>
   <span class='@slug ivar id'>@slug</span>
@@ -321,12 +321,12 @@ Returns the value of attribute slug
       <pre class="lines">
 
 
-39
-40
-41</pre>
+43
+44
+45</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 43</span>
 
 <span class='def def kw'>def</span> <span class='find_slug identifier id'>find_slug</span>
   <span class='raise identifier id'>raise</span> <span class='NotImplementedError constant id'>NotImplementedError</span>
@@ -361,12 +361,12 @@ The friendly id.
       <pre class="lines">
 
 
-53
-54
-55</pre>
+57
+58
+59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 53</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 57</span>
 
 <span class='def def kw'>def</span> <span class='friendly_id identifier id'>friendly_id</span>
   <span class='slug identifier id'>slug</span><span class='dot token'>.</span><span class='to_friendly_id identifier id'>to_friendly_id</span>
@@ -390,12 +390,12 @@ The friendly id.
       <pre class="lines">
 
 
-43
-44
-45</pre>
+47
+48
+49</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 47</span>
 
 <span class='def def kw'>def</span> <span class='friendly_id_config identifier id'>friendly_id_config</span>
   <span class='self self kw'>self</span><span class='dot token'>.</span><span class='class identifier id'>class</span><span class='dot token'>.</span><span class='friendly_id_config identifier id'>friendly_id_config</span>
@@ -430,12 +430,12 @@ Get the <tt><a href="../Status.html" title="FriendlyId::Status (class)">Friendly
       <pre class="lines">
 
 
-48
-49
-50</pre>
+52
+53
+54</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 52</span>
 
 <span class='def def kw'>def</span> <span class='friendly_id_status identifier id'>friendly_id_status</span>
   <span class='@friendly_id_status ivar id'>@friendly_id_status</span> <span class='opasgn op'>||=</span> <span class='Status constant id'>Status</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='symbol val'>:record</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='self self kw'>self</span><span class='rparen token'>)</span>
@@ -505,12 +505,12 @@ this method to add your own custom normalization routines.
       <pre class="lines">
 
 
-61
-62
-63</pre>
+65
+66
+67</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 65</span>
 
 <span class='def def kw'>def</span> <span class='normalize_friendly_id identifier id'>normalize_friendly_id</span><span class='lparen token'>(</span><span class='string identifier id'>string</span><span class='rparen token'>)</span>
   <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='normalize_for! fid id'>normalize_for!</span><span class='lparen token'>(</span><span class='friendly_id_config identifier id'>friendly_id_config</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
@@ -558,12 +558,12 @@ Does the instance have a slug?
       <pre class="lines">
 
 
-66
-67
-68</pre>
+70
+71
+72</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 70</span>
 
 <span class='def def kw'>def</span> <span class='slug? fid id'>slug?</span>
   <span class='notop op'>!</span><span class='notop op'>!</span> <span class='slug identifier id'>slug</span>
@@ -579,7 +579,7 @@ Does the instance have a slug?
 </div>
     
     <div id="footer">
-  Generated on Tue Feb  9 16:02:47 2010 by 
+  Generated on Mon Mar 22 12:59:29 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.3 (ruby-1.8.7).
 </div>
