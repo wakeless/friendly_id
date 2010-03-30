@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
 <title>File: Guide</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
@@ -42,7 +42,7 @@
     <iframe id="search_frame"></iframe>
     
     <div id="content"><div id='filecontents'><h1 id='friendlyid_guide'>FriendlyId Guide</h1>
-<div class='maruku_toc'><ul style='list-style: none;'><li><a href='#friendlyid_guide'>FriendlyId Guide</a><ul style='list-style: none;'><li><a href='#overview'>Overview</a></li><li><a href='#simple_models'>Simple Models</a></li><li><a href='#slugged_models'>Slugged Models</a></li><li><a href='#installation'>Installation</a><ul style='list-style: none;'><li><a href='#as_a_gem'>As a Gem</a><ul style='list-style: none;'><li><a href='#rails_22x__23x'>Rails 2.2.x - 2.3.x</a></li></ul></li><li><a href='#as_a_plugin'>As a Plugin</a></li><li><a href='#setup'>Setup</a></li></ul></li><li><a href='#configuration'>Configuration</a></li></ul></li><li><a href='#features'>Features</a><ul style='list-style: none;'><li><a href='#friendlyid_strings'>FriendlyId Strings</a><ul style='list-style: none;'><li><a href='#replacing_accented_characters'>Replacing Accented Characters</a></li><li><a href='#german_approximations'>German Approximations</a></li><li><a href='#spanish_approximations'>Spanish Approximations</a></li><li><a href='#approximations_for_other_languages'>Approximations for Other Languages</a></li><li><a href='#unicode_slugs'>Unicode Slugs</a></li><li><a href='#ascii_slugs'>ASCII Slugs</a></li><li><a href='#using_a_custom_method_to_generate_the_slug_text'>Using a Custom Method to Generate the Slug Text</a></li></ul></li><li><a href='#using_a_custom_method_to_process_the_slug_text'>Using a Custom Method to Process the Slug Text</a><ul style='list-style: none;'><li><a href='#converting_nonwestern_characters_to_ascii_with_stringex'>Converting non-Western characters to ASCII with Stringex</a></li></ul></li><li><a href='#redirecting_to_the_current_friendly_url'>Redirecting to the Current Friendly URL</a></li><li><a href='#nonunique_slugs'>Non-unique Slugs</a></li><li><a href='#reserved_words'>Reserved Words</a></li><li><a href='#caching_the_friendlyid_slug_for_better_performance'>Caching the FriendlyId Slug for Better Performance</a><ul style='list-style: none;'><li><a href='#automatic_setup'>Automatic setup</a></li><li><a href='#using_a_custom_column_name'>Using a custom column name</a></li></ul></li><li><a href='#scoped_slugs'>Scoped Slugs</a><ul style='list-style: none;'><li><a href='#updating_a_relations_scoped_slugs'>Updating a Relation&#8217;s Scoped Slugs</a></li><li><a href='#routes_for_scoped_models'>Routes for Scoped Models</a></li></ul></li><li><a href='#friendlyid_rake_tasks'>FriendlyId Rake Tasks</a><ul style='list-style: none;'><li><a href='#generating_new_slugs_for_the_first_time'>Generating New Slugs For the First Time</a></li><li><a href='#regenerating_slugs'>Regenerating Slugs</a></li><li><a href='#deleting_old_slugs'>Deleting Old Slugs</a></li></ul></li></ul></li><li><a href='#hacking_friendlyid'>Hacking FriendlyId</a><ul style='list-style: none;'><li><a href='#some_benchmarks'>Some Benchmarks</a></li></ul></li></ul></div>
+<div class='maruku_toc'><ul style='list-style: none;'><li><a href='#friendlyid_guide'>FriendlyId Guide</a><ul style='list-style: none;'><li><a href='#overview'>Overview</a></li><li><a href='#simple_models'>Simple Models</a></li><li><a href='#slugged_models'>Slugged Models</a></li><li><a href='#installation'>Installation</a><ul style='list-style: none;'><li><a href='#as_a_gem'>As a Gem</a><ul style='list-style: none;'><li><a href='#rails_22x__23x'>Rails 2.2.x - 2.3.x</a></li></ul></li><li><a href='#rails_30'>Rails 3.0</a></li><li><a href='#as_a_plugin'>As a Plugin</a></li><li><a href='#setup'>Setup</a></li></ul></li><li><a href='#configuration'>Configuration</a></li></ul></li><li><a href='#features'>Features</a><ul style='list-style: none;'><li><a href='#friendlyid_strings'>FriendlyId Strings</a><ul style='list-style: none;'><li><a href='#replacing_accented_characters'>Replacing Accented Characters</a></li><li><a href='#german_approximations'>German Approximations</a></li><li><a href='#spanish_approximations'>Spanish Approximations</a></li><li><a href='#approximations_for_other_languages'>Approximations for Other Languages</a></li><li><a href='#unicode_slugs'>Unicode Slugs</a></li><li><a href='#ascii_slugs'>ASCII Slugs</a></li><li><a href='#using_a_custom_method_to_generate_the_slug_text'>Using a Custom Method to Generate the Slug Text</a></li></ul></li><li><a href='#using_a_custom_method_to_process_the_slug_text'>Using a Custom Method to Process the Slug Text</a><ul style='list-style: none;'><li><a href='#converting_nonwestern_characters_to_ascii_with_stringex'>Converting non-Western characters to ASCII with Stringex</a></li></ul></li><li><a href='#redirecting_to_the_current_friendly_url'>Redirecting to the Current Friendly URL</a></li><li><a href='#nonunique_slugs'>Non-unique Slugs</a></li><li><a href='#reserved_words'>Reserved Words</a></li><li><a href='#caching_the_friendlyid_slug_for_better_performance'>Caching the FriendlyId Slug for Better Performance</a><ul style='list-style: none;'><li><a href='#automatic_setup'>Automatic setup</a></li><li><a href='#using_a_custom_column_name'>Using a custom column name</a></li></ul></li><li><a href='#nil_slugs_and_skipping_validations'>Nil slugs and skipping validations</a></li><li><a href='#scoped_slugs'>Scoped Slugs</a><ul style='list-style: none;'><li><a href='#updating_a_relations_scoped_slugs'>Updating a Relation&#8217;s Scoped Slugs</a></li><li><a href='#routes_for_scoped_models'>Routes for Scoped Models</a></li></ul></li><li><a href='#friendlyid_rake_tasks'>FriendlyId Rake Tasks</a><ul style='list-style: none;'><li><a href='#generating_new_slugs_for_the_first_time'>Generating New Slugs For the First Time</a></li><li><a href='#regenerating_slugs'>Regenerating Slugs</a></li><li><a href='#deleting_old_slugs'>Deleting Old Slugs</a></li></ul></li></ul></li><li><a href='#misc_tips'>Misc tips</a><ul style='list-style: none;'><li><a href='#mysql_50_or_less'>MySQL 5.0 or less</a></li></ul></li><li><a href='#hacking_friendlyid'>Hacking FriendlyId</a><ul style='list-style: none;'><li><a href='#running_the_tests'>Running the Tests</a></li><li><a href='#some_benchmarks'>Some Benchmarks</a></li></ul></li></ul></div>
 <h2 id='overview'>Overview</h2>
 
 <p>FriendlyId is a Ruby gem which allows you to work with human-friendly strings as if they were numeric ids for ActiveRecord models. This facilitates replacing &#8220;unfriendly&#8221; URL&#8217;s like</p>
@@ -98,7 +98,7 @@
 
 <h2 id='installation'>Installation</h2>
 
-<p>FriendlyId can be installed as a gem, or as a Rails plugin. It is compatible with Rails 2.2.x, 2.3.x. Support for Rails 3.x is in progress.</p>
+<p>FriendlyId can be installed as a gem, or as a Rails plugin. It is compatible with Rails 2.2.x, 2.3.x. and 3.0.</p>
 
 <h3 id='as_a_gem'>As a Gem</h3>
 
@@ -109,7 +109,14 @@
 
 <p>After installing the gem, add an entry in environment.rb:</p>
 
-<pre class="code"><span class='config identifier id'>config</span><span class='dot token'>.</span><span class='gem identifier id'>gem</span> <span class='string val'>&quot;friendly_id&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:version</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;&gt;= 2.3&quot;</span>
+<pre class="code"><span class='config identifier id'>config</span><span class='dot token'>.</span><span class='gem identifier id'>gem</span> <span class='string val'>&quot;friendly_id&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:version</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;~&gt; 2.3&quot;</span>
+</pre>
+
+<h3 id='rails_30'>Rails 3.0</h3>
+
+<p>After installing the gem, add an entry in the Gemfile:</p>
+
+<pre class="code"><span class='gem identifier id'>gem</span> <span class='string val'>&quot;friendly_id&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;~&gt; 3.0&quot;</span>
 </pre>
 
 <h3 id='as_a_plugin'>As a Plugin</h3>
@@ -119,7 +126,7 @@
 <pre class="code"><span class='dot token'>.</span><span class='div op'>/</span><span class='script identifier id'>script</span><span class='div op'>/</span><span class='plugin identifier id'>plugin</span> <span class='install identifier id'>install</span> <span class='git identifier id'>git</span><span class='symbol val'>:/</span><span class='regexp val'>/github.com/n</span><span class='orman identifier id'>orman</span><span class='div op'>/</span><span class='friendly_id identifier id'>friendly_id</span><span class='dot token'>.</span><span class='git identifier id'>git</span>
 </pre>
 
-<p>However, installing as a gem offers simpler version control than plugin installation. Whenever possible, install as a gem instead. Plugin support will probably be removed in version 3.0.</p>
+<p>However, installing as a gem offers simpler version control than plugin installation. Whenever possible, install as a gem instead. Plugin support may eventually be removed in a future version.</p>
 
 <h3 id='setup'>Setup</h3>
 
@@ -391,6 +398,23 @@
 <span class='end end kw'>end</span>
 </pre>
 
+<h2 id='nil_slugs_and_skipping_validations'>Nil slugs and skipping validations</h2>
+
+<p>You can choose to allow <code>nil</code> friendly_ids via the <code>:allow_nil</code> config option:</p>
+
+<pre class="code"><span class='class class kw'>class</span> <span class='User constant id'>User</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
+  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='symbol val'>:allow_nil</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span>
+<span class='end end kw'>end</span>
+</pre>
+
+<p>This works whether the model uses slugs or not.</p>
+
+<p>For slugged models, if the friendly_id text is <code>nil</code>, no slug will be created. This can be useful, for example, to only create slugs for published articles and avoid creating many slugs with sequences.</p>
+
+<p>For models that don&#8217;t use slugs, this will make FriendlyId skip all its validations when the friendly_id text is <code>nil</code>. This can be useful, for example, if you wish to add the friendly_id value in an <code>:after_save</code> callback.</p>
+
+<p>For non-slugged models, if you simply wish to skip friendly_ids&#8217;s validations for some reason, you can override the <code>skip_friendly_id_validations</code> method. Note that this method is <strong>not</strong> used by slugged models.</p>
+
 <h2 id='scoped_slugs'>Scoped Slugs</h2>
 
 <p>FriendlyId can generate unique slugs within a given scope. For example, assume you have an application that displays restaurants. Without scoped slugs, if two restaurants are named &#8220;Joe&#8217;s Diner,&#8221; the second one will end up with &#8220;joes-diner&#8211;2&#8221; as its friendly_id. Using scoped allows you to keep the slug names unique for each city, so that the second &#8220;Joe&#8217;s Diner&#8221; could have the slug &#8220;joes-diner&#8221; if it&#8217;s located in a different city:</p>
@@ -459,6 +483,12 @@
 
 <p>Use this task if you wish to delete expired slugs; manually or perhaps via cron. If you don&#8217;t specify the days option, the default is to remove unused slugs older than 45 days.</p>
 
+<h1 id='misc_tips'>Misc tips</h1>
+
+<h2 id='mysql_50_or_less'>MySQL 5.0 or less</h2>
+
+<p>Currently, the default FriendlyId migration will not work with MySQL 5.0 or less because it creates and index that&#8217;s too large. The easiest way to work around this is to change the generated migration to add limits on some column lengths. Please see <a href='http://github.com/norman/friendly_id/issues#issue/50'>this issue</a> in the FriendlyId issue tracker for more information.</p>
+
 <h1 id='hacking_friendlyid'>Hacking FriendlyId</h1>
 
 <p>A couple of notes for programmers intending to work on FriendlyId:</p>
@@ -467,6 +497,10 @@
 
 <p>Before removing any public or protected methods, FriendlyId will deprecate them through one major release cycle. Private methods may, however, change at any time.</p>
 
+<h2 id='running_the_tests'>Running the Tests</h2>
+
+<p>FriendlyId uses <a href='http://github.com/carlhuda/bundler'>Bundler</a> to manage its gem dependencies. To run the tests, first make sure you have bundler installed. Then, copy Gemfile.default to Gemfile. If you wish to test against different gem versions than the ones specifed in the Gemfile (for example, to test with Postgres or MySQL rather than SQLite3, or to test against different versions of ActiveRecord), then simply modify the Gemfile to suit your dependencies.</p>
+
 <h2 id='some_benchmarks'>Some Benchmarks</h2>
 
 <p>These benchmarks can give you an idea of FriendlyId&#8217;s impact on the performance of your application. Of course your results may vary.</p>
@@ -474,6 +508,7 @@
 <p>Note that much of the performance difference can be attributed to finding an SQL record by a text column. Finding a single record by numeric primary key is always the fastest operation, and thus the best choice when possible. If you decide not to use FriendlyId for performance reasons, keep in mind that your own solution is unlikely to be any faster than FriendlyId with cached slugs enabled. But if it is, then your patches would be very welcome!</p>
 
 <pre class="code"><span class='ruby identifier id'>ruby</span> <span class='float val'>1.9</span><span class='integer val'>.1</span><span class='p378 identifier id'>p378</span> <span class='lparen token'>(</span><span class='integer val'>2010</span><span class='minus op'>-</span><span class='integer val'>01</span><span class='minus op'>-</span><span class='integer val'>10</span> <span class='revision identifier id'>revision</span> <span class='integer val'>26273</span><span class='rparen token'>)</span> <span class='lbrack token'>[</span><span class='i386 identifier id'>i386</span><span class='minus op'>-</span><span class='darwin10 identifier id'>darwin10</span><span class='float val'>.2.0</span><span class='rbrack token'>]</span>
+<span class='activerecord identifier id'>activerecord</span> <span class='lparen token'>(</span><span class='float val'>2.3</span><span class='integer val'>.5</span><span class='rparen token'>)</span>
 <span class='friendly_id identifier id'>friendly_id</span> <span class='lparen token'>(</span><span class='float val'>2.3</span><span class='integer val'>.0</span><span class='rparen token'>)</span>
 <span class='sqlite3 identifier id'>sqlite3</span> <span class='float val'>3.6</span><span class='integer val'>.19</span> <span class='in in kw'>in</span><span class='minus op'>-</span><span class='memory identifier id'>memory</span> <span class='database identifier id'>database</span>
 <span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span>
@@ -493,9 +528,9 @@
 </pre></div></div>
     
     <div id="footer">
-  Generated on Mon Mar 22 12:59:26 2010 by 
+  Generated on Tue Mar 30 11:20:03 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.3 (ruby-1.8.7).
+  0.5.4 (ruby-1.8.7).
 </div>
 
   </body>

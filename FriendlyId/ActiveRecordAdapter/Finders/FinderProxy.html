@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
+<title>Class: FriendlyId::ActiveRecordAdapter::Finders::FinderProxy</title>
+<link rel="stylesheet" href="../../../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../../../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '../../..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../_index.html">Index (F)</a> &raquo; 
+    <span class='title'><a href="../../../FriendlyId.html" title="FriendlyId (module)">FriendlyId</a></span> &raquo; <span class='title'><a href="../../ActiveRecordAdapter.html" title="FriendlyId::ActiveRecordAdapter (module)">ActiveRecordAdapter</a></span> &raquo; <span class='title'><a href="../Finders.html" title="FriendlyId::ActiveRecordAdapter::Finders (module)">Finders</a></span>
+     &raquo; 
+    <span class="title">FinderProxy</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: FriendlyId::ActiveRecordAdapter::Finders::FinderProxy 
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">FriendlyId::ActiveRecordAdapter::Finders::FinderProxy</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+      <dt class="r2">Extends:</dt>
+      <dd class="r2">Forwardable</dd>
+      
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/friendly_id/active_record_adapter/finders.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+FinderProxy is used to choose which finder class to instantiate; depending
+on the model_class&#8217;s <tt>friendly_id_config</tt> and the options
+passed into the constructor, it will decide whether to use simple or
+slugged finder, a single or multiple finder, and in the case of slugs, a
+cached or uncached finder.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div>
+
+  
+  <h2>Instance Attribute Summary</h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#finder-instance_method" title="#finder (instance method)">- (Object) <strong>finder</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Perform the find query.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#finder_class-instance_method" title="#finder_class (instance method)">- (Object) <strong>finder_class</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute finder_class.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ids-instance_method" title="#ids (instance method)">- (Object) <strong>ids</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute ids.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#model_class-instance_method" title="#model_class (instance method)">- (Object) <strong>model_class</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute model_class.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#options-instance_method" title="#options (instance method)">- (Object) <strong>options</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute options.
+</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+  
+    <h2>Instance Method Summary</h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (FinderProxy) <strong>initialize</strong>(model_class, *args, &amp;block) </a>
+    
+
+    
+  </span>
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+A new instance of FinderProxy.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#multiple%3F-instance_method" title="#multiple? (instance method)">- (Boolean) <strong>multiple?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt><a href="" title="FriendlyId::ActiveRecordAdapter::Finders::FinderProxy (class)">FinderProxy</a></tt>) <strong>initialize</strong>(model_class, *args, &amp;block) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+A new instance of FinderProxy
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/finders.rb', line 29</span>
+
+<span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='model_class identifier id'>model_class</span><span class='comma token'>,</span> <span class='mult op'>*</span><span class='args identifier id'>args</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
+  <span class='@model_class ivar id'>@model_class</span> <span class='assign token'>=</span> <span class='model_class identifier id'>model_class</span>
+  <span class='@ids ivar id'>@ids</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='shift identifier id'>shift</span>
+  <span class='@options ivar id'>@options</span> <span class='assign token'>=</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='first identifier id'>first</span><span class='dot token'>.</span><span class='kind_of? fid id'>kind_of?</span><span class='lparen token'>(</span><span class='Hash constant id'>Hash</span><span class='rparen token'>)</span> <span class='question op'>?</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='first identifier id'>first</span> <span class='colon op'>:</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <span id="finder-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="finder-instance_method">
+  
+    - (<tt>Object</tt>) <strong>finder</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Perform the find query.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/finders.rb', line 36</span>
+
+<span class='def def kw'>def</span> <span class='finder identifier id'>finder</span>
+  <span class='@finder ivar id'>@finder</span> <span class='opasgn op'>||=</span> <span class='finder_class identifier id'>finder_class</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='ids identifier id'>ids</span><span class='comma token'>,</span> <span class='model_class identifier id'>model_class</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="finder_class-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="finder_class-instance_method">
+  
+    - (<tt>Object</tt>) <strong>finder_class</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute finder_class
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+22
+23
+24</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/finders.rb', line 22</span>
+
+<span class='def def kw'>def</span> <span class='finder_class identifier id'>finder_class</span>
+  <span class='@finder_class ivar id'>@finder_class</span> <span class='opasgn op'>||=</span> <span class='slugged? fid id'>slugged?</span> <span class='integer val'>? </span><span class='slugged_finder_class identifier id'>slugged_finder_class</span> <span class='colon op'>:</span> <span class='simple_finder_class identifier id'>simple_finder_class</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="ids-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="ids-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ids</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute ids
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+23
+24
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/finders.rb', line 23</span>
+
+<span class='def def kw'>def</span> <span class='ids identifier id'>ids</span>
+  <span class='@ids ivar id'>@ids</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="model_class-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="model_class-instance_method">
+  
+    - (<tt>Object</tt>) <strong>model_class</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute model_class
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/finders.rb', line 24</span>
+
+<span class='def def kw'>def</span> <span class='model_class identifier id'>model_class</span>
+  <span class='@model_class ivar id'>@model_class</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="options-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="options-instance_method">
+  
+    - (<tt>Object</tt>) <strong>options</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute options
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/finders.rb', line 25</span>
+
+<span class='def def kw'>def</span> <span class='options identifier id'>options</span>
+  <span class='@options ivar id'>@options</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="multiple?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>multiple?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/finders.rb', line 44</span>
+
+<span class='def def kw'>def</span> <span class='multiple? fid id'>multiple?</span>
+  <span class='ids identifier id'>ids</span><span class='dot token'>.</span><span class='kind_of? fid id'>kind_of?</span> <span class='Array constant id'>Array</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Tue Mar 30 11:20:04 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.4 (ruby-1.8.7).
+</div>
+
+  </body>
+</html>

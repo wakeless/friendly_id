@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
 <title>Module: FriendlyId::Slugged::Model</title>
 <link rel="stylesheet" href="../../css/style.css" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="../../css/common.css" type="text/css" media="screen" charset="utf-8" />
@@ -56,8 +56,13 @@
     
   
   
-    <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/friendly_id/slugged.rb</dd>
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><a href="../ActiveRecordAdapter/SluggedModel.html" title="FriendlyId::ActiveRecordAdapter::SluggedModel (module)">FriendlyId::ActiveRecordAdapter::SluggedModel</a></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/friendly_id/slugged.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -85,10 +90,10 @@
   
 
   
-    <span class="summary_desc">
+    <span class="summary_desc"><div class='inline'><p>
 Returns the value of attribute slug.
-
-</span>
+</p>
+</div></span>
   
 </li>
 
@@ -96,11 +101,12 @@ Returns the value of attribute slug.
   </ul>
 
 
-  <h2>Instance Method Summary</h2>
+  
+    <h2>Instance Method Summary</h2>
 
-  <ul class="summary">
-    
-      <li class="public ">
+    <ul class="summary">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#find_slug-instance_method" title="#find_slug (instance method)">- (Object) <strong>find_slug</strong> </a>
@@ -115,12 +121,12 @@ Returns the value of attribute slug.
   
 
   
-    <span class="summary_desc"></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#friendly_id-instance_method" title="#friendly_id (instance method)">- (Object) <strong>friendly_id</strong> </a>
@@ -135,15 +141,15 @@ Returns the value of attribute slug.
   
 
   
-    <span class="summary_desc">
+    <span class="summary_desc"><div class='inline'><p>
 The friendly id.
-
-</span>
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#friendly_id_config-instance_method" title="#friendly_id_config (instance method)">- (Object) <strong>friendly_id_config</strong> </a>
@@ -158,12 +164,12 @@ The friendly id.
   
 
   
-    <span class="summary_desc"></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#friendly_id_status-instance_method" title="#friendly_id_status (instance method)">- (Object) <strong>friendly_id_status</strong> </a>
@@ -178,15 +184,15 @@ The friendly id.
   
 
   
-    <span class="summary_desc">
+    <span class="summary_desc"><div class='inline'><p>
 Get the <tt><a href="../Status.html" title="FriendlyId::Status (class)">FriendlyId::Status</a></tt> after the find has been performed.
-
-</span>
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#normalize_friendly_id-instance_method" title="#normalize_friendly_id (instance method)">- (String) <strong>normalize_friendly_id</strong>(string) </a>
@@ -201,15 +207,15 @@ Get the <tt><a href="../Status.html" title="FriendlyId::Status (class)">Friendly
   
 
   
-    <span class="summary_desc">
+    <span class="summary_desc"><div class='inline'><p>
 Clean up the string before setting it as the friendly_id.
-
-</span>
+</p>
+</div></span>
   
 </li>
 
-    
-      <li class="public ">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#slug%3F-instance_method" title="#slug? (instance method)">- (Boolean) <strong>slug?</strong> </a>
@@ -224,15 +230,17 @@ Clean up the string before setting it as the friendly_id.
   
 
   
-    <span class="summary_desc">
+    <span class="summary_desc"><div class='inline'><p>
 Does the instance have a slug?.
-
-</span>
+</p>
+</div></span>
   
 </li>
 
-    
-  </ul>
+      
+    </ul>
+  
+
 
   <div id="instance_attr_details" class="attr_details">
     <h2>Instance Attribute Details</h2>
@@ -369,7 +377,7 @@ The friendly id.
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 57</span>
 
 <span class='def def kw'>def</span> <span class='friendly_id identifier id'>friendly_id</span>
-  <span class='slug identifier id'>slug</span><span class='dot token'>.</span><span class='to_friendly_id identifier id'>to_friendly_id</span>
+  <span class='slug identifier id'>slug</span><span class='dot token'>.</span><span class='to_friendly_id identifier id'>to_friendly_id</span> <span class='if if_mod kw'>if</span> <span class='slug? fid id'>slug?</span>
 <span class='end end kw'>end</span>
 </pre>
     </td>
@@ -477,10 +485,10 @@ this method to add your own custom normalization routines.
       
       
         &mdash;
-        
+        <div class='inline'><p>
 .
-
-
+</p>
+</div>
       
     </li>
   
@@ -579,9 +587,9 @@ Does the instance have a slug?
 </div>
     
     <div id="footer">
-  Generated on Mon Mar 22 12:59:29 2010 by 
+  Generated on Tue Mar 30 11:20:03 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.3 (ruby-1.8.7).
+  0.5.4 (ruby-1.8.7).
 </div>
 
   </body>

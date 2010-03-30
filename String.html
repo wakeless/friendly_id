@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
 <title>Class: String</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
@@ -71,6 +71,7 @@
     
   
   
+  
     <dt class="r2 last">Defined in:</dt>
     <dd class="r2 last">lib/friendly_id.rb</dd>
   
@@ -80,11 +81,12 @@
 
 
 
-  <h2>Instance Method Summary</h2>
+  
+    <h2>Instance Method Summary</h2>
 
-  <ul class="summary">
-    
-      <li class="public ">
+    <ul class="summary">
+      
+        <li class="public ">
   <span class="summary_signature">
     
       <a href="#parse_friendly_id-instance_method" title="#parse_friendly_id (instance method)">- (Object) <strong>parse_friendly_id</strong>(separator = nil) </a>
@@ -99,12 +101,14 @@
   
 
   
-    <span class="summary_desc"></span>
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
-    
-  </ul>
+      
+    </ul>
+  
+
 
 
   <div id="instance_method_details" class="method_details_list">
@@ -124,14 +128,14 @@
       <pre class="lines">
 
 
+61
 62
 63
 64
-65
-66</pre>
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 62</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 61</span>
 
 <span class='def def kw'>def</span> <span class='parse_friendly_id identifier id'>parse_friendly_id</span><span class='lparen token'>(</span><span class='separator identifier id'>separator</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='rparen token'>)</span>
   <span class='separator identifier id'>separator</span> <span class='opasgn op'>||=</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='Configuration constant id'>Configuration</span><span class='colon2 op'>::</span><span class='DEFAULTS constant id'>DEFAULTS</span><span class='lbrack token'>[</span><span class='symbol val'>:sequence_separator</span><span class='rbrack token'>]</span>
@@ -149,9 +153,9 @@
 </div>
     
     <div id="footer">
-  Generated on Mon Mar 22 12:59:30 2010 by 
+  Generated on Tue Mar 30 11:20:05 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.3 (ruby-1.8.7).
+  0.5.4 (ruby-1.8.7).
 </div>
 
   </body>

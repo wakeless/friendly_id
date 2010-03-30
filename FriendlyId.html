@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta name="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
 <title>Module: FriendlyId</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
@@ -56,9 +56,10 @@
     
   
   
+  
     <dt class="r1 last">Defined in:</dt>
     <dd class="r1 last">lib/friendly_id.rb<span class="defines">,<br />
-  lib/friendly_id/test.rb,<br /> lib/friendly_id/status.rb,<br /> lib/friendly_id/version.rb,<br /> lib/friendly_id/slugged.rb,<br /> lib/friendly_id/finders.rb,<br /> lib/friendly_id/slug_string.rb,<br /> lib/friendly_id/configuration.rb,<br /> lib/friendly_id/active_record2.rb,<br /> lib/friendly_id/active_record2/slug.rb,<br /> lib/friendly_id/active_record2/tasks.rb,<br /> lib/friendly_id/active_record2/finders.rb,<br /> lib/friendly_id/active_record2/simple_model.rb,<br /> lib/friendly_id/active_record2/slugged_model.rb,<br /> lib/friendly_id/active_record2/configuration.rb</span>
+  lib/friendly_id/test.rb,<br /> lib/friendly_id/status.rb,<br /> lib/friendly_id/railtie.rb,<br /> lib/friendly_id/slugged.rb,<br /> lib/friendly_id/finders.rb,<br /> lib/friendly_id/version.rb,<br /> lib/friendly_id/slug_string.rb,<br /> lib/friendly_id/active_record.rb,<br /> lib/friendly_id/configuration.rb,<br /> lib/friendly_id/active_record_adapter/tasks.rb,<br /> lib/friendly_id/active_record_adapter/finders.rb,<br /> lib/friendly_id/active_record_adapter/simple_model.rb,<br /> lib/friendly_id/active_record_adapter/configuration.rb,<br /> lib/friendly_id/active_record_adapter/slugged_model.rb</span>
 </dd>
   
 </dl>
@@ -79,11 +80,11 @@ encoding: utf-8
 <p class="children">
    
     
-      <strong class="modules">Modules:</strong> <a href="FriendlyId/ActiveRecord2.html" title="FriendlyId::ActiveRecord2 (module)">ActiveRecord2</a>, <a href="FriendlyId/Base.html" title="FriendlyId::Base (module)">Base</a>, <a href="FriendlyId/Finders.html" title="FriendlyId::Finders (module)">Finders</a>, <a href="FriendlyId/Slugged.html" title="FriendlyId::Slugged (module)">Slugged</a>, <a href="FriendlyId/Test.html" title="FriendlyId::Test (module)">Test</a>, <a href="FriendlyId/Version.html" title="FriendlyId::Version (module)">Version</a>
+      <strong class="modules">Modules:</strong> <a href="FriendlyId/ActiveRecordAdapter.html" title="FriendlyId::ActiveRecordAdapter (module)">ActiveRecordAdapter</a>, <a href="FriendlyId/Base.html" title="FriendlyId::Base (module)">Base</a>, <a href="FriendlyId/Finders.html" title="FriendlyId::Finders (module)">Finders</a>, <a href="FriendlyId/Slugged.html" title="FriendlyId::Slugged (module)">Slugged</a>, <a href="FriendlyId/Test.html" title="FriendlyId::Test (module)">Test</a>, <a href="FriendlyId/Version.html" title="FriendlyId::Version (module)">Version</a>
     
    
     
-      <strong class="classes">Classes:</strong> <a href="FriendlyId/BlankError.html" title="FriendlyId::BlankError (class)">BlankError</a>, <a href="FriendlyId/Configuration.html" title="FriendlyId::Configuration (class)">Configuration</a>, <a href="FriendlyId/ReservedError.html" title="FriendlyId::ReservedError (class)">ReservedError</a>, <a href="FriendlyId/SlugGenerationError.html" title="FriendlyId::SlugGenerationError (class)">SlugGenerationError</a>, <a href="FriendlyId/SlugString.html" title="FriendlyId::SlugString (class)">SlugString</a>, <a href="FriendlyId/Status.html" title="FriendlyId::Status (class)">Status</a>, <a href="FriendlyId/TaskRunner.html" title="FriendlyId::TaskRunner (class)">TaskRunner</a>
+      <strong class="classes">Classes:</strong> <a href="FriendlyId/BlankError.html" title="FriendlyId::BlankError (class)">BlankError</a>, <a href="FriendlyId/Configuration.html" title="FriendlyId::Configuration (class)">Configuration</a>, <a href="FriendlyId/Railtie.html" title="FriendlyId::Railtie (class)">Railtie</a>, <a href="FriendlyId/ReservedError.html" title="FriendlyId::ReservedError (class)">ReservedError</a>, <a href="FriendlyId/SlugGenerationError.html" title="FriendlyId::SlugGenerationError (class)">SlugGenerationError</a>, <a href="FriendlyId/SlugString.html" title="FriendlyId::SlugString (class)">SlugString</a>, <a href="FriendlyId/Status.html" title="FriendlyId::Status (class)">Status</a>, <a href="FriendlyId/TaskRunner.html" title="FriendlyId::TaskRunner (class)">TaskRunner</a>
     
   
 </p>
@@ -91,12 +92,13 @@ encoding: utf-8
 
 
 
+
 </div>
     
     <div id="footer">
-  Generated on Mon Mar 22 12:59:29 2010 by 
+  Generated on Tue Mar 30 11:20:05 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.3 (ruby-1.8.7).
+  0.5.4 (ruby-1.8.7).
 </div>
 
   </body>
