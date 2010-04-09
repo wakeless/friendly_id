@@ -89,11 +89,11 @@ needed primarily for Unicode encoding normalization and proper calculation
 of string lengths.
 </p>
 <p>
-Note that this class includes many &quot;bang methods&quot; such as
-<tt><a href="#clean%21-instance_method" title="FriendlyId::SlugString#clean! (method)">#clean!</a></tt> and <tt><a href="#normalize%21-instance_method" title="FriendlyId::SlugString#normalize! (method)">#normalize!</a></tt> that perform actions on the string in-place.
-Each of these methods has a corresponding &quot;bangless&quot; method
-(i.e., <tt>SlugString#clean!</tt> and <tt>SlugString#clean</tt>) which does not appear in
-the documentation because it is generated dynamically.
+Note that this class includes many "bang methods" such as <tt><a href="#clean%21-instance_method" title="FriendlyId::SlugString#clean! (method)">#clean!</a></tt> and
+<tt><a href="#normalize%21-instance_method" title="FriendlyId::SlugString#normalize! (method)">#normalize!</a></tt> that perform actions on the string in-place. Each of these
+methods has a corresponding "bangless" method (i.e., <tt>SlugString#clean!</tt>
+and <tt>SlugString#clean</tt>) which does not appear in the documentation because
+it is generated dynamically.
 </p>
 <p>
 All of the bang methods return an instance of String, while the bangless
@@ -172,6 +172,56 @@ All values are Unicode decimal characters or character arrays.
   <span class='rbrack token'>]</span><span class='dot token'>.</span><span class='freeze identifier id'>freeze</span><span class='comma token'>,</span>
   <span class='symbol val'>:german</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='Hash constant id'>Hash</span><span class='lbrack token'>[</span><span class='integer val'>252</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='integer val'>117</span><span class='comma token'>,</span> <span class='integer val'>101</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='integer val'>246</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='integer val'>111</span><span class='comma token'>,</span> <span class='integer val'>101</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='integer val'>228</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='integer val'>97</span><span class='comma token'>,</span> <span class='integer val'>101</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
   <span class='symbol val'>:spanish</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='Hash constant id'>Hash</span><span class='lbrack token'>[</span><span class='integer val'>209</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='integer val'>78</span><span class='comma token'>,</span> <span class='integer val'>110</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='integer val'>241</span><span class='comma token'>,</span> <span class='lbrack token'>[</span><span class='integer val'>110</span><span class='comma token'>,</span> <span class='integer val'>110</span><span class='rbrack token'>]</span><span class='rbrack token'>]</span>
+<span class='rbrace token'>}</span>
+</pre></dd>
+      
+        <dt id="CP1252-constant" class="">CP1252 =
+          <div class="docstring">
+  <div class="discussion">
+    <p>
+CP-1252 decimal byte => UTF-8 approximation as an array of bytes
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbrace token'>{</span>
+  <span class='integer val'>128</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>130</span><span class='comma token'>,</span> <span class='integer val'>172</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>129</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span>
+  <span class='integer val'>130</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>128</span><span class='comma token'>,</span> <span class='integer val'>154</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>131</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>198</span><span class='comma token'>,</span> <span class='integer val'>146</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>132</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>128</span><span class='comma token'>,</span> <span class='integer val'>158</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>133</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>128</span><span class='comma token'>,</span> <span class='integer val'>166</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>134</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>128</span><span class='comma token'>,</span> <span class='integer val'>160</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>135</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>128</span><span class='comma token'>,</span> <span class='integer val'>161</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>136</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>203</span><span class='comma token'>,</span> <span class='integer val'>134</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>137</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>128</span><span class='comma token'>,</span> <span class='integer val'>176</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>138</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>197</span><span class='comma token'>,</span> <span class='integer val'>160</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>139</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>128</span><span class='comma token'>,</span> <span class='integer val'>185</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>140</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>197</span><span class='comma token'>,</span> <span class='integer val'>146</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>141</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span>
+  <span class='integer val'>142</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>197</span><span class='comma token'>,</span> <span class='integer val'>189</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>143</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span>
+  <span class='integer val'>144</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span>
+  <span class='integer val'>145</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>128</span><span class='comma token'>,</span> <span class='integer val'>152</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>146</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>128</span><span class='comma token'>,</span> <span class='integer val'>153</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>147</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>128</span><span class='comma token'>,</span> <span class='integer val'>156</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>148</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>128</span><span class='comma token'>,</span> <span class='integer val'>157</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>149</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>128</span><span class='comma token'>,</span> <span class='integer val'>162</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>150</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>128</span><span class='comma token'>,</span> <span class='integer val'>147</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>151</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>128</span><span class='comma token'>,</span> <span class='integer val'>148</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>152</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>203</span><span class='comma token'>,</span> <span class='integer val'>156</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>153</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>132</span><span class='comma token'>,</span> <span class='integer val'>162</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>154</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>197</span><span class='comma token'>,</span> <span class='integer val'>161</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>155</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>226</span><span class='comma token'>,</span> <span class='integer val'>128</span><span class='comma token'>,</span> <span class='integer val'>186</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>156</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>197</span><span class='comma token'>,</span> <span class='integer val'>147</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>157</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span>
+  <span class='integer val'>158</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>197</span><span class='comma token'>,</span> <span class='integer val'>190</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
+  <span class='integer val'>159</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='integer val'>197</span><span class='comma token'>,</span> <span class='integer val'>184</span><span class='rbrack token'>]</span>
 <span class='rbrace token'>}</span>
 </pre></dd>
       
@@ -360,6 +410,29 @@ Normalize the string for a given <tt><a href="Configuration.html" title="Friendl
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#tidy_bytes%21-instance_method" title="#tidy_bytes! (instance method)">- (Object) <strong>tidy_bytes!</strong>(force = false) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Attempt to replace invalid UTF-8 bytes with valid ones.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#to_ascii%21-instance_method" title="#to_ascii! (instance method)">- (Object) <strong>to_ascii!</strong> </a>
     
 
@@ -466,7 +539,7 @@ the max length if necessary.
 
   
     <span class="summary_desc"><div class='inline'><p>
-Replaces whitespace with dashes (&quot;-&quot;).
+Replaces whitespace with dashes ("-").
 </p>
 </div></span>
   
@@ -548,15 +621,17 @@ The string to use as the basis of the SlugString.
       <pre class="lines">
 
 
-111
-112
-113</pre>
+147
+148
+149
+150</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 111</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 147</span>
 
 <span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='string identifier id'>string</span><span class='rparen token'>)</span>
   <span class='super super kw'>super</span> <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
+  <span class='tidy_bytes! fid id'>tidy_bytes!</span>
 <span class='end end kw'>end</span>
 </pre>
     </td>
@@ -582,104 +657,40 @@ The string to use as the basis of the SlugString.
   <div class="discussion">
     <p>
 This method can be used by developers wishing to debug the <tt><a href="#APPROXIMATIONS-constant" title="FriendlyId::SlugString::APPROXIMATIONS (constant)">APPROXIMATIONS</a></tt>
-hashes, which are written in a hard-to-read format. {:common =&gt;
-{&quot;À&quot;=&gt;&quot;A&quot;, &quot;Á&quot;=&gt;&quot;A&quot;,
-&quot;Â&quot;=&gt;&quot;A&quot;, &quot;Ã&quot;=&gt;&quot;A&quot;,
-&quot;Ä&quot;=&gt;&quot;A&quot;, &quot;Å&quot;=&gt;&quot;A&quot;,
-&quot;Æ&quot;=&gt;&quot;AE&quot;, &quot;Ç&quot;=&gt;&quot;C&quot;,
-&quot;È&quot;=&gt;&quot;E&quot;, &quot;É&quot;=&gt;&quot;E&quot;,
-&quot;Ê&quot;=&gt;&quot;E&quot;, &quot;Ë&quot;=&gt;&quot;E&quot;,
-&quot;Ì&quot;=&gt;&quot;I&quot;, &quot;Í&quot;=&gt;&quot;I&quot;,
-&quot;Î&quot;=&gt;&quot;I&quot;, &quot;Ï&quot;=&gt;&quot;I&quot;,
-&quot;Ð&quot;=&gt;&quot;D&quot;, &quot;Ñ&quot;=&gt;&quot;N&quot;,
-&quot;Ò&quot;=&gt;&quot;O&quot;, &quot;Ó&quot;=&gt;&quot;O&quot;,
-&quot;Ô&quot;=&gt;&quot;O&quot;, &quot;Õ&quot;=&gt;&quot;O&quot;,
-&quot;Ö&quot;=&gt;&quot;O&quot;, &quot;×&quot;=&gt;&quot;x&quot;,
-&quot;Ø&quot;=&gt;&quot;O&quot;, &quot;Ù&quot;=&gt;&quot;U&quot;,
-&quot;Ú&quot;=&gt;&quot;U&quot;, &quot;Û&quot;=&gt;&quot;U&quot;,
-&quot;Ü&quot;=&gt;&quot;U&quot;, &quot;Ý&quot;=&gt;&quot;Y&quot;,
-&quot;Þ&quot;=&gt;&quot;Th&quot;, &quot;ß&quot;=&gt;&quot;ss&quot;,
-&quot;à&quot;=&gt;&quot;a&quot;, &quot;á&quot;=&gt;&quot;a&quot;,
-&quot;â&quot;=&gt;&quot;a&quot;, &quot;ã&quot;=&gt;&quot;a&quot;,
-&quot;ä&quot;=&gt;&quot;a&quot;, &quot;å&quot;=&gt;&quot;a&quot;,
-&quot;æ&quot;=&gt;&quot;ae&quot;, &quot;ç&quot;=&gt;&quot;c&quot;,
-&quot;è&quot;=&gt;&quot;e&quot;, &quot;é&quot;=&gt;&quot;e&quot;,
-&quot;ê&quot;=&gt;&quot;e&quot;, &quot;ë&quot;=&gt;&quot;e&quot;,
-&quot;ì&quot;=&gt;&quot;i&quot;, &quot;í&quot;=&gt;&quot;i&quot;,
-&quot;î&quot;=&gt;&quot;i&quot;, &quot;ï&quot;=&gt;&quot;i&quot;,
-&quot;ð&quot;=&gt;&quot;d&quot;, &quot;ñ&quot;=&gt;&quot;n&quot;,
-&quot;ò&quot;=&gt;&quot;o&quot;, &quot;ó&quot;=&gt;&quot;o&quot;,
-&quot;ô&quot;=&gt;&quot;o&quot;, &quot;õ&quot;=&gt;&quot;o&quot;,
-&quot;ö&quot;=&gt;&quot;o&quot;, &quot;ø&quot;=&gt;&quot;o&quot;,
-&quot;ù&quot;=&gt;&quot;u&quot;, &quot;ú&quot;=&gt;&quot;u&quot;,
-&quot;û&quot;=&gt;&quot;u&quot;, &quot;ü&quot;=&gt;&quot;u&quot;,
-&quot;ý&quot;=&gt;&quot;y&quot;, &quot;þ&quot;=&gt;&quot;th&quot;,
-&quot;ÿ&quot;=&gt;&quot;y&quot;, &quot;Ā&quot;=&gt;&quot;A&quot;,
-&quot;ā&quot;=&gt;&quot;a&quot;, &quot;Ă&quot;=&gt;&quot;A&quot;,
-&quot;ă&quot;=&gt;&quot;a&quot;, &quot;Ą&quot;=&gt;&quot;A&quot;,
-&quot;ą&quot;=&gt;&quot;a&quot;, &quot;Ć&quot;=&gt;&quot;C&quot;,
-&quot;ć&quot;=&gt;&quot;c&quot;, &quot;Ĉ&quot;=&gt;&quot;C&quot;,
-&quot;ĉ&quot;=&gt;&quot;c&quot;, &quot;Ċ&quot;=&gt;&quot;C&quot;,
-&quot;ċ&quot;=&gt;&quot;c&quot;, &quot;Č&quot;=&gt;&quot;C&quot;,
-&quot;č&quot;=&gt;&quot;c&quot;, &quot;Ď&quot;=&gt;&quot;D&quot;,
-&quot;ď&quot;=&gt;&quot;d&quot;, &quot;Đ&quot;=&gt;&quot;D&quot;,
-&quot;đ&quot;=&gt;&quot;d&quot;, &quot;Ē&quot;=&gt;&quot;E&quot;,
-&quot;ē&quot;=&gt;&quot;e&quot;, &quot;Ĕ&quot;=&gt;&quot;E&quot;,
-&quot;ĕ&quot;=&gt;&quot;e&quot;, &quot;Ė&quot;=&gt;&quot;E&quot;,
-&quot;ė&quot;=&gt;&quot;e&quot;, &quot;Ę&quot;=&gt;&quot;E&quot;,
-&quot;ę&quot;=&gt;&quot;e&quot;, &quot;Ě&quot;=&gt;&quot;E&quot;,
-&quot;ě&quot;=&gt;&quot;e&quot;, &quot;Ĝ&quot;=&gt;&quot;G&quot;,
-&quot;ĝ&quot;=&gt;&quot;g&quot;, &quot;Ğ&quot;=&gt;&quot;G&quot;,
-&quot;ğ&quot;=&gt;&quot;g&quot;, &quot;Ġ&quot;=&gt;&quot;G&quot;,
-&quot;ġ&quot;=&gt;&quot;g&quot;, &quot;Ģ&quot;=&gt;&quot;G&quot;,
-&quot;ģ&quot;=&gt;&quot;g&quot;, &quot;Ĥ&quot;=&gt;&quot;H&quot;,
-&quot;ĥ&quot;=&gt;&quot;h&quot;, &quot;Ħ&quot;=&gt;&quot;H&quot;,
-&quot;ħ&quot;=&gt;&quot;h&quot;, &quot;Ĩ&quot;=&gt;&quot;I&quot;,
-&quot;ĩ&quot;=&gt;&quot;i&quot;, &quot;Ī&quot;=&gt;&quot;I&quot;,
-&quot;ī&quot;=&gt;&quot;i&quot;, &quot;Ĭ&quot;=&gt;&quot;I&quot;,
-&quot;ĭ&quot;=&gt;&quot;i&quot;, &quot;Į&quot;=&gt;&quot;I&quot;,
-&quot;į&quot;=&gt;&quot;i&quot;, &quot;İ&quot;=&gt;&quot;I&quot;,
-&quot;ı&quot;=&gt;&quot;i&quot;, &quot;Ĳ&quot;=&gt;&quot;IJ&quot;,
-&quot;ĳ&quot;=&gt;&quot;ij&quot;, &quot;Ĵ&quot;=&gt;&quot;J&quot;,
-&quot;ĵ&quot;=&gt;&quot;j&quot;, &quot;Ķ&quot;=&gt;&quot;K&quot;,
-&quot;ķ&quot;=&gt;&quot;k&quot;, &quot;ĸ&quot;=&gt;&quot;k&quot;,
-&quot;Ĺ&quot;=&gt;&quot;L&quot;, &quot;ĺ&quot;=&gt;&quot;l&quot;,
-&quot;Ļ&quot;=&gt;&quot;L&quot;, &quot;ļ&quot;=&gt;&quot;l&quot;,
-&quot;Ľ&quot;=&gt;&quot;L&quot;, &quot;ľ&quot;=&gt;&quot;l&quot;,
-&quot;Ŀ&quot;=&gt;&quot;L&quot;, &quot;ŀ&quot;=&gt;&quot;l&quot;,
-&quot;Ł&quot;=&gt;&quot;L&quot;, &quot;ł&quot;=&gt;&quot;l&quot;,
-&quot;Ń&quot;=&gt;&quot;N&quot;, &quot;ń&quot;=&gt;&quot;n&quot;,
-&quot;Ņ&quot;=&gt;&quot;N&quot;, &quot;ņ&quot;=&gt;&quot;n&quot;,
-&quot;Ň&quot;=&gt;&quot;N&quot;, &quot;ň&quot;=&gt;&quot;n&quot;,
-&quot;ŉ&quot;=&gt;&quot;&#8217;n&quot;, &quot;Ŋ&quot;=&gt;&quot;NG&quot;,
-&quot;ŋ&quot;=&gt;&quot;ng&quot;, &quot;Ō&quot;=&gt;&quot;O&quot;,
-&quot;ō&quot;=&gt;&quot;o&quot;, &quot;Ŏ&quot;=&gt;&quot;O&quot;,
-&quot;ŏ&quot;=&gt;&quot;o&quot;, &quot;Ő&quot;=&gt;&quot;O&quot;,
-&quot;ő&quot;=&gt;&quot;o&quot;, &quot;Œ&quot;=&gt;&quot;OE&quot;,
-&quot;œ&quot;=&gt;&quot;oe&quot;, &quot;Ŕ&quot;=&gt;&quot;R&quot;,
-&quot;ŕ&quot;=&gt;&quot;r&quot;, &quot;Ŗ&quot;=&gt;&quot;R&quot;,
-&quot;ŗ&quot;=&gt;&quot;r&quot;, &quot;Ř&quot;=&gt;&quot;R&quot;,
-&quot;ř&quot;=&gt;&quot;r&quot;, &quot;Ś&quot;=&gt;&quot;S&quot;,
-&quot;ś&quot;=&gt;&quot;s&quot;, &quot;Ŝ&quot;=&gt;&quot;S&quot;,
-&quot;ŝ&quot;=&gt;&quot;s&quot;, &quot;Ş&quot;=&gt;&quot;S&quot;,
-&quot;ş&quot;=&gt;&quot;s&quot;, &quot;Š&quot;=&gt;&quot;S&quot;,
-&quot;š&quot;=&gt;&quot;s&quot;, &quot;Ţ&quot;=&gt;&quot;T&quot;,
-&quot;ţ&quot;=&gt;&quot;t&quot;, &quot;Ť&quot;=&gt;&quot;T&quot;,
-&quot;ť&quot;=&gt;&quot;t&quot;, &quot;Ŧ&quot;=&gt;&quot;T&quot;,
-&quot;ŧ&quot;=&gt;&quot;t&quot;, &quot;Ũ&quot;=&gt;&quot;U&quot;,
-&quot;ũ&quot;=&gt;&quot;u&quot;, &quot;Ū&quot;=&gt;&quot;U&quot;,
-&quot;ū&quot;=&gt;&quot;u&quot;, &quot;Ŭ&quot;=&gt;&quot;U&quot;,
-&quot;ŭ&quot;=&gt;&quot;u&quot;, &quot;Ů&quot;=&gt;&quot;U&quot;,
-&quot;ů&quot;=&gt;&quot;u&quot;, &quot;Ű&quot;=&gt;&quot;U&quot;,
-&quot;ű&quot;=&gt;&quot;u&quot;, &quot;Ų&quot;=&gt;&quot;U&quot;,
-&quot;ų&quot;=&gt;&quot;u&quot;, &quot;Ŵ&quot;=&gt;&quot;W&quot;,
-&quot;ŵ&quot;=&gt;&quot;w&quot;, &quot;Ŷ&quot;=&gt;&quot;Y&quot;,
-&quot;ŷ&quot;=&gt;&quot;y&quot;, &quot;Ÿ&quot;=&gt;&quot;Y&quot;,
-&quot;Ź&quot;=&gt;&quot;Z&quot;, &quot;ź&quot;=&gt;&quot;z&quot;,
-&quot;Ż&quot;=&gt;&quot;Z&quot;, &quot;ż&quot;=&gt;&quot;z&quot;,
-&quot;Ž&quot;=&gt;&quot;Z&quot;, &quot;ž&quot;=&gt;&quot;z&quot;},
-:german =&gt; <tt>&quot;ö&quot;=&gt;&quot;oe&quot;, &quot;ä&quot;=&gt;&quot;ae&quot;</tt>,
-:spanish =&gt; <tt>&quot;ñ&quot;=&gt;&quot;nn&quot;</tt>}
+hashes, which are written in a hard-to-read format. {:common => {"À"=>"A",
+"Á"=>"A", "Â"=>"A", "Ã"=>"A", "Ä"=>"A", "Å"=>"A", "Æ"=>"AE",
+"Ç"=>"C", "È"=>"E", "É"=>"E", "Ê"=>"E", "Ë"=>"E", "Ì"=>"I",
+"Í"=>"I", "Î"=>"I", "Ï"=>"I", "Ð"=>"D", "Ñ"=>"N", "Ò"=>"O",
+"Ó"=>"O", "Ô"=>"O", "Õ"=>"O", "Ö"=>"O", "×"=>"x", "Ø"=>"O",
+"Ù"=>"U", "Ú"=>"U", "Û"=>"U", "Ü"=>"U", "Ý"=>"Y", "Þ"=>"Th",
+"ß"=>"ss", "à"=>"a", "á"=>"a", "â"=>"a", "ã"=>"a", "ä"=>"a",
+"å"=>"a", "æ"=>"ae", "ç"=>"c", "è"=>"e", "é"=>"e", "ê"=>"e",
+"ë"=>"e", "ì"=>"i", "í"=>"i", "î"=>"i", "ï"=>"i", "ð"=>"d",
+"ñ"=>"n", "ò"=>"o", "ó"=>"o", "ô"=>"o", "õ"=>"o", "ö"=>"o",
+"ø"=>"o", "ù"=>"u", "ú"=>"u", "û"=>"u", "ü"=>"u", "ý"=>"y",
+"þ"=>"th", "ÿ"=>"y", "Ā"=>"A", "ā"=>"a", "Ă"=>"A", "ă"=>"a",
+"Ą"=>"A", "ą"=>"a", "Ć"=>"C", "ć"=>"c", "Ĉ"=>"C", "ĉ"=>"c",
+"Ċ"=>"C", "ċ"=>"c", "Č"=>"C", "č"=>"c", "Ď"=>"D", "ď"=>"d",
+"Đ"=>"D", "đ"=>"d", "Ē"=>"E", "ē"=>"e", "Ĕ"=>"E", "ĕ"=>"e",
+"Ė"=>"E", "ė"=>"e", "Ę"=>"E", "ę"=>"e", "Ě"=>"E", "ě"=>"e",
+"Ĝ"=>"G", "ĝ"=>"g", "Ğ"=>"G", "ğ"=>"g", "Ġ"=>"G", "ġ"=>"g",
+"Ģ"=>"G", "ģ"=>"g", "Ĥ"=>"H", "ĥ"=>"h", "Ħ"=>"H", "ħ"=>"h",
+"Ĩ"=>"I", "ĩ"=>"i", "Ī"=>"I", "ī"=>"i", "Ĭ"=>"I", "ĭ"=>"i",
+"Į"=>"I", "į"=>"i", "İ"=>"I", "ı"=>"i", "Ĳ"=>"IJ", "ĳ"=>"ij",
+"Ĵ"=>"J", "ĵ"=>"j", "Ķ"=>"K", "ķ"=>"k", "ĸ"=>"k", "Ĺ"=>"L",
+"ĺ"=>"l", "Ļ"=>"L", "ļ"=>"l", "Ľ"=>"L", "ľ"=>"l", "Ŀ"=>"L",
+"ŀ"=>"l", "Ł"=>"L", "ł"=>"l", "Ń"=>"N", "ń"=>"n", "Ņ"=>"N",
+"ņ"=>"n", "Ň"=>"N", "ň"=>"n", "ŉ"=>"&#8217;n", "Ŋ"=>"NG", "ŋ"=>"ng",
+"Ō"=>"O", "ō"=>"o", "Ŏ"=>"O", "ŏ"=>"o", "Ő"=>"O", "ő"=>"o",
+"Œ"=>"OE", "œ"=>"oe", "Ŕ"=>"R", "ŕ"=>"r", "Ŗ"=>"R", "ŗ"=>"r",
+"Ř"=>"R", "ř"=>"r", "Ś"=>"S", "ś"=>"s", "Ŝ"=>"S", "ŝ"=>"s",
+"Ş"=>"S", "ş"=>"s", "Š"=>"S", "š"=>"s", "Ţ"=>"T", "ţ"=>"t",
+"Ť"=>"T", "ť"=>"t", "Ŧ"=>"T", "ŧ"=>"t", "Ũ"=>"U", "ũ"=>"u",
+"Ū"=>"U", "ū"=>"u", "Ŭ"=>"U", "ŭ"=>"u", "Ů"=>"U", "ů"=>"u",
+"Ű"=>"U", "ű"=>"u", "Ų"=>"U", "ų"=>"u", "Ŵ"=>"W", "ŵ"=>"w",
+"Ŷ"=>"Y", "ŷ"=>"y", "Ÿ"=>"Y", "Ź"=>"Z", "ź"=>"z", "Ż"=>"Z",
+"ż"=>"z", "Ž"=>"Z", "ž"=>"z"}, :german => {"ü"=>"ue", "ö"=>"oe",
+"ä"=>"ae"}, :spanish => <tt>"ñ"=>"nn"</tt>}
 </p>
 
 
@@ -722,14 +733,14 @@ Hash
       <pre class="lines">
 
 
-103
-104
-105
-106
-107</pre>
+139
+140
+141
+142
+143</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 103</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 139</span>
 
 <span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='dump_approximations identifier id'>dump_approximations</span>
   <span class='Hash constant id'>Hash</span><span class='lbrack token'>[</span><span class='APPROXIMATIONS constant id'>APPROXIMATIONS</span><span class='dot token'>.</span><span class='map identifier id'>map</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='approx identifier id'>approx</span><span class='bitor op'>|</span>
@@ -770,8 +781,8 @@ characters are left unmodified.
 </pre>
 <p>
 You can pass any key(s) from <tt><a href="#APPROXIMATIONS-constant" title="FriendlyId::SlugString::APPROXIMATIONS (constant)">APPROXIMATIONS</a></tt> as arguments. This allows for
-contextual approximations. By default; <tt>:spanish</tt> and <tt>:german</tt> are
-provided:
+contextual approximations. By default; <tt>:spanish</tt> and
+<tt>:german</tt> are provided:
 </p>
 <pre class="code">
   <span class='string identifier id'>string</span> <span class='assign token'>=</span> <span class='SlugString constant id'>SlugString</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='string val'>&quot;Jürgen Müller&quot;</span>
@@ -801,8 +812,7 @@ It&#8217;s also possible to use a custom approximation for all strings:
 </pre>
 <p>
 Notice that this method does not simply convert to ASCII; if you want to
-remove non-ASCII characters such as &quot;¡&quot; and &quot;¿&quot;, use
-<tt><a href="#to_ascii%21-instance_method" title="FriendlyId::SlugString#to_ascii! (method)">#to_ascii!</a></tt>:
+remove non-ASCII characters such as "¡" and "¿", use <tt><a href="#to_ascii%21-instance_method" title="FriendlyId::SlugString#to_ascii! (method)">#to_ascii!</a></tt>:
 </p>
 <pre class="code">
   <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='approximate_ascii! fid id'>approximate_ascii!</span><span class='lparen token'>(</span><span class='symbol val'>:spanish</span><span class='rparen token'>)</span>       <span class='comment val'># =&gt; &quot;¡Feliz anno!&quot;</span>
@@ -854,13 +864,13 @@ String
       <pre class="lines">
 
 
-156
-157
-158
-159</pre>
+193
+194
+195
+196</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 156</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 193</span>
 
 <span class='def def kw'>def</span> <span class='approximate_ascii! fid id'>approximate_ascii!</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
   <span class='@maps ivar id'>@maps</span> <span class='assign token'>=</span> <span class='lparen token'>(</span><span class='self self kw'>self</span><span class='dot token'>.</span><span class='class identifier id'>class</span><span class='dot token'>.</span><span class='approximations identifier id'>approximations</span> <span class='plus op'>+</span> <span class='args identifier id'>args</span> <span class='plus op'>+</span> <span class='lbrack token'>[</span><span class='symbol val'>:common</span><span class='rbrack token'>]</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='dot token'>.</span><span class='uniq identifier id'>uniq</span>
@@ -916,12 +926,12 @@ String
       <pre class="lines">
 
 
-164
-165
-166</pre>
+201
+202
+203</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 164</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 201</span>
 
 <span class='def def kw'>def</span> <span class='clean! fid id'>clean!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='@wrapped_string ivar id'>@wrapped_string</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/\A\-|\-\z/</span><span class='comma token'>,</span> <span class='string val'>&quot;&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/\s+/</span><span class='u identifier id'>u</span><span class='comma token'>,</span> <span class='string val'>&quot; &quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='strip identifier id'>strip</span>
@@ -976,12 +986,12 @@ String
       <pre class="lines">
 
 
-171
-172
-173</pre>
+208
+209
+210</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 171</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 208</span>
 
 <span class='def def kw'>def</span> <span class='downcase! fid id'>downcase!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='apply_mapping identifier id'>apply_mapping</span> <span class='symbol val'>:lowercase_mapping</span>
@@ -1038,15 +1048,15 @@ String
       <pre class="lines">
 
 
-214
-215
-216
-217
-218
-219</pre>
+251
+252
+253
+254
+255
+256</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 214</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 251</span>
 
 <span class='def def kw'>def</span> <span class='normalize! fid id'>normalize!</span>
   <span class='clean! fid id'>clean!</span>
@@ -1118,19 +1128,158 @@ String
       <pre class="lines">
 
 
-200
-201
-202
-203
-204</pre>
+237
+238
+239
+240
+241</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 200</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 237</span>
 
 <span class='def def kw'>def</span> <span class='normalize_for! fid id'>normalize_for!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='rparen token'>)</span>
   <span class='approximate_ascii! fid id'>approximate_ascii!</span> <span class='if if_mod kw'>if</span> <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='approximate_ascii? fid id'>approximate_ascii?</span>
   <span class='to_ascii! fid id'>to_ascii!</span> <span class='if if_mod kw'>if</span> <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='strip_non_ascii? fid id'>strip_non_ascii?</span>
   <span class='normalize! fid id'>normalize!</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="tidy_bytes!-instance_method">
+  
+    - (<tt>Object</tt>) <strong>tidy_bytes!</strong>(force = false) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Attempt to replace invalid UTF-8 bytes with valid ones. This method naively
+assumes if you have invalid UTF8 bytes, they are either Windows CP-1252 or
+ISO8859-1. In practice this isn&#8217;t a bad assumption, but may not
+always work.
+</p>
+<p>
+Passing <tt>true</tt> will forcibly tidy all bytes, assuming that the
+string&#8217;s encoding is CP-1252 or ISO-8859-1.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 265</span>
+
+<span class='def def kw'>def</span> <span class='tidy_bytes! fid id'>tidy_bytes!</span><span class='lparen token'>(</span><span class='force identifier id'>force</span> <span class='assign token'>=</span> <span class='false false kw'>false</span><span class='rparen token'>)</span>
+
+  <span class='if if kw'>if</span> <span class='force identifier id'>force</span>
+    <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='@wrapped_string ivar id'>@wrapped_string</span><span class='dot token'>.</span><span class='unpack identifier id'>unpack</span><span class='lparen token'>(</span><span class='string val'>&quot;C*&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='map identifier id'>map</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='b identifier id'>b</span><span class='bitor op'>|</span>
+      <span class='tidy_byte identifier id'>tidy_byte</span><span class='lparen token'>(</span><span class='b identifier id'>b</span><span class='rparen token'>)</span>
+    <span class='end end kw'>end</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='dot token'>.</span><span class='compact identifier id'>compact</span><span class='dot token'>.</span><span class='pack identifier id'>pack</span><span class='lparen token'>(</span><span class='string val'>&quot;C*&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='unpack identifier id'>unpack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='pack identifier id'>pack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+
+  <span class='bytes identifier id'>bytes</span> <span class='assign token'>=</span> <span class='@wrapped_string ivar id'>@wrapped_string</span><span class='dot token'>.</span><span class='unpack identifier id'>unpack</span><span class='lparen token'>(</span><span class='string val'>&quot;C*&quot;</span><span class='rparen token'>)</span>
+  <span class='conts_expected identifier id'>conts_expected</span> <span class='assign token'>=</span> <span class='integer val'>0</span>
+  <span class='last_lead identifier id'>last_lead</span> <span class='assign token'>=</span> <span class='integer val'>0</span>
+
+  <span class='bytes identifier id'>bytes</span><span class='dot token'>.</span><span class='each_index identifier id'>each_index</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='i identifier id'>i</span><span class='bitor op'>|</span>
+
+    <span class='byte identifier id'>byte</span>          <span class='assign token'>=</span> <span class='bytes identifier id'>bytes</span><span class='lbrack token'>[</span><span class='i identifier id'>i</span><span class='rbrack token'>]</span>
+    <span class='is_ascii identifier id'>is_ascii</span>      <span class='assign token'>=</span> <span class='byte identifier id'>byte</span> <span class='lt op'>&lt;</span> <span class='integer val'>128</span>
+    <span class='is_cont identifier id'>is_cont</span>       <span class='assign token'>=</span> <span class='byte identifier id'>byte</span> <span class='gt op'>&gt;</span> <span class='integer val'>127</span> <span class='andop op'>&amp;&amp;</span> <span class='byte identifier id'>byte</span> <span class='lt op'>&lt;</span> <span class='integer val'>192</span>
+    <span class='is_lead identifier id'>is_lead</span>       <span class='assign token'>=</span> <span class='byte identifier id'>byte</span> <span class='gt op'>&gt;</span> <span class='integer val'>191</span> <span class='andop op'>&amp;&amp;</span> <span class='byte identifier id'>byte</span> <span class='lt op'>&lt;</span> <span class='integer val'>245</span>
+    <span class='is_unused identifier id'>is_unused</span>     <span class='assign token'>=</span> <span class='byte identifier id'>byte</span> <span class='gt op'>&gt;</span> <span class='integer val'>240</span>
+    <span class='is_restricted identifier id'>is_restricted</span> <span class='assign token'>=</span> <span class='byte identifier id'>byte</span> <span class='gt op'>&gt;</span> <span class='integer val'>244</span>
+
+    <span class='comment val'># Impossible or highly unlikely byte? Clean it.</span>
+    <span class='if if kw'>if</span> <span class='is_unused identifier id'>is_unused</span> <span class='orop op'>||</span> <span class='is_restricted identifier id'>is_restricted</span>
+      <span class='bytes identifier id'>bytes</span><span class='lbrack token'>[</span><span class='i identifier id'>i</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='tidy_byte identifier id'>tidy_byte</span><span class='lparen token'>(</span><span class='byte identifier id'>byte</span><span class='rparen token'>)</span>
+    <span class='elsif elsif kw'>elsif</span> <span class='is_cont identifier id'>is_cont</span>
+      <span class='comment val'># Not expecting contination byte? Clean up. Otherwise, now expect one less.</span>
+      <span class='conts_expected identifier id'>conts_expected</span> <span class='eq op'>==</span> <span class='integer val'>0</span> <span class='question op'>?</span> <span class='bytes identifier id'>bytes</span><span class='lbrack token'>[</span><span class='i identifier id'>i</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='tidy_byte identifier id'>tidy_byte</span><span class='lparen token'>(</span><span class='byte identifier id'>byte</span><span class='rparen token'>)</span> <span class='colon op'>:</span> <span class='conts_expected identifier id'>conts_expected</span> <span class='opasgn op'>-=</span> <span class='integer val'>1</span>
+    <span class='else else kw'>else</span>
+      <span class='if if kw'>if</span> <span class='conts_expected identifier id'>conts_expected</span> <span class='gt op'>&gt;</span> <span class='integer val'>0</span>
+        <span class='comment val'># Expected continuation, but got ASCII or leading? Clean backwards up to</span>
+        <span class='comment val'># the leading byte.</span>
+        <span class='lparen token'>(</span><span class='float val'>1</span><span class='dot2 op'>..</span><span class='lparen token'>(</span><span class='i identifier id'>i</span> <span class='minus op'>-</span> <span class='last_lead identifier id'>last_lead</span><span class='rparen token'>)</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='lbrace token'>{</span><span class='bitor op'>|</span><span class='j identifier id'>j</span><span class='bitor op'>|</span> <span class='bytes identifier id'>bytes</span><span class='lbrack token'>[</span><span class='i identifier id'>i</span> <span class='minus op'>-</span> <span class='j identifier id'>j</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='tidy_byte identifier id'>tidy_byte</span><span class='lparen token'>(</span><span class='bytes identifier id'>bytes</span><span class='lbrack token'>[</span><span class='i identifier id'>i</span> <span class='minus op'>-</span> <span class='j identifier id'>j</span><span class='rbrack token'>]</span><span class='rparen token'>)</span><span class='rbrace token'>}</span>
+        <span class='conts_expected identifier id'>conts_expected</span> <span class='assign token'>=</span> <span class='integer val'>0</span>
+      <span class='end end kw'>end</span>
+      <span class='if if kw'>if</span> <span class='is_lead identifier id'>is_lead</span>
+        <span class='comment val'># Final byte is leading? Clean it.</span>
+        <span class='if if kw'>if</span> <span class='i identifier id'>i</span> <span class='eq op'>==</span> <span class='bytes identifier id'>bytes</span><span class='dot token'>.</span><span class='length identifier id'>length</span> <span class='minus op'>-</span> <span class='integer val'>1</span>
+          <span class='bytes identifier id'>bytes</span><span class='lbrack token'>[</span><span class='i identifier id'>i</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='tidy_byte identifier id'>tidy_byte</span><span class='lparen token'>(</span><span class='bytes identifier id'>bytes</span><span class='dot token'>.</span><span class='last identifier id'>last</span><span class='rparen token'>)</span>
+        <span class='else else kw'>else</span>
+          <span class='comment val'># Valid leading byte? Expect continuations determined by position of</span>
+          <span class='comment val'># first zero bit, with max of 3.</span>
+          <span class='conts_expected identifier id'>conts_expected</span> <span class='assign token'>=</span> <span class='byte identifier id'>byte</span> <span class='lt op'>&lt;</span> <span class='integer val'>224</span> <span class='question op'>?</span> <span class='integer val'>1</span> <span class='colon op'>:</span> <span class='byte identifier id'>byte</span> <span class='lt op'>&lt;</span> <span class='integer val'>240</span> <span class='question op'>?</span> <span class='integer val'>2</span> <span class='colon op'>:</span> <span class='integer val'>3</span>
+          <span class='last_lead identifier id'>last_lead</span> <span class='assign token'>=</span> <span class='i identifier id'>i</span>
+        <span class='end end kw'>end</span>
+      <span class='end end kw'>end</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+  <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='bytes identifier id'>bytes</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span> <span class='integer val'>? </span><span class='string val'>&quot;&quot;</span> <span class='colon op'>:</span> <span class='bytes identifier id'>bytes</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='dot token'>.</span><span class='compact identifier id'>compact</span><span class='dot token'>.</span><span class='pack identifier id'>pack</span><span class='lparen token'>(</span><span class='string val'>&quot;C*&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='unpack identifier id'>unpack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='pack identifier id'>pack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span>
 <span class='end end kw'>end</span>
 </pre>
     </td>
@@ -1181,17 +1330,17 @@ String
       <pre class="lines">
 
 
-229
-230
-231
-232
-233
-234
-235
-236</pre>
+317
+318
+319
+320
+321
+322
+323
+324</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 229</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 317</span>
 
 <span class='def def kw'>def</span> <span class='to_ascii! fid id'>to_ascii!</span>
   <span class='if if kw'>if</span> <span class='string val'>&quot;&gt;= 1.9&quot;</span><span class='dot token'>.</span><span class='respond_to? fid id'>respond_to?</span><span class='lparen token'>(</span><span class='symbol val'>:force_encoding</span><span class='rparen token'>)</span>
@@ -1250,12 +1399,12 @@ String
       <pre class="lines">
 
 
-223
-224
-225</pre>
+328
+329
+330</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 223</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 328</span>
 
 <span class='def def kw'>def</span> <span class='truncate! fid id'>truncate!</span><span class='lparen token'>(</span><span class='max identifier id'>max</span><span class='rparen token'>)</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='self self kw'>self</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='dot3 op'>...</span><span class='max identifier id'>max</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span> <span class='if if_mod kw'>if</span> <span class='length identifier id'>length</span> <span class='gt op'>&gt;</span> <span class='max identifier id'>max</span>
@@ -1310,12 +1459,12 @@ String
       <pre class="lines">
 
 
-241
-242
-243</pre>
+335
+336
+337</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 241</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 335</span>
 
 <span class='def def kw'>def</span> <span class='upcase! fid id'>upcase!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='apply_mapping identifier id'>apply_mapping</span> <span class='symbol val'>:uppercase_mapping</span>
@@ -1419,15 +1568,15 @@ FriendlyId::ReservedError
       <pre class="lines">
 
 
-251
-252
-253
-254
-255
-256</pre>
+345
+346
+347
+348
+349
+350</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 251</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 345</span>
 
 <span class='def def kw'>def</span> <span class='validate_for! fid id'>validate_for!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='rparen token'>)</span>
   <span class='truncate! fid id'>truncate!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='dot token'>.</span><span class='max_length identifier id'>max_length</span><span class='rparen token'>)</span>
@@ -1451,7 +1600,7 @@ FriendlyId::ReservedError
 </p><div class="docstring">
   <div class="discussion">
     <p>
-Replaces whitespace with dashes (&quot;-&quot;).
+Replaces whitespace with dashes ("-").
 </p>
 
 
@@ -1484,12 +1633,12 @@ String
       <pre class="lines">
 
 
-260
-261
-262</pre>
+354
+355
+356</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 260</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 354</span>
 
 <span class='def def kw'>def</span> <span class='with_dashes! fid id'>with_dashes!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='@wrapped_string ivar id'>@wrapped_string</span><span class='dot token'>.</span><span class='gsub identifier id'>gsub</span><span class='lparen token'>(</span><span class='regexp val'>/[\s\-]+/</span><span class='u identifier id'>u</span><span class='comma token'>,</span> <span class='string val'>&quot;-&quot;</span><span class='rparen token'>)</span>
@@ -1543,28 +1692,28 @@ String
       <pre class="lines">
 
 
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195</pre>
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 177</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 214</span>
 
 <span class='def def kw'>def</span> <span class='word_chars! fid id'>word_chars!</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='normalize_utf8 identifier id'>normalize_utf8</span><span class='lparen token'>(</span><span class='symbol val'>:c</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='unpack identifier id'>unpack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='map identifier id'>map</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='char identifier id'>char</span><span class='bitor op'>|</span>
@@ -1596,7 +1745,7 @@ String
 </div>
     
     <div id="footer">
-  Generated on Tue Mar 30 11:20:06 2010 by 
+  Generated on Fri Apr  9 16:07:33 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.4 (ruby-1.8.7).
 </div>

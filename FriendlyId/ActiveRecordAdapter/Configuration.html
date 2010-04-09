@@ -217,26 +217,6 @@ Returns the value of attribute custom_cache_column.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#cache_finders%3F-instance_method" title="#cache_finders? (instance method)">- (Boolean) <strong>cache_finders?</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
       <a href="#custom_cache_column%3F-instance_method" title="#custom_cache_column? (instance method)">- (Boolean) <strong>custom_cache_column?</strong> </a>
     
 
@@ -306,7 +286,7 @@ Returns the value of attribute custom_cache_column.
   
   
   <h3 class="inherited">Methods inherited from <a href="../Configuration.html" title="FriendlyId::Configuration (class)">FriendlyId::Configuration</a></h3>
-  <p class="inherited"><a href="../Configuration.html#forbid_nil%3F-instance_method" title="FriendlyId::Configuration#forbid_nil? (method)">#forbid_nil?</a>, <a href="../Configuration.html#initialize-instance_method" title="FriendlyId::Configuration#initialize (method)">#initialize</a>, <a href="../Configuration.html#reserved%3F-instance_method" title="FriendlyId::Configuration#reserved? (method)">#reserved?</a>, <a href="../Configuration.html#reserved_error_message-instance_method" title="FriendlyId::Configuration#reserved_error_message (method)">#reserved_error_message</a></p>
+  <p class="inherited"><a href="../Configuration.html#initialize-instance_method" title="FriendlyId::Configuration#initialize (method)">#initialize</a>, <a href="../Configuration.html#reserved%3F-instance_method" title="FriendlyId::Configuration#reserved? (method)">#reserved?</a>, <a href="../Configuration.html#reserved_error_message-instance_method" title="FriendlyId::Configuration#reserved_error_message (method)">#reserved_error_message</a></p>
 <div id="constructor_details" class="method_details_list">
   <h2>Constructor Details</h2>
   
@@ -334,7 +314,7 @@ The column used to cache the friendly_id string. If no column is specified,
 FriendlyId will look for a column named <tt>cached_slug</tt> and use it
 automatically if it exists. If for some reason you have a column named
 <tt>cached_slug</tt> but don&#8217;t want FriendlyId to modify it, pass the
-option <tt>:cache_column =&amp;gt; false</tt> to
+option <tt>:cache_column =&gt; false</tt> to
 <tt><a href="../ActiveRecordAdapter.html#has_friendly_id-instance_method" title="FriendlyId::ActiveRecordAdapter#has_friendly_id (method)">has_friendly_id</a></tt>.
 </p>
 
@@ -512,56 +492,6 @@ Returns the value of attribute custom_cache_column
 </div>
     
       <div class="method_details ">
-  <p class="signature " id="cache_finders?-instance_method">
-  
-    - (<tt>Boolean</tt>) <strong>cache_finders?</strong> 
-  
-
-  
-</p><div class="docstring">
-  <div class="discussion">
-    
-
-  </div>
-</div>
-<div class="tags">
-  <h3>Returns:</h3>
-<ul class="return">
-  
-    <li>
-      
-        <span class='type'>(<tt>Boolean</tt>)</span>
-      
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-36
-37
-38</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/configuration.rb', line 36</span>
-
-<span class='def def kw'>def</span> <span class='cache_finders? fid id'>cache_finders?</span>
-  <span class='notop op'>!</span><span class='notop op'>!</span> <span class='cache_column identifier id'>cache_column</span>
-<span class='end end kw'>end</span>
-</pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
   <p class="signature " id="custom_cache_column?-instance_method">
   
     - (<tt>Boolean</tt>) <strong>custom_cache_column?</strong> 
@@ -595,12 +525,12 @@ Returns the value of attribute custom_cache_column
       <pre class="lines">
 
 
-44
-45
-46</pre>
+40
+41
+42</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/configuration.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/configuration.rb', line 40</span>
 
 <span class='def def kw'>def</span> <span class='custom_cache_column? fid id'>custom_cache_column?</span>
   <span class='notop op'>!</span><span class='notop op'>!</span> <span class='custom_cache_column identifier id'>custom_cache_column</span>
@@ -624,12 +554,12 @@ Returns the value of attribute custom_cache_column
       <pre class="lines">
 
 
-48
-49
-50</pre>
+44
+45
+46</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/configuration.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/configuration.rb', line 44</span>
 
 <span class='def def kw'>def</span> <span class='scope_for identifier id'>scope_for</span><span class='lparen token'>(</span><span class='record identifier id'>record</span><span class='rparen token'>)</span>
   <span class='scope? fid id'>scope?</span> <span class='integer val'>? </span><span class='record identifier id'>record</span><span class='dot token'>.</span><span class='send identifier id'>send</span><span class='lparen token'>(</span><span class='scope identifier id'>scope</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='to_param identifier id'>to_param</span> <span class='colon op'>:</span> <span class='nil nil kw'>nil</span>
@@ -674,12 +604,12 @@ Returns the value of attribute custom_cache_column
       <pre class="lines">
 
 
-52
-53
-54</pre>
+48
+49
+50</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/configuration.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/configuration.rb', line 48</span>
 
 <span class='def def kw'>def</span> <span class='scopes_over? fid id'>scopes_over?</span><span class='lparen token'>(</span><span class='klass identifier id'>klass</span><span class='rparen token'>)</span>
   <span class='scope? fid id'>scope?</span> <span class='andop op'>&amp;&amp;</span> <span class='scope identifier id'>scope</span> <span class='eq op'>==</span> <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='underscore identifier id'>underscore</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span>
@@ -695,7 +625,7 @@ Returns the value of attribute custom_cache_column
 </div>
     
     <div id="footer">
-  Generated on Tue Mar 30 11:20:07 2010 by 
+  Generated on Fri Apr  9 16:07:31 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.4 (ruby-1.8.7).
 </div>
