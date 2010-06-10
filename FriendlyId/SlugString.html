@@ -43,7 +43,8 @@
     
     <iframe id="search_frame"></iframe>
     
-    <div id="content"><h1>Class: FriendlyId::SlugString 
+    <div id="content"><h1>Class: FriendlyId::SlugString
+  
   
   
 </h1>
@@ -89,8 +90,8 @@ needed primarily for Unicode encoding normalization and proper calculation
 of string lengths.
 </p>
 <p>
-Note that this class includes many "bang methods" such as <tt><a href="#clean%21-instance_method" title="FriendlyId::SlugString#clean! (method)">#clean!</a></tt> and
-<tt><a href="#normalize%21-instance_method" title="FriendlyId::SlugString#normalize! (method)">#normalize!</a></tt> that perform actions on the string in-place. Each of these
+Note that this class includes many "bang methods" such as <tt><a href="#clean%21-instance_method" title="FriendlyId::SlugString#clean! (method)">SlugString#clean!</a></tt> and
+<tt><a href="#normalize%21-instance_method" title="FriendlyId::SlugString#normalize! (method)">SlugString#normalize!</a></tt> that perform actions on the string in-place. Each of these
 methods has a corresponding "bangless" method (i.e., <tt>SlugString#clean!</tt>
 and <tt>SlugString#clean</tt>) which does not appear in the documentation because
 it is generated dynamically.
@@ -114,9 +115,9 @@ methods specific to this class can be chained:
   <h3>See Also:</h3>
   <ul class="see">
     
-      <li><a href="http://www.utf8-chartable.de/unicode-utf8-table.pl?utf8=dec" title="Unicode character table">Unicode character table</a></li>
+      <li><a href="http://www.utf8-chartable.de/unicode-utf8-table.pl?utf8=dec" target="_parent" title="Unicode character table">Unicode character table</a></li>
     
-      <li><a href="#dump_approximations-class_method" title="FriendlyId::SlugString.dump_approximations (method)">FriendlyId::SlugString::dump_approximations</a></li>
+      <li><a href="#dump_approximations-class_method" title="FriendlyId::SlugString.dump_approximations (method)">SlugString.dump_approximations</a></li>
     
   </ul>
 
@@ -232,7 +233,10 @@ CP-1252 decimal byte => UTF-8 approximation as an array of bytes
   
 
   
-    <h2>Class Method Summary</h2>
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
 
     <ul class="summary">
       
@@ -249,10 +253,11 @@ CP-1252 decimal byte => UTF-8 approximation as an array of bytes
   
   
   
+  
 
   
     <span class="summary_desc"><div class='inline'><p>
-This method can be used by developers wishing to debug the <tt><a href="#APPROXIMATIONS-constant" title="FriendlyId::SlugString::APPROXIMATIONS (constant)">APPROXIMATIONS</a></tt>
+This method can be used by developers wishing to debug the <tt><a href="#APPROXIMATIONS-constant" title="FriendlyId::SlugString::APPROXIMATIONS (constant)">SlugString::APPROXIMATIONS</a></tt>
 hashes, which are written in a hard-to-read format.
 </p>
 </div></span>
@@ -262,7 +267,10 @@ hashes, which are written in a hard-to-read format.
       
     </ul>
   
-    <h2>Instance Method Summary</h2>
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
 
     <ul class="summary">
       
@@ -274,6 +282,7 @@ hashes, which are written in a hard-to-read format.
 
     
   </span>
+  
   
   
   
@@ -302,6 +311,7 @@ Approximate an ASCII string.
   
   
   
+  
 
   
     <span class="summary_desc"><div class='inline'><p>
@@ -321,6 +331,7 @@ whitespace characters with a single space.
 
     
   </span>
+  
   
   
   
@@ -351,6 +362,7 @@ Lowercases the string.
   
   
   
+  
 
   
     <span class="summary_desc"><div class='inline'><p>
@@ -369,6 +381,7 @@ A new instance of SlugString.
 
     
   </span>
+  
   
   
   
@@ -397,10 +410,11 @@ Normalize the string for use as a FriendlyId.
   
   
   
+  
 
   
     <span class="summary_desc"><div class='inline'><p>
-Normalize the string for a given <tt><a href="Configuration.html" title="FriendlyId::Configuration (class)">FriendlyId::Configuration</a></tt>.
+Normalize the string for a given <tt><a href="Configuration.html" title="FriendlyId::Configuration (class)">Configuration</a></tt>.
 </p>
 </div></span>
   
@@ -415,6 +429,7 @@ Normalize the string for a given <tt><a href="Configuration.html" title="Friendl
 
     
   </span>
+  
   
   
   
@@ -443,6 +458,7 @@ Attempt to replace invalid UTF-8 bytes with valid ones.
   
   
   
+  
 
   
     <span class="summary_desc"><div class='inline'><p>
@@ -461,6 +477,7 @@ Delete any non-ascii characters.
 
     
   </span>
+  
   
   
   
@@ -489,6 +506,7 @@ Truncate the string to <tt>max</tt> length.
   
   
   
+  
 
   
     <span class="summary_desc"><div class='inline'><p>
@@ -507,6 +525,7 @@ Upper-cases the string.
 
     
   </span>
+  
   
   
   
@@ -536,6 +555,7 @@ the max length if necessary.
   
   
   
+  
 
   
     <span class="summary_desc"><div class='inline'><p>
@@ -554,6 +574,7 @@ Replaces whitespace with dashes ("-").
 
     
   </span>
+  
   
   
   
@@ -873,7 +894,7 @@ String
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 193</span>
 
 <span class='def def kw'>def</span> <span class='approximate_ascii! fid id'>approximate_ascii!</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='args identifier id'>args</span><span class='rparen token'>)</span>
-  <span class='@maps ivar id'>@maps</span> <span class='assign token'>=</span> <span class='lparen token'>(</span><span class='self self kw'>self</span><span class='dot token'>.</span><span class='class identifier id'>class</span><span class='dot token'>.</span><span class='approximations identifier id'>approximations</span> <span class='plus op'>+</span> <span class='args identifier id'>args</span> <span class='plus op'>+</span> <span class='lbrack token'>[</span><span class='symbol val'>:common</span><span class='rbrack token'>]</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='dot token'>.</span><span class='uniq identifier id'>uniq</span>
+  <span class='@maps ivar id'>@maps</span> <span class='assign token'>=</span> <span class='lparen token'>(</span><span class='self self kw'>self</span><span class='dot token'>.</span><span class='class identifier id'>class</span><span class='dot token'>.</span><span class='approximations identifier id'>approximations</span> <span class='plus op'>+</span> <span class='args identifier id'>args</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span> <span class='plus op'>+</span> <span class='lbrack token'>[</span><span class='symbol val'>:common</span><span class='rbrack token'>]</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='dot token'>.</span><span class='uniq identifier id'>uniq</span>
   <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='normalize_utf8 identifier id'>normalize_utf8</span><span class='lparen token'>(</span><span class='symbol val'>:c</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='unpack identifier id'>unpack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='map identifier id'>map</span> <span class='lbrace token'>{</span> <span class='bitor op'>|</span><span class='char identifier id'>char</span><span class='bitor op'>|</span> <span class='approx_char identifier id'>approx_char</span><span class='lparen token'>(</span><span class='char identifier id'>char</span><span class='rparen token'>)</span> <span class='rbrace token'>}</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='dot token'>.</span><span class='pack identifier id'>pack</span><span class='lparen token'>(</span><span class='string val'>&quot;U*&quot;</span><span class='rparen token'>)</span>
 <span class='end end kw'>end</span>
 </pre>
@@ -994,7 +1015,7 @@ String
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 208</span>
 
 <span class='def def kw'>def</span> <span class='downcase! fid id'>downcase!</span>
-  <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='apply_mapping identifier id'>apply_mapping</span> <span class='symbol val'>:lowercase_mapping</span>
+  <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='ActiveSupport constant id'>ActiveSupport</span><span class='colon2 op'>::</span><span class='Multibyte constant id'>Multibyte</span><span class='colon2 op'>::</span><span class='Unicode constant id'>Unicode</span><span class='dot token'>.</span><span class='apply_mapping identifier id'>apply_mapping</span><span class='lparen token'>(</span><span class='@wrapped_string ivar id'>@wrapped_string</span><span class='comma token'>,</span> <span class='symbol val'>:lowercase_mapping</span><span class='rparen token'>)</span>
 <span class='end end kw'>end</span>
 </pre>
     </td>
@@ -1138,7 +1159,7 @@ String
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 237</span>
 
 <span class='def def kw'>def</span> <span class='normalize_for! fid id'>normalize_for!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='rparen token'>)</span>
-  <span class='approximate_ascii! fid id'>approximate_ascii!</span> <span class='if if_mod kw'>if</span> <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='approximate_ascii? fid id'>approximate_ascii?</span>
+  <span class='approximate_ascii! fid id'>approximate_ascii!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='dot token'>.</span><span class='ascii_approximation_options identifier id'>ascii_approximation_options</span><span class='rparen token'>)</span> <span class='if if_mod kw'>if</span> <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='approximate_ascii? fid id'>approximate_ascii?</span>
   <span class='to_ascii! fid id'>to_ascii!</span> <span class='if if_mod kw'>if</span> <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='strip_non_ascii? fid id'>strip_non_ascii?</span>
   <span class='normalize! fid id'>normalize!</span>
 <span class='end end kw'>end</span>
@@ -1467,7 +1488,7 @@ String
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 335</span>
 
 <span class='def def kw'>def</span> <span class='upcase! fid id'>upcase!</span>
-  <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='apply_mapping identifier id'>apply_mapping</span> <span class='symbol val'>:uppercase_mapping</span>
+  <span class='@wrapped_string ivar id'>@wrapped_string</span> <span class='assign token'>=</span> <span class='ActiveSupport constant id'>ActiveSupport</span><span class='colon2 op'>::</span><span class='Multibyte constant id'>Multibyte</span><span class='colon2 op'>::</span><span class='Unicode constant id'>Unicode</span><span class='dot token'>.</span><span class='apply_mapping identifier id'>apply_mapping</span><span class='lparen token'>(</span><span class='@wrapped_string ivar id'>@wrapped_string</span><span class='comma token'>,</span> <span class='symbol val'>:uppercase_mapping</span><span class='rparen token'>)</span>
 <span class='end end kw'>end</span>
 </pre>
     </td>
@@ -1745,9 +1766,9 @@ String
 </div>
     
     <div id="footer">
-  Generated on Fri Apr  9 16:07:33 2010 by 
+  Generated on Thu Jun 10 14:47:18 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.4 (ruby-1.8.7).
+  0.5.5 (ruby-1.8.6).
 </div>
 
   </body>

@@ -43,7 +43,8 @@
     
     <iframe id="search_frame"></iframe>
     
-    <div id="content"><h1>Module: FriendlyId::Base 
+    <div id="content"><h1>Module: FriendlyId::Base
+  
   
   
 </h1>
@@ -71,7 +72,10 @@
 
 
   
-    <h2>Instance Method Summary</h2>
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
 
     <ul class="summary">
       
@@ -83,6 +87,7 @@
 
     
   </span>
+  
   
   
   
@@ -106,6 +111,7 @@ Set up a model to use a friendly_id.
 
     
   </span>
+  
   
   
   
@@ -232,12 +238,12 @@ For valid configuration options, see <tt><a href="Configuration.html" title="Fri
       <pre class="lines">
 
 
-48
-49
-50</pre>
+53
+54
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 53</span>
 
 <span class='def def kw'>def</span> <span class='has_friendly_id identifier id'>has_friendly_id</span><span class='lparen token'>(</span><span class='method identifier id'>method</span><span class='comma token'>,</span> <span class='options identifier id'>options</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
   <span class='raise identifier id'>raise</span> <span class='NotImplementedError constant id'>NotImplementedError</span>
@@ -285,12 +291,12 @@ Does the model class use the FriendlyId plugin?
       <pre class="lines">
 
 
-53
-54
-55</pre>
+58
+59
+60</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 53</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 58</span>
 
 <span class='def def kw'>def</span> <span class='uses_friendly_id? fid id'>uses_friendly_id?</span>
   <span class='respond_to? fid id'>respond_to?</span> <span class='symbol val'>:friendly_id_config</span>
@@ -306,9 +312,9 @@ Does the model class use the FriendlyId plugin?
 </div>
     
     <div id="footer">
-  Generated on Fri Apr  9 16:07:30 2010 by 
+  Generated on Thu Jun 10 14:47:17 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.4 (ruby-1.8.7).
+  0.5.5 (ruby-1.8.6).
 </div>
 
   </body>

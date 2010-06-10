@@ -43,7 +43,8 @@
     
     <iframe id="search_frame"></iframe>
     
-    <div id="content"><h1>Class: FriendlyId::ActiveRecordAdapter::SluggedModel::SingleFinder 
+    <div id="content"><h1>Class: FriendlyId::ActiveRecordAdapter::SluggedModel::SingleFinder
+  
   
   
 </h1>
@@ -99,7 +100,10 @@
   
 
   
-    <h2>Instance Method Summary</h2>
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
 
     <ul class="summary">
       
@@ -111,6 +115,7 @@
 
     
   </span>
+  
   
   
   
@@ -195,7 +200,7 @@
 
 <span class='def def kw'>def</span> <span class='find identifier id'>find</span>
   <span class='@result ivar id'>@result</span> <span class='assign token'>=</span> <span class='model_class identifier id'>model_class</span><span class='dot token'>.</span><span class='scoped identifier id'>scoped</span><span class='lparen token'>(</span><span class='find_options identifier id'>find_options</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='first identifier id'>first</span><span class='lparen token'>(</span><span class='options identifier id'>options</span><span class='rparen token'>)</span>
-  <span class='handle_friendly_result identifier id'>handle_friendly_result</span> <span class='if if_mod kw'>if</span> <span class='friendly? fid id'>friendly?</span>
+  <span class='handle_friendly_result identifier id'>handle_friendly_result</span> <span class='if if_mod kw'>if</span> <span class='@result ivar id'>@result</span> <span class='or or kw'>or</span> <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='scope? fid id'>scope?</span>
   <span class='@result ivar id'>@result</span>
 <span class='rescue rescue kw'>rescue</span> <span class='colon2 op'>::</span><span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='RecordNotFound constant id'>RecordNotFound</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='@error ivar id'>@error</span>
   <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='scope? fid id'>scope?</span> <span class='integer val'>? </span><span class='raise_scoped_error identifier id'>raise_scoped_error</span> <span class='colon op'>:</span> <span class='lparen token'>(</span><span class='raise identifier id'>raise</span> <span class='@error ivar id'>@error</span><span class='rparen token'>)</span>
@@ -211,9 +216,9 @@
 </div>
     
     <div id="footer">
-  Generated on Fri Apr  9 16:07:30 2010 by 
+  Generated on Thu Jun 10 14:47:16 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.4 (ruby-1.8.7).
+  0.5.5 (ruby-1.8.6).
 </div>
 
   </body>

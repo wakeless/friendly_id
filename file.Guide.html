@@ -359,11 +359,12 @@
 
 <h3 id='automatic_setup'>Automatic setup</h3>
 
-<p>To enable slug caching, simply add a column named &#8220;cached_slug&#8221; to your model. FriendlyId will automatically use this column if it detects it:</p>
+<p>To enable slug caching, simply add a column named &#8220;cached_slug&#8221; to your model. Is also advised to index this column for performance reason. FriendlyId will automatically use this column if it detects it:</p>
 
 <pre class="code"><span class='class class kw'>class</span> <span class='AddCachedSlugToUsers constant id'>AddCachedSlugToUsers</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Migration constant id'>Migration</span>
   <span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='up identifier id'>up</span>
     <span class='add_column identifier id'>add_column</span> <span class='symbol val'>:users</span><span class='comma token'>,</span> <span class='symbol val'>:cached_slug</span><span class='comma token'>,</span> <span class='symbol val'>:string</span>
+    <span class='add_index identifier id'>add_index</span>  <span class='symbol val'>:users</span><span class='comma token'>,</span> <span class='symbol val'>:cached_slug</span>
   <span class='end end kw'>end</span>
 
   <span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='down identifier id'>down</span>
@@ -534,9 +535,9 @@
 </pre></div></div>
     
     <div id="footer">
-  Generated on Fri Apr  9 16:07:30 2010 by 
+  Generated on Thu Jun 10 14:47:16 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.4 (ruby-1.8.7).
+  0.5.5 (ruby-1.8.6).
 </div>
 
   </body>

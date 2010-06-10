@@ -43,7 +43,8 @@
     
     <iframe id="search_frame"></iframe>
     
-    <div id="content"><h1>Class: FriendlyId::ActiveRecordAdapter::SluggedModel::CachedSingleFinder 
+    <div id="content"><h1>Class: FriendlyId::ActiveRecordAdapter::SluggedModel::CachedSingleFinder
+  
   
   
 </h1>
@@ -122,7 +123,10 @@ circumstances unless the <tt>:scope</tt> argument is present.
   
 
   
-    <h2>Instance Method Summary</h2>
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
 
     <ul class="summary">
       
@@ -134,6 +138,7 @@ circumstances unless the <tt>:scope</tt> argument is present.
 
     
   </span>
+  
   
   
   
@@ -157,6 +162,28 @@ The column used to store the cached slug.
 
     
   </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#uncached_find-instance_method" title="#uncached_find (instance method)">- (Object) <strong>uncached_find</strong> </a>
+    
+
+    
+  </span>
+  
   
   
   
@@ -254,12 +281,12 @@ The column used to store the cached slug.
       <pre class="lines">
 
 
-130
-131
-132</pre>
+138
+139
+140</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/slugged_model.rb', line 130</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/slugged_model.rb', line 138</span>
 
 <span class='def def kw'>def</span> <span class='column identifier id'>column</span>
   <span class='dstring node'>&quot;#{table_name}.#{friendly_id_config.cache_column}&quot;</span>
@@ -289,16 +316,53 @@ The column used to store the cached slug.
 124
 125
 126
-127</pre>
+127
+128
+129
+130
+131</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/slugged_model.rb', line 121</span>
 
 <span class='def def kw'>def</span> <span class='find identifier id'>find</span>
   <span class='@result ivar id'>@result</span> <span class='assign token'>=</span> <span class='model_class identifier id'>model_class</span><span class='dot token'>.</span><span class='scoped identifier id'>scoped</span><span class='lparen token'>(</span><span class='find_options identifier id'>find_options</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='first identifier id'>first</span><span class='lparen token'>(</span><span class='options identifier id'>options</span><span class='rparen token'>)</span>
-  <span class='handle_friendly_result identifier id'>handle_friendly_result</span> <span class='if if_mod kw'>if</span> <span class='friendly? fid id'>friendly?</span>
-  <span class='@result ivar id'>@result</span>
+  <span class='if if kw'>if</span> <span class='@result ivar id'>@result</span>
+    <span class='handle_friendly_result identifier id'>handle_friendly_result</span>
+    <span class='@result ivar id'>@result</span>
+  <span class='else else kw'>else</span>
+    <span class='uncached_find identifier id'>uncached_find</span>
+  <span class='end end kw'>end</span>
 <span class='rescue rescue kw'>rescue</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='RecordNotFound constant id'>RecordNotFound</span>
+  <span class='uncached_find identifier id'>uncached_find</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="uncached_find-instance_method">
+  
+    - (<tt>Object</tt>) <strong>uncached_find</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+133
+134
+135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/slugged_model.rb', line 133</span>
+
+<span class='def def kw'>def</span> <span class='uncached_find identifier id'>uncached_find</span>
   <span class='SingleFinder constant id'>SingleFinder</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='id identifier id'>id</span><span class='comma token'>,</span> <span class='model_class identifier id'>model_class</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='find identifier id'>find</span>
 <span class='end end kw'>end</span>
 </pre>
@@ -312,9 +376,9 @@ The column used to store the cached slug.
 </div>
     
     <div id="footer">
-  Generated on Fri Apr  9 16:07:32 2010 by 
+  Generated on Thu Jun 10 14:47:20 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.4 (ruby-1.8.7).
+  0.5.5 (ruby-1.8.6).
 </div>
 
   </body>
