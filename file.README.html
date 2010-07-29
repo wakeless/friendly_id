@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta name="Content-Type" content="text/html; charset=utf-8" />
-<title>Documentation by YARD 0.5.5</title>
+<title>Documentation by YARD 0.5.8</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
 
@@ -43,51 +43,58 @@
     
     <div id="content"><div id='filecontents'><h1 id='friendlyid'>FriendlyId</h1>
 
-<p>FriendlyId is the &#8220;Swiss Army bulldozer&#8221; of slugging and permalink plugins for Ruby on Rails. It allows you to create pretty URL&#8217;s and work with human-friendly strings as if they were numeric ids for ActiveRecord models.</p>
+<p>FriendlyId is the &#8220;Swiss Army bulldozer&#8221; of slugging and permalink plugins for Ruby on Rails. It allows you to create pretty URL&#8217;s and work with human-friendly strings as if they were numeric ids for Active Record models.</p>
 
 <p>Using FriendlyId, it&#8217;s easy to make your application use URL&#8217;s like:</p>
 
-<pre class="code"><span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/example.com/s</span><span class='tates identifier id'>tates</span><span class='div op'>/</span><span class='washington identifier id'>washington</span>
-</pre>
+<pre class="code"><span class='id http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id example'>example</span><span class='period'>.</span><span class='id com'>com</span><span class='op'>/</span><span class='id states'>states</span><span class='op'>/</span><span class='id washington'>washington</span></pre>
 
 <p>instead of:</p>
 
-<pre class="code"><span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/example.com/s</span><span class='tates identifier id'>tates</span><span class='div op'>/</span><span class='integer val'>4323454</span>
-</pre>
+<pre class="code"><span class='id http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id example'>example</span><span class='period'>.</span><span class='id com'>com</span><span class='op'>/</span><span class='id states'>states</span><span class='op'>/</span><span class='int'>4323454</span></pre>
 
 <h2 id='friendlyid_features'>FriendlyId Features</h2>
 
 <p>FriendlyId offers many advanced features, including: slug history and versioning, scoped slugs, reserved words, custom slug generators, and excellent Unicode support. For complete information on using FriendlyId, please see the <a href="http://norman.github.com/friendly_id/file.Guide.html" target="_parent" title="FriendlyId Guide">FriendlyId Guide</a>.</p>
 
-<p>FriendlyId is compatible with Rails 2.2.x - 3.0.</p>
+<p>FriendlyId is compatible with Active Record 2.3.x and 3.0.</p>
 
 <h2 id='rails_quickstart'>Rails Quickstart</h2>
 
-<pre class="code"><span class='gem identifier id'>gem</span> <span class='install identifier id'>install</span> <span class='friendly_id identifier id'>friendly_id</span>
+<pre class="code">gem install friendly_id
 
-<span class='rails identifier id'>rails</span> <span class='my_app identifier id'>my_app</span>
+rails my_app
 
-<span class='cd identifier id'>cd</span> <span class='my_app identifier id'>my_app</span>
+cd my_app
 
-<span class='comment val'># add to Gemfile</span>
-<span class='gem identifier id'>gem</span> <span class='string val'>&quot;friendly_id&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;~&gt; 3.0&quot;</span>
+# add to Gemfile
+gem &quot;friendly_id&quot;, &quot;~&gt; 3.1&quot;
 
-<span class='rails identifier id'>rails</span> <span class='generate identifier id'>generate</span> <span class='friendly_id identifier id'>friendly_id</span>
-<span class='rails identifier id'>rails</span> <span class='generate identifier id'>generate</span> <span class='scaffold identifier id'>scaffold</span> <span class='user identifier id'>user</span> <span class='name identifier id'>name</span><span class='symbol val'>:string</span> <span class='cached_slug identifier id'>cached_slug</span><span class='symbol val'>:string</span>
+rails generate friendly_id
+rails generate scaffold user name:string cached_slug:string
 
-<span class='rake identifier id'>rake</span> <span class='db identifier id'>db</span><span class='symbol val'>:migrate</span>
+rake db:migrate
 
-<span class='comment val'># edit app/models/user.rb</span>
-<span class='class class kw'>class</span> <span class='User constant id'>User</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span>
-<span class='end end kw'>end</span>
+# edit app/models/user.rb
+class User &lt; ActiveRecord::Base
+  has_friendly_id :name, :use_slug =&gt; true
+end
 
-<span class='User constant id'>User</span><span class='dot token'>.</span><span class='create! fid id'>create!</span> <span class='symbol val'>:name</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;Joe Schmoe&quot;</span>
+User.create! :name =&gt; &quot;Joe Schmoe&quot;
 
-<span class='dot token'>.</span><span class='div op'>/</span><span class='script identifier id'>script</span><span class='div op'>/</span><span class='server identifier id'>server</span>
+./script/server
 
-<span class='GET constant id'>GET</span> <span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/0.0.0.0:3000/</span><span class='users identifier id'>users</span><span class='div op'>/</span><span class='joe identifier id'>joe</span><span class='minus op'>-</span><span class='schmoe identifier id'>schmoe</span>
-</pre>
+GET http://0.0.0.0:3000/users/joe-schmoe</pre>
+
+<h2 id='sequel_and_datamapper_too'>Sequel and DataMapper, too</h2>
+
+<p>FriendlyId has experimental support for Sequel. Support for Datamapper is in progress. To find out more, check out the Github projects:</p>
+
+<ul>
+<li><a href='http://github.com/norman/friendly_id_sequel'>http://github.com/norman/friendly_id_sequel</a></li>
+
+<li><a href='http://github.com/myabc/friendly_id_datamapper'>http://github.com/myabc/friendly_id_datamapper</a></li>
+</ul>
 
 <h2 id='docs_info_and_support'>Docs, Info and Support</h2>
 
@@ -110,9 +117,9 @@
 <p>If you have a bug to report, please include the following information:</p>
 
 <ul>
-<li>Stack trace and error message.</li>
+<li><strong>Version information for FriendlyId, Rails and Ruby.</strong></li>
 
-<li>Version information for FriendlyId, Rails and Ruby.</li>
+<li>Stack trace and error message.</li>
 
 <li>Any snippets of relevant model, view or controller code that shows how your are using FriendlyId.</li>
 </ul>
@@ -126,9 +133,9 @@
 <p>Copyright (c) 2008-2010, released under the MIT license.</p></div></div>
     
     <div id="footer">
-  Generated on Thu Jun 10 14:47:15 2010 by 
+  Generated on Thu Jul 29 16:13:57 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.5 (ruby-1.8.6).
+  0.5.8 (ruby-1.9.2).
 </div>
 
   </body>

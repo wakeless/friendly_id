@@ -139,7 +139,7 @@ Does the model class use the FriendlyId plugin?.
       <div class="method_details first">
   <p class="signature first" id="has_friendly_id-instance_method">
   
-    - (<tt>Object</tt>) <strong>has_friendly_id</strong>(method, options = {}) 
+    - (<tt><a href="../Object.html" title="Object (class)">Object</a></tt>) <strong>has_friendly_id</strong>(method, options = {}) 
   
 
   
@@ -160,14 +160,13 @@ Set up a model to use a friendly_id. This method accepts a hash with
     
       <h4><div class='inline'></div></h4>
       <pre class="example code">
-<span class='class class kw'>class</span> <span class='User constant id'>User</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:user_name</span>
-<span class='end end kw'>end</span>
+<span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:user_name</span>
+<span class='kw'>end</span>
 
-<span class='class class kw'>class</span> <span class='Post constant id'>Post</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:title</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span> <span class='symbol val'>:approximate_ascii</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>class</span> <span class='const'>Post</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:title</span><span class='comma'>,</span> <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:approximate_ascii</span> <span class='op'>=&gt;</span> <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
     
   </div>
 <h3>Parameters:</h3>
@@ -238,17 +237,16 @@ For valid configuration options, see <tt><a href="Configuration.html" title="Fri
       <pre class="lines">
 
 
-53
-54
-55</pre>
+45
+46
+47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 53</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 45</span>
 
-<span class='def def kw'>def</span> <span class='has_friendly_id identifier id'>has_friendly_id</span><span class='lparen token'>(</span><span class='method identifier id'>method</span><span class='comma token'>,</span> <span class='options identifier id'>options</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
-  <span class='raise identifier id'>raise</span> <span class='NotImplementedError constant id'>NotImplementedError</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id has_friendly_id'>has_friendly_id</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id raise'>raise</span> <span class='const'>NotImplementedError</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -291,17 +289,16 @@ Does the model class use the FriendlyId plugin?
       <pre class="lines">
 
 
-58
-59
-60</pre>
+50
+51
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 58</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 50</span>
 
-<span class='def def kw'>def</span> <span class='uses_friendly_id? fid id'>uses_friendly_id?</span>
-  <span class='respond_to? fid id'>respond_to?</span> <span class='symbol val'>:friendly_id_config</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id uses_friendly_id?'>uses_friendly_id?</span>
+  <span class='id respond_to?'>respond_to?</span> <span class='symbol'>:friendly_id_config</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -312,9 +309,9 @@ Does the model class use the FriendlyId plugin?
 </div>
     
     <div id="footer">
-  Generated on Thu Jun 10 14:47:17 2010 by 
+  Generated on Thu Jul 29 16:13:58 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.5 (ruby-1.8.6).
+  0.5.8 (ruby-1.9.2).
 </div>
 
   </body>

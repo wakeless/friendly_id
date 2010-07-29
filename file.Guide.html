@@ -42,42 +42,38 @@
     <iframe id="search_frame"></iframe>
     
     <div id="content"><div id='filecontents'><h1 id='friendlyid_guide'>FriendlyId Guide</h1>
-<div class='maruku_toc'><ul style='list-style: none;'><li><a href='#friendlyid_guide'>FriendlyId Guide</a><ul style='list-style: none;'><li><a href='#overview'>Overview</a></li><li><a href='#simple_models'>Simple Models</a></li><li><a href='#slugged_models'>Slugged Models</a></li><li><a href='#installation'>Installation</a><ul style='list-style: none;'><li><a href='#as_a_gem'>As a Gem</a><ul style='list-style: none;'><li><a href='#rails_22x__23x'>Rails 2.2.x - 2.3.x</a></li></ul></li><li><a href='#rails_30'>Rails 3.0</a></li><li><a href='#as_a_plugin'>As a Plugin</a></li><li><a href='#setup'>Setup</a></li></ul></li><li><a href='#configuration'>Configuration</a></li></ul></li><li><a href='#features'>Features</a><ul style='list-style: none;'><li><a href='#friendlyid_strings'>FriendlyId Strings</a><ul style='list-style: none;'><li><a href='#replacing_accented_characters'>Replacing Accented Characters</a></li><li><a href='#german_approximations'>German Approximations</a></li><li><a href='#spanish_approximations'>Spanish Approximations</a></li><li><a href='#approximations_for_other_languages'>Approximations for Other Languages</a></li><li><a href='#unicode_slugs'>Unicode Slugs</a></li><li><a href='#ascii_slugs'>ASCII Slugs</a></li><li><a href='#using_a_custom_method_to_generate_the_slug_text'>Using a Custom Method to Generate the Slug Text</a></li></ul></li><li><a href='#using_a_custom_method_to_process_the_slug_text'>Using a Custom Method to Process the Slug Text</a><ul style='list-style: none;'><li><a href='#converting_nonwestern_characters_to_ascii_with_stringex'>Converting non-Western characters to ASCII with Stringex</a></li></ul></li><li><a href='#redirecting_to_the_current_friendly_url'>Redirecting to the Current Friendly URL</a></li><li><a href='#nonunique_slugs'>Non-unique Slugs</a></li><li><a href='#reserved_words'>Reserved Words</a></li><li><a href='#caching_the_friendlyid_slug_for_better_performance'>Caching the FriendlyId Slug for Better Performance</a><ul style='list-style: none;'><li><a href='#automatic_setup'>Automatic setup</a></li><li><a href='#using_a_custom_column_name'>Using a custom column name</a></li></ul></li><li><a href='#nil_slugs_and_skipping_validations'>Nil slugs and skipping validations</a></li><li><a href='#scoped_slugs'>Scoped Slugs</a><ul style='list-style: none;'><li><a href='#updating_a_relations_scoped_slugs'>Updating a Relation&#8217;s Scoped Slugs</a></li><li><a href='#routes_for_scoped_models'>Routes for Scoped Models</a></li></ul></li><li><a href='#friendlyid_rake_tasks'>FriendlyId Rake Tasks</a><ul style='list-style: none;'><li><a href='#generating_new_slugs_for_the_first_time'>Generating New Slugs For the First Time</a></li><li><a href='#regenerating_slugs'>Regenerating Slugs</a></li><li><a href='#deleting_old_slugs'>Deleting Old Slugs</a></li></ul></li></ul></li><li><a href='#misc_tips'>Misc tips</a><ul style='list-style: none;'><li><a href='#mysql_50_or_less'>MySQL 5.0 or less</a></li></ul></li><li><a href='#hacking_friendlyid'>Hacking FriendlyId</a><ul style='list-style: none;'><li><a href='#running_the_tests'>Running the Tests</a></li><li><a href='#some_benchmarks'>Some Benchmarks</a></li></ul></li></ul></div>
+<div class='maruku_toc'><ul style='list-style: none;'><li><a href='#friendlyid_guide'>FriendlyId Guide</a><ul style='list-style: none;'><li><a href='#overview'>Overview</a></li><li><a href='#simple_models'>Simple Models</a></li><li><a href='#slugged_models'>Slugged Models</a></li><li><a href='#installation'>Installation</a><ul style='list-style: none;'><li><a href='#as_a_gem'>As a Gem</a><ul style='list-style: none;'><li><a href='#rails_23x'>Rails 2.3.x</a></li></ul></li><li><a href='#rails_30'>Rails 3.0</a></li><li><a href='#as_a_plugin'>As a Plugin</a></li><li><a href='#setup'>Setup</a></li></ul></li><li><a href='#configuration'>Configuration</a></li></ul></li><li><a href='#features'>Features</a><ul style='list-style: none;'><li><a href='#friendlyid_strings'>FriendlyId Strings</a><ul style='list-style: none;'><li><a href='#replacing_accented_characters'>Replacing Accented Characters</a></li><li><a href='#german_approximations'>German Approximations</a></li><li><a href='#spanish_approximations'>Spanish Approximations</a></li><li><a href='#unicode_slugs'>Unicode Slugs</a></li><li><a href='#ascii_slugs'>ASCII Slugs</a></li><li><a href='#using_a_custom_method_to_generate_the_slug_text'>Using a Custom Method to Generate the Slug Text</a></li></ul></li><li><a href='#using_a_custom_method_to_process_the_slug_text'>Using a Custom Method to Process the Slug Text</a><ul style='list-style: none;'><li><a href='#converting_nonwestern_characters_to_ascii_with_stringex'>Converting non-Western characters to ASCII with Stringex</a></li></ul></li><li><a href='#redirecting_to_the_current_friendly_url'>Redirecting to the Current Friendly URL</a></li><li><a href='#nonunique_slugs'>Non-unique Slugs</a></li><li><a href='#reserved_words'>Reserved Words</a></li><li><a href='#caching_the_friendlyid_slug_for_better_performance'>Caching the FriendlyId Slug for Better Performance</a><ul style='list-style: none;'><li><a href='#automatic_setup'>Automatic setup</a></li><li><a href='#using_a_custom_column_name'>Using a custom column name</a></li></ul></li><li><a href='#nil_slugs_and_skipping_validations'>Nil slugs and skipping validations</a></li><li><a href='#scoped_slugs'>Scoped Slugs</a><ul style='list-style: none;'><li><a href='#updating_a_relations_scoped_slugs'>Updating a Relation&#8217;s Scoped Slugs</a></li><li><a href='#routes_for_scoped_models'>Routes for Scoped Models</a></li></ul></li><li><a href='#friendlyid_rake_tasks'>FriendlyId Rake Tasks</a><ul style='list-style: none;'><li><a href='#generating_new_slugs_for_the_first_time'>Generating New Slugs For the First Time</a></li><li><a href='#regenerating_slugs'>Regenerating Slugs</a></li><li><a href='#deleting_old_slugs'>Deleting Old Slugs</a></li></ul></li></ul></li><li><a href='#misc_tips'>Misc tips</a><ul style='list-style: none;'><li><a href='#default_scopes'>Default Scopes</a></li><li><a href='#mysql_50_or_less'>MySQL 5.0 or less</a></li></ul></li><li><a href='#hacking_friendlyid'>Hacking FriendlyId</a><ul style='list-style: none;'><li><a href='#some_benchmarks'>Some Benchmarks</a></li></ul></li></ul></div>
 <h2 id='overview'>Overview</h2>
 
-<p>FriendlyId is a Ruby gem which allows you to work with human-friendly strings as if they were numeric ids for ActiveRecord models. This facilitates replacing &#8220;unfriendly&#8221; URL&#8217;s like</p>
+<p>FriendlyId is a Ruby gem which allows you to work with human-friendly strings as if they were numeric ids for Active Record models. This facilitates replacing &#8220;unfriendly&#8221; URL&#8217;s like</p>
 
-<pre class="code"><span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/example.com/s</span><span class='tates identifier id'>tates</span><span class='div op'>/</span><span class='integer val'>4323454</span>
-</pre>
+<pre class="code"><span class='id http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id example'>example</span><span class='period'>.</span><span class='id com'>com</span><span class='op'>/</span><span class='id states'>states</span><span class='op'>/</span><span class='int'>4323454</span></pre>
 
 <p>with &#8220;friendly&#8221; ones such as:</p>
 
-<pre class="code"><span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/example.com/s</span><span class='tates identifier id'>tates</span><span class='div op'>/</span><span class='washington identifier id'>washington</span>
-</pre>
+<pre class="code"><span class='id http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id example'>example</span><span class='period'>.</span><span class='id com'>com</span><span class='op'>/</span><span class='id states'>states</span><span class='op'>/</span><span class='id washington'>washington</span></pre>
 
 <h2 id='simple_models'>Simple Models</h2>
 
 <p>The simplest way to use FriendlyId is with a model that has a uniquely indexed column with no spaces or special characters, and that is seldom or never updated. The most common example of this is a user name or login column:</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='User constant id'>User</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='validates_format_of identifier id'>validates_format_of</span> <span class='symbol val'>:login</span><span class='comma token'>,</span> <span class='symbol val'>:with</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='regexp val'>/\A[a-z0-9]+\z/i</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:login</span>
-<span class='end end kw'>end</span>
+<pre class="code"><span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id validates_format_of'>validates_format_of</span> <span class='symbol'>:login</span><span class='comma'>,</span> <span class='symbol'>:with</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\A[a-z0-9]+\z</span><span class='regexp_end'>/i</span></span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:login</span>
+<span class='kw'>end</span>
 
-<span class='@user ivar id'>@user</span> <span class='assign token'>=</span> <span class='User constant id'>User</span><span class='dot token'>.</span><span class='find identifier id'>find</span> <span class='string val'>&quot;joe&quot;</span>   <span class='comment val'># the old User.find(1) still works, too</span>
-<span class='@user ivar id'>@user</span><span class='dot token'>.</span><span class='to_param identifier id'>to_param</span>            <span class='comment val'># returns &quot;joe&quot;</span>
-<span class='redirect_to identifier id'>redirect_to</span> <span class='@user ivar id'>@user</span>         <span class='comment val'># the URL will be /users/joe</span>
-</pre>
+<span class='ivar'>@user</span> <span class='op'>=</span> <span class='const'>User</span><span class='period'>.</span><span class='id find'>find</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>joe</span><span class='tstring_end'>&quot;</span></span>   <span class='comment'># the old User.find(1) still works, too
+</span><span class='ivar'>@user</span><span class='period'>.</span><span class='id to_param'>to_param</span>            <span class='comment'># returns &quot;joe&quot;
+</span><span class='id redirect_to'>redirect_to</span> <span class='ivar'>@user</span>         <span class='comment'># the URL will be /users/joe</span></pre>
 
 <p>In this case, FriendlyId assumes you want to use the column as-is; FriendlyId will never modify the value of the column, and your application must ensure that the value is admissible in a URL:</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='City constant id'>City</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span>
-<span class='end end kw'>end</span>
+<pre class="code"><span class='kw'>class</span> <span class='const'>City</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:name</span>
+<span class='kw'>end</span>
 
-<span class='@city ivar id'>@city</span><span class='dot token'>.</span><span class='find identifier id'>find</span> <span class='string val'>&quot;Viña del Mar&quot;</span>
-<span class='redirect_to identifier id'>redirect_to</span> <span class='@city ivar id'>@city</span> <span class='comment val'># the URL will be /cities/Viña%20del%20Mar</span>
-</pre>
+<span class='ivar'>@city</span><span class='period'>.</span><span class='id find'>find</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Viña del Mar</span><span class='tstring_end'>&quot;</span></span>
+<span class='id redirect_to'>redirect_to</span> <span class='ivar'>@city</span> <span class='comment'># the URL will be /cities/Viña%20del%20Mar</span></pre>
 
 <p>For this reason, it is often more convenient to use Slugs rather than a single column.</p>
 
@@ -85,46 +81,41 @@
 
 <p>FriendlyId uses a separate table to store slugs for models which require some processing of the friendly_id text. The most common example is a blog post&#8217;s title, which may have spaces, uppercase characters, or other attributes you wish to modify to make them more suitable for use in URL&#8217;s.</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='Post constant id'>Post</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:title</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span>
-<span class='end end kw'>end</span>
+<pre class="code"><span class='kw'>class</span> <span class='const'>Post</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:title</span><span class='comma'>,</span> <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span>
+<span class='kw'>end</span>
 
-<span class='@post ivar id'>@post</span> <span class='assign token'>=</span> <span class='Post constant id'>Post</span><span class='dot token'>.</span><span class='create identifier id'>create</span><span class='lparen token'>(</span><span class='symbol val'>:title</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;This is the first post!&quot;</span><span class='rparen token'>)</span>
-<span class='@post ivar id'>@post</span><span class='dot token'>.</span><span class='friendly_id identifier id'>friendly_id</span>   <span class='comment val'># returns &quot;this-is-the-first-post&quot;</span>
-<span class='redirect_to identifier id'>redirect_to</span> <span class='@post ivar id'>@post</span>   <span class='comment val'># the URL will be /posts/this-is-the-first-post</span>
-</pre>
+<span class='ivar'>@post</span> <span class='op'>=</span> <span class='const'>Post</span><span class='period'>.</span><span class='id create'>create</span><span class='lparen'>(</span><span class='symbol'>:title</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>This is the first post!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='ivar'>@post</span><span class='period'>.</span><span class='id friendly_id'>friendly_id</span>   <span class='comment'># returns &quot;this-is-the-first-post&quot;
+</span><span class='id redirect_to'>redirect_to</span> <span class='ivar'>@post</span>   <span class='comment'># the URL will be /posts/this-is-the-first-post</span></pre>
 
 <p>If you are unsure whether to use slugs, then your best bet is to use them, because FriendlyId provides many useful features that only work with slugs. These features are explained in detail <a href="file.Guide.html#features" title="below">below</a>.</p>
 
 <h2 id='installation'>Installation</h2>
 
-<p>FriendlyId can be installed as a gem, or as a Rails plugin. It is compatible with Rails 2.2.x, 2.3.x. and 3.0.</p>
+<p>FriendlyId can be installed as a gem, or as a Rails plugin. It is compatible with Rails 2.3.x. and 3.0.</p>
 
 <h3 id='as_a_gem'>As a Gem</h3>
 
-<pre class="code"><span class='gem identifier id'>gem</span> <span class='install identifier id'>install</span> <span class='friendly_id identifier id'>friendly_id</span>
-</pre>
+<pre class="code"><span class='id gem'>gem</span> <span class='id install'>install</span> <span class='id friendly_id'>friendly_id</span></pre>
 
-<h4 id='rails_22x__23x'>Rails 2.2.x - 2.3.x</h4>
+<h4 id='rails_23x'>Rails 2.3.x</h4>
 
 <p>After installing the gem, add an entry in environment.rb:</p>
 
-<pre class="code"><span class='config identifier id'>config</span><span class='dot token'>.</span><span class='gem identifier id'>gem</span> <span class='string val'>&quot;friendly_id&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:version</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;~&gt; 2.3&quot;</span>
-</pre>
+<pre class="code"><span class='id config'>config</span><span class='period'>.</span><span class='id gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>friendly_id</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:version</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>~&gt; 2.3</span><span class='tstring_end'>&quot;</span></span></pre>
 
 <h3 id='rails_30'>Rails 3.0</h3>
 
 <p>After installing the gem, add an entry in the Gemfile:</p>
 
-<pre class="code"><span class='gem identifier id'>gem</span> <span class='string val'>&quot;friendly_id&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;~&gt; 3.0&quot;</span>
-</pre>
+<pre class="code"><span class='id gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>friendly_id</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>~&gt; 3.0</span><span class='tstring_end'>&quot;</span></span></pre>
 
 <h3 id='as_a_plugin'>As a Plugin</h3>
 
 <p>Plugin installation is simple for all supported versions of Rails:</p>
 
-<pre class="code"><span class='dot token'>.</span><span class='div op'>/</span><span class='script identifier id'>script</span><span class='div op'>/</span><span class='plugin identifier id'>plugin</span> <span class='install identifier id'>install</span> <span class='git identifier id'>git</span><span class='symbol val'>:/</span><span class='regexp val'>/github.com/n</span><span class='orman identifier id'>orman</span><span class='div op'>/</span><span class='friendly_id identifier id'>friendly_id</span><span class='dot token'>.</span><span class='git identifier id'>git</span>
-</pre>
+<pre class="code">./script/plugin install git://github.com/norman/friendly_id.git</pre>
 
 <p>However, installing as a gem offers simpler version control than plugin installation. Whenever possible, install as a gem instead. Plugin support may eventually be removed in a future version.</p>
 
@@ -132,14 +123,12 @@
 
 <p>After installing either as a gem or plugin, run:</p>
 
-<pre class="code"><span class='dot token'>.</span><span class='div op'>/</span><span class='script identifier id'>script</span><span class='div op'>/</span><span class='generate identifier id'>generate</span> <span class='friendly_id identifier id'>friendly_id</span>
-<span class='rake identifier id'>rake</span> <span class='db identifier id'>db</span><span class='symbol val'>:migrate</span>
-</pre>
+<pre class="code">./script/generate friendly_id
+rake db:migrate</pre>
 
 <p>This will install the Rake tasks and slug migration for FriendlyId. If you are not going to use slugs, you can do:</p>
 
-<pre class="code"><span class='dot token'>.</span><span class='div op'>/</span><span class='script identifier id'>script</span><span class='div op'>/</span><span class='generate identifier id'>generate</span> <span class='friendly_id identifier id'>friendly_id</span> <span class='minus op'>-</span><span class='minus op'>-</span><span class='skip identifier id'>skip</span><span class='minus op'>-</span><span class='migration identifier id'>migration</span>
-</pre>
+<pre class="code">./script/generate friendly_id --skip-migration</pre>
 
 <p>FriendlyId is now set up and ready for you to use.</p>
 
@@ -147,17 +136,16 @@
 
 <p>FriendlyId is configured in your model using the <code>has_friendly_id</code> method:</p>
 
-<pre class="code"><span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:a_column_or_method</span> <span class='options_hash identifier id'>options_hash</span>
+<pre class="code">has_friendly_id :a_column_or_method options_hash
 
-<span class='class class kw'>class</span> <span class='Post constant id'>Post</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='comment val'># use the &quot;title&quot; column as the basis of the friendly_id, and use slugs</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:title</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span>
-    <span class='comment val'># remove accents and other diacritics from Western characters</span>
-    <span class='symbol val'>:approximate_ascii</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span>
-    <span class='comment val'># don't use slugs longer than 50 chars</span>
-    <span class='symbol val'>:max_length</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>50</span>
-<span class='end end kw'>end</span>
-</pre>
+class Post &lt; ActiveRecord::Base
+  # use the &quot;title&quot; column as the basis of the friendly_id, and use slugs
+  has_friendly_id :title, :use_slug =&gt; true,
+    # remove accents and other diacritics from Western characters
+    :approximate_ascii =&gt; true,
+    # don't use slugs longer than 50 chars
+    :max_length =&gt; 50
+end</pre>
 
 <p>Read on to learn about the various features that can be configured. For the full list of valid configuration options, see the instance attribute summary for <tt><a href="FriendlyId/Configuration.html" title="FriendlyId::Configuration (class)">FriendlyId::Configuration</a></tt>.</p>
 
@@ -165,97 +153,86 @@
 
 <h2 id='friendlyid_strings'>FriendlyId Strings</h2>
 
-<p>FriendlyId comes with <tt><a href="FriendlyId/SlugString.html" title="FriendlyId::SlugString (class)">excellent support for Unicode strings</a></tt>. When using slugs, FriendlyId will automatically modify the slug text to make it more suitable for use in a URL:</p>
+<p>FriendlyId uses the <a href='http://github.com/norman/babosa'>Babosa</a> library for generating slug strings. When using slugs, FriendlyId/Babosa will automatically modify the slug text to make it more suitable for use in a URL:</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='City constant id'>City</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span>
-<span class='end end kw'>end</span>
+<pre class="code"><span class='kw'>class</span> <span class='const'>City</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span>
+<span class='kw'>end</span>
 
-<span class='@city ivar id'>@city</span><span class='dot token'>.</span><span class='create identifier id'>create</span> <span class='symbol val'>:name</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;Viña del Mar&quot;</span>
-<span class='@city ivar id'>@city</span><span class='dot token'>.</span><span class='friendly_id identifier id'>friendly_id</span>  <span class='comment val'># will be &quot;viña-del-mar&quot;</span>
-</pre>
+<span class='ivar'>@city</span><span class='period'>.</span><span class='id create'>create</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Viña del Mar</span><span class='tstring_end'>&quot;</span></span>
+<span class='ivar'>@city</span><span class='period'>.</span><span class='id friendly_id'>friendly_id</span>  <span class='comment'># will be &quot;viña-del-mar&quot;</span></pre>
 
-<p>By default, the string is <tt><a href="FriendlyId/SlugString.html#downcase%21-instance_method" title="FriendlyId::SlugString#downcase! (method)">downcased</a></tt> and <tt><a href="FriendlyId/SlugString.html#clean%21-instance_method" title="FriendlyId::SlugString#clean! (method)">stripped</a></tt>, <tt><a href="FriendlyId/SlugString.html#with_dashes%21-instance_method" title="FriendlyId::SlugString#with_dashes! (method)">spaces are replaced with dashes</a></tt>, and <tt><a href="FriendlyId/SlugString.html#word_chars%21-instance_method" title="FriendlyId::SlugString#word_chars! (method)">non-word characters are removed</a></tt>.</p>
+<p>By default, the string is downcased and stripped, spaces are replaced with dashes, and non-word characters other than &#8220;-&#8221; are removed.</p>
 
 <h3 id='replacing_accented_characters'>Replacing Accented Characters</h3>
 
 <p>If your strings use Western characters, you can use the <code>:approximate_ascii</code> option to remove accents and other diacritics:</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='City constant id'>City</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span> <span class='symbol val'>:approximate_ascii</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span>
-<span class='end end kw'>end</span>
+<pre class="code"><span class='kw'>class</span> <span class='const'>City</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:approximate_ascii</span> <span class='op'>=&gt;</span> <span class='kw'>true</span>
+<span class='kw'>end</span>
 
-<span class='@city ivar id'>@city</span><span class='dot token'>.</span><span class='create identifier id'>create</span> <span class='symbol val'>:name</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;Łódź, Poland&quot;</span>
-<span class='@city ivar id'>@city</span><span class='dot token'>.</span><span class='friendly_id identifier id'>friendly_id</span>  <span class='comment val'># will be &quot;lodz-poland&quot;</span>
-</pre>
+<span class='ivar'>@city</span><span class='period'>.</span><span class='id create'>create</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Łódź, Poland</span><span class='tstring_end'>&quot;</span></span>
+<span class='ivar'>@city</span><span class='period'>.</span><span class='id friendly_id'>friendly_id</span>  <span class='comment'># will be &quot;lodz-poland&quot;</span></pre>
 
 <p>There are special options for some languages:</p>
 
 <h3 id='german_approximations'>German Approximations</h3>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='Person constant id'>Person</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span> <span class='symbol val'>:approximate_ascii</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span>
-    <span class='symbol val'>:ascii_approximation_options</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:german</span>
-<span class='end end kw'>end</span>
+<pre class="code"><span class='kw'>class</span> <span class='const'>Person</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:approximate_ascii</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+    <span class='symbol'>:ascii_approximation_options</span> <span class='op'>=&gt;</span> <span class='symbol'>:german</span>
+<span class='kw'>end</span>
 
-<span class='@person ivar id'>@person</span><span class='dot token'>.</span><span class='create identifier id'>create</span> <span class='symbol val'>:name</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;Jürgen Müller&quot;</span>
-<span class='@person ivar id'>@person</span><span class='dot token'>.</span><span class='friendly_id identifier id'>friendly_id</span>  <span class='comment val'># will be &quot;juergen-mueller&quot;</span>
-</pre>
+<span class='ivar'>@person</span><span class='period'>.</span><span class='id create'>create</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Jürgen Müller</span><span class='tstring_end'>&quot;</span></span>
+<span class='ivar'>@person</span><span class='period'>.</span><span class='id friendly_id'>friendly_id</span>  <span class='comment'># will be &quot;juergen-mueller&quot;</span></pre>
 
 <h3 id='spanish_approximations'>Spanish Approximations</h3>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='Post constant id'>Post</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:title</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span> <span class='symbol val'>:approximate_ascii</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span>
-    <span class='symbol val'>:ascii_approximation_options</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:spanish</span>
-<span class='end end kw'>end</span>
+<pre class="code"><span class='kw'>class</span> <span class='const'>Post</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:title</span><span class='comma'>,</span> <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:approximate_ascii</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+    <span class='symbol'>:ascii_approximation_options</span> <span class='op'>=&gt;</span> <span class='symbol'>:spanish</span>
+<span class='kw'>end</span>
 
-<span class='@post ivar id'>@post</span><span class='dot token'>.</span><span class='create identifier id'>create</span><span class='lparen token'>(</span><span class='symbol val'>:title</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;¡Feliz año!&quot;</span><span class='rparen token'>)</span>
-<span class='@post ivar id'>@post</span><span class='dot token'>.</span><span class='title identifier id'>title</span>  <span class='comment val'># will be &quot;feliz-anno&quot;</span>
-</pre>
-
-<h3 id='approximations_for_other_languages'>Approximations for Other Languages</h3>
-
-<p>You can add custom approximations for your language by adding Hash of approximations to <tt><a href="FriendlyId/SlugString.html#APPROXIMATIONS-constant" title="FriendlyId::SlugString::APPROXIMATIONS (constant)">FriendlyId::SlugString::APPROXIMATIONS</a></tt>. The approximations must be listed as Unicode decimal numbers, and arrays of numbers.</p>
+<span class='ivar'>@post</span><span class='period'>.</span><span class='id create'>create</span><span class='lparen'>(</span><span class='symbol'>:title</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>¡Feliz año!</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='ivar'>@post</span><span class='period'>.</span><span class='id title'>title</span>  <span class='comment'># will be &quot;feliz-anno&quot;</span></pre>
 
 <h3 id='unicode_slugs'>Unicode Slugs</h3>
 
-<p>By default, any character outside the Unicode Western character sets will be passed through untouched, allowing you to have slugs in Arabic, Japanese, Greek, etc:</p>
+<p>By default, any character outside the Unicode Latin character range will be passed through untouched, allowing you to have slugs in Arabic, Japanese, Greek, etc:</p>
 
-<pre class="code"><span class='@post ivar id'>@post</span><span class='dot token'>.</span><span class='create identifier id'>create</span> <span class='symbol val'>:title</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;katakana: ゲコゴサザシジ!&quot;</span>
-<span class='@post ivar id'>@post</span><span class='dot token'>.</span><span class='friendly_id identifier id'>friendly_id</span> <span class='comment val'># will be: &quot;katakana-ゲコゴサザシジ&quot;</span>
-</pre>
+<pre class="code"><span class='ivar'>@post</span><span class='period'>.</span><span class='id create'>create</span> <span class='symbol'>:title</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>katakana: ゲコゴサザシジ!</span><span class='tstring_end'>&quot;</span></span>
+<span class='ivar'>@post</span><span class='period'>.</span><span class='id friendly_id'>friendly_id</span> <span class='comment'># will be: &quot;katakana-ゲコゴサザシジ&quot;</span></pre>
 
 <h3 id='ascii_slugs'>ASCII Slugs</h3>
 
 <p>You can also configure FriendlyId using <code>:strip_non_ascii</code> to completely delete any non-ascii characters:</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='Post constant id'>Post</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:title</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span> <span class='symbol val'>:strip_non_ascii</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span>
-<span class='end end kw'>end</span>
+<pre class="code"><span class='kw'>class</span> <span class='const'>Post</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:title</span><span class='comma'>,</span> <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:strip_non_ascii</span> <span class='op'>=&gt;</span> <span class='kw'>true</span>
+<span class='kw'>end</span>
 
-<span class='@post ivar id'>@post</span><span class='dot token'>.</span><span class='create identifier id'>create</span> <span class='symbol val'>:title</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;katakana: ゲコゴサザシジ!&quot;</span>
-<span class='@post ivar id'>@post</span><span class='dot token'>.</span><span class='friendly_id identifier id'>friendly_id</span> <span class='comment val'># will be: &quot;katakana&quot;</span>
-</pre>
+<span class='ivar'>@post</span><span class='period'>.</span><span class='id create'>create</span> <span class='symbol'>:title</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>katakana: ゲコゴサザシジ!</span><span class='tstring_end'>&quot;</span></span>
+<span class='ivar'>@post</span><span class='period'>.</span><span class='id friendly_id'>friendly_id</span> <span class='comment'># will be: &quot;katakana&quot;</span></pre>
 
 <h3 id='using_a_custom_method_to_generate_the_slug_text'>Using a Custom Method to Generate the Slug Text</h3>
 
 <p>FriendlyId can use either a column or a method to generate the slug text for your model:</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='City constant id'>City</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
+<pre class="code"><span class='kw'>class</span> <span class='const'>City</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
 
-  <span class='belongs_to identifier id'>belongs_to</span> <span class='symbol val'>:country</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name_and_country</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span>
+  <span class='id belongs_to'>belongs_to</span> <span class='symbol'>:country</span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:name_and_country</span><span class='comma'>,</span> <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span>
 
-  <span class='def def kw'>def</span> <span class='name_and_country identifier id'>name_and_country</span>
-    <span class='comment val'>#{name} #{country.name}</span>
-  <span class='end end kw'>end</span>
+  <span class='kw'>def</span> <span class='id name_and_country'>name_and_country</span>
+    <span class='comment'>#{name} #{country.name}
+</span>  <span class='kw'>end</span>
 
-<span class='end end kw'>end</span>
+<span class='kw'>end</span>
 
-<span class='@country ivar id'>@country</span> <span class='assign token'>=</span> <span class='Country constant id'>Country</span><span class='dot token'>.</span><span class='create identifier id'>create</span><span class='lparen token'>(</span><span class='symbol val'>:name</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;Argentina&quot;</span><span class='rparen token'>)</span>
-<span class='@city ivar id'>@city</span> <span class='assign token'>=</span> <span class='City constant id'>City</span><span class='dot token'>.</span><span class='create identifier id'>create</span><span class='lparen token'>(</span><span class='symbol val'>:name</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;Buenos Aires&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:country</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='@country ivar id'>@country</span><span class='rparen token'>)</span>
-<span class='@city ivar id'>@city</span><span class='dot token'>.</span><span class='friendly_id identifier id'>friendly_id</span> <span class='comment val'># will be &quot;buenos-aires-argentina&quot;</span>
-</pre>
+<span class='ivar'>@country</span> <span class='op'>=</span> <span class='const'>Country</span><span class='period'>.</span><span class='id create'>create</span><span class='lparen'>(</span><span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Argentina</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='ivar'>@city</span> <span class='op'>=</span> <span class='const'>City</span><span class='period'>.</span><span class='id create'>create</span><span class='lparen'>(</span><span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Buenos Aires</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:country</span> <span class='op'>=&gt;</span> <span class='ivar'>@country</span><span class='rparen'>)</span>
+<span class='ivar'>@city</span><span class='period'>.</span><span class='id friendly_id'>friendly_id</span> <span class='comment'># will be &quot;buenos-aires-argentina&quot;</span></pre>
 
 <p>One word of caution: in the example above, if the country&#8217;s name were updated, say, to &#8220;Argentine Republic&#8221;, the city&#8217;s friendly_id would not be automatically updated. For this reason, it&#8217;s a good idea to avoid using frequently-updated relations as a part of the friendly_id.</p>
 
@@ -263,14 +240,13 @@
 
 <p>If the built-in slug text handling options don&#8217;t work for your application, you can override the <code>normalize_friendly_id</code> method in your model class in order to fine-tune the output:</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='City constant id'>City</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
+<pre class="code"><span class='kw'>class</span> <span class='const'>City</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
 
-  <span class='def def kw'>def</span> <span class='normalize_friendly_id identifier id'>normalize_friendly_id</span><span class='lparen token'>(</span><span class='text identifier id'>text</span><span class='rparen token'>)</span>
-    <span class='my_text_modifier_method identifier id'>my_text_modifier_method</span><span class='lparen token'>(</span><span class='text identifier id'>text</span><span class='rparen token'>)</span>
-  <span class='end end kw'>end</span>
+  <span class='kw'>def</span> <span class='id normalize_friendly_id'>normalize_friendly_id</span><span class='lparen'>(</span><span class='id text'>text</span><span class='rparen'>)</span>
+    <span class='id my_text_modifier_method'>my_text_modifier_method</span><span class='lparen'>(</span><span class='id text'>text</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>end</span></pre>
 
 <p>The normalize_friendly_id method takes a single argument and receives an instance of <tt><a href="FriendlyId/SlugString.html" title="FriendlyId::SlugString (class)">FriendlyId::SlugString</a></tt>, a class which wraps a regular Ruby string with some additional formatting options inherits Multibyte support from ActiveSupport::Multibyte::Chars.</p>
 
@@ -278,36 +254,33 @@
 
 <p>Stringex is a library which provides some interesting options for transliterating non-Western strings to ASCII:</p>
 
-<pre class="code"><span class='string val'>&quot;你好&quot;</span><span class='dot token'>.</span><span class='to_url identifier id'>to_url</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;ni-hao&quot;</span>
-</pre>
+<pre class="code">&quot;你好&quot;.to_url =&gt; &quot;ni-hao&quot;</pre>
 
 <p>Using Stringex with FriendlyId is a simple matter of installing and requiring the <code>stringex</code> gem, and overriding the <code>normalize_friendly_id</code> method in your model:</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='City constant id'>City</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
+<pre class="code"><span class='kw'>class</span> <span class='const'>City</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
 
-  <span class='def def kw'>def</span> <span class='normalize_friendly_id identifier id'>normalize_friendly_id</span><span class='lparen token'>(</span><span class='text identifier id'>text</span><span class='rparen token'>)</span>
-    <span class='text identifier id'>text</span><span class='dot token'>.</span><span class='to_url identifier id'>to_url</span>
-  <span class='end end kw'>end</span>
+  <span class='kw'>def</span> <span class='id normalize_friendly_id'>normalize_friendly_id</span><span class='lparen'>(</span><span class='id text'>text</span><span class='rparen'>)</span>
+    <span class='id text'>text</span><span class='period'>.</span><span class='id to_url'>to_url</span>
+  <span class='kw'>end</span>
 
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>end</span></pre>
 
 <h2 id='redirecting_to_the_current_friendly_url'>Redirecting to the Current Friendly URL</h2>
 
 <p>FriendlyId maintains a history of your record&#8217;s older slugs, so if your record&#8217;s friendly_id changes, your URL&#8217;s won&#8217;t break. It offers several methods to determine whether the model instance was found using the most recent friendly_id. This helps you redirect to your &#8220;unfriendly&#8221; URL&#8217;s to your new &#8220;friendly&#8221; ones when adding FriendlyId to an existing application:</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='PostsController constant id'>PostsController</span> <span class='lt op'>&lt;</span> <span class='ApplicationController constant id'>ApplicationController</span>
+<pre class="code">class PostsController &lt; ApplicationController
 
-  <span class='before_filter identifier id'>before_filter</span> <span class='ensure_current_post_url identifier id'>ensure_current_post_url</span><span class='comma token'>,</span> <span class='symbol val'>:only</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:show</span>
+  before_filter ensure_current_post_url, :only =&gt; :show
 
-  <span class='dot3 op'>...</span>
+  ...
 
-  <span class='def def kw'>def</span> <span class='ensure_current_post_url identifier id'>ensure_current_post_url</span>
-    <span class='redirect_to identifier id'>redirect_to</span> <span class='@post ivar id'>@post</span><span class='comma token'>,</span> <span class='symbol val'>:status</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:moved_permanently</span> <span class='unless unless_mod kw'>unless</span> <span class='@post ivar id'>@post</span><span class='dot token'>.</span><span class='friendly_id_status identifier id'>friendly_id_status</span><span class='dot token'>.</span><span class='best? fid id'>best?</span>
-  <span class='end end kw'>end</span>
+  def ensure_current_post_url
+    redirect_to @post, :status =&gt; :moved_permanently unless @post.friendly_id_status.best?
+  end
 
-<span class='end end kw'>end</span>
-</pre>
+end</pre>
 
 <p>For more information, take a look at the documentation for <tt><a href="FriendlyId/Status.html" title="FriendlyId::Status (class)">FriendlyId::Status</a></tt>.</p>
 
@@ -315,23 +288,20 @@
 
 <p>FriendlyId will append a arbitrary number to the end of the id to keep it unique if necessary:</p>
 
-<pre class="code"><span class='regexp val'>/posts/n</span><span class='ew identifier id'>ew</span><span class='minus op'>-</span><span class='version identifier id'>version</span><span class='minus op'>-</span><span class='released identifier id'>released</span>
-<span class='regexp val'>/posts/n</span><span class='ew identifier id'>ew</span><span class='minus op'>-</span><span class='version identifier id'>version</span><span class='minus op'>-</span><span class='released identifier id'>released</span><span class='minus op'>-</span><span class='integer val'>-2</span>
-<span class='regexp val'>/posts/n</span><span class='ew identifier id'>ew</span><span class='minus op'>-</span><span class='version identifier id'>version</span><span class='minus op'>-</span><span class='released identifier id'>released</span><span class='minus op'>-</span><span class='integer val'>-3</span>
-<span class='dot3 op'>...</span>
-<span class='etc identifier id'>etc</span><span class='dot token'>.</span>
-</pre>
+<pre class="code">/posts/new-version-released
+/posts/new-version-released--2
+/posts/new-version-released--3
+...
+etc.</pre>
 
 <p>Note that the number is preceded by &#8221;&#8211;&#8221; to distinguish it from the rest of the slug. This is important to enable having slugs like:</p>
 
-<pre class="code"><span class='regexp val'>/cars/</span><span class='peugeot identifier id'>peugeot</span><span class='minus op'>-</span><span class='integer val'>206</span>
-<span class='regexp val'>/cars/</span><span class='peugeot identifier id'>peugeot</span><span class='minus op'>-</span><span class='integer val'>206</span><span class='minus op'>-</span><span class='integer val'>-2</span>
-</pre>
+<pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>cars</span><span class='regexp_end'>/peugeot</span></span><span class='op'>-</span><span class='int'>206</span>
+<span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>cars</span><span class='regexp_end'>/peugeot</span></span><span class='op'>-</span><span class='int'>206</span><span class='op'>-</span><span class='op'>-</span><span class='int'>2</span></pre>
 
 <p>You can configure the separator string used by your model by setting the <code>:sequence_separator</code> option in <code>has_friendly_id</code>:</p>
 
-<pre class="code"><span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:title</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span> <span class='symbol val'>:sequence_separator</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;;&quot;</span>
-</pre>
+<pre class="code"><span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:title</span><span class='comma'>,</span> <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:sequence_separator</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>;</span><span class='tstring_end'>&quot;</span></span></pre>
 
 <p>You can also override the default used in <tt><a href="FriendlyId/Configuration.html#DEFAULTS-constant" title="FriendlyId::Configuration::DEFAULTS (constant)">FriendlyId::Configuration::DEFAULTS</a></tt> to set the value for any model using FriendlyId. If you change this value in an existing application, be sure to <a href="file.Guide.html#regenerating_slugs" title="regenerate the slugs">regenerate the slugs</a> afterwards.</p>
 
@@ -339,17 +309,15 @@
 
 <p>You can configure a list of strings as reserved so that, for example, you don&#8217;t end up with this problem:</p>
 
-<pre class="code"><span class='regexp val'>/users/</span><span class='joe identifier id'>joe</span><span class='minus op'>-</span><span class='schmoe identifier id'>schmoe</span> <span class='comment val'># A user chose &quot;joe schmoe&quot; as his user name - no worries.</span>
-<span class='regexp val'>/users/n</span><span class='ew identifier id'>ew</span>        <span class='comment val'># A user chose &quot;new&quot; as his user name, and now no one can sign up.</span>
-</pre>
+<pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>users</span><span class='regexp_end'>/joe</span></span><span class='op'>-</span><span class='id schmoe'>schmoe</span> <span class='comment'># A user chose &quot;joe schmoe&quot; as his user name - no worries.
+</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>users</span><span class='regexp_end'>/new</span></span>        <span class='comment'># A user chose &quot;new&quot; as his user name, and now no one can sign up.</span></pre>
 
 <p>Reserved words are configured using the <code>:reserved_words</code> option:</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='Restaurant constant id'>Restaurant</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='belongs_to identifier id'>belongs_to</span> <span class='symbol val'>:city</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span> <span class='symbol val'>:reserved_words</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='string val'>&quot;my&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;values&quot;</span><span class='rbrack token'>]</span>
-<span class='end end kw'>end</span>
-</pre>
+<pre class="code"><span class='kw'>class</span> <span class='const'>Restaurant</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id belongs_to'>belongs_to</span> <span class='symbol'>:city</span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:reserved_words</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>my</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>values</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
 
 <p>The strings &#8220;new&#8221; and &#8220;index&#8221; are reserved by default. When you attempt to store a reserved value, FriendlyId raises a <tt><a href="FriendlyId/ReservedError.html" title="FriendlyId::ReservedError (class)">FriendlyId::ReservedError</a></tt>. You can also override the default reserved words in <tt><a href="FriendlyId/Configuration.html#DEFAULTS-constant" title="FriendlyId::Configuration::DEFAULTS (constant)">FriendlyId::Configuration::DEFAULTS</a></tt> to set the value for any model using FriendlyId.</p>
 
@@ -361,24 +329,22 @@
 
 <p>To enable slug caching, simply add a column named &#8220;cached_slug&#8221; to your model. Is also advised to index this column for performance reason. FriendlyId will automatically use this column if it detects it:</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='AddCachedSlugToUsers constant id'>AddCachedSlugToUsers</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Migration constant id'>Migration</span>
-  <span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='up identifier id'>up</span>
-    <span class='add_column identifier id'>add_column</span> <span class='symbol val'>:users</span><span class='comma token'>,</span> <span class='symbol val'>:cached_slug</span><span class='comma token'>,</span> <span class='symbol val'>:string</span>
-    <span class='add_index identifier id'>add_index</span>  <span class='symbol val'>:users</span><span class='comma token'>,</span> <span class='symbol val'>:cached_slug</span>
-  <span class='end end kw'>end</span>
+<pre class="code"><span class='kw'>class</span> <span class='const'>AddCachedSlugToUsers</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Migration</span>
+  <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id up'>up</span>
+    <span class='id add_column'>add_column</span> <span class='symbol'>:users</span><span class='comma'>,</span> <span class='symbol'>:cached_slug</span><span class='comma'>,</span> <span class='symbol'>:string</span>
+    <span class='id add_index'>add_index</span>  <span class='symbol'>:users</span><span class='comma'>,</span> <span class='symbol'>:cached_slug</span>
+  <span class='kw'>end</span>
 
-  <span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='down identifier id'>down</span>
-    <span class='remove_column identifier id'>remove_column</span> <span class='symbol val'>:users</span><span class='comma token'>,</span> <span class='symbol val'>:cached_slug</span>
-  <span class='end end kw'>end</span>
-<span class='end end kw'>end</span>
-</pre>
+  <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id down'>down</span>
+    <span class='id remove_column'>remove_column</span> <span class='symbol'>:users</span><span class='comma'>,</span> <span class='symbol'>:cached_slug</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
 
 <p>Then, redo the slugs:</p>
 
-<pre class="code"><span class='rake identifier id'>rake</span> <span class='friendly_id identifier id'>friendly_id</span><span class='symbol val'>:redo_slugs</span> <span class='MODEL constant id'>MODEL</span><span class='assign token'>=</span><span class='User constant id'>User</span>
-</pre>
+<pre class="code">rake friendly_id:redo_slugs MODEL=User</pre>
 
-<p>FriendlyId will also query against the cache column if it&#8217;s available, which can significantly improve the performance of many queries, particularly when passing an array of friendly ids to #find.</p>
+<p>FriendlyId will automatically query against the cache column if it&#8217;s available, which significantly improves the performance of many queries, particularly when passing an array of friendly ids to #find.</p>
 
 <p>A few warnings when using this feature:</p>
 
@@ -394,19 +360,17 @@
 
 <p>You can also use a different name for the column if you choose, via the <code>:cache_column</code> config option:</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='User constant id'>User</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span> <span class='symbol val'>:cache_column</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'my_cached_slug'</span>
-<span class='end end kw'>end</span>
-</pre>
+<pre class="code"><span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:cache_column</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>my_cached_slug</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span></pre>
 
 <h2 id='nil_slugs_and_skipping_validations'>Nil slugs and skipping validations</h2>
 
 <p>You can choose to allow <code>nil</code> friendly_ids via the <code>:allow_nil</code> config option:</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='User constant id'>User</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='symbol val'>:allow_nil</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span>
-<span class='end end kw'>end</span>
-</pre>
+<pre class="code"><span class='kw'>class</span> <span class='const'>User</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:allow_nil</span> <span class='op'>=&gt;</span> <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
 
 <p>This works whether the model uses slugs or not.</p>
 
@@ -420,23 +384,22 @@
 
 <p>FriendlyId can generate unique slugs within a given scope. For example, assume you have an application that displays restaurants. Without scoped slugs, if two restaurants are named &#8220;Joe&#8217;s Diner,&#8221; the second one will end up with &#8220;joes-diner&#8211;2&#8221; as its friendly_id. Using scoped allows you to keep the slug names unique for each city, so that the second &#8220;Joe&#8217;s Diner&#8221; could have the slug &#8220;joes-diner&#8221; if it&#8217;s located in a different city:</p>
 
-<pre class="code"><span class='class class kw'>class</span> <span class='Restaurant constant id'>Restaurant</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='belongs_to identifier id'>belongs_to</span> <span class='symbol val'>:city</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span> <span class='symbol val'>:scope</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:city</span>
-<span class='end end kw'>end</span>
+<pre class="code"><span class='kw'>class</span> <span class='const'>Restaurant</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id belongs_to'>belongs_to</span> <span class='symbol'>:city</span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='symbol'>:scope</span> <span class='op'>=&gt;</span> <span class='symbol'>:city</span>
+<span class='kw'>end</span>
 
-<span class='class class kw'>class</span> <span class='City constant id'>City</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
-  <span class='has_many identifier id'>has_many</span> <span class='symbol val'>:restaurants</span>
-  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span>
-<span class='end end kw'>end</span>
+<span class='kw'>class</span> <span class='const'>City</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
+  <span class='id has_many'>has_many</span> <span class='symbol'>:restaurants</span>
+  <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span>
+<span class='kw'>end</span>
 
-<span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/example.org/</span><span class='cities identifier id'>cities</span><span class='div op'>/</span><span class='seattle identifier id'>seattle</span><span class='div op'>/</span><span class='restaurants identifier id'>restaurants</span><span class='div op'>/</span><span class='joes identifier id'>joes</span><span class='minus op'>-</span><span class='diner identifier id'>diner</span>
-<span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/example.org/</span><span class='cities identifier id'>cities</span><span class='div op'>/</span><span class='chicago identifier id'>chicago</span><span class='div op'>/</span><span class='restaurants identifier id'>restaurants</span><span class='div op'>/</span><span class='joes identifier id'>joes</span><span class='minus op'>-</span><span class='diner identifier id'>diner</span>
+<span class='id http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id example'>example</span><span class='period'>.</span><span class='id org'>org</span><span class='op'>/</span><span class='id cities'>cities</span><span class='op'>/</span><span class='id seattle'>seattle</span><span class='op'>/</span><span class='id restaurants'>restaurants</span><span class='op'>/</span><span class='id joes'>joes</span><span class='op'>-</span><span class='id diner'>diner</span>
+<span class='id http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id example'>example</span><span class='period'>.</span><span class='id org'>org</span><span class='op'>/</span><span class='id cities'>cities</span><span class='op'>/</span><span class='id chicago'>chicago</span><span class='op'>/</span><span class='id restaurants'>restaurants</span><span class='op'>/</span><span class='id joes'>joes</span><span class='op'>-</span><span class='id diner'>diner</span>
 
-<span class='Restaurant constant id'>Restaurant</span><span class='dot token'>.</span><span class='find identifier id'>find</span><span class='lparen token'>(</span><span class='string val'>&quot;joes-diner&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:scope</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;seattle&quot;</span><span class='rparen token'>)</span>  <span class='comment val'># returns 1 record</span>
-<span class='Restaurant constant id'>Restaurant</span><span class='dot token'>.</span><span class='find identifier id'>find</span><span class='lparen token'>(</span><span class='string val'>&quot;joes-diner&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:scope</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;chicago&quot;</span><span class='rparen token'>)</span>  <span class='comment val'># returns 1 record</span>
-<span class='Restaurant constant id'>Restaurant</span><span class='dot token'>.</span><span class='find identifier id'>find</span><span class='lparen token'>(</span><span class='string val'>&quot;joes-diner&quot;</span><span class='rparen token'>)</span>                       <span class='comment val'># returns both records</span>
-</pre>
+<span class='const'>Restaurant</span><span class='period'>.</span><span class='id find'>find</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>joes-diner</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:scope</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>seattle</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='comment'># returns 1 record
+</span><span class='const'>Restaurant</span><span class='period'>.</span><span class='id find'>find</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>joes-diner</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:scope</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>chicago</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='comment'># returns 1 record
+</span><span class='const'>Restaurant</span><span class='period'>.</span><span class='id find'>find</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>joes-diner</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>                       <span class='comment'># returns both records</span></pre>
 
 <p>The value for the <code>:scope</code> key in your model can be a custom method you define, or the name of a relation. If it&#8217;s the name of a relation, then the scope&#8217;s text value will be the result of calling <code>to_param</code> on the related model record. In the example above, the city model also uses FriendlyId and so its <code>to_param</code> method returns its friendly_id: &#8220;chicago&#8221; or &#8220;seattle&#8221;.</p>
 
@@ -448,16 +411,15 @@
 
 <p>Note that FriendlyId does not set up any routes for scoped models; you must do this yourself in your application. Here&#8217;s an example of one way to set this up:</p>
 
-<pre class="code"><span class='comment val'># in routes.rb</span>
-<span class='map identifier id'>map</span><span class='dot token'>.</span><span class='resources identifier id'>resources</span> <span class='symbol val'>:restaurants</span>
-<span class='map identifier id'>map</span><span class='dot token'>.</span><span class='restaurant identifier id'>restaurant</span> <span class='string val'>&quot;/restaurants/:scope/:id&quot;</span><span class='comma token'>,</span> <span class='symbol val'>:controller</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;restaurants&quot;</span>
+<pre class="code"><span class='comment'># in routes.rb
+</span><span class='id map'>map</span><span class='period'>.</span><span class='id resources'>resources</span> <span class='symbol'>:restaurants</span>
+<span class='id map'>map</span><span class='period'>.</span><span class='id restaurant'>restaurant</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/restaurants/:scope/:id</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:controller</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>restaurants</span><span class='tstring_end'>&quot;</span></span>
 
-<span class='comment val'># in views</span>
-<span class='link_to identifier id'>link_to</span> <span class='string val'>'Show'</span><span class='comma token'>,</span> <span class='restaurant_path identifier id'>restaurant_path</span><span class='lparen token'>(</span><span class='restaurant identifier id'>restaurant</span><span class='dot token'>.</span><span class='city identifier id'>city</span><span class='comma token'>,</span> <span class='restaurant identifier id'>restaurant</span><span class='rparen token'>)</span>
+<span class='comment'># in views
+</span><span class='id link_to'>link_to</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Show</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id restaurant_path'>restaurant_path</span><span class='lparen'>(</span><span class='id restaurant'>restaurant</span><span class='period'>.</span><span class='id city'>city</span><span class='comma'>,</span> <span class='id restaurant'>restaurant</span><span class='rparen'>)</span>
 
-<span class='comment val'># in controllers</span>
-<span class='@restaurant ivar id'>@restaurant</span> <span class='assign token'>=</span> <span class='Restaurant constant id'>Restaurant</span><span class='dot token'>.</span><span class='find identifier id'>find</span><span class='lparen token'>(</span><span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:id</span><span class='rbrack token'>]</span><span class='comma token'>,</span> <span class='symbol val'>:scope</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:scope</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
-</pre>
+<span class='comment'># in controllers
+</span><span class='ivar'>@restaurant</span> <span class='op'>=</span> <span class='const'>Restaurant</span><span class='period'>.</span><span class='id find'>find</span><span class='lparen'>(</span><span class='id params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:scope</span> <span class='op'>=&gt;</span> <span class='id params'>params</span><span class='lbracket'>[</span><span class='symbol'>:scope</span><span class='rbracket'>]</span><span class='rparen'>)</span></pre>
 
 <h2 id='friendlyid_rake_tasks'>FriendlyId Rake Tasks</h2>
 
@@ -465,26 +427,39 @@
 
 <h3 id='generating_new_slugs_for_the_first_time'>Generating New Slugs For the First Time</h3>
 
-<pre class="code"><span class='friendly_id identifier id'>friendly_id</span><span class='symbol val'>:make_slugs</span> <span class='MODEL constant id'>MODEL</span><span class='assign token'>=</span><span class='lt op'>&lt;</span><span class='model identifier id'>model</span> <span class='name identifier id'>name</span><span class='gt op'>&gt;</span>
-</pre>
+<pre class="code">friendly_id:make_slugs MODEL=&lt;model name&gt;</pre>
 
 <p>Use this task to generate slugs after installing FriendlyId in a new application.</p>
 
 <h3 id='regenerating_slugs'>Regenerating Slugs</h3>
 
-<pre class="code"><span class='friendly_id identifier id'>friendly_id</span><span class='symbol val'>:redo_slugs</span> <span class='MODEL constant id'>MODEL</span><span class='assign token'>=</span><span class='lt op'>&lt;</span><span class='model identifier id'>model</span> <span class='name identifier id'>name</span><span class='gt op'>&gt;</span>
-</pre>
+<pre class="code">friendly_id:redo_slugs MODEL=&lt;model name&gt;</pre>
 
 <p>Use this task to regenerate slugs after making any changes to your model&#8217;s FriendlyId configuration options that affect slug generation. For example, if you introduce a <code>cached_slug</code> column or change the <code>:seqence_separator</code>.</p>
 
 <h3 id='deleting_old_slugs'>Deleting Old Slugs</h3>
 
-<pre class="code"><span class='rake identifier id'>rake</span> <span class='friendly_id identifier id'>friendly_id</span><span class='symbol val'>:remove_old_slugs</span> <span class='MODEL constant id'>MODEL</span><span class='assign token'>=</span><span class='lt op'>&lt;</span><span class='model identifier id'>model</span> <span class='name identifier id'>name</span><span class='gt op'>&gt;</span> <span class='DAYS constant id'>DAYS</span><span class='assign token'>=</span><span class='lt op'>&lt;</span><span class='days identifier id'>days</span><span class='gt op'>&gt;</span>
-</pre>
+<pre class="code">rake friendly_id:remove_old_slugs MODEL=&lt;model name&gt; DAYS=&lt;days&gt;</pre>
 
 <p>Use this task if you wish to delete expired slugs; manually or perhaps via cron. If you don&#8217;t specify the days option, the default is to remove unused slugs older than 45 days.</p>
 
 <h1 id='misc_tips'>Misc tips</h1>
+
+<h2 id='default_scopes'>Default Scopes</h2>
+
+<p>Whether you&#8217;re using FriendlyId or not, a good rule of thumb for default scopes is to always use your model&#8217;s table name. Otherwise any time you do a join, you risk having queries fail because of duplicate column names - particularly for a default scope like this one:</p>
+
+<pre class="code"><span class='id default_scope'>default_scope</span> <span class='symbol'>:order</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>created_at DESC</span><span class='tstring_end'>&quot;</span></span></pre>
+
+<p>Instead, do this:</p>
+
+<pre class="code">default_scope :order =&gt; = &quot;#{quoted_table_name}.created_at DESC&quot;</pre>
+
+<p>Or even better, unless you&#8217;re using a custom primary key:</p>
+
+<pre class="code">default_scope :order =&gt; = &quot;#{quoted_table_name}.id DESC&quot;</pre>
+
+<p>because sorting by a unique integer column is faster than sorting by a date column.</p>
 
 <h2 id='mysql_50_or_less'>MySQL 5.0 or less</h2>
 
@@ -498,46 +473,44 @@
 
 <p>Before removing any public or protected methods, FriendlyId will deprecate them through one major release cycle. Private methods may, however, change at any time.</p>
 
-<h2 id='running_the_tests'>Running the Tests</h2>
-
-<p>FriendlyId uses <a href='http://github.com/carlhuda/bundler'>Bundler</a> to manage its gem dependencies. To run the tests, first make sure you have bundler installed. Then, copy Gemfile.default to Gemfile. If you wish to test against different gem versions than the ones specified in the Gemfile (for example, to test with Postgres or MySQL rather than SQLite3, or to test against different versions of ActiveRecord), then simply modify the Gemfile to suit your dependencies.</p>
-
 <h2 id='some_benchmarks'>Some Benchmarks</h2>
 
 <p>These benchmarks can give you an idea of FriendlyId&#8217;s impact on the performance of your application. Of course your results may vary.</p>
 
 <p>Note that much of the performance difference can be attributed to finding an SQL record by a text column. Finding a single record by numeric primary key is always the fastest operation, and thus the best choice when possible. If you decide not to use FriendlyId for performance reasons, keep in mind that your own solution is unlikely to be any faster than FriendlyId with cached slugs enabled. But if it is, then your patches would be very welcome!</p>
 
-<pre class="code"><span class='ruby identifier id'>ruby</span> <span class='float val'>1.9</span><span class='integer val'>.1</span><span class='p378 identifier id'>p378</span> <span class='lparen token'>(</span><span class='integer val'>2010</span><span class='minus op'>-</span><span class='integer val'>01</span><span class='minus op'>-</span><span class='integer val'>10</span> <span class='revision identifier id'>revision</span> <span class='integer val'>26273</span><span class='rparen token'>)</span> <span class='lbrack token'>[</span><span class='i386 identifier id'>i386</span><span class='minus op'>-</span><span class='darwin10 identifier id'>darwin10</span><span class='float val'>.2.0</span><span class='rbrack token'>]</span>
-<span class='activerecord identifier id'>activerecord</span> <span class='lparen token'>(</span><span class='float val'>2.3</span><span class='integer val'>.5</span><span class='rparen token'>)</span>
-<span class='friendly_id identifier id'>friendly_id</span> <span class='lparen token'>(</span><span class='float val'>2.3</span><span class='integer val'>.2</span><span class='rparen token'>)</span>
-<span class='sqlite3 identifier id'>sqlite3</span> <span class='float val'>3.6</span><span class='integer val'>.19</span> <span class='in in kw'>in</span><span class='minus op'>-</span><span class='memory identifier id'>memory</span> <span class='database identifier id'>database</span>
-                                                   <span class='bitor op'>|</span> <span class='DEFAULT constant id'>DEFAULT</span> <span class='bitor op'>|</span> <span class='NO_SLUG constant id'>NO_SLUG</span> <span class='bitor op'>|</span>    <span class='SLUG constant id'>SLUG</span> <span class='bitor op'>|</span> <span class='CACHED_SLUG constant id'>CACHED_SLUG</span> <span class='bitor op'>|</span>
-<span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span>
-<span class='find identifier id'>find</span> <span class='model identifier id'>model</span> <span class='by identifier id'>by</span> <span class='id identifier id'>id</span>                             <span class='x1000 identifier id'>x1000</span> <span class='bitor op'>|</span>   <span class='integer val'>0</span><span class='integer val'>.274</span> <span class='bitor op'>|</span>   <span class='integer val'>0</span><span class='integer val'>.426</span> <span class='bitor op'>|</span>   <span class='integer val'>0</span><span class='integer val'>.780</span> <span class='bitor op'>|</span>       <span class='integer val'>0</span><span class='integer val'>.489</span> <span class='bitor op'>|</span>
-<span class='find identifier id'>find</span> <span class='model identifier id'>model</span> <span class='using identifier id'>using</span> <span class='array identifier id'>array</span> <span class='of identifier id'>of</span> <span class='ids identifier id'>ids</span>                <span class='x1000 identifier id'>x1000</span> <span class='bitor op'>|</span>   <span class='integer val'>0</span><span class='integer val'>.517</span> <span class='bitor op'>|</span>   <span class='integer val'>0</span><span class='integer val'>.525</span> <span class='bitor op'>|</span>   <span class='float val'>1.692</span> <span class='bitor op'>|</span>       <span class='integer val'>0</span><span class='integer val'>.623</span> <span class='bitor op'>|</span>
-<span class='find identifier id'>find</span> <span class='model identifier id'>model</span> <span class='using identifier id'>using</span> <span class='id identifier id'>id</span><span class='comma token'>,</span> <span class='then then kw'>then</span> <span class='to_param identifier id'>to_param</span>           <span class='x1000 identifier id'>x1000</span> <span class='bitor op'>|</span>   <span class='integer val'>0</span><span class='integer val'>.279</span> <span class='bitor op'>|</span>   <span class='integer val'>0</span><span class='integer val'>.431</span> <span class='bitor op'>|</span>   <span class='float val'>1.253</span> <span class='bitor op'>|</span>       <span class='integer val'>0</span><span class='integer val'>.498</span> <span class='bitor op'>|</span>
-<span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span>
-<span class='Total constant id'>Total</span>                                              <span class='bitor op'>|</span>   <span class='float val'>1.071</span> <span class='bitor op'>|</span>   <span class='float val'>1.382</span> <span class='bitor op'>|</span>   <span class='float val'>3.725</span> <span class='bitor op'>|</span>       <span class='float val'>1.610</span> <span class='bitor op'>|</span>
+<pre class="code">activerecord (2.3.8)
+ruby 1.9.2dev (2010-07-06 revision 28549) [x86_64-darwin10.4.0]
+friendly_id (3.1.0)
+sqlite3 3.6.12 in-memory database
 
-<span class='ruby identifier id'>ruby</span> <span class='float val'>1.9</span><span class='integer val'>.1</span><span class='p378 identifier id'>p378</span> <span class='lparen token'>(</span><span class='integer val'>2010</span><span class='minus op'>-</span><span class='integer val'>01</span><span class='minus op'>-</span><span class='integer val'>10</span> <span class='revision identifier id'>revision</span> <span class='integer val'>26273</span><span class='rparen token'>)</span> <span class='lbrack token'>[</span><span class='i386 identifier id'>i386</span><span class='minus op'>-</span><span class='darwin10 identifier id'>darwin10</span><span class='float val'>.2.0</span><span class='rbrack token'>]</span>
-<span class='activerecord identifier id'>activerecord</span> <span class='lparen token'>(</span><span class='float val'>3.0</span><span class='float val'>.0</span><span class='dot token'>.</span><span class='beta1 identifier id'>beta1</span><span class='rparen token'>)</span>
-<span class='friendly_id identifier id'>friendly_id</span> <span class='lparen token'>(</span><span class='float val'>2.3</span><span class='integer val'>.2</span><span class='rparen token'>)</span>
-<span class='sqlite3 identifier id'>sqlite3</span> <span class='float val'>3.6</span><span class='integer val'>.19</span> <span class='in in kw'>in</span><span class='minus op'>-</span><span class='memory identifier id'>memory</span> <span class='database identifier id'>database</span>
+                                                   | DEFAULT | NO_SLUG |    SLUG | CACHED_SLUG |
+------------------------------------------------------------------------------------------------
+find model by id                             x1000 |   0.340 |   0.468 |   0.877 |       0.534 |
+find model using array of ids                x1000 |   0.551 |   0.592 |   0.989 |       0.893 |
+find model using id, then to_param           x1000 |   0.340 |   0.487 |   1.310 |       0.551 |
+================================================================================================
+Total                                              |   1.231 |   1.547 |   3.176 |       1.979 |
 
-                                                   <span class='bitor op'>|</span> <span class='DEFAULT constant id'>DEFAULT</span> <span class='bitor op'>|</span> <span class='NO_SLUG constant id'>NO_SLUG</span> <span class='bitor op'>|</span>    <span class='SLUG constant id'>SLUG</span> <span class='bitor op'>|</span> <span class='CACHED_SLUG constant id'>CACHED_SLUG</span> <span class='bitor op'>|</span>
-<span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span><span class='minus op'>-</span>
-<span class='find identifier id'>find</span> <span class='model identifier id'>model</span> <span class='by identifier id'>by</span> <span class='id identifier id'>id</span>                             <span class='x1000 identifier id'>x1000</span> <span class='bitor op'>|</span>   <span class='integer val'>0</span><span class='integer val'>.557</span> <span class='bitor op'>|</span>   <span class='float val'>1.135</span> <span class='bitor op'>|</span>   <span class='float val'>6.491</span> <span class='bitor op'>|</span>       <span class='float val'>1.398</span> <span class='bitor op'>|</span>
-<span class='find identifier id'>find</span> <span class='model identifier id'>model</span> <span class='using identifier id'>using</span> <span class='array identifier id'>array</span> <span class='of identifier id'>of</span> <span class='ids identifier id'>ids</span>                <span class='x1000 identifier id'>x1000</span> <span class='bitor op'>|</span>   <span class='integer val'>0</span><span class='integer val'>.862</span> <span class='bitor op'>|</span>   <span class='integer val'>0</span><span class='integer val'>.882</span> <span class='bitor op'>|</span>   <span class='float val'>6.152</span> <span class='bitor op'>|</span>       <span class='float val'>1.919</span> <span class='bitor op'>|</span>
-<span class='find identifier id'>find</span> <span class='model identifier id'>model</span> <span class='using identifier id'>using</span> <span class='id identifier id'>id</span><span class='comma token'>,</span> <span class='then then kw'>then</span> <span class='to_param identifier id'>to_param</span>           <span class='x1000 identifier id'>x1000</span> <span class='bitor op'>|</span>   <span class='integer val'>0</span><span class='integer val'>.658</span> <span class='bitor op'>|</span>   <span class='float val'>2.200</span> <span class='bitor op'>|</span>   <span class='float val'>8.398</span> <span class='bitor op'>|</span>       <span class='float val'>1.539</span> <span class='bitor op'>|</span>
-<span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span><span class='eqq op'>===</span>
-<span class='Total constant id'>Total</span>                                              <span class='bitor op'>|</span>   <span class='float val'>2.077</span> <span class='bitor op'>|</span>   <span class='float val'>4.217</span> <span class='bitor op'>|</span>  <span class='float val'>21.041</span> <span class='bitor op'>|</span>       <span class='float val'>4.856</span> <span class='bitor op'>|</span>
-</pre></div></div>
+
+
+activerecord (3.0.0.beta4)
+ruby 1.9.2dev (2010-07-06 revision 28549) [x86_64-darwin10.4.0]
+friendly_id (3.1.0)
+sqlite3 3.6.12 in-memory database
+
+                                                   | DEFAULT | NO_SLUG |    SLUG | CACHED_SLUG |
+------------------------------------------------------------------------------------------------
+find model by id                             x1000 |   0.495 |   0.608 |   1.519 |       0.641 |
+find model using array of ids                x1000 |   0.708 |   0.722 |   6.483 |       0.782 |
+find model using id, then to_param           x1000 |   0.506 |   0.645 |   2.644 |       0.637 |
+================================================================================================
+Total                                              |   1.709 |   1.976 |  10.645 |       2.061 |</pre></div></div>
     
     <div id="footer">
-  Generated on Thu Jun 10 14:47:16 2010 by 
+  Generated on Thu Jul 29 16:13:57 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.5 (ruby-1.8.6).
+  0.5.8 (ruby-1.9.2).
 </div>
 
   </body>

@@ -60,7 +60,7 @@
   
     <dt class="r1 last">Defined in:</dt>
     <dd class="r1 last">lib/friendly_id.rb<span class="defines">,<br />
-  lib/friendly_id/test.rb,<br /> lib/friendly_id/status.rb,<br /> lib/friendly_id/railtie.rb,<br /> lib/friendly_id/slugged.rb,<br /> lib/friendly_id/finders.rb,<br /> lib/friendly_id/version.rb,<br /> lib/friendly_id/slug_string.rb,<br /> lib/friendly_id/active_record.rb,<br /> lib/friendly_id/configuration.rb,<br /> lib/friendly_id/active_record_adapter/tasks.rb,<br /> lib/friendly_id/active_record_adapter/finders.rb,<br /> lib/friendly_id/active_record_adapter/simple_model.rb,<br /> lib/friendly_id/active_record_adapter/configuration.rb,<br /> lib/friendly_id/active_record_adapter/slugged_model.rb</span>
+  lib/friendly_id/test.rb,<br /> lib/friendly_id/status.rb,<br /> lib/friendly_id/version.rb,<br /> lib/friendly_id/slugged.rb,<br /> lib/friendly_id/railtie.rb,<br /> lib/friendly_id/slug_string.rb,<br /> lib/friendly_id/active_record.rb,<br /> lib/friendly_id/configuration.rb,<br /> lib/friendly_id/active_record_adapter/tasks.rb,<br /> lib/friendly_id/active_record_adapter/finders.rb,<br /> lib/friendly_id/active_record_adapter/relation.rb,<br /> lib/friendly_id/active_record_adapter/simple_model.rb,<br /> lib/friendly_id/active_record_adapter/configuration.rb,<br /> lib/friendly_id/active_record_adapter/slugged_model.rb</span>
 </dd>
   
 </dl>
@@ -81,7 +81,7 @@ encoding: utf-8
 <p class="children">
    
     
-      <strong class="modules">Modules:</strong> <a href="FriendlyId/ActiveRecordAdapter.html" title="FriendlyId::ActiveRecordAdapter (module)">ActiveRecordAdapter</a>, <a href="FriendlyId/Base.html" title="FriendlyId::Base (module)">Base</a>, <a href="FriendlyId/Finders.html" title="FriendlyId::Finders (module)">Finders</a>, <a href="FriendlyId/Slugged.html" title="FriendlyId::Slugged (module)">Slugged</a>, <a href="FriendlyId/Test.html" title="FriendlyId::Test (module)">Test</a>, <a href="FriendlyId/Version.html" title="FriendlyId::Version (module)">Version</a>
+      <strong class="modules">Modules:</strong> <a href="FriendlyId/ActiveRecordAdapter.html" title="FriendlyId::ActiveRecordAdapter (module)">ActiveRecordAdapter</a>, <a href="FriendlyId/Base.html" title="FriendlyId::Base (module)">Base</a>, <a href="FriendlyId/Slugged.html" title="FriendlyId::Slugged (module)">Slugged</a>, <a href="FriendlyId/Test.html" title="FriendlyId::Test (module)">Test</a>, <a href="FriendlyId/Version.html" title="FriendlyId::Version (module)">Version</a>
     
    
     
@@ -92,14 +92,107 @@ encoding: utf-8
 
 
 
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
 
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#on_ar3%3F-class_method" title="on_ar3? (class method)">+ (Boolean) <strong>on_ar3?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Are we running on ActiveRecord 3 or higher?.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="on_ar3?-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>on_ar3?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Are we running on ActiveRecord 3 or higher?
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+4
+5
+6</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record.rb', line 4</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id on_ar3?'>on_ar3?</span>
+  <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>VERSION</span><span class='op'>::</span><span class='const'>STRING</span> <span class='op'>&gt;=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>3</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
 
 </div>
     
     <div id="footer">
-  Generated on Thu Jun 10 14:47:17 2010 by 
+  Generated on Thu Jul 29 16:13:58 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.5 (ruby-1.8.6).
+  0.5.8 (ruby-1.9.2).
 </div>
 
   </body>

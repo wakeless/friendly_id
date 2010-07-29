@@ -68,18 +68,6 @@
 </dl>
 <div class="clear"></div>
 
-<h2>Defined Under Namespace</h2>
-<p class="children">
-   
-    
-      <strong class="modules">Modules:</strong> <a href="SluggedModel/SluggedFinder.html" title="FriendlyId::ActiveRecordAdapter::SluggedModel::SluggedFinder (module)">SluggedFinder</a>
-    
-   
-    
-      <strong class="classes">Classes:</strong> <a href="SluggedModel/CachedMultipleFinder.html" title="FriendlyId::ActiveRecordAdapter::SluggedModel::CachedMultipleFinder (class)">CachedMultipleFinder</a>, <a href="SluggedModel/CachedSingleFinder.html" title="FriendlyId::ActiveRecordAdapter::SluggedModel::CachedSingleFinder (class)">CachedSingleFinder</a>, <a href="SluggedModel/MultipleFinder.html" title="FriendlyId::ActiveRecordAdapter::SluggedModel::MultipleFinder (class)">MultipleFinder</a>, <a href="SluggedModel/SingleFinder.html" title="FriendlyId::ActiveRecordAdapter::SluggedModel::SingleFinder (class)">SingleFinder</a>
-    
-  
-</p>
 
 
   
@@ -192,7 +180,7 @@ Returns the friendly id, or if none is available, the numeric id.
       <div class="method_details first">
   <p class="signature first" id="included-class_method">
   
-    + (<tt>Object</tt>) <strong>included</strong>(base) 
+    + (<tt><a href="../../Object.html" title="Object (class)">Object</a></tt>) <strong>included</strong>(base) 
   
 
   
@@ -210,35 +198,34 @@ Returns the friendly id, or if none is available, the numeric id.
       <pre class="lines">
 
 
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155</pre>
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/slugged_model.rb', line 144</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/slugged_model.rb', line 5</span>
 
-<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='included identifier id'>included</span><span class='lparen token'>(</span><span class='base identifier id'>base</span><span class='rparen token'>)</span>
-  <span class='base identifier id'>base</span><span class='dot token'>.</span><span class='class_eval identifier id'>class_eval</span> <span class='do do kw'>do</span>
-    <span class='has_many identifier id'>has_many</span> <span class='symbol val'>:slugs</span><span class='comma token'>,</span> <span class='symbol val'>:order</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'id DESC'</span><span class='comma token'>,</span> <span class='symbol val'>:as</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:sluggable</span><span class='comma token'>,</span> <span class='symbol val'>:dependent</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:destroy</span>
-    <span class='has_one identifier id'>has_one</span> <span class='symbol val'>:slug</span><span class='comma token'>,</span> <span class='symbol val'>:order</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'id DESC'</span><span class='comma token'>,</span> <span class='symbol val'>:as</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:sluggable</span><span class='comma token'>,</span> <span class='symbol val'>:dependent</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:destroy</span>
-    <span class='before_save identifier id'>before_save</span> <span class='symbol val'>:build_a_slug</span>
-    <span class='after_save identifier id'>after_save</span> <span class='symbol val'>:set_slug_cache</span>
-    <span class='after_update identifier id'>after_update</span> <span class='symbol val'>:update_scope</span>
-    <span class='after_update identifier id'>after_update</span> <span class='symbol val'>:update_dependent_scopes</span>
-    <span class='protect_friendly_id_attributes identifier id'>protect_friendly_id_attributes</span>
-    <span class='extend identifier id'>extend</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='ActiveRecordAdapter constant id'>ActiveRecordAdapter</span><span class='colon2 op'>::</span><span class='FinderMethods constant id'>FinderMethods</span>
-  <span class='end end kw'>end</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id included'>included</span><span class='lparen'>(</span><span class='id base'>base</span><span class='rparen'>)</span>
+  <span class='id base'>base</span><span class='period'>.</span><span class='id class_eval'>class_eval</span> <span class='kw'>do</span>
+    <span class='id has_many'>has_many</span> <span class='symbol'>:slugs</span><span class='comma'>,</span> <span class='symbol'>:order</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id DESC</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:as</span> <span class='op'>=&gt;</span> <span class='symbol'>:sluggable</span><span class='comma'>,</span> <span class='symbol'>:dependent</span> <span class='op'>=&gt;</span> <span class='symbol'>:destroy</span>
+    <span class='id has_one'>has_one</span> <span class='symbol'>:slug</span><span class='comma'>,</span> <span class='symbol'>:order</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>id DESC</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:as</span> <span class='op'>=&gt;</span> <span class='symbol'>:sluggable</span><span class='comma'>,</span> <span class='symbol'>:dependent</span> <span class='op'>=&gt;</span> <span class='symbol'>:destroy</span>
+    <span class='id before_save'>before_save</span> <span class='symbol'>:build_a_slug</span>
+    <span class='id after_save'>after_save</span> <span class='symbol'>:set_slug_cache</span>
+    <span class='id after_update'>after_update</span> <span class='symbol'>:update_scope</span>
+    <span class='id after_update'>after_update</span> <span class='symbol'>:update_dependent_scopes</span>
+    <span class='id protect_friendly_id_attributes'>protect_friendly_id_attributes</span>
+    <span class='id extend'>extend</span> <span class='const'>FriendlyId</span><span class='op'>::</span><span class='const'>ActiveRecordAdapter</span><span class='op'>::</span><span class='const'>Finders</span> <span class='kw'>unless</span> <span class='const'>FriendlyId</span><span class='period'>.</span><span class='id on_ar3?'>on_ar3?</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -253,7 +240,7 @@ Returns the friendly id, or if none is available, the numeric id.
       <div class="method_details first">
   <p class="signature first" id="find_slug-instance_method">
   
-    - (<tt>Object</tt>) <strong>find_slug</strong>(name, sequence) 
+    - (<tt><a href="../../Object.html" title="Object (class)">Object</a></tt>) <strong>find_slug</strong>(name, sequence) 
   
 
   
@@ -263,17 +250,16 @@ Returns the friendly id, or if none is available, the numeric id.
       <pre class="lines">
 
 
-159
-160
-161</pre>
+20
+21
+22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/slugged_model.rb', line 159</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/slugged_model.rb', line 20</span>
 
-<span class='def def kw'>def</span> <span class='find_slug identifier id'>find_slug</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='sequence identifier id'>sequence</span><span class='rparen token'>)</span>
-  <span class='slugs identifier id'>slugs</span><span class='dot token'>.</span><span class='find_by_name_and_sequence identifier id'>find_by_name_and_sequence</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='sequence identifier id'>sequence</span><span class='rparen token'>)</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id find_slug'>find_slug</span><span class='lparen'>(</span><span class='id name'>name</span><span class='comma'>,</span> <span class='id sequence'>sequence</span><span class='rparen'>)</span>
+  <span class='id slugs'>slugs</span><span class='period'>.</span><span class='id find_by_name_and_sequence'>find_by_name_and_sequence</span><span class='lparen'>(</span><span class='id name'>name</span><span class='comma'>,</span> <span class='id sequence'>sequence</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -282,14 +268,16 @@ Returns the friendly id, or if none is available, the numeric id.
       <div class="method_details ">
   <p class="signature " id="to_param-instance_method">
   
-    - (<tt>Object</tt>) <strong>to_param</strong> 
+    - (<tt><a href="../../Object.html" title="Object (class)">Object</a></tt>) <strong>to_param</strong> 
   
 
   
 </p><div class="docstring">
   <div class="discussion">
     <p>
-Returns the friendly id, or if none is available, the numeric id.
+Returns the friendly id, or if none is available, the numeric id. Note that
+this method will use the cached_slug value if present, unlike
+<tt><a href="../Slugged/Model.html#friendly_id-instance_method" title="FriendlyId::Slugged::Model#friendly_id (method)">FriendlyId::Slugged::Model#friendly_id</a></tt>.
 </p>
 
 
@@ -303,17 +291,16 @@ Returns the friendly id, or if none is available, the numeric id.
       <pre class="lines">
 
 
-164
-165
-166</pre>
+26
+27
+28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/slugged_model.rb', line 164</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/slugged_model.rb', line 26</span>
 
-<span class='def def kw'>def</span> <span class='to_param identifier id'>to_param</span>
-  <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='cache_column identifier id'>cache_column</span> <span class='integer val'>? </span><span class='to_param_from_cache identifier id'>to_param_from_cache</span> <span class='colon op'>:</span> <span class='to_param_from_slug identifier id'>to_param_from_slug</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id to_param'>to_param</span>
+  <span class='id friendly_id_config'>friendly_id_config</span><span class='period'>.</span><span class='id cache_column'>cache_column</span> <span class='op'>?</span> <span class='id to_param_from_cache'>to_param_from_cache</span> <span class='op'>:</span> <span class='id to_param_from_slug'>to_param_from_slug</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -324,9 +311,9 @@ Returns the friendly id, or if none is available, the numeric id.
 </div>
     
     <div id="footer">
-  Generated on Thu Jun 10 14:47:20 2010 by 
+  Generated on Thu Jul 29 16:13:58 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
-  0.5.5 (ruby-1.8.6).
+  0.5.8 (ruby-1.9.2).
 </div>
 
   </body>
