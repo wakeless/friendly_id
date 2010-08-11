@@ -479,6 +479,63 @@ Use slugs for storing the friendly_id string.
 
   
     <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scopes_used%3D-class_method" title="scopes_used= (class method)">+ (Object) <strong>scopes_used=</strong>(val) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+This will be set if FriendlyId&#8217;s scope feature is used in any model.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scopes_used%3F-class_method" title="scopes_used? (class method)">+ (Boolean) <strong>scopes_used?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Are scoped slugs being used by any model?.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
       Instance Method Summary
       <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
     </h2>
@@ -641,17 +698,17 @@ the object that the method was called on
       <pre class="lines">
 
 
+79
 80
 81
 82
 83
 84
 85
-86
-87</pre>
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 80</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 79</span>
 
 <span class='kw'>def</span> <span class='id initialize'>initialize</span><span class='lparen'>(</span><span class='id configured_class'>configured_class</span><span class='comma'>,</span> <span class='id method'>method</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
   <span class='ivar'>@configured_class</span> <span class='op'>=</span> <span class='id configured_class'>configured_class</span>
@@ -774,8 +831,7 @@ Strip diacritics from Western characters.
 </p><div class="docstring">
   <div class="discussion">
     <p>
-Locale-type options for ASCII approximations. These currently be
-<tt>:german</tt> or <tt>:spanish</tt>.
+Locale-type options for ASCII approximations.
 </p>
 
 
@@ -789,12 +845,12 @@ Locale-type options for ASCII approximations. These currently be
       <pre class="lines">
 
 
+43
 44
-45
-46</pre>
+45</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 43</span>
 
 <span class='kw'>def</span> <span class='id ascii_approximation_options'>ascii_approximation_options</span>
   <span class='ivar'>@ascii_approximation_options</span>
@@ -831,12 +887,12 @@ The class that&#8217;s using the configuration.
       <pre class="lines">
 
 
+46
 47
-48
-49</pre>
+48</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 47</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 46</span>
 
 <span class='kw'>def</span> <span class='id configured_class'>configured_class</span>
   <span class='ivar'>@configured_class</span>
@@ -875,12 +931,12 @@ characters, etc.
       <pre class="lines">
 
 
+50
 51
-52
-53</pre>
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 51</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 50</span>
 
 <span class='kw'>def</span> <span class='id max_length'>max_length</span>
   <span class='ivar'>@max_length</span>
@@ -922,12 +978,12 @@ string.
       <pre class="lines">
 
 
+53
 54
-55
-56</pre>
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='id method'>method</span>
   <span class='ivar'>@method</span>
@@ -971,12 +1027,12 @@ The message shown when a reserved word is used.
       <pre class="lines">
 
 
+58
 59
-60
-61</pre>
+60</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 58</span>
 
 <span class='kw'>def</span> <span class='id reserved_message'>reserved_message</span>
   <span class='ivar'>@reserved_message</span>
@@ -1017,12 +1073,12 @@ used as the defaults unless overridden.
       <pre class="lines">
 
 
+64
 65
-66
-67</pre>
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 65</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 64</span>
 
 <span class='kw'>def</span> <span class='id reserved_words'>reserved_words</span>
   <span class='ivar'>@reserved_words</span>
@@ -1059,12 +1115,12 @@ The method or relation to use as the friendly_id&#8217;s scope.
       <pre class="lines">
 
 
+67
 68
-69
-70</pre>
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 68</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 67</span>
 
 <span class='kw'>def</span> <span class='id scope'>scope</span>
   <span class='ivar'>@scope</span>
@@ -1102,12 +1158,12 @@ The string that separates slug names from slug sequences. Defaults to
       <pre class="lines">
 
 
+70
 71
-72
-73</pre>
+72</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 71</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 70</span>
 
 <span class='kw'>def</span> <span class='id sequence_separator'>sequence_separator</span>
   <span class='ivar'>@sequence_separator</span>
@@ -1144,12 +1200,12 @@ Strip non-ASCII characters from the friendly_id string.
       <pre class="lines">
 
 
+73
 74
-75
-76</pre>
+75</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 73</span>
 
 <span class='kw'>def</span> <span class='id strip_non_ascii'>strip_non_ascii</span>
   <span class='ivar'>@strip_non_ascii</span>
@@ -1190,12 +1246,12 @@ Use slugs for storing the friendly_id string.
       <pre class="lines">
 
 
+76
 77
-78
-79</pre>
+78</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 77</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 76</span>
 
 <span class='kw'>def</span> <span class='id use_slug'>use_slug</span>
   <span class='ivar'>@use_slug</span>
@@ -1207,6 +1263,112 @@ Use slugs for storing the friendly_id string.
     
   </div>
 
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="scopes_used=-class_method">
+  
+    + (<tt><a href="../Object.html" title="Object (class)">Object</a></tt>) <strong>scopes_used=</strong>(val) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+This will be set if FriendlyId&#8217;s scope feature is used in any model.
+It is here to provide a way to avoid invoking costly scope lookup methods
+when the scoped slug feature is not being used by any models.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+113
+114
+115</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 113</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id scopes_used='>scopes_used=</span><span class='lparen'>(</span><span class='id val'>val</span><span class='rparen'>)</span>
+  <span class='ivar'>@scopes_used</span> <span class='op'>=</span> <span class='op'>!</span><span class='op'>!</span><span class='id val'>val</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="scopes_used?-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>scopes_used?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Are scoped slugs being used by any model?
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li>Configuration.scoped_used=</li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+119
+120
+121</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 119</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id scopes_used?'>scopes_used?</span>
+  <span class='ivar'>@scopes_used</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
 
   <div id="instance_method_details" class="method_details_list">
     <h2>Instance Method Details</h2>
@@ -1249,12 +1411,12 @@ This should be overridden by adapters that implement caching.
       <pre class="lines">
 
 
+89
 90
-91
-92</pre>
+91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 90</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 89</span>
 
 <span class='kw'>def</span> <span class='id cache_column?'>cache_column?</span>
   <span class='kw'>false</span>
@@ -1298,12 +1460,12 @@ This should be overridden by adapters that implement caching.
       <pre class="lines">
 
 
+97
 98
-99
-100</pre>
+99</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 97</span>
 
 <span class='kw'>def</span> <span class='id reserved?'>reserved?</span><span class='lparen'>(</span><span class='id word'>word</span><span class='rparen'>)</span>
   <span class='id reserved_words'>reserved_words</span><span class='period'>.</span><span class='id include?'>include?</span> <span class='id word'>word</span><span class='period'>.</span><span class='id to_s'>to_s</span>
@@ -1326,12 +1488,12 @@ This should be overridden by adapters that implement caching.
       <pre class="lines">
 
 
+101
 102
-103
-104</pre>
+103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 102</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 101</span>
 
 <span class='kw'>def</span> <span class='id reserved_error_message'>reserved_error_message</span><span class='lparen'>(</span><span class='id word'>word</span><span class='rparen'>)</span>
   <span class='lbracket'>[</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id reserved_message'>reserved_message</span> <span class='op'>%</span> <span class='id word'>word</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id reserved?'>reserved?</span> <span class='id word'>word</span>
@@ -1346,7 +1508,7 @@ This should be overridden by adapters that implement caching.
 </div>
     
     <div id="footer">
-  Generated on Thu Jul 29 16:13:58 2010 by 
+  Generated on Wed Aug 11 13:34:38 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.8 (ruby-1.9.2).
 </div>
