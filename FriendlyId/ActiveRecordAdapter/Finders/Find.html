@@ -797,7 +797,8 @@ Returns the value of attribute unfriendly_ids
 44
 45
 46
-47</pre>
+47
+48</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/finders.rb', line 35</span>
@@ -806,11 +807,12 @@ Returns the value of attribute unfriendly_ids
   <span class='id parse_ids!'>parse_ids!</span>
   <span class='id scope'>scope</span> <span class='op'>=</span> <span class='id some_friendly_scope'>some_friendly_scope</span>
   <span class='kw'>if</span> <span class='id use_slugs?'>use_slugs?</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@friendly_ids</span><span class='period'>.</span><span class='id present?'>present?</span>
-    <span class='id scope'>scope</span> <span class='op'>=</span> <span class='id scope'>scope</span><span class='period'>.</span><span class='id scoped'>scoped</span><span class='lparen'>(</span><span class='symbol'>:include</span> <span class='op'>=&gt;</span> <span class='symbol'>:slugs</span><span class='rparen'>)</span>
+    <span class='id scope'>scope</span> <span class='op'>=</span> <span class='id scope'>scope</span><span class='period'>.</span><span class='id scoped'>scoped</span><span class='lparen'>(</span><span class='symbol'>:joins</span> <span class='op'>=&gt;</span> <span class='symbol'>:slugs</span><span class='rparen'>)</span>
     <span class='kw'>if</span> <span class='id fc'>fc</span><span class='period'>.</span><span class='id scope?'>scope?</span>
       <span class='id scope'>scope</span> <span class='op'>=</span> <span class='id scope'>scope</span><span class='period'>.</span><span class='id scoped'>scoped</span><span class='lparen'>(</span><span class='symbol'>:conditions</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:slugs</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:scope</span> <span class='op'>=&gt;</span> <span class='id scope_val'>scope_val</span><span class='rbrace'>}</span><span class='rbrace'>}</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
+  <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:readonly</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:readonly</span><span class='rbracket'>]</span>
   <span class='ivar'>@result</span> <span class='op'>=</span> <span class='id scope'>scope</span><span class='period'>.</span><span class='id all'>all</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span><span class='period'>.</span><span class='id uniq'>uniq</span>
   <span class='id validate_expected_size!'>validate_expected_size!</span>
   <span class='ivar'>@result</span><span class='period'>.</span><span class='id each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id record'>record</span><span class='op'>|</span> <span class='id record'>record</span><span class='period'>.</span><span class='id friendly_id_status'>friendly_id_status</span><span class='period'>.</span><span class='id name'>name</span> <span class='op'>=</span> <span class='id id'>id</span> <span class='rbrace'>}</span>
@@ -854,15 +856,15 @@ Returns the value of attribute unfriendly_ids
       <pre class="lines">
 
 
-49
 50
 51
 52
 53
-54</pre>
+54
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/finders.rb', line 49</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/finders.rb', line 50</span>
 
 <span class='kw'>def</span> <span class='id raise_error'>raise_error</span><span class='lparen'>(</span><span class='id error'>error</span><span class='rparen'>)</span>
   <span class='id raise'>raise</span><span class='lparen'>(</span><span class='id error'>error</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id fc'>fc</span><span class='period'>.</span><span class='id scope?'>scope?</span>
@@ -880,7 +882,7 @@ Returns the value of attribute unfriendly_ids
 </div>
     
     <div id="footer">
-  Generated on Wed Aug 11 13:34:38 2010 by 
+  Generated on Wed Aug 11 15:08:16 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.8 (ruby-1.9.2).
 </div>
