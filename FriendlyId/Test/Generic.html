@@ -349,7 +349,7 @@ features should include this module.
       <span class='id assert'>assert</span> <span class='op'>!</span><span class='id i'>i</span>
     <span class='kw'>else</span>
       <span class='id instance'>instance</span> <span class='op'>=</span> <span class='id i'>i</span>
-      <span class='id assert_not_empty'>assert_not_empty</span> <span class='id instance'>instance</span><span class='period'>.</span><span class='id errors'>errors</span>
+      <span class='id assert'>assert</span> <span class='op'>!</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id errors'>errors</span><span class='period'>.</span><span class='id empty?'>empty?</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
@@ -741,9 +741,9 @@ features should include this module.
 </div>
     
     <div id="footer">
-  Generated on Wed Sep  1 12:29:38 2010 by 
+  Generated on Tue Sep 14 04:40:08 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.0 (ruby-1.9.2).
+  0.6.1 (ruby-1.9.2).
 </div>
 
   </body>

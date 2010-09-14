@@ -180,12 +180,12 @@ Returns the value of attribute friendly_id_scope
       <pre class="lines">
 
 
-140
-141
-142</pre>
+145
+146
+147</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/relation.rb', line 140</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/relation.rb', line 145</span>
 
 <span class='kw'>def</span> <span class='id friendly_id_scope'>friendly_id_scope</span>
   <span class='ivar'>@friendly_id_scope</span>
@@ -227,14 +227,14 @@ This method overrides Active Record&#8217;s default in order to allow the
       <pre class="lines">
 
 
-144
-145
-146
-147
-148</pre>
+149
+150
+151
+152
+153</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/relation.rb', line 144</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/relation.rb', line 149</span>
 
 <span class='kw'>def</span> <span class='id apply_finder_options'>apply_finder_options</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span>
   <span class='ivar'>@friendly_id_scope</span> <span class='op'>=</span> <span class='id options'>options</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:scope</span><span class='rparen'>)</span>
@@ -251,9 +251,9 @@ This method overrides Active Record&#8217;s default in order to allow the
 </div>
     
     <div id="footer">
-  Generated on Wed Sep  1 12:29:38 2010 by 
+  Generated on Tue Sep 14 04:40:08 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.0 (ruby-1.9.2).
+  0.6.1 (ruby-1.9.2).
 </div>
 
   </body>

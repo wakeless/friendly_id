@@ -69,7 +69,7 @@
   
     
       <dt class="r2">Extended by:</dt>
-      <dd class="r2">orwardable</dd>
+      <dd class="r2">Forwardable</dd>
       
     
   
@@ -420,7 +420,7 @@ Returns the value of attribute relation
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/relation.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id find_one'>find_one</span>
-  <span class='kw'>if</span> <span class='id fc'>fc</span><span class='period'>.</span><span class='id cache_column?'>cache_column?</span>
+  <span class='kw'>if</span> <span class='id fc'>fc</span><span class='period'>.</span><span class='id cache_column?'>cache_column?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id fc'>fc</span><span class='period'>.</span><span class='id scope?'>scope?</span>
     <span class='id find_one_with_cached_slug'>find_one_with_cached_slug</span>
   <span class='kw'>elsif</span> <span class='id fc'>fc</span><span class='period'>.</span><span class='id use_slugs?'>use_slugs?</span>
     <span class='id find_one_with_slug'>find_one_with_slug</span>
@@ -533,9 +533,9 @@ Returns the value of attribute relation
 </div>
     
     <div id="footer">
-  Generated on Wed Sep  1 12:29:38 2010 by 
+  Generated on Tue Sep 14 04:40:09 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.0 (ruby-1.9.2).
+  0.6.1 (ruby-1.9.2).
 </div>
 
   </body>
