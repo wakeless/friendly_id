@@ -215,16 +215,17 @@ Returns the friendly id, or if none is available, the numeric id.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/simple_model.rb', line 6</span>
 
-<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id included'>included</span><span class='lparen'>(</span><span class='id base'>base</span><span class='rparen'>)</span>
-  <span class='id base'>base</span><span class='period'>.</span><span class='id class_eval'>class_eval</span> <span class='kw'>do</span>
-    <span class='id column'>column</span> <span class='op'>=</span> <span class='id friendly_id_config'>friendly_id_config</span><span class='period'>.</span><span class='id column'>column</span>
-    <span class='id validate'>validate</span> <span class='symbol'>:validate_friendly_id</span><span class='comma'>,</span> <span class='symbol'>:unless</span> <span class='op'>=&gt;</span> <span class='symbol'>:skip_friendly_id_validations</span>
-    <span class='id validates_presence_of'>validates_presence_of</span> <span class='id column'>column</span><span class='comma'>,</span> <span class='symbol'>:unless</span> <span class='op'>=&gt;</span> <span class='symbol'>:skip_friendly_id_validations</span>
-    <span class='id validates_length_of'>validates_length_of</span> <span class='id column'>column</span><span class='comma'>,</span> <span class='symbol'>:maximum</span> <span class='op'>=&gt;</span> <span class='id friendly_id_config'>friendly_id_config</span><span class='period'>.</span><span class='id max_length'>max_length</span><span class='comma'>,</span> <span class='symbol'>:unless</span> <span class='op'>=&gt;</span> <span class='symbol'>:skip_friendly_id_validations</span>
-    <span class='id after_update'>after_update</span> <span class='symbol'>:update_scopes</span>
-    <span class='id extend'>extend</span> <span class='const'>FriendlyId</span><span class='op'>::</span><span class='const'>ActiveRecordAdapter</span><span class='op'>::</span><span class='const'>Finders</span> <span class='kw'>unless</span> <span class='const'>FriendlyId</span><span class='period'>.</span><span class='id on_ar3?'>on_ar3?</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='included identifier id'>included</span><span class='lparen token'>(</span><span class='base identifier id'>base</span><span class='rparen token'>)</span>
+  <span class='base identifier id'>base</span><span class='dot token'>.</span><span class='class_eval identifier id'>class_eval</span> <span class='do do kw'>do</span>
+    <span class='column identifier id'>column</span> <span class='assign token'>=</span> <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='column identifier id'>column</span>
+    <span class='validate identifier id'>validate</span> <span class='symbol val'>:validate_friendly_id</span><span class='comma token'>,</span> <span class='symbol val'>:unless</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:skip_friendly_id_validations</span>
+    <span class='validates_presence_of identifier id'>validates_presence_of</span> <span class='column identifier id'>column</span><span class='comma token'>,</span> <span class='symbol val'>:unless</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:skip_friendly_id_validations</span>
+    <span class='validates_length_of identifier id'>validates_length_of</span> <span class='column identifier id'>column</span><span class='comma token'>,</span> <span class='symbol val'>:maximum</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='max_length identifier id'>max_length</span><span class='comma token'>,</span> <span class='symbol val'>:unless</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:skip_friendly_id_validations</span>
+    <span class='after_update identifier id'>after_update</span> <span class='symbol val'>:update_scopes</span>
+    <span class='extend identifier id'>extend</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='ActiveRecordAdapter constant id'>ActiveRecordAdapter</span><span class='colon2 op'>::</span><span class='Finders constant id'>Finders</span> <span class='unless unless_mod kw'>unless</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='dot token'>.</span><span class='on_ar3? fid id'>on_ar3?</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -271,9 +272,10 @@ Returns the friendly_id.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/simple_model.rb', line 23</span>
 
-<span class='kw'>def</span> <span class='id friendly_id'>friendly_id</span>
-  <span class='id send'>send</span> <span class='id friendly_id_config'>friendly_id_config</span><span class='period'>.</span><span class='id column'>column</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='friendly_id identifier id'>friendly_id</span>
+  <span class='send identifier id'>send</span> <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='column identifier id'>column</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -310,9 +312,10 @@ Get the <span class='object_link'><a href="../Status.html" title="FriendlyId::St
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/simple_model.rb', line 18</span>
 
-<span class='kw'>def</span> <span class='id friendly_id_status'>friendly_id_status</span>
-  <span class='ivar'>@friendly_id_status</span> <span class='op'>||=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id new'>new</span> <span class='symbol'>:record</span> <span class='op'>=&gt;</span> <span class='kw'>self</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='friendly_id_status identifier id'>friendly_id_status</span>
+  <span class='@friendly_id_status ivar id'>@friendly_id_status</span> <span class='opasgn op'>||=</span> <span class='Status constant id'>Status</span><span class='dot token'>.</span><span class='new identifier id'>new</span> <span class='symbol val'>:record</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='self self kw'>self</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -349,9 +352,10 @@ Returns the friendly id, or if none is available, the numeric id.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/simple_model.rb', line 29</span>
 
-<span class='kw'>def</span> <span class='id to_param'>to_param</span>
-  <span class='lparen'>(</span><span class='id friendly_id'>friendly_id</span> <span class='op'>||</span> <span class='id id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_s'>to_s</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='to_param identifier id'>to_param</span>
+  <span class='lparen token'>(</span><span class='friendly_id identifier id'>friendly_id</span> <span class='orop op'>||</span> <span class='id identifier id'>id</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -362,9 +366,9 @@ Returns the friendly id, or if none is available, the numeric id.
 </div>
     
     <div id="footer">
-  Generated on Tue Sep 14 04:40:09 2010 by 
+  Generated on Tue Sep 14 05:50:25 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.1 (ruby-1.9.2).
+  0.6.1 (ruby-1.8.7).
 </div>
 
   </body>

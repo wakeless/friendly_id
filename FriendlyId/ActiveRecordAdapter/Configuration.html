@@ -325,7 +325,7 @@ The column used to cache the friendly_id string. If no column is specified,
 FriendlyId will look for a column named <tt>cached_slug</tt> and use it
 automatically if it exists. If for some reason you have a column named
 <tt>cached_slug</tt> but don&#8217;t want FriendlyId to modify it, pass the
-option <tt>:cache_column =&gt; false</tt> to
+option <tt>:cache_column =&amp;gt; false</tt> to
 <span class='object_link'><a href="../ActiveRecordAdapter.html#has_friendly_id-instance_method" title="FriendlyId::ActiveRecordAdapter#has_friendly_id (method)">has_friendly_id</a></span>.
 </p>
 
@@ -348,10 +348,11 @@ option <tt>:cache_column =&gt; false</tt> to
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/configuration.rb', line 14</span>
 
-<span class='kw'>def</span> <span class='id cache_column'>cache_column</span>
-  <span class='kw'>return</span> <span class='ivar'>@cache_column</span> <span class='kw'>if</span> <span class='kw'>defined?</span><span class='lparen'>(</span><span class='ivar'>@cache_column</span><span class='rparen'>)</span>
-  <span class='ivar'>@cache_column</span> <span class='op'>=</span> <span class='id autodiscover_cache_column'>autodiscover_cache_column</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='cache_column identifier id'>cache_column</span>
+  <span class='return return kw'>return</span> <span class='@cache_column ivar id'>@cache_column</span> <span class='if if_mod kw'>if</span> <span class='defined? defined kw'>defined?</span><span class='lparen token'>(</span><span class='@cache_column ivar id'>@cache_column</span><span class='rparen token'>)</span>
+  <span class='@cache_column ivar id'>@cache_column</span> <span class='assign token'>=</span> <span class='autodiscover_cache_column identifier id'>autodiscover_cache_column</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -394,11 +395,12 @@ scope.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/configuration.rb', line 18</span>
 
-<span class='kw'>def</span> <span class='id child_scopes'>child_scopes</span>
-  <span class='ivar'>@child_scopes</span> <span class='op'>||=</span> <span class='id associated_friendly_classes'>associated_friendly_classes</span><span class='period'>.</span><span class='id select'>select</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id klass'>klass</span><span class='op'>|</span>
-    <span class='id klass'>klass</span><span class='period'>.</span><span class='id friendly_id_config'>friendly_id_config</span><span class='period'>.</span><span class='id scopes_over?'>scopes_over?</span><span class='lparen'>(</span><span class='id configured_class'>configured_class</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='child_scopes identifier id'>child_scopes</span>
+  <span class='@child_scopes ivar id'>@child_scopes</span> <span class='opasgn op'>||=</span> <span class='associated_friendly_classes identifier id'>associated_friendly_classes</span><span class='dot token'>.</span><span class='select identifier id'>select</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='klass identifier id'>klass</span><span class='bitor op'>|</span>
+    <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='scopes_over? fid id'>scopes_over?</span><span class='lparen token'>(</span><span class='configured_class identifier id'>configured_class</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -438,9 +440,10 @@ Returns the value of attribute custom_cache_column
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/configuration.rb', line 20</span>
 
-<span class='kw'>def</span> <span class='id custom_cache_column'>custom_cache_column</span>
-  <span class='ivar'>@custom_cache_column</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='custom_cache_column identifier id'>custom_cache_column</span>
+  <span class='@custom_cache_column ivar id'>@custom_cache_column</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -494,9 +497,10 @@ Returns the value of attribute custom_cache_column
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/configuration.rb', line 27</span>
 
-<span class='kw'>def</span> <span class='id cache_column?'>cache_column?</span>
-  <span class='op'>!</span><span class='op'>!</span> <span class='id cache_column'>cache_column</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='cache_column? fid id'>cache_column?</span>
+  <span class='notop op'>!</span><span class='notop op'>!</span> <span class='cache_column identifier id'>cache_column</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -543,9 +547,10 @@ Returns the value of attribute custom_cache_column
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/configuration.rb', line 42</span>
 
-<span class='kw'>def</span> <span class='id custom_cache_column?'>custom_cache_column?</span>
-  <span class='op'>!</span><span class='op'>!</span> <span class='id custom_cache_column'>custom_cache_column</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='custom_cache_column? fid id'>custom_cache_column?</span>
+  <span class='notop op'>!</span><span class='notop op'>!</span> <span class='custom_cache_column identifier id'>custom_cache_column</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -572,10 +577,11 @@ Returns the value of attribute custom_cache_column
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/configuration.rb', line 46</span>
 
-<span class='kw'>def</span> <span class='id scope_for'>scope_for</span><span class='lparen'>(</span><span class='id record'>record</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>unless</span> <span class='id scope?'>scope?</span>
-  <span class='id record'>record</span><span class='period'>.</span><span class='id send'>send</span><span class='lparen'>(</span><span class='id scope'>scope</span><span class='rparen'>)</span><span class='period'>.</span><span class='id nil?'>nil?</span> <span class='op'>?</span> <span class='kw'>nil</span> <span class='op'>:</span> <span class='id record'>record</span><span class='period'>.</span><span class='id send'>send</span><span class='lparen'>(</span><span class='id scope'>scope</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_param'>to_param</span> 
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='scope_for identifier id'>scope_for</span><span class='lparen token'>(</span><span class='record identifier id'>record</span><span class='rparen token'>)</span>
+  <span class='return return kw'>return</span> <span class='nil nil kw'>nil</span> <span class='unless unless_mod kw'>unless</span> <span class='scope? fid id'>scope?</span>
+  <span class='record identifier id'>record</span><span class='dot token'>.</span><span class='send identifier id'>send</span><span class='lparen token'>(</span><span class='scope identifier id'>scope</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='nil? fid id'>nil?</span> <span class='integer val'>? </span><span class='nil nil kw'>nil</span> <span class='colon op'>:</span> <span class='record identifier id'>record</span><span class='dot token'>.</span><span class='send identifier id'>send</span><span class='lparen token'>(</span><span class='scope identifier id'>scope</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='to_param identifier id'>to_param</span> 
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -622,9 +628,10 @@ Returns the value of attribute custom_cache_column
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/configuration.rb', line 51</span>
 
-<span class='kw'>def</span> <span class='id scopes_over?'>scopes_over?</span><span class='lparen'>(</span><span class='id klass'>klass</span><span class='rparen'>)</span>
-  <span class='id scope?'>scope?</span> <span class='op'>&amp;&amp;</span> <span class='id scope'>scope</span> <span class='op'>==</span> <span class='id klass'>klass</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id underscore'>underscore</span><span class='period'>.</span><span class='id to_sym'>to_sym</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='scopes_over? fid id'>scopes_over?</span><span class='lparen token'>(</span><span class='klass identifier id'>klass</span><span class='rparen token'>)</span>
+  <span class='scope? fid id'>scope?</span> <span class='andop op'>&amp;&amp;</span> <span class='scope identifier id'>scope</span> <span class='eq op'>==</span> <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='underscore identifier id'>underscore</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -635,9 +642,9 @@ Returns the value of attribute custom_cache_column
 </div>
     
     <div id="footer">
-  Generated on Tue Sep 14 04:40:09 2010 by 
+  Generated on Tue Sep 14 05:50:26 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.1 (ruby-1.9.2).
+  0.6.1 (ruby-1.8.7).
 </div>
 
   </body>

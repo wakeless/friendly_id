@@ -160,13 +160,14 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/finders.rb', line 145</span>
 
-<span class='kw'>def</span> <span class='id find_one'>find_one</span><span class='lparen'>(</span><span class='id id'>id</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='kw'>super</span> <span class='kw'>if</span> <span class='id id'>id</span><span class='period'>.</span><span class='id blank?'>blank?</span> <span class='op'>||</span> <span class='id id'>id</span><span class='period'>.</span><span class='id unfriendly_id?'>unfriendly_id?</span>
-  <span class='id finder'>finder</span> <span class='op'>=</span> <span class='const'>Find</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id id'>id</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
-  <span class='id finder'>finder</span><span class='period'>.</span><span class='id find_one'>find_one</span> <span class='kw'>or</span> <span class='kw'>super</span>
-<span class='kw'>rescue</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>RecordNotFound</span> <span class='op'>=&gt;</span> <span class='id error'>error</span>
-  <span class='id finder'>finder</span> <span class='op'>?</span> <span class='id finder'>finder</span><span class='period'>.</span><span class='id raise_error'>raise_error</span><span class='lparen'>(</span><span class='id error'>error</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id raise'>raise</span><span class='lparen'>(</span><span class='id error'>error</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='find_one identifier id'>find_one</span><span class='lparen token'>(</span><span class='id identifier id'>id</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='rparen token'>)</span>
+  <span class='return return kw'>return</span> <span class='super super kw'>super</span> <span class='if if_mod kw'>if</span> <span class='id identifier id'>id</span><span class='dot token'>.</span><span class='blank? fid id'>blank?</span> <span class='orop op'>||</span> <span class='id identifier id'>id</span><span class='dot token'>.</span><span class='unfriendly_id? fid id'>unfriendly_id?</span>
+  <span class='finder identifier id'>finder</span> <span class='assign token'>=</span> <span class='Find constant id'>Find</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='comma token'>,</span> <span class='id identifier id'>id</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='rparen token'>)</span>
+  <span class='finder identifier id'>finder</span><span class='dot token'>.</span><span class='find_one identifier id'>find_one</span> <span class='or or kw'>or</span> <span class='super super kw'>super</span>
+<span class='rescue rescue kw'>rescue</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='RecordNotFound constant id'>RecordNotFound</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='error identifier id'>error</span>
+  <span class='finder identifier id'>finder</span> <span class='integer val'>? </span><span class='finder identifier id'>finder</span><span class='dot token'>.</span><span class='raise_error identifier id'>raise_error</span><span class='lparen token'>(</span><span class='error identifier id'>error</span><span class='rparen token'>)</span> <span class='colon op'>:</span> <span class='raise identifier id'>raise</span><span class='lparen token'>(</span><span class='error identifier id'>error</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -196,13 +197,14 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/finders.rb', line 153</span>
 
-<span class='kw'>def</span> <span class='id find_some'>find_some</span><span class='lparen'>(</span><span class='id ids'>ids</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='kw'>super</span> <span class='kw'>if</span> <span class='id ids'>ids</span><span class='period'>.</span><span class='id empty?'>empty?</span>
-  <span class='id finder'>finder</span> <span class='op'>=</span> <span class='const'>Find</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id ids'>ids</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
-  <span class='id finder'>finder</span><span class='period'>.</span><span class='id find_some'>find_some</span>
-<span class='kw'>rescue</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>RecordNotFound</span> <span class='op'>=&gt;</span> <span class='id error'>error</span>
-  <span class='id finder'>finder</span> <span class='op'>?</span> <span class='id finder'>finder</span><span class='period'>.</span><span class='id raise_error'>raise_error</span><span class='lparen'>(</span><span class='id error'>error</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id raise'>raise</span><span class='lparen'>(</span><span class='id error'>error</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='find_some identifier id'>find_some</span><span class='lparen token'>(</span><span class='ids identifier id'>ids</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='rparen token'>)</span>
+  <span class='return return kw'>return</span> <span class='super super kw'>super</span> <span class='if if_mod kw'>if</span> <span class='ids identifier id'>ids</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span>
+  <span class='finder identifier id'>finder</span> <span class='assign token'>=</span> <span class='Find constant id'>Find</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='comma token'>,</span> <span class='ids identifier id'>ids</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='rparen token'>)</span>
+  <span class='finder identifier id'>finder</span><span class='dot token'>.</span><span class='find_some identifier id'>find_some</span>
+<span class='rescue rescue kw'>rescue</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='RecordNotFound constant id'>RecordNotFound</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='error identifier id'>error</span>
+  <span class='finder identifier id'>finder</span> <span class='integer val'>? </span><span class='finder identifier id'>finder</span><span class='dot token'>.</span><span class='raise_error identifier id'>raise_error</span><span class='lparen token'>(</span><span class='error identifier id'>error</span><span class='rparen token'>)</span> <span class='colon op'>:</span> <span class='raise identifier id'>raise</span><span class='lparen token'>(</span><span class='error identifier id'>error</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -213,9 +215,9 @@
 </div>
     
     <div id="footer">
-  Generated on Tue Sep 14 04:40:08 2010 by 
+  Generated on Tue Sep 14 05:50:25 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.1 (ruby-1.9.2).
+  0.6.1 (ruby-1.8.7).
 </div>
 
   </body>

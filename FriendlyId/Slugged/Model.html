@@ -290,9 +290,10 @@ Returns the value of attribute slug
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 41</span>
 
-<span class='kw'>def</span> <span class='id slug'>slug</span>
-  <span class='ivar'>@slug</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='slug identifier id'>slug</span>
+  <span class='@slug ivar id'>@slug</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -346,9 +347,10 @@ Returns the value of attribute slug
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 43</span>
 
-<span class='kw'>def</span> <span class='id find_slug'>find_slug</span>
-  <span class='id raise'>raise</span> <span class='const'>NotImplementedError</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='find_slug identifier id'>find_slug</span>
+  <span class='raise identifier id'>raise</span> <span class='NotImplementedError constant id'>NotImplementedError</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -403,12 +405,13 @@ The friendly id.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 58</span>
 
-<span class='kw'>def</span> <span class='id friendly_id'>friendly_id</span><span class='lparen'>(</span><span class='id skip_cache'>skip_cache</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
-  <span class='kw'>if</span> <span class='id friendly_id_config'>friendly_id_config</span><span class='period'>.</span><span class='id cache_column?'>cache_column?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id skip_cache'>skip_cache</span>
-    <span class='id friendly_id'>friendly_id</span> <span class='op'>=</span> <span class='id send'>send</span><span class='lparen'>(</span><span class='id friendly_id_config'>friendly_id_config</span><span class='period'>.</span><span class='id cache_column'>cache_column</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-  <span class='id friendly_id'>friendly_id</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='id slug'>slug</span><span class='period'>.</span><span class='id to_friendly_id'>to_friendly_id</span> <span class='kw'>if</span> <span class='id slug?'>slug?</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='friendly_id identifier id'>friendly_id</span><span class='lparen token'>(</span><span class='skip_cache identifier id'>skip_cache</span> <span class='assign token'>=</span> <span class='false false kw'>false</span><span class='rparen token'>)</span>
+  <span class='if if kw'>if</span> <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='cache_column? fid id'>cache_column?</span> <span class='andop op'>&amp;&amp;</span> <span class='notop op'>!</span><span class='skip_cache identifier id'>skip_cache</span>
+    <span class='friendly_id identifier id'>friendly_id</span> <span class='assign token'>=</span> <span class='send identifier id'>send</span><span class='lparen token'>(</span><span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='cache_column identifier id'>cache_column</span><span class='rparen token'>)</span>
+  <span class='end end kw'>end</span>
+  <span class='friendly_id identifier id'>friendly_id</span> <span class='orop op'>||</span> <span class='lparen token'>(</span><span class='slug identifier id'>slug</span><span class='dot token'>.</span><span class='to_friendly_id identifier id'>to_friendly_id</span> <span class='if if_mod kw'>if</span> <span class='slug? fid id'>slug?</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -434,9 +437,10 @@ The friendly id.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 47</span>
 
-<span class='kw'>def</span> <span class='id friendly_id_config'>friendly_id_config</span>
-  <span class='kw'>self</span><span class='period'>.</span><span class='id class'>class</span><span class='period'>.</span><span class='id friendly_id_config'>friendly_id_config</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='friendly_id_config identifier id'>friendly_id_config</span>
+  <span class='self self kw'>self</span><span class='dot token'>.</span><span class='class identifier id'>class</span><span class='dot token'>.</span><span class='friendly_id_config identifier id'>friendly_id_config</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -473,9 +477,10 @@ Get the <span class='object_link'><a href="../Status.html" title="FriendlyId::St
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 52</span>
 
-<span class='kw'>def</span> <span class='id friendly_id_status'>friendly_id_status</span>
-  <span class='ivar'>@friendly_id_status</span> <span class='op'>||=</span> <span class='const'>Status</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='symbol'>:record</span> <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='friendly_id_status identifier id'>friendly_id_status</span>
+  <span class='@friendly_id_status ivar id'>@friendly_id_status</span> <span class='opasgn op'>||=</span> <span class='Status constant id'>Status</span><span class='dot token'>.</span><span class='new identifier id'>new</span><span class='lparen token'>(</span><span class='symbol val'>:record</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='self self kw'>self</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -547,9 +552,10 @@ An instance of <span class='object_link'><a href="../SlugString.html" title="Fri
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 69</span>
 
-<span class='kw'>def</span> <span class='id normalize_friendly_id'>normalize_friendly_id</span><span class='lparen'>(</span><span class='id string'>string</span><span class='rparen'>)</span>
-  <span class='id string'>string</span><span class='period'>.</span><span class='id normalize_for!'>normalize_for!</span><span class='lparen'>(</span><span class='id friendly_id_config'>friendly_id_config</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_s'>to_s</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='normalize_friendly_id identifier id'>normalize_friendly_id</span><span class='lparen token'>(</span><span class='string identifier id'>string</span><span class='rparen token'>)</span>
+  <span class='string identifier id'>string</span><span class='dot token'>.</span><span class='normalize_for! fid id'>normalize_for!</span><span class='lparen token'>(</span><span class='friendly_id_config identifier id'>friendly_id_config</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -599,9 +605,10 @@ Does the instance have a slug?
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 74</span>
 
-<span class='kw'>def</span> <span class='id slug?'>slug?</span>
-  <span class='op'>!</span><span class='op'>!</span> <span class='id slug'>slug</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='slug? fid id'>slug?</span>
+  <span class='notop op'>!</span><span class='notop op'>!</span> <span class='slug identifier id'>slug</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -612,9 +619,9 @@ Does the instance have a slug?
 </div>
     
     <div id="footer">
-  Generated on Tue Sep 14 04:40:08 2010 by 
+  Generated on Tue Sep 14 05:50:29 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.1 (ruby-1.9.2).
+  0.6.1 (ruby-1.8.7).
 </div>
 
   </body>

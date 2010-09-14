@@ -217,9 +217,10 @@ String
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 8</span>
 
-<span class='kw'>def</span> <span class='id normalize_for!'>normalize_for!</span><span class='lparen'>(</span><span class='id config'>config</span><span class='rparen'>)</span>
-  <span class='id normalize!'>normalize!</span><span class='lparen'>(</span><span class='id config'>config</span><span class='period'>.</span><span class='id babosa_options'>babosa_options</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='normalize_for! fid id'>normalize_for!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='rparen token'>)</span>
+  <span class='normalize! fid id'>normalize!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='dot token'>.</span><span class='babosa_options identifier id'>babosa_options</span><span class='rparen token'>)</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -328,12 +329,13 @@ FriendlyId::ReservedError
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slug_string.rb', line 18</span>
 
-<span class='kw'>def</span> <span class='id validate_for!'>validate_for!</span><span class='lparen'>(</span><span class='id config'>config</span><span class='rparen'>)</span>
-  <span class='id truncate_bytes!'>truncate_bytes!</span><span class='lparen'>(</span><span class='id config'>config</span><span class='period'>.</span><span class='id max_length'>max_length</span><span class='rparen'>)</span>
-  <span class='id raise'>raise</span> <span class='const'>FriendlyId</span><span class='op'>::</span><span class='const'>BlankError</span> <span class='kw'>if</span> <span class='id blank?'>blank?</span>
-  <span class='id raise'>raise</span> <span class='const'>FriendlyId</span><span class='op'>::</span><span class='const'>ReservedError</span> <span class='kw'>if</span> <span class='id config'>config</span><span class='period'>.</span><span class='id reserved?'>reserved?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
-  <span class='kw'>self</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='validate_for! fid id'>validate_for!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='rparen token'>)</span>
+  <span class='truncate_bytes! fid id'>truncate_bytes!</span><span class='lparen token'>(</span><span class='config identifier id'>config</span><span class='dot token'>.</span><span class='max_length identifier id'>max_length</span><span class='rparen token'>)</span>
+  <span class='raise identifier id'>raise</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='BlankError constant id'>BlankError</span> <span class='if if_mod kw'>if</span> <span class='blank? fid id'>blank?</span>
+  <span class='raise identifier id'>raise</span> <span class='FriendlyId constant id'>FriendlyId</span><span class='colon2 op'>::</span><span class='ReservedError constant id'>ReservedError</span> <span class='if if_mod kw'>if</span> <span class='config identifier id'>config</span><span class='dot token'>.</span><span class='reserved? fid id'>reserved?</span><span class='lparen token'>(</span><span class='self self kw'>self</span><span class='rparen token'>)</span>
+  <span class='self self kw'>self</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -344,9 +346,9 @@ FriendlyId::ReservedError
 </div>
     
     <div id="footer">
-  Generated on Tue Sep 14 04:40:08 2010 by 
+  Generated on Tue Sep 14 05:50:26 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.1 (ruby-1.9.2).
+  0.6.1 (ruby-1.8.7).
 </div>
 
   </body>

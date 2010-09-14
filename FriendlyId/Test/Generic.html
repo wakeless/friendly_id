@@ -338,21 +338,22 @@ features should include this module.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/test.rb', line 52</span>
 
-<span class='kw'>def</span> <span class='id assert_validation_error'>assert_validation_error</span>
-  <span class='kw'>if</span> <span class='id validation_exceptions'>validation_exceptions</span>
-    <span class='id assert_raise'>assert_raise</span><span class='lparen'>(</span><span class='op'>*</span><span class='lbracket'>[</span><span class='id validation_exceptions'>validation_exceptions</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id flatten'>flatten</span><span class='rparen'>)</span> <span class='kw'>do</span>
-      <span class='kw'>yield</span>
-    <span class='kw'>end</span>
-  <span class='kw'>else</span>  <span class='comment'># DataMapper does not raise Validation Errors
-</span>    <span class='id i'>i</span> <span class='op'>=</span> <span class='kw'>yield</span>
-    <span class='kw'>if</span> <span class='id i'>i</span><span class='period'>.</span><span class='id kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>TrueClass</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id i'>i</span><span class='period'>.</span><span class='id kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>FalseClass</span><span class='rparen'>)</span>
-      <span class='id assert'>assert</span> <span class='op'>!</span><span class='id i'>i</span>
-    <span class='kw'>else</span>
-      <span class='id instance'>instance</span> <span class='op'>=</span> <span class='id i'>i</span>
-      <span class='id assert'>assert</span> <span class='op'>!</span><span class='id instance'>instance</span><span class='period'>.</span><span class='id errors'>errors</span><span class='period'>.</span><span class='id empty?'>empty?</span>
-    <span class='kw'>end</span>
-  <span class='kw'>end</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='assert_validation_error identifier id'>assert_validation_error</span>
+  <span class='if if kw'>if</span> <span class='validation_exceptions identifier id'>validation_exceptions</span>
+    <span class='assert_raise identifier id'>assert_raise</span><span class='lparen token'>(</span><span class='mult op'>*</span><span class='lbrack token'>[</span><span class='validation_exceptions identifier id'>validation_exceptions</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='flatten identifier id'>flatten</span><span class='rparen token'>)</span> <span class='do do kw'>do</span>
+      <span class='yield yield kw'>yield</span>
+    <span class='end end kw'>end</span>
+  <span class='else else kw'>else</span>  <span class='comment val'># DataMapper does not raise Validation Errors</span>
+    <span class='i identifier id'>i</span> <span class='assign token'>=</span> <span class='yield yield kw'>yield</span>
+    <span class='if if kw'>if</span> <span class='i identifier id'>i</span><span class='dot token'>.</span><span class='kind_of? fid id'>kind_of?</span><span class='lparen token'>(</span><span class='TrueClass constant id'>TrueClass</span><span class='rparen token'>)</span> <span class='orop op'>||</span> <span class='i identifier id'>i</span><span class='dot token'>.</span><span class='kind_of? fid id'>kind_of?</span><span class='lparen token'>(</span><span class='FalseClass constant id'>FalseClass</span><span class='rparen token'>)</span>
+      <span class='assert identifier id'>assert</span> <span class='notop op'>!</span><span class='i identifier id'>i</span>
+    <span class='else else kw'>else</span>
+      <span class='instance identifier id'>instance</span> <span class='assign token'>=</span> <span class='i identifier id'>i</span>
+      <span class='assert identifier id'>assert</span> <span class='notop op'>!</span><span class='instance identifier id'>instance</span><span class='dot token'>.</span><span class='errors identifier id'>errors</span><span class='dot token'>.</span><span class='empty? fid id'>empty?</span>
+    <span class='end end kw'>end</span>
+  <span class='end end kw'>end</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -399,9 +400,10 @@ features should include this module.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/test.rb', line 40</span>
 
-<span class='kw'>def</span> <span class='id create_method'>create_method</span>
-  <span class='id raise'>raise</span> <span class='const'>NotImplementedError</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='create_method identifier id'>create_method</span>
+  <span class='raise identifier id'>raise</span> <span class='NotImplementedError constant id'>NotImplementedError</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -448,9 +450,10 @@ features should include this module.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/test.rb', line 36</span>
 
-<span class='kw'>def</span> <span class='id find_method'>find_method</span>
-  <span class='id raise'>raise</span> <span class='const'>NotImplementedError</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='find_method identifier id'>find_method</span>
+  <span class='raise identifier id'>raise</span> <span class='NotImplementedError constant id'>NotImplementedError</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -497,9 +500,10 @@ features should include this module.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/test.rb', line 24</span>
 
-<span class='kw'>def</span> <span class='id instance'>instance</span>
-  <span class='id raise'>raise</span> <span class='const'>NotImplementedError</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='instance identifier id'>instance</span>
+  <span class='raise identifier id'>raise</span> <span class='NotImplementedError constant id'>NotImplementedError</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -546,9 +550,10 @@ features should include this module.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/test.rb', line 28</span>
 
-<span class='kw'>def</span> <span class='id klass'>klass</span>
-  <span class='id raise'>raise</span> <span class='const'>NotImplementedError</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='klass identifier id'>klass</span>
+  <span class='raise identifier id'>raise</span> <span class='NotImplementedError constant id'>NotImplementedError</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -595,9 +600,10 @@ features should include this module.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/test.rb', line 32</span>
 
-<span class='kw'>def</span> <span class='id other_class'>other_class</span>
-  <span class='id raise'>raise</span> <span class='const'>NotImplementedError</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='other_class identifier id'>other_class</span>
+  <span class='raise identifier id'>raise</span> <span class='NotImplementedError constant id'>NotImplementedError</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -623,9 +629,10 @@ features should include this module.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/test.rb', line 16</span>
 
-<span class='kw'>def</span> <span class='id setup'>setup</span>
-  <span class='id klass'>klass</span><span class='period'>.</span><span class='id send'>send</span> <span class='id delete_all_method'>delete_all_method</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='setup identifier id'>setup</span>
+  <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='send identifier id'>send</span> <span class='delete_all_method identifier id'>delete_all_method</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -651,9 +658,10 @@ features should include this module.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/test.rb', line 20</span>
 
-<span class='kw'>def</span> <span class='id teardown'>teardown</span>
-  <span class='id klass'>klass</span><span class='period'>.</span><span class='id send'>send</span> <span class='id delete_all_method'>delete_all_method</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='teardown identifier id'>teardown</span>
+  <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='send identifier id'>send</span> <span class='delete_all_method identifier id'>delete_all_method</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -700,9 +708,10 @@ features should include this module.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/test.rb', line 44</span>
 
-<span class='kw'>def</span> <span class='id update_method'>update_method</span>
-  <span class='id raise'>raise</span> <span class='const'>NotImplementedError</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='update_method identifier id'>update_method</span>
+  <span class='raise identifier id'>raise</span> <span class='NotImplementedError constant id'>NotImplementedError</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -728,9 +737,10 @@ features should include this module.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/test.rb', line 48</span>
 
-<span class='kw'>def</span> <span class='id validation_exceptions'>validation_exceptions</span>
-  <span class='kw'>return</span> <span class='const'>RuntimeError</span>
-<span class='kw'>end</span></pre>
+<span class='def def kw'>def</span> <span class='validation_exceptions identifier id'>validation_exceptions</span>
+  <span class='return return kw'>return</span> <span class='RuntimeError constant id'>RuntimeError</span>
+<span class='end end kw'>end</span>
+</pre>
     </td>
   </tr>
 </table>
@@ -741,9 +751,9 @@ features should include this module.
 </div>
     
     <div id="footer">
-  Generated on Tue Sep 14 04:40:08 2010 by 
+  Generated on Tue Sep 14 05:50:26 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.1 (ruby-1.9.2).
+  0.6.1 (ruby-1.8.7).
 </div>
 
   </body>

@@ -47,11 +47,13 @@
 
 <p>Using FriendlyId, it&#8217;s easy to make your application use URL&#8217;s like:</p>
 
-<pre class="code"><span class='id http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id example'>example</span><span class='period'>.</span><span class='id com'>com</span><span class='op'>/</span><span class='id states'>states</span><span class='op'>/</span><span class='id washington'>washington</span></pre>
+<pre class="code"><span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/example.com/s</span><span class='tates identifier id'>tates</span><span class='div op'>/</span><span class='washington identifier id'>washington</span>
+</pre>
 
 <p>instead of:</p>
 
-<pre class="code"><span class='id http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id example'>example</span><span class='period'>.</span><span class='id com'>com</span><span class='op'>/</span><span class='id states'>states</span><span class='op'>/</span><span class='int'>4323454</span></pre>
+<pre class="code"><span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/example.com/s</span><span class='tates identifier id'>tates</span><span class='div op'>/</span><span class='integer val'>4323454</span>
+</pre>
 
 <h2 id='friendlyid_features'>FriendlyId Features</h2>
 
@@ -75,30 +77,33 @@
 
 <h2 id='rails_quickstart'>Rails Quickstart</h2>
 
-<pre class="code">gem install friendly_id
+<p>Note that the example below uses Rails 3. But don&#8217;t worry: FriendlyId will continue to support 2.3.x until Rails 3.1 is released.</p>
 
-rails new my_app
+<pre class="code"><span class='gem identifier id'>gem</span> <span class='install identifier id'>install</span> <span class='friendly_id identifier id'>friendly_id</span>
 
-cd my_app
+<span class='rails identifier id'>rails</span> <span class='new identifier id'>new</span> <span class='my_app identifier id'>my_app</span>
 
-# add to Gemfile
-gem &quot;friendly_id&quot;, &quot;~&gt; 3.1&quot;
+<span class='cd identifier id'>cd</span> <span class='my_app identifier id'>my_app</span>
 
-rails generate friendly_id
-rails generate scaffold user name:string cached_slug:string
+<span class='comment val'># add to Gemfile</span>
+<span class='gem identifier id'>gem</span> <span class='string val'>&quot;friendly_id&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;~&gt; 3.1&quot;</span>
 
-rake db:migrate
+<span class='rails identifier id'>rails</span> <span class='generate identifier id'>generate</span> <span class='friendly_id identifier id'>friendly_id</span>
+<span class='rails identifier id'>rails</span> <span class='generate identifier id'>generate</span> <span class='scaffold identifier id'>scaffold</span> <span class='user identifier id'>user</span> <span class='name identifier id'>name</span><span class='symbol val'>:string</span> <span class='cached_slug identifier id'>cached_slug</span><span class='symbol val'>:string</span>
 
-# edit app/models/user.rb
-class User &lt; ActiveRecord::Base
-  has_friendly_id :name, :use_slug =&gt; true
-end
+<span class='rake identifier id'>rake</span> <span class='db identifier id'>db</span><span class='symbol val'>:migrate</span>
 
-User.create! :name =&gt; &quot;Joe Schmoe&quot;
+<span class='comment val'># edit app/models/user.rb</span>
+<span class='class class kw'>class</span> <span class='User constant id'>User</span> <span class='lt op'>&lt;</span> <span class='ActiveRecord constant id'>ActiveRecord</span><span class='colon2 op'>::</span><span class='Base constant id'>Base</span>
+  <span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span> <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span>
+<span class='end end kw'>end</span>
 
-rails server
+<span class='User constant id'>User</span><span class='dot token'>.</span><span class='create! fid id'>create!</span> <span class='symbol val'>:name</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;Joe Schmoe&quot;</span>
 
-GET http://0.0.0.0:3000/users/joe-schmoe</pre>
+<span class='rails identifier id'>rails</span> <span class='server identifier id'>server</span>
+
+<span class='GET constant id'>GET</span> <span class='http identifier id'>http</span><span class='symbol val'>:/</span><span class='regexp val'>/0.0.0.0:3000/</span><span class='users identifier id'>users</span><span class='div op'>/</span><span class='joe identifier id'>joe</span><span class='minus op'>-</span><span class='schmoe identifier id'>schmoe</span>
+</pre>
 
 <h2 id='sequel_and_datamapper_too'>Sequel and DataMapper, too</h2>
 
@@ -141,9 +146,9 @@ GET http://0.0.0.0:3000/users/joe-schmoe</pre>
 <p>Copyright (c) 2008-2010, released under the MIT license.</p></div></div>
     
     <div id="footer">
-  Generated on Tue Sep 14 04:40:07 2010 by 
+  Generated on Tue Sep 14 05:50:24 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.1 (ruby-1.9.2).
+  0.6.1 (ruby-1.8.7).
 </div>
 
   </body>
