@@ -156,17 +156,20 @@ Is the object a friendly id? Note that the return value here is
 <tt>nil</tt> if it can not be determined. The return value will be:
 </p>
 <ul>
-<li><tt>true</tt> - if the id is definitely friendly (i.e., a string with
+<li><p>
+<tt>true</tt> - if the id is definitely friendly (i.e., a string with
 non-numeric characters)
-
+</p>
 </li>
-<li><tt>false</tt> - if the id is definitely unfriendly (i.e., an Integer, a
+<li><p>
+<tt>false</tt> - if the id is definitely unfriendly (i.e., an Integer, a
 model instance, etc.)
-
+</p>
 </li>
-<li><tt>nil</tt> - if it can not be determined (i.e., a numeric string like
-&quot;206&quot;.)
-
+<li><p>
+<tt>nil</tt> - if it can not be determined (i.e., a numeric string like
+&#8220;206&#8221;.)
+</p>
 </li>
 </ul>
 
@@ -212,14 +215,13 @@ model instance, etc.)
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 76</span>
 
-<span class='def def kw'>def</span> <span class='friendly_id? fid id'>friendly_id?</span>
-  <span class='if if kw'>if</span> <span class='kind_of? fid id'>kind_of?</span><span class='lparen token'>(</span><span class='Integer constant id'>Integer</span><span class='rparen token'>)</span> <span class='or or kw'>or</span> <span class='kind_of? fid id'>kind_of?</span><span class='lparen token'>(</span><span class='Symbol constant id'>Symbol</span><span class='rparen token'>)</span> <span class='or or kw'>or</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='class identifier id'>class</span><span class='dot token'>.</span><span class='respond_to? fid id'>respond_to?</span> <span class='colon op'>:</span><span class='friendly_id_config identifier id'>friendly_id_config</span>
-    <span class='false false kw'>false</span>
-  <span class='elsif elsif kw'>elsif</span> <span class='to_i identifier id'>to_i</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span> <span class='neq op'>!=</span> <span class='to_s identifier id'>to_s</span>
-    <span class='true true kw'>true</span>
-  <span class='end end kw'>end</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id friendly_id?'>friendly_id?</span>
+  <span class='kw'>if</span> <span class='id kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Integer</span><span class='rparen'>)</span> <span class='kw'>or</span> <span class='id kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Symbol</span><span class='rparen'>)</span> <span class='kw'>or</span> <span class='kw'>self</span><span class='period'>.</span><span class='id class'>class</span><span class='period'>.</span><span class='id respond_to?'>respond_to?</span> <span class='symbol'>:friendly_id_config</span>
+    <span class='kw'>false</span>
+  <span class='kw'>elsif</span> <span class='id to_i'>to_i</span><span class='period'>.</span><span class='id to_s'>to_s</span> <span class='op'>!=</span> <span class='id to_s'>to_s</span>
+    <span class='kw'>true</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -283,10 +285,9 @@ friendly, else <tt>nil</tt>.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id.rb', line 88</span>
 
-<span class='def def kw'>def</span> <span class='unfriendly_id? fid id'>unfriendly_id?</span>
-  <span class='val identifier id'>val</span> <span class='assign token'>=</span> <span class='friendly_id? fid id'>friendly_id?</span> <span class='semicolon token'>;</span> <span class='notop op'>!</span><span class='val identifier id'>val</span> <span class='unless unless_mod kw'>unless</span> <span class='val identifier id'>val</span><span class='dot token'>.</span><span class='nil? fid id'>nil?</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id unfriendly_id?'>unfriendly_id?</span>
+  <span class='id val'>val</span> <span class='op'>=</span> <span class='id friendly_id?'>friendly_id?</span> <span class='semicolon'>;</span> <span class='op'>!</span><span class='id val'>val</span> <span class='kw'>unless</span> <span class='id val'>val</span><span class='period'>.</span><span class='id nil?'>nil?</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -297,9 +298,9 @@ friendly, else <tt>nil</tt>.
 </div>
     
     <div id="footer">
-  Generated on Wed Sep 22 18:18:55 2010 by 
+  Generated on Wed Sep 22 18:27:38 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.1 (ruby-1.8.7).
+  0.6.1 (ruby-1.9.2).
 </div>
 
   </body>

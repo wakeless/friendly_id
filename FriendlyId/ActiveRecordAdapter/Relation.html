@@ -187,10 +187,9 @@ Returns the value of attribute friendly_id_scope
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/relation.rb', line 145</span>
 
-<span class='def def kw'>def</span> <span class='friendly_id_scope identifier id'>friendly_id_scope</span>
-  <span class='@friendly_id_scope ivar id'>@friendly_id_scope</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id friendly_id_scope'>friendly_id_scope</span>
+  <span class='ivar'>@friendly_id_scope</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -237,12 +236,11 @@ This method overrides Active Record&#8217;s default in order to allow the
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/relation.rb', line 149</span>
 
-<span class='def def kw'>def</span> <span class='apply_finder_options identifier id'>apply_finder_options</span><span class='lparen token'>(</span><span class='options identifier id'>options</span><span class='rparen token'>)</span>
-  <span class='@friendly_id_scope ivar id'>@friendly_id_scope</span> <span class='assign token'>=</span> <span class='options identifier id'>options</span><span class='dot token'>.</span><span class='delete identifier id'>delete</span><span class='lparen token'>(</span><span class='symbol val'>:scope</span><span class='rparen token'>)</span>
-  <span class='@friendly_id_scope ivar id'>@friendly_id_scope</span> <span class='assign token'>=</span> <span class='@friendly_id_scope ivar id'>@friendly_id_scope</span><span class='dot token'>.</span><span class='to_param identifier id'>to_param</span> <span class='if if_mod kw'>if</span> <span class='@friendly_id_scope ivar id'>@friendly_id_scope</span><span class='dot token'>.</span><span class='respond_to? fid id'>respond_to?</span><span class='lparen token'>(</span><span class='symbol val'>:to_param</span><span class='rparen token'>)</span>
-  <span class='super super kw'>super</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id apply_finder_options'>apply_finder_options</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='ivar'>@friendly_id_scope</span> <span class='op'>=</span> <span class='id options'>options</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:scope</span><span class='rparen'>)</span>
+  <span class='ivar'>@friendly_id_scope</span> <span class='op'>=</span> <span class='ivar'>@friendly_id_scope</span><span class='period'>.</span><span class='id to_param'>to_param</span> <span class='kw'>if</span> <span class='ivar'>@friendly_id_scope</span><span class='period'>.</span><span class='id respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:to_param</span><span class='rparen'>)</span>
+  <span class='kw'>super</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -253,9 +251,9 @@ This method overrides Active Record&#8217;s default in order to allow the
 </div>
     
     <div id="footer">
-  Generated on Wed Sep 22 18:18:58 2010 by 
+  Generated on Wed Sep 22 18:27:39 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.1 (ruby-1.8.7).
+  0.6.1 (ruby-1.9.2).
 </div>
 
   </body>

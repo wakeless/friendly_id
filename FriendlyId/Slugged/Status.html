@@ -330,10 +330,9 @@ Returns the value of attribute sequence
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 6</span>
 
-<span class='def def kw'>def</span> <span class='sequence identifier id'>sequence</span>
-  <span class='@sequence ivar id'>@sequence</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id sequence'>sequence</span>
+  <span class='ivar'>@sequence</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -373,10 +372,9 @@ The slug that was used to find the model.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 34</span>
 
-<span class='def def kw'>def</span> <span class='slug identifier id'>slug</span>
-  <span class='@slug ivar id'>@slug</span> <span class='opasgn op'>||=</span> <span class='record identifier id'>record</span><span class='dot token'>.</span><span class='find_slug identifier id'>find_slug</span><span class='lparen token'>(</span><span class='name identifier id'>name</span><span class='comma token'>,</span> <span class='sequence identifier id'>sequence</span><span class='rparen token'>)</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id slug'>slug</span>
+  <span class='ivar'>@slug</span> <span class='op'>||=</span> <span class='id record'>record</span><span class='period'>.</span><span class='id find_slug'>find_slug</span><span class='lparen'>(</span><span class='id name'>name</span><span class='comma'>,</span> <span class='id sequence'>sequence</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -434,10 +432,9 @@ numeric, but the model has no slug, or <tt>id</tt> is friendly and current
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 10</span>
 
-<span class='def def kw'>def</span> <span class='best? fid id'>best?</span>
-  <span class='current? fid id'>current?</span> <span class='orop op'>||</span> <span class='lparen token'>(</span><span class='numeric? fid id'>numeric?</span> <span class='andop op'>&amp;&amp;</span> <span class='notop op'>!</span><span class='record identifier id'>record</span><span class='dot token'>.</span><span class='slug identifier id'>slug</span><span class='rparen token'>)</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id best?'>best?</span>
+  <span class='id current?'>current?</span> <span class='op'>||</span> <span class='lparen'>(</span><span class='id numeric?'>numeric?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id record'>record</span><span class='period'>.</span><span class='id slug'>slug</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -487,10 +484,9 @@ Did the find operation use the current slug?
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 15</span>
 
-<span class='def def kw'>def</span> <span class='current? fid id'>current?</span>
-  <span class='notop op'>!</span><span class='notop op'>!</span> <span class='slug identifier id'>slug</span> <span class='andop op'>&amp;&amp;</span> <span class='slug identifier id'>slug</span><span class='dot token'>.</span><span class='current? fid id'>current?</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id current?'>current?</span>
+  <span class='op'>!</span><span class='op'>!</span> <span class='id slug'>slug</span> <span class='op'>&amp;&amp;</span> <span class='id slug'>slug</span><span class='period'>.</span><span class='id current?'>current?</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -540,10 +536,9 @@ Did the find operation use a friendly id?
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 20</span>
 
-<span class='def def kw'>def</span> <span class='friendly? fid id'>friendly?</span>
-  <span class='notop op'>!</span><span class='notop op'>!</span> <span class='lparen token'>(</span><span class='name identifier id'>name</span> <span class='or or kw'>or</span> <span class='slug identifier id'>slug</span><span class='rparen token'>)</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id friendly?'>friendly?</span>
+  <span class='op'>!</span><span class='op'>!</span> <span class='lparen'>(</span><span class='id name'>name</span> <span class='kw'>or</span> <span class='id slug'>slug</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -569,10 +564,9 @@ Did the find operation use a friendly id?
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 24</span>
 
-<span class='def def kw'>def</span> <span class='friendly_id= identifier id'>friendly_id=</span><span class='lparen token'>(</span><span class='friendly_id identifier id'>friendly_id</span><span class='rparen token'>)</span>
-  <span class='@name ivar id'>@name</span><span class='comma token'>,</span> <span class='@sequence ivar id'>@sequence</span> <span class='assign token'>=</span> <span class='friendly_id identifier id'>friendly_id</span><span class='dot token'>.</span><span class='parse_friendly_id identifier id'>parse_friendly_id</span><span class='lparen token'>(</span><span class='record identifier id'>record</span><span class='dot token'>.</span><span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='sequence_separator identifier id'>sequence_separator</span><span class='rparen token'>)</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id friendly_id='>friendly_id=</span><span class='lparen'>(</span><span class='id friendly_id'>friendly_id</span><span class='rparen'>)</span>
+  <span class='ivar'>@name</span><span class='comma'>,</span> <span class='ivar'>@sequence</span> <span class='op'>=</span> <span class='id friendly_id'>friendly_id</span><span class='period'>.</span><span class='id parse_friendly_id'>parse_friendly_id</span><span class='lparen'>(</span><span class='id record'>record</span><span class='period'>.</span><span class='id friendly_id_config'>friendly_id_config</span><span class='period'>.</span><span class='id sequence_separator'>sequence_separator</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -622,10 +616,9 @@ Did the find operation use an outdated slug?
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/slugged.rb', line 29</span>
 
-<span class='def def kw'>def</span> <span class='outdated? fid id'>outdated?</span>
-  <span class='notop op'>!</span><span class='current? fid id'>current?</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id outdated?'>outdated?</span>
+  <span class='op'>!</span><span class='id current?'>current?</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -636,9 +629,9 @@ Did the find operation use an outdated slug?
 </div>
     
     <div id="footer">
-  Generated on Wed Sep 22 18:18:57 2010 by 
+  Generated on Wed Sep 22 18:27:38 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.1 (ruby-1.8.7).
+  0.6.1 (ruby-1.9.2).
 </div>
 
   </body>

@@ -91,8 +91,7 @@
         <dt id="OLD_SLUG_DAYS-constant" class="">OLD_SLUG_DAYS =
           
         </dt>
-        <dd><pre class="code"><span class='integer val'>45</span>
-</pre></dd>
+        <dd><pre class="code"><span class='int'>45</span></pre></dd>
       
     </dl>
   
@@ -343,11 +342,10 @@ A new instance of TaskRunner
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/tasks.rb', line 14</span>
 
-<span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
-  <span class='self self kw'>self</span><span class='dot token'>.</span><span class='klass identifier id'>klass</span> <span class='assign token'>=</span> <span class='ENV constant id'>ENV</span><span class='lbrack token'>[</span><span class='string val'>&quot;MODEL&quot;</span><span class='rbrack token'>]</span>
-  <span class='self self kw'>self</span><span class='dot token'>.</span><span class='days identifier id'>days</span>  <span class='assign token'>=</span> <span class='ENV constant id'>ENV</span><span class='lbrack token'>[</span><span class='string val'>&quot;DAYS&quot;</span><span class='rbrack token'>]</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id initialize'>initialize</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id klass'>klass</span> <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>MODEL</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id days'>days</span>  <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>DAYS</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -392,10 +390,9 @@ Returns the value of attribute days
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/tasks.rb', line 6</span>
 
-<span class='def def kw'>def</span> <span class='days identifier id'>days</span>
-  <span class='@days ivar id'>@days</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id days'>days</span>
+  <span class='ivar'>@days</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -435,10 +432,9 @@ Returns the value of attribute klass
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/tasks.rb', line 7</span>
 
-<span class='def def kw'>def</span> <span class='klass identifier id'>klass</span>
-  <span class='@klass ivar id'>@klass</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id klass'>klass</span>
+  <span class='ivar'>@klass</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -478,10 +474,9 @@ Returns the value of attribute task_options
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/tasks.rb', line 8</span>
 
-<span class='def def kw'>def</span> <span class='task_options identifier id'>task_options</span>
-  <span class='@task_options ivar id'>@task_options</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id task_options'>task_options</span>
+  <span class='ivar'>@task_options</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -519,15 +514,14 @@ Returns the value of attribute task_options
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/tasks.rb', line 49</span>
 
-<span class='def def kw'>def</span> <span class='delete_old_slugs identifier id'>delete_old_slugs</span>
-  <span class='conditions identifier id'>conditions</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='string val'>&quot;created_at &lt; ?&quot;</span><span class='comma token'>,</span> <span class='DateTime constant id'>DateTime</span><span class='dot token'>.</span><span class='now identifier id'>now</span> <span class='minus op'>-</span> <span class='days identifier id'>days</span><span class='rbrack token'>]</span>
-  <span class='if if kw'>if</span> <span class='klass identifier id'>klass</span>
-    <span class='conditions identifier id'>conditions</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span> <span class='lshft op'>&lt;&lt;</span> <span class='string val'>&quot; AND sluggable_type = ?&quot;</span>
-    <span class='conditions identifier id'>conditions</span> <span class='lshft op'>&lt;&lt;</span> <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
-  <span class='end end kw'>end</span>
-  <span class='Slug constant id'>Slug</span><span class='dot token'>.</span><span class='all identifier id'>all</span><span class='lparen token'>(</span><span class='symbol val'>:conditions</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='conditions identifier id'>conditions</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='select identifier id'>select</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:outdated?</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='map identifier id'>map</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:destroy</span><span class='rparen token'>)</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id delete_old_slugs'>delete_old_slugs</span>
+  <span class='id conditions'>conditions</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>created_at &lt; ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='const'>DateTime</span><span class='period'>.</span><span class='id now'>now</span> <span class='op'>-</span> <span class='id days'>days</span><span class='rbracket'>]</span>
+  <span class='kw'>if</span> <span class='id klass'>klass</span>
+    <span class='id conditions'>conditions</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> AND sluggable_type = ?</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id conditions'>conditions</span> <span class='op'>&lt;&lt;</span> <span class='id klass'>klass</span><span class='period'>.</span><span class='id to_s'>to_s</span>
+  <span class='kw'>end</span>
+  <span class='const'>Slug</span><span class='period'>.</span><span class='id all'>all</span><span class='lparen'>(</span><span class='symbol'>:conditions</span> <span class='op'>=&gt;</span> <span class='id conditions'>conditions</span><span class='rparen'>)</span><span class='period'>.</span><span class='id select'>select</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:outdated?</span><span class='rparen'>)</span><span class='period'>.</span><span class='id map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:destroy</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -557,14 +551,13 @@ Returns the value of attribute task_options
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/tasks.rb', line 41</span>
 
-<span class='def def kw'>def</span> <span class='delete_slugs identifier id'>delete_slugs</span>
-  <span class='validate_uses_slugs identifier id'>validate_uses_slugs</span>
-  <span class='Slug constant id'>Slug</span><span class='dot token'>.</span><span class='destroy_all identifier id'>destroy_all</span><span class='lparen token'>(</span><span class='lbrack token'>[</span><span class='string val'>&quot;sluggable_type = ?&quot;</span><span class='comma token'>,</span> <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
-  <span class='if if kw'>if</span> <span class='column identifier id'>column</span> <span class='assign token'>=</span> <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='cache_column identifier id'>cache_column</span>
-    <span class='update_all identifier id'>update_all</span><span class='lparen token'>(</span><span class='dstring node'>&quot;#{column} = NULL&quot;</span><span class='rparen token'>)</span>
-  <span class='end end kw'>end</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id delete_slugs'>delete_slugs</span>
+  <span class='id validate_uses_slugs'>validate_uses_slugs</span>
+  <span class='const'>Slug</span><span class='period'>.</span><span class='id destroy_all'>destroy_all</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sluggable_type = ?</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id klass'>klass</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id column'>column</span> <span class='op'>=</span> <span class='id friendly_id_config'>friendly_id_config</span><span class='period'>.</span><span class='id cache_column'>cache_column</span>
+    <span class='id update_all'>update_all</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id column'>column</span><span class='rbrace'>}</span><span class='tstring_content'> = NULL</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -595,79 +588,24 @@ Returns the value of attribute task_options
 36
 37
 38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66</pre>
+39</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/tasks.rb', line 27</span>
 
-<span class='def def kw'>def</span> <span class='make_slugs identifier id'>make_slugs</span>
-    <span class='validate_uses_slugs identifier id'>validate_uses_slugs</span>
-    <span class='cond identifier id'>cond</span> <span class='assign token'>=</span> <span class='string val'>&quot;slugs.id IS NULL&quot;</span>
-    <span class='options identifier id'>options</span> <span class='assign token'>=</span> <span class='lbrace token'>{</span><span class='symbol val'>:limit</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>100</span><span class='comma token'>,</span> <span class='symbol val'>:include</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:slugs</span><span class='comma token'>,</span> <span class='symbol val'>:conditions</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='cond identifier id'>cond</span><span class='comma token'>,</span> <span class='symbol val'>:order</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='dstring node'>&quot;#{klass.table_name}.id ASC&quot;</span><span class='rbrace token'>}</span><span class='dot token'>.</span><span class='merge identifier id'>merge</span><span class='lparen token'>(</span><span class='task_options identifier id'>task_options</span> <span class='orop op'>||</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span>
-    <span class='while while kw'>while</span> <span class='records identifier id'>records</span> <span class='assign token'>=</span> <span class='find identifier id'>find</span><span class='lparen token'>(</span><span class='symbol val'>:all</span><span class='comma token'>,</span> <span class='options identifier id'>options</span><span class='rparen token'>)</span> <span class='do do kw'>do</span>
-      <span class='break break kw'>break</span> <span class='if if_mod kw'>if</span> <span class='records identifier id'>records</span><span class='dot token'>.</span><span class='size identifier id'>size</span> <span class='eq op'>==</span> <span class='integer val'>0</span>
-      <span class='records identifier id'>records</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='record identifier id'>record</span><span class='bitor op'>|</span>
-        <span class='record identifier id'>record</span><span class='dot token'>.</span><span class='save identifier id'>save</span><span class='lparen token'>(</span><span class='symbol val'>:validate</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='false false kw'>false</span><span class='rparen token'>)</span>
-        <span class='yield yield kw'>yield</span><span class='lparen token'>(</span><span class='record identifier id'>record</span><span class='rparen token'>)</span> <span class='if if_mod kw'>if</span> <span class='block_given? fid id'>block_given?</span>
-      <span class='end end kw'>end</span>
-      <span class='options identifier id'>options</span><span class='lbrack token'>[</span><span class='symbol val'>:conditions</span><span class='rbrack token'>]</span> <span class='assign token'>=</span> <span class='cond identifier id'>cond</span> <span class='plus op'>+</span> <span class='dstring node'>&quot; and #{klass.table_name}.id &gt; #{records.last.id}&quot;</span>
-    <span class='end end kw'>end</span>
-  <span class='end end kw'>end</span>
-
-  <span class='def def kw'>def</span> <span class='delete_slugs identifier id'>delete_slugs</span>
-    <span class='validate_uses_slugs identifier id'>validate_uses_slugs</span>
-    <span class='Slug constant id'>Slug</span><span class='dot token'>.</span><span class='destroy_all identifier id'>destroy_all</span><span class='lparen token'>(</span><span class='lbrack token'>[</span><span class='string val'>&quot;sluggable_type = ?&quot;</span><span class='comma token'>,</span> <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='rbrack token'>]</span><span class='rparen token'>)</span>
-    <span class='if if kw'>if</span> <span class='column identifier id'>column</span> <span class='assign token'>=</span> <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='cache_column identifier id'>cache_column</span>
-      <span class='update_all identifier id'>update_all</span><span class='lparen token'>(</span><span class='dstring node'>&quot;#{column} = NULL&quot;</span><span class='rparen token'>)</span>
-    <span class='end end kw'>end</span>
-  <span class='end end kw'>end</span>
-
-  <span class='def def kw'>def</span> <span class='delete_old_slugs identifier id'>delete_old_slugs</span>
-    <span class='conditions identifier id'>conditions</span> <span class='assign token'>=</span> <span class='lbrack token'>[</span><span class='string val'>&quot;created_at &lt; ?&quot;</span><span class='comma token'>,</span> <span class='DateTime constant id'>DateTime</span><span class='dot token'>.</span><span class='now identifier id'>now</span> <span class='minus op'>-</span> <span class='days identifier id'>days</span><span class='rbrack token'>]</span>
-    <span class='if if kw'>if</span> <span class='klass identifier id'>klass</span>
-      <span class='conditions identifier id'>conditions</span><span class='lbrack token'>[</span><span class='integer val'>0</span><span class='rbrack token'>]</span> <span class='lshft op'>&lt;&lt;</span> <span class='string val'>&quot; AND sluggable_type = ?&quot;</span>
-      <span class='conditions identifier id'>conditions</span> <span class='lshft op'>&lt;&lt;</span> <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
-    <span class='end end kw'>end</span>
-    <span class='Slug constant id'>Slug</span><span class='dot token'>.</span><span class='all identifier id'>all</span><span class='lparen token'>(</span><span class='symbol val'>:conditions</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='conditions identifier id'>conditions</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='select identifier id'>select</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:outdated?</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='map identifier id'>map</span><span class='lparen token'>(</span><span class='bitand op'>&amp;</span><span class='symbol val'>:destroy</span><span class='rparen token'>)</span>
-  <span class='end end kw'>end</span>
-
-  <span class='def def kw'>def</span> <span class='validate_uses_slugs identifier id'>validate_uses_slugs</span>
-    <span class='lparen token'>(</span><span class='raise identifier id'>raise</span> <span class='string val'>&quot;You need to pass a MODEL=&lt;model name&gt; argument to rake&quot;</span><span class='rparen token'>)</span> <span class='if if_mod kw'>if</span> <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='blank? fid id'>blank?</span>
-    <span class='unless unless kw'>unless</span> <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='use_slug? fid id'>use_slug?</span>
-      <span class='raise identifier id'>raise</span> <span class='string val'>&quot;Class '%s' doesn't use slugs&quot;</span> <span class='mod op'>%</span> <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
-    <span class='end end kw'>end</span>
-  <span class='rescue rescue kw'>rescue</span> <span class='NoMethodError constant id'>NoMethodError</span>
-    <span class='raise identifier id'>raise</span> <span class='string val'>&quot;Class '%s' doesn't use FriendlyId&quot;</span> <span class='mod op'>%</span> <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
-  <span class='end end kw'>end</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id make_slugs'>make_slugs</span>
+  <span class='id validate_uses_slugs'>validate_uses_slugs</span>
+  <span class='id cond'>cond</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>slugs.id IS NULL</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='symbol'>:limit</span> <span class='op'>=&gt;</span> <span class='int'>100</span><span class='comma'>,</span> <span class='symbol'>:include</span> <span class='op'>=&gt;</span> <span class='symbol'>:slugs</span><span class='comma'>,</span> <span class='symbol'>:conditions</span> <span class='op'>=&gt;</span> <span class='id cond'>cond</span><span class='comma'>,</span> <span class='symbol'>:order</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id klass'>klass</span><span class='period'>.</span><span class='id table_name'>table_name</span><span class='rbrace'>}</span><span class='tstring_content'>.id ASC</span><span class='tstring_end'>&quot;</span></span><span class='rbrace'>}</span><span class='period'>.</span><span class='id merge'>merge</span><span class='lparen'>(</span><span class='id task_options'>task_options</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='kw'>while</span> <span class='id records'>records</span> <span class='op'>=</span> <span class='id find'>find</span><span class='lparen'>(</span><span class='symbol'>:all</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='kw'>break</span> <span class='kw'>if</span> <span class='id records'>records</span><span class='period'>.</span><span class='id size'>size</span> <span class='op'>==</span> <span class='int'>0</span>
+    <span class='id records'>records</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id record'>record</span><span class='op'>|</span>
+      <span class='id record'>record</span><span class='period'>.</span><span class='id save'>save</span><span class='lparen'>(</span><span class='symbol'>:validate</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='rparen'>)</span>
+      <span class='kw'>yield</span><span class='lparen'>(</span><span class='id record'>record</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id block_given?'>block_given?</span>
+    <span class='kw'>end</span>
+    <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:conditions</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id cond'>cond</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> and </span><span class='embexpr_beg'>#{</span><span class='id klass'>klass</span><span class='period'>.</span><span class='id table_name'>table_name</span><span class='rbrace'>}</span><span class='tstring_content'>.id &gt; </span><span class='embexpr_beg'>#{</span><span class='id records'>records</span><span class='period'>.</span><span class='id last'>last</span><span class='period'>.</span><span class='id id'>id</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -698,15 +636,14 @@ Returns the value of attribute task_options
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/active_record_adapter/tasks.rb', line 58</span>
 
-<span class='def def kw'>def</span> <span class='validate_uses_slugs identifier id'>validate_uses_slugs</span>
-  <span class='lparen token'>(</span><span class='raise identifier id'>raise</span> <span class='string val'>&quot;You need to pass a MODEL=&lt;model name&gt; argument to rake&quot;</span><span class='rparen token'>)</span> <span class='if if_mod kw'>if</span> <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='blank? fid id'>blank?</span>
-  <span class='unless unless kw'>unless</span> <span class='friendly_id_config identifier id'>friendly_id_config</span><span class='dot token'>.</span><span class='use_slug? fid id'>use_slug?</span>
-    <span class='raise identifier id'>raise</span> <span class='string val'>&quot;Class '%s' doesn't use slugs&quot;</span> <span class='mod op'>%</span> <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
-  <span class='end end kw'>end</span>
-<span class='rescue rescue kw'>rescue</span> <span class='NoMethodError constant id'>NoMethodError</span>
-  <span class='raise identifier id'>raise</span> <span class='string val'>&quot;Class '%s' doesn't use FriendlyId&quot;</span> <span class='mod op'>%</span> <span class='klass identifier id'>klass</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id validate_uses_slugs'>validate_uses_slugs</span>
+  <span class='lparen'>(</span><span class='id raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You need to pass a MODEL=&lt;model name&gt; argument to rake</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id klass'>klass</span><span class='period'>.</span><span class='id blank?'>blank?</span>
+  <span class='kw'>unless</span> <span class='id friendly_id_config'>friendly_id_config</span><span class='period'>.</span><span class='id use_slug?'>use_slug?</span>
+    <span class='id raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Class '%s' doesn't use slugs</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id klass'>klass</span><span class='period'>.</span><span class='id to_s'>to_s</span>
+  <span class='kw'>end</span>
+<span class='kw'>rescue</span> <span class='const'>NoMethodError</span>
+  <span class='id raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Class '%s' doesn't use FriendlyId</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='id klass'>klass</span><span class='period'>.</span><span class='id to_s'>to_s</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -717,9 +654,9 @@ Returns the value of attribute task_options
 </div>
     
     <div id="footer">
-  Generated on Wed Sep 22 18:18:56 2010 by 
+  Generated on Wed Sep 22 18:27:39 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.1 (ruby-1.8.7).
+  0.6.1 (ruby-1.9.2).
 </div>
 
   </body>

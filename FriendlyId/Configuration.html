@@ -101,17 +101,16 @@ the attributes below for information on the possible options.
     <h3>Examples:</h3>
     
       <h4><div class='inline'></div></h4>
-      <pre class="example code"><span class='has_friendly_id identifier id'>has_friendly_id</span> <span class='symbol val'>:name</span><span class='comma token'>,</span>
- <span class='symbol val'>:use_slug</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span>
- <span class='symbol val'>:max_length</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>150</span><span class='comma token'>,</span>
- <span class='symbol val'>:approximate_ascii</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='true true kw'>true</span><span class='comma token'>,</span>
- <span class='symbol val'>:ascii_approximation_options</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:german</span><span class='comma token'>,</span>
- <span class='symbol val'>:sequence_separator</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;:&quot;</span><span class='comma token'>,</span>
- <span class='symbol val'>:reserved_words</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='string val'>&quot;reserved&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;words&quot;</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
- <span class='symbol val'>:scope</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:country</span><span class='comma token'>,</span>
- <span class='symbol val'>:cache_column</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='symbol val'>:my_cache_column_name</span>
- <span class='comment val'># etc.</span>
-</pre>
+      <pre class="example code"><span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:name</span><span class='comma'>,</span>
+ <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+ <span class='symbol'>:max_length</span> <span class='op'>=&gt;</span> <span class='int'>150</span><span class='comma'>,</span>
+ <span class='symbol'>:approximate_ascii</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+ <span class='symbol'>:ascii_approximation_options</span> <span class='op'>=&gt;</span> <span class='symbol'>:german</span><span class='comma'>,</span>
+ <span class='symbol'>:sequence_separator</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>:</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+ <span class='symbol'>:reserved_words</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>reserved</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>words</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+ <span class='symbol'>:scope</span> <span class='op'>=&gt;</span> <span class='symbol'>:country</span><span class='comma'>,</span>
+ <span class='symbol'>:cache_column</span> <span class='op'>=&gt;</span> <span class='symbol'>:my_cache_column_name</span>
+ <span class='comment'># etc.</span></pre>
     
   </div>
 
@@ -127,15 +126,14 @@ the attributes below for information on the possible options.
         <dt id="DEFAULTS-constant" class="">DEFAULTS =
           
         </dt>
-        <dd><pre class="code"><span class='lbrace token'>{</span>
-  <span class='symbol val'>:allow_nil</span>                   <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='false false kw'>false</span><span class='comma token'>,</span>
-  <span class='symbol val'>:ascii_approximation_options</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
-  <span class='symbol val'>:max_length</span>                  <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='integer val'>255</span><span class='comma token'>,</span>
-  <span class='symbol val'>:reserved_words</span>              <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='lbrack token'>[</span><span class='string val'>&quot;index&quot;</span><span class='comma token'>,</span> <span class='string val'>&quot;new&quot;</span><span class='rbrack token'>]</span><span class='comma token'>,</span>
-  <span class='symbol val'>:reserved_message</span>            <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>'can not be &quot;%s&quot;'</span><span class='comma token'>,</span>
-  <span class='symbol val'>:sequence_separator</span>          <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='string val'>&quot;--&quot;</span>
-<span class='rbrace token'>}</span>
-</pre></dd>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+  <span class='symbol'>:allow_nil</span>                   <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='comma'>,</span>
+  <span class='symbol'>:ascii_approximation_options</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='symbol'>:max_length</span>                  <span class='op'>=&gt;</span> <span class='int'>255</span><span class='comma'>,</span>
+  <span class='symbol'>:reserved_words</span>              <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>index</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>new</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='symbol'>:reserved_message</span>            <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>can not be &quot;%s&quot;</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
+  <span class='symbol'>:sequence_separator</span>          <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--</span><span class='tstring_end'>&quot;</span></span>
+<span class='rbrace'>}</span></pre></dd>
       
     </dl>
   
@@ -754,15 +752,14 @@ the object that the method was called on
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 79</span>
 
-<span class='def def kw'>def</span> <span class='initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='configured_class identifier id'>configured_class</span><span class='comma token'>,</span> <span class='method identifier id'>method</span><span class='comma token'>,</span> <span class='options identifier id'>options</span> <span class='assign token'>=</span> <span class='nil nil kw'>nil</span><span class='comma token'>,</span> <span class='bitand op'>&amp;</span><span class='block identifier id'>block</span><span class='rparen token'>)</span>
-  <span class='@configured_class ivar id'>@configured_class</span> <span class='assign token'>=</span> <span class='configured_class identifier id'>configured_class</span>
-  <span class='@method ivar id'>@method</span> <span class='assign token'>=</span> <span class='method identifier id'>method</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span>
-  <span class='DEFAULTS constant id'>DEFAULTS</span><span class='dot token'>.</span><span class='merge identifier id'>merge</span><span class='lparen token'>(</span><span class='options identifier id'>options</span> <span class='orop op'>||</span> <span class='lbrace token'>{</span><span class='rbrace token'>}</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='each identifier id'>each</span> <span class='do do kw'>do</span> <span class='bitor op'>|</span><span class='key identifier id'>key</span><span class='comma token'>,</span> <span class='value identifier id'>value</span><span class='bitor op'>|</span>
-    <span class='self self kw'>self</span><span class='dot token'>.</span><span class='send identifier id'>send</span> <span class='dstring node'>&quot;#{key}=&quot;</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span><span class='comma token'>,</span> <span class='value identifier id'>value</span>
-  <span class='end end kw'>end</span>
-  <span class='yield yield kw'>yield</span> <span class='self self kw'>self</span> <span class='if if_mod kw'>if</span> <span class='block_given? fid id'>block_given?</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id initialize'>initialize</span><span class='lparen'>(</span><span class='id configured_class'>configured_class</span><span class='comma'>,</span> <span class='id method'>method</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+  <span class='ivar'>@configured_class</span> <span class='op'>=</span> <span class='id configured_class'>configured_class</span>
+  <span class='ivar'>@method</span> <span class='op'>=</span> <span class='id method'>method</span><span class='period'>.</span><span class='id to_sym'>to_sym</span>
+  <span class='const'>DEFAULTS</span><span class='period'>.</span><span class='id merge'>merge</span><span class='lparen'>(</span><span class='id options'>options</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id key'>key</span><span class='comma'>,</span> <span class='id value'>value</span><span class='op'>|</span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id send'>send</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id key'>key</span><span class='rbrace'>}</span><span class='tstring_content'>=</span><span class='tstring_end'>&quot;</span></span><span class='period'>.</span><span class='id to_sym'>to_sym</span><span class='comma'>,</span> <span class='id value'>value</span>
+  <span class='kw'>end</span>
+  <span class='kw'>yield</span> <span class='kw'>self</span> <span class='kw'>if</span> <span class='id block_given?'>block_given?</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -813,10 +810,9 @@ application.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 36</span>
 
-<span class='def def kw'>def</span> <span class='allow_nil identifier id'>allow_nil</span>
-  <span class='@allow_nil ivar id'>@allow_nil</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id allow_nil'>allow_nil</span>
+  <span class='ivar'>@allow_nil</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -856,10 +852,9 @@ Strip diacritics from Western characters.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 40</span>
 
-<span class='def def kw'>def</span> <span class='approximate_ascii identifier id'>approximate_ascii</span>
-  <span class='@approximate_ascii ivar id'>@approximate_ascii</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id approximate_ascii'>approximate_ascii</span>
+  <span class='ivar'>@approximate_ascii</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -899,10 +894,9 @@ Locale-type options for ASCII approximations.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 43</span>
 
-<span class='def def kw'>def</span> <span class='ascii_approximation_options identifier id'>ascii_approximation_options</span>
-  <span class='@ascii_approximation_options ivar id'>@ascii_approximation_options</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id ascii_approximation_options'>ascii_approximation_options</span>
+  <span class='ivar'>@ascii_approximation_options</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -942,10 +936,9 @@ The class that&#8217;s using the configuration.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 46</span>
 
-<span class='def def kw'>def</span> <span class='configured_class identifier id'>configured_class</span>
-  <span class='@configured_class ivar id'>@configured_class</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id configured_class'>configured_class</span>
+  <span class='ivar'>@configured_class</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -987,10 +980,9 @@ characters, etc.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 50</span>
 
-<span class='def def kw'>def</span> <span class='max_length identifier id'>max_length</span>
-  <span class='@max_length ivar id'>@max_length</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id max_length'>max_length</span>
+  <span class='ivar'>@max_length</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1035,10 +1027,9 @@ string.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 53</span>
 
-<span class='def def kw'>def</span> <span class='method identifier id'>method</span>
-  <span class='@method ivar id'>@method</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id method'>method</span>
+  <span class='ivar'>@method</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1085,10 +1076,9 @@ The message shown when a reserved word is used.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 58</span>
 
-<span class='def def kw'>def</span> <span class='reserved_message identifier id'>reserved_message</span>
-  <span class='@reserved_message ivar id'>@reserved_message</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id reserved_message'>reserved_message</span>
+  <span class='ivar'>@reserved_message</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1110,8 +1100,8 @@ The message shown when a reserved word is used.
 Array of words that are reserved and can&#8217;t be used as friendly_id
 strings. If a listed word is used in a sluggable model, it will raise a
 FriendlyId::SlugGenerationError. For Rails applications, you are
-recommended to include &quot;index&quot; and &quot;new&quot;, which used as
-the defaults unless overridden.
+recommended to include &#8220;index&#8221; and &#8220;new&#8221;, which
+used as the defaults unless overridden.
 </p>
 
 
@@ -1132,10 +1122,9 @@ the defaults unless overridden.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 64</span>
 
-<span class='def def kw'>def</span> <span class='reserved_words identifier id'>reserved_words</span>
-  <span class='@reserved_words ivar id'>@reserved_words</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id reserved_words'>reserved_words</span>
+  <span class='ivar'>@reserved_words</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1175,10 +1164,9 @@ The method or relation to use as the friendly_id&#8217;s scope.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 67</span>
 
-<span class='def def kw'>def</span> <span class='scope identifier id'>scope</span>
-  <span class='@scope ivar id'>@scope</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id scope'>scope</span>
+  <span class='ivar'>@scope</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1198,7 +1186,7 @@ The method or relation to use as the friendly_id&#8217;s scope.
   <div class="discussion">
     <p>
 The string that separates slug names from slug sequences. Defaults to
-&quot;--&quot;.
+&#8220;--&#8221;.
 </p>
 
 
@@ -1219,10 +1207,9 @@ The string that separates slug names from slug sequences. Defaults to
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 70</span>
 
-<span class='def def kw'>def</span> <span class='sequence_separator identifier id'>sequence_separator</span>
-  <span class='@sequence_separator ivar id'>@sequence_separator</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id sequence_separator'>sequence_separator</span>
+  <span class='ivar'>@sequence_separator</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1262,10 +1249,9 @@ Strip non-ASCII characters from the friendly_id string.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 73</span>
 
-<span class='def def kw'>def</span> <span class='strip_non_ascii identifier id'>strip_non_ascii</span>
-  <span class='@strip_non_ascii ivar id'>@strip_non_ascii</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id strip_non_ascii'>strip_non_ascii</span>
+  <span class='ivar'>@strip_non_ascii</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1309,10 +1295,9 @@ Use slugs for storing the friendly_id string.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 76</span>
 
-<span class='def def kw'>def</span> <span class='use_slug identifier id'>use_slug</span>
-  <span class='@use_slug ivar id'>@use_slug</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id use_slug'>use_slug</span>
+  <span class='ivar'>@use_slug</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1358,10 +1343,9 @@ when the scoped slug feature is not being used by any models.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 137</span>
 
-<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='scopes_used identifier id'>scopes_used</span><span class='assign token'>=</span><span class='lparen token'>(</span><span class='val identifier id'>val</span><span class='rparen token'>)</span>
-  <span class='@scopes_used ivar id'>@scopes_used</span> <span class='assign token'>=</span> <span class='notop op'>!</span><span class='notop op'>!</span><span class='val identifier id'>val</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id scopes_used='>scopes_used=</span><span class='lparen'>(</span><span class='id val'>val</span><span class='rparen'>)</span>
+  <span class='ivar'>@scopes_used</span> <span class='op'>=</span> <span class='op'>!</span><span class='op'>!</span><span class='id val'>val</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1418,10 +1402,9 @@ Are scoped slugs being used by any model?
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 143</span>
 
-<span class='def def kw'>def</span> <span class='self self kw'>self</span><span class='dot token'>.</span><span class='scopes_used? fid id'>scopes_used?</span>
-  <span class='@scopes_used ivar id'>@scopes_used</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id scopes_used?'>scopes_used?</span>
+  <span class='ivar'>@scopes_used</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1446,27 +1429,26 @@ Are scoped slugs being used by any model?
       <pre class="lines">
 
 
+157
 158
 159
 160
 161
 162
 163
-164
-165</pre>
+164</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 158</span>
+      <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 157</span>
 
-<span class='def def kw'>def</span> <span class='babosa_options identifier id'>babosa_options</span>
-  <span class='lbrace token'>{</span>
-    <span class='symbol val'>:to_ascii</span>         <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='strip_non_ascii? fid id'>strip_non_ascii?</span><span class='comma token'>,</span>
-    <span class='symbol val'>:transliterate</span>    <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='approximate_ascii? fid id'>approximate_ascii?</span><span class='comma token'>,</span>
-    <span class='symbol val'>:transliterations</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='ascii_approximation_options identifier id'>ascii_approximation_options</span><span class='comma token'>,</span>
-    <span class='symbol val'>:max_length</span>       <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='max_length identifier id'>max_length</span>
-  <span class='rbrace token'>}</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id babosa_options'>babosa_options</span>
+  <span class='lbrace'>{</span>
+    <span class='symbol'>:to_ascii</span>         <span class='op'>=&gt;</span> <span class='id strip_non_ascii?'>strip_non_ascii?</span><span class='comma'>,</span>
+    <span class='symbol'>:transliterate</span>    <span class='op'>=&gt;</span> <span class='id approximate_ascii?'>approximate_ascii?</span><span class='comma'>,</span>
+    <span class='symbol'>:transliterations</span> <span class='op'>=&gt;</span> <span class='id ascii_approximation_options'>ascii_approximation_options</span><span class='comma'>,</span>
+    <span class='symbol'>:max_length</span>       <span class='op'>=&gt;</span> <span class='id max_length'>max_length</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1496,14 +1478,13 @@ Are scoped slugs being used by any model?
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 88</span>
 
-<span class='def def kw'>def</span> <span class='cache_column= identifier id'>cache_column=</span><span class='lparen token'>(</span><span class='value identifier id'>value</span><span class='rparen token'>)</span>
-  <span class='@cache_column ivar id'>@cache_column</span> <span class='assign token'>=</span> <span class='value identifier id'>value</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='strip identifier id'>strip</span><span class='dot token'>.</span><span class='to_sym identifier id'>to_sym</span>
-  <span class='if if kw'>if</span> <span class='value identifier id'>value</span> <span class='match op'>=~</span> <span class='regexp val'>/\s/</span> <span class='orop op'>||</span> <span class='lbrack token'>[</span><span class='symbol val'>:slug</span><span class='comma token'>,</span> <span class='symbol val'>:slugs</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='include? fid id'>include?</span><span class='lparen token'>(</span><span class='@cache_column ivar id'>@cache_column</span><span class='rparen token'>)</span>
-    <span class='raise identifier id'>raise</span> <span class='ArgumentError constant id'>ArgumentError</span><span class='comma token'>,</span> <span class='dstring node'>&quot;FriendlyId cache column can not be named '#{value}'&quot;</span>
-  <span class='end end kw'>end</span>
-  <span class='@cache_column ivar id'>@cache_column</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id cache_column='>cache_column=</span><span class='lparen'>(</span><span class='id value'>value</span><span class='rparen'>)</span>
+  <span class='ivar'>@cache_column</span> <span class='op'>=</span> <span class='id value'>value</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id strip'>strip</span><span class='period'>.</span><span class='id to_sym'>to_sym</span>
+  <span class='kw'>if</span> <span class='id value'>value</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\s</span><span class='regexp_end'>/</span></span> <span class='op'>||</span> <span class='lbracket'>[</span><span class='symbol'>:slug</span><span class='comma'>,</span> <span class='symbol'>:slugs</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id include?'>include?</span><span class='lparen'>(</span><span class='ivar'>@cache_column</span><span class='rparen'>)</span>
+    <span class='id raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>FriendlyId cache column can not be named '</span><span class='embexpr_beg'>#{</span><span class='id value'>value</span><span class='rbrace'>}</span><span class='tstring_content'>'</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='ivar'>@cache_column</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1553,10 +1534,9 @@ This should be overridden by adapters that implement caching.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 97</span>
 
-<span class='def def kw'>def</span> <span class='cache_column? fid id'>cache_column?</span>
-  <span class='false false kw'>false</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id cache_column?'>cache_column?</span>
+  <span class='kw'>false</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1608,15 +1588,14 @@ This should be overridden by adapters that implement caching.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 109</span>
 
-<span class='def def kw'>def</span> <span class='reserved? fid id'>reserved?</span><span class='lparen token'>(</span><span class='word identifier id'>word</span><span class='rparen token'>)</span>
-  <span class='word identifier id'>word</span> <span class='assign token'>=</span> <span class='word identifier id'>word</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span>
-  <span class='if if kw'>if</span> <span class='reserved_words identifier id'>reserved_words</span><span class='dot token'>.</span><span class='kind_of? fid id'>kind_of?</span><span class='lparen token'>(</span><span class='Regexp constant id'>Regexp</span><span class='rparen token'>)</span>
-    <span class='reserved_words identifier id'>reserved_words</span> <span class='match op'>=~</span> <span class='word identifier id'>word</span>
-  <span class='else else kw'>else</span>
-    <span class='reserved_words identifier id'>reserved_words</span><span class='dot token'>.</span><span class='include? fid id'>include?</span><span class='lparen token'>(</span><span class='word identifier id'>word</span><span class='rparen token'>)</span>
-  <span class='end end kw'>end</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id reserved?'>reserved?</span><span class='lparen'>(</span><span class='id word'>word</span><span class='rparen'>)</span>
+  <span class='id word'>word</span> <span class='op'>=</span> <span class='id word'>word</span><span class='period'>.</span><span class='id to_s'>to_s</span>
+  <span class='kw'>if</span> <span class='id reserved_words'>reserved_words</span><span class='period'>.</span><span class='id kind_of?'>kind_of?</span><span class='lparen'>(</span><span class='const'>Regexp</span><span class='rparen'>)</span>
+    <span class='id reserved_words'>reserved_words</span> <span class='op'>=~</span> <span class='id word'>word</span>
+  <span class='kw'>else</span>
+    <span class='id reserved_words'>reserved_words</span><span class='period'>.</span><span class='id include?'>include?</span><span class='lparen'>(</span><span class='id word'>word</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1642,10 +1621,9 @@ This should be overridden by adapters that implement caching.
     <td>
       <pre class="code"><span class="info file"># File 'lib/friendly_id/configuration.rb', line 118</span>
 
-<span class='def def kw'>def</span> <span class='reserved_error_message identifier id'>reserved_error_message</span><span class='lparen token'>(</span><span class='word identifier id'>word</span><span class='rparen token'>)</span>
-  <span class='lbrack token'>[</span><span class='method identifier id'>method</span><span class='comma token'>,</span> <span class='reserved_message identifier id'>reserved_message</span> <span class='mod op'>%</span> <span class='word identifier id'>word</span><span class='rbrack token'>]</span> <span class='if if_mod kw'>if</span> <span class='reserved? fid id'>reserved?</span> <span class='word identifier id'>word</span>
-<span class='end end kw'>end</span>
-</pre>
+<span class='kw'>def</span> <span class='id reserved_error_message'>reserved_error_message</span><span class='lparen'>(</span><span class='id word'>word</span><span class='rparen'>)</span>
+  <span class='lbracket'>[</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id reserved_message'>reserved_message</span> <span class='op'>%</span> <span class='id word'>word</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id reserved?'>reserved?</span> <span class='id word'>word</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -1656,9 +1634,9 @@ This should be overridden by adapters that implement caching.
 </div>
     
     <div id="footer">
-  Generated on Wed Sep 22 18:18:57 2010 by 
+  Generated on Wed Sep 22 18:27:39 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.6.1 (ruby-1.8.7).
+  0.6.1 (ruby-1.9.2).
 </div>
 
   </body>
