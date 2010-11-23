@@ -42,7 +42,7 @@
     <iframe id="search_frame"></iframe>
     
     <div id="content"><div id='filecontents'><h1 id='friendlyid_guide'>FriendlyId Guide</h1>
-<div class='maruku_toc'><ul style='list-style: none;'><li><a href='#friendlyid_guide'>FriendlyId Guide</a><ul style='list-style: none;'><li><a href='#overview'>Overview</a></li><li><a href='#simple_models'>Simple Models</a></li><li><a href='#slugged_models'>Slugged Models</a></li><li><a href='#installation'>Installation</a><ul style='list-style: none;'><li><a href='#as_a_gem'>As a Gem</a><ul style='list-style: none;'><li><a href='#rails_23x'>Rails 2.3.x</a></li></ul></li><li><a href='#rails_30'>Rails 3.0</a></li><li><a href='#as_a_plugin'>As a Plugin</a></li><li><a href='#future_compatibility'>Future Compatibility</a></li><li><a href='#setup'>Setup</a></li></ul></li><li><a href='#configuration'>Configuration</a></li></ul></li><li><a href='#features'>Features</a><ul style='list-style: none;'><li><a href='#friendlyid_strings'>FriendlyId Strings</a><ul style='list-style: none;'><li><a href='#replacing_accented_characters'>Replacing Accented Characters</a></li><li><a href='#unicode_slugs'>Unicode Slugs</a></li><li><a href='#ascii_slugs'>ASCII Slugs</a></li><li><a href='#using_a_custom_method_to_generate_the_slug_text'>Using a Custom Method to Generate the Slug Text</a></li></ul></li><li><a href='#using_a_custom_method_to_process_the_slug_text'>Using a Custom Method to Process the Slug Text</a><ul style='list-style: none;'><li><a href='#converting_nonlatin_characters_to_ascii_with_stringex'>Converting non-Latin characters to ASCII with Stringex</a></li></ul></li><li><a href='#redirecting_to_the_current_friendly_url'>Redirecting to the Current Friendly URL</a></li><li><a href='#nonunique_slugs'>Non-unique Slugs</a></li><li><a href='#reserved_words'>Reserved Words</a></li><li><a href='#caching_the_friendlyid_slug_for_better_performance'>Caching the FriendlyId Slug for Better Performance</a><ul style='list-style: none;'><li><a href='#automatic_setup'>Automatic setup</a></li><li><a href='#using_a_custom_column_name'>Using a custom column name</a></li></ul></li><li><a href='#nil_slugs_and_skipping_validations'>Nil slugs and skipping validations</a></li><li><a href='#scoped_slugs'>Scoped Slugs</a><ul style='list-style: none;'><li><a href='#complications_with_scoped_slugs'>Complications with Scoped Slugs</a><ul style='list-style: none;'><li><a href='#finding_records_by_friendly_id'>Finding Records by friendly_id</a></li><li><a href='#finding_all_records_that_match_a_scoped_id'>Finding All Records That Match a Scoped ID</a></li><li><a href='#updating_a_relations_scoped_slugs'>Updating a Relation&#8217;s Scoped Slugs</a></li></ul></li><li><a href='#routes_for_scoped_models'>Routes for Scoped Models</a></li><li><a href='#scoped_models_and_cached_slugs'>Scoped Models and Cached Slugs</a></li><li><a href='#scoped_models_in_friendyid_before_320'>Scoped Models in FriendyId Before 3.2.0</a></li></ul></li><li><a href='#friendlyid_rake_tasks'>FriendlyId Rake Tasks</a><ul style='list-style: none;'><li><a href='#generating_new_slugs_for_the_first_time'>Generating New Slugs For the First Time</a></li><li><a href='#regenerating_slugs'>Regenerating Slugs</a></li><li><a href='#deleting_old_slugs'>Deleting Old Slugs</a></li></ul></li></ul></li><li><a href='#misc_tips'>Misc tips</a><ul style='list-style: none;'><li><a href='#allowing_users_to_overridecontrol_slugs'>Allowing Users to Override/Control Slugs</a></li><li><a href='#default_scopes'>Default Scopes</a></li><li><a href='#mysql_myisam_tables'>MySQL MyISAM tables</a></li></ul></li><li><a href='#hacking_friendlyid'>Hacking FriendlyId</a><ul style='list-style: none;'><li><a href='#some_benchmarks'>Some Benchmarks</a></li></ul></li></ul></div>
+<div class='maruku_toc'><ul style='list-style: none;'><li><a href='#friendlyid_guide'>FriendlyId Guide</a><ul style='list-style: none;'><li><a href='#overview'>Overview</a></li><li><a href='#simple_models'>Simple Models</a></li><li><a href='#slugged_models'>Slugged Models</a></li><li><a href='#installation'>Installation</a><ul style='list-style: none;'><li><a href='#as_a_gem'>As a Gem</a><ul style='list-style: none;'><li><a href='#rails_23x'>Rails 2.3.x</a></li></ul></li><li><a href='#rails_30'>Rails 3.0</a></li><li><a href='#as_a_plugin'>As a Plugin</a></li><li><a href='#future_compatibility'>Future Compatibility</a></li><li><a href='#setup'>Setup</a></li></ul></li><li><a href='#configuration'>Configuration</a></li></ul></li><li><a href='#features'>Features</a><ul style='list-style: none;'><li><a href='#friendlyid_strings'>FriendlyId Strings</a><ul style='list-style: none;'><li><a href='#replacing_accented_characters'>Replacing Accented Characters</a></li><li><a href='#unicode_slugs'>Unicode Slugs</a></li><li><a href='#ascii_slugs'>ASCII Slugs</a></li><li><a href='#using_a_custom_method_to_generate_the_slug_text'>Using a Custom Method to Generate the Slug Text</a></li></ul></li><li><a href='#using_a_custom_method_to_process_the_slug_text'>Using a Custom Method to Process the Slug Text</a><ul style='list-style: none;'><li><a href='#converting_nonlatin_characters_to_ascii_with_stringex'>Converting non-Latin characters to ASCII with Stringex</a></li></ul></li><li><a href='#redirecting_to_the_current_friendly_url'>Redirecting to the Current Friendly URL</a></li><li><a href='#nonunique_slugs'>Non-unique Slugs</a></li><li><a href='#reserved_words'>Reserved Words</a></li><li><a href='#caching_the_friendlyid_slug_for_better_performance'>Caching the FriendlyId Slug for Better Performance</a><ul style='list-style: none;'><li><a href='#automatic_setup'>Automatic setup</a></li><li><a href='#using_a_custom_column_name'>Using a custom column name</a></li></ul></li><li><a href='#nil_slugs_and_skipping_validations'>Nil slugs and skipping validations</a></li><li><a href='#scoped_slugs'>Scoped Slugs</a><ul style='list-style: none;'><li><a href='#complications_with_scoped_slugs'>Complications with Scoped Slugs</a></li><li><a href='#scoped_models_and_cached_slugs'>Scoped Models and Cached Slugs</a><ul style='list-style: none;'><li><a href='#finding_records_by_friendly_id'>Finding Records by friendly_id</a></li><li><a href='#finding_all_records_that_match_a_scoped_id'>Finding All Records That Match a Scoped ID</a></li><li><a href='#updating_a_relations_scoped_slugs'>Updating a Relation&#8217;s Scoped Slugs</a></li></ul></li><li><a href='#routes_for_scoped_models'>Routes for Scoped Models</a></li></ul></li><li><a href='#friendlyid_rake_tasks'>FriendlyId Rake Tasks</a><ul style='list-style: none;'><li><a href='#generating_new_slugs_for_the_first_time'>Generating New Slugs For the First Time</a></li><li><a href='#regenerating_slugs'>Regenerating Slugs</a></li><li><a href='#deleting_old_slugs'>Deleting Old Slugs</a></li></ul></li></ul></li><li><a href='#misc_tips'>Misc tips</a><ul style='list-style: none;'><li><a href='#allowing_users_to_overridecontrol_slugs'>Allowing Users to Override/Control Slugs</a></li><li><a href='#default_scopes'>Default Scopes</a></li><li><a href='#mysql_myisam_tables'>MySQL MyISAM tables</a></li></ul></li><li><a href='#hacking_friendlyid'>Hacking FriendlyId</a><ul style='list-style: none;'><li><a href='#some_benchmarks'>Some Benchmarks</a></li></ul></li></ul></div>
 <h2 id='overview'>Overview</h2>
 
 <p>FriendlyId is an ORM-centric Ruby library that lets you work with human-friendly strings as if they were numeric ids. Among other things, this facilitates replacing &#8220;unfriendly&#8221; URL&#8217;s like:</p>
@@ -385,7 +385,9 @@ etc.</pre>
 
 <h2 id='scoped_slugs'>Scoped Slugs</h2>
 
-<p>FriendlyId can generate unique slugs within a given scope. For example, assume you have an application that displays restaurants. Without scoped slugs, if two restaurants are named &#8220;Joe&#8217;s Diner,&#8221; the second one will end up with &#8220;joes-diner&#8211;2&#8221; as its friendly_id. Using scoped allows you to keep the slug names unique for each city, so that the second &#8220;Joe&#8217;s Diner&#8221; could have the slug &#8220;joes-diner&#8221; if it&#8217;s located in a different city:</p>
+<p><em>Note that in FriendlyId prior to 3.2.0, you could specify a non-standard <code>:scope</code> argument on finds. This feature has been removed in 3.2.0 in favor of the query stategies described below.</em></p>
+
+<p>FriendlyId can generate unique slugs within a given scope. For example, assume you have an application that displays restaurants. Without scoped slugs, if two restaurants are named &#8220;Joe&#8217;s Diner,&#8221; the second one will end up with &#8220;joes-diner&#8211;2&#8221; as its friendly_id. Using scoped allows you to keep the slug names unique for each city, so that the second &#8220;Joe&#8217;s Diner&#8221; can also have the slug &#8220;joes-diner&#8221;, as long as it&#8217;s located in a different city:</p>
 
 <pre class="code"><span class='kw'>class</span> <span class='const'>Restaurant</span> <span class='op'>&lt;</span> <span class='const'>ActiveRecord</span><span class='op'>::</span><span class='const'>Base</span>
   <span class='id belongs_to'>belongs_to</span> <span class='symbol'>:city</span>
@@ -397,15 +399,16 @@ etc.</pre>
   <span class='id has_friendly_id'>has_friendly_id</span> <span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:use_slug</span> <span class='op'>=&gt;</span> <span class='kw'>true</span>
 <span class='kw'>end</span>
 
-<span class='id http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id example'>example</span><span class='period'>.</span><span class='id org'>org</span><span class='op'>/</span><span class='id cities'>cities</span><span class='op'>/</span><span class='id seattle'>seattle</span><span class='op'>/</span><span class='id restaurants'>restaurants</span><span class='op'>/</span><span class='id joes'>joes</span><span class='op'>-</span><span class='id diner'>diner</span>
-<span class='id http'>http</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id example'>example</span><span class='period'>.</span><span class='id org'>org</span><span class='op'>/</span><span class='id cities'>cities</span><span class='op'>/</span><span class='id chicago'>chicago</span><span class='op'>/</span><span class='id restaurants'>restaurants</span><span class='op'>/</span><span class='id joes'>joes</span><span class='op'>-</span><span class='id diner'>diner</span>
-
-<span class='const'>City</span><span class='period'>.</span><span class='id find'>find</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>seattle</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id restaurants'>restaurants</span><span class='period'>.</span><span class='id find'>find</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>joes-diner</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='comment'># returns 1 record
-</span><span class='const'>City</span><span class='period'>.</span><span class='id find'>find</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>chicago</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id restaurants'>restaurants</span><span class='period'>.</span><span class='id find'>find</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>joes-diner</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>  <span class='comment'># returns 1 record</span></pre>
+<span class='const'>City</span><span class='period'>.</span><span class='id find'>find</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>seattle</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id restaurants'>restaurants</span><span class='period'>.</span><span class='id find'>find</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>joes-diner</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='const'>City</span><span class='period'>.</span><span class='id find'>find</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>chicago</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id restaurants'>restaurants</span><span class='period'>.</span><span class='id find'>find</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>joes-diner</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></pre>
 
 <p>The value for the <code>:scope</code> key in your model can be a custom method you define, or the name of a relation. If it&#8217;s the name of a relation, then the scope&#8217;s text value will be the result of calling <code>to_param</code> on the related model record. In the example above, the city model also uses FriendlyId and so its <code>to_param</code> method returns its friendly_id: &#8220;chicago&#8221; or &#8220;seattle&#8221;.</p>
 
 <h3 id='complications_with_scoped_slugs'>Complications with Scoped Slugs</h3>
+
+<h3 id='scoped_models_and_cached_slugs'>Scoped Models and Cached Slugs</h3>
+
+<p>If you want to use cached slugs with scoped models, be sure not to create a unique index on the <code>cached_slug</code> column.</p>
 
 <h4 id='finding_records_by_friendly_id'>Finding Records by friendly_id</h4>
 
@@ -426,9 +429,7 @@ etc.</pre>
 
 <p>If you want to find all records with a partular friendly_id regardless of scope, the easiest way is to use cached slugs and query this column directly:</p>
 
-<pre class="code"><span class='const'>Restaurant</span><span class='period'>.</span><span class='id find_all_by_cached_slug'>find_all_by_cached_slug</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>joes-diner</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='comment'># Another option, with Active Record 3.x
-</span><span class='const'>Restaurant</span><span class='period'>.</span><span class='id where'>where</span><span class='lparen'>(</span><span class='symbol'>:cached_slug</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>joes-diner</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></pre>
+<pre class="code"><span class='const'>Restaurant</span><span class='period'>.</span><span class='id find_all_by_cached_slug'>find_all_by_cached_slug</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>joes-diner</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></pre>
 
 <p>If you&#8217;re not using cached slugs, then this is slightly more complicated, but still doable:</p>
 
@@ -445,24 +446,21 @@ etc.</pre>
 
 <p>Note that FriendlyId does not set up any routes for scoped models; you must do this yourself in your application. Here&#8217;s an example of one way to set this up:</p>
 
-<pre class="code"><span class='comment'># in routes.rb
-</span><span class='id map'>map</span><span class='period'>.</span><span class='id resources'>resources</span> <span class='symbol'>:restaurants</span>
-<span class='id map'>map</span><span class='period'>.</span><span class='id restaurant'>restaurant</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/restaurants/:city_id/:id</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:controller</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>restaurants</span><span class='tstring_end'>&quot;</span></span>
+<pre class="code"># in routes.rb
+resources :cities do
+  resources :restaurants
+end
 
-<span class='comment'># in views
-</span><span class='id link_to'>link_to</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Show</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id restaurant_path'>restaurant_path</span><span class='lparen'>(</span><span class='id restaurant'>restaurant</span><span class='period'>.</span><span class='id city'>city</span><span class='comma'>,</span> <span class='id restaurant'>restaurant</span><span class='rparen'>)</span>
+# in views
+&lt;%= link_to 'Show', [@city, @restaurant] %&gt;
 
-<span class='comment'># in controllers
-</span><span class='ivar'>@city</span> <span class='op'>=</span> <span class='const'>City</span><span class='period'>.</span><span class='id find'>find</span><span class='lparen'>(</span><span class='id params'>params</span><span class='lbracket'>[</span><span class='symbol'>:city_id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
-<span class='ivar'>@restaurant</span> <span class='op'>=</span> <span class='ivar'>@city</span><span class='period'>.</span><span class='id resaturants'>resaturants</span><span class='period'>.</span><span class='id find'>find</span><span class='lparen'>(</span><span class='id params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span></pre>
+# in controllers
+@city = City.find(params[:city_id])
+@restaurant = @city.restaurants.find(params[:id])
 
-<h3 id='scoped_models_and_cached_slugs'>Scoped Models and Cached Slugs</h3>
-
-<p>If you want to use cached slugs with scoped models, be sure not to create a unique index on the <code>cached_slug</code> column.</p>
-
-<h3 id='scoped_models_in_friendyid_before_320'>Scoped Models in FriendyId Before 3.2.0</h3>
-
-<p>In older versions of FriendlyId, you could specify a non-standard <code>:scope</code> argument to finds. This feature has been removed in 3.2.0 in favor of the query stategies described above.</p>
+# URL's:
+http://example.org/cities/seattle/restaurants/joes-diner
+http://example.org/cities/chicago/restaurants/joes-diner</pre>
 
 <h2 id='friendlyid_rake_tasks'>FriendlyId Rake Tasks</h2>
 
@@ -556,7 +554,7 @@ find model using id, then to_param           x1000 |   0.321 |   0.332 |   0.976
 Total                                              |   0.936 |   1.138 |   2.203 |       1.266 |</pre></div></div>
     
     <div id="footer">
-  Generated on Tue Nov 23 14:15:19 2010 by 
+  Generated on Tue Nov 23 16:56:02 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.1 (ruby-1.9.2).
 </div>
