@@ -330,7 +330,7 @@ FriendlyId::ReservedError
 
 <span class='kw'>def</span> <span class='id validate_for!'>validate_for!</span><span class='lparen'>(</span><span class='id config'>config</span><span class='rparen'>)</span>
   <span class='id truncate_bytes!'>truncate_bytes!</span><span class='lparen'>(</span><span class='id config'>config</span><span class='period'>.</span><span class='id max_length'>max_length</span><span class='rparen'>)</span>
-  <span class='id raise'>raise</span> <span class='const'>FriendlyId</span><span class='op'>::</span><span class='const'>BlankError</span> <span class='kw'>if</span> <span class='id blank?'>blank?</span>
+  <span class='id raise'>raise</span> <span class='const'>FriendlyId</span><span class='op'>::</span><span class='const'>BlankError</span> <span class='kw'>if</span> <span class='id empty?'>empty?</span>
   <span class='id raise'>raise</span> <span class='const'>FriendlyId</span><span class='op'>::</span><span class='const'>ReservedError</span> <span class='kw'>if</span> <span class='id config'>config</span><span class='period'>.</span><span class='id reserved?'>reserved?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
   <span class='kw'>self</span>
 <span class='kw'>end</span></pre>
@@ -344,7 +344,7 @@ FriendlyId::ReservedError
 </div>
     
     <div id="footer">
-  Generated on Tue Nov 23 16:58:04 2010 by 
+  Generated on Wed Jan 12 14:12:08 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.1 (ruby-1.9.2).
 </div>
